@@ -1,4 +1,5 @@
 const sparkId = 'vitner-flame-craft:spark:1';
+export const fireTamerId = 'holy-toikalokke-master-of-elements:fire-tamer:4';
 const solarTablets = new Set(['holy-gerbanis-warmth-of-sunvei', 'holy-joaringfaith-power-of-sille']);
 export function fixedLightProfile(context = {}){
  const sourceId = context?.sourceId ?? '';
@@ -6,10 +7,10 @@ export function fixedLightProfile(context = {}){
  const count = index => Math.max(0, Math.trunc(Number(context.countsById?.[sourceId + ':' + index] ?? context.counts?.[index]) || 0));
  if(sourceId === sparkId && count(4) > 0){
   const torch = count(3) > 0;
-  return {kind:'fixedLight', radius:torch?6:3, range:1, rounds:12+12*count(0)+720*count(1)+17280*count(2),
+  return {kind:'fixedLight', attachable:true, radius:torch?6:3, range:1, rounds:12+12*count(0)+720*count(1)+17280*count(2),
    illumination:{bright:torch?3:1, dim:torch?6:3, flame:true}};
  }
- if(sourceId === 'holy-toikalokke-master-of-elements:fire-tamer:4'){
+ if(sourceId === fireTamerId){
   return {kind:'fixedLight',radius:6,range:10+10*count(3),rounds:1+3*count(0)+10*count(1),
    illumination:{bright:3,dim:6,flame:true}};
  }

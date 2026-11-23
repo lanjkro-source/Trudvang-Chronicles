@@ -26,13 +26,18 @@ const lightRegion=light=>light.flags?.[S]?.spellZoneLight?.regionUuid;
 export function spellZoneFireLightData(region, info=region.flags?.[S]?.spellZone){
  const shape=Array.from(region.shapes??[]).find(shape=>shape.type==='circle');
  if(!shape||!['fire','fixedLight'].includes(info?.profile.kind))return null;
+ const support=info.lightTokenId?region.parent.tokens?.get(info.lightTokenId):null;
+ if(info.lightTokenId&&!support)return null;
  const radius=Number(shape.radius)*Number(region.parent.grid?.distance||1)/Number(region.parent.grid?.size||1);
  const illumination=info.profile.illumination;
  const scale=illumination?radius/info.profile.radius:1;
  const flame=illumination?.flame??info.profile.kind==='fire';
  // Physical fire colour requested by the GM, independent of the interface palette.
- const hidden=Boolean(info.profile.requiresDaylight&&Number(region.parent.environment?.darknessLevel)>=0.5);
- return {name:game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name'),x:Number(shape.x),y:Number(shape.y),elevation:Number(info.elevation)||0,hidden,walls:true,vision:false,
+ const hidden=Boolean(info.lightExtinguished||support?.hidden||info.profile.requiresDaylight&&Number(region.parent.environment?.darknessLevel)>=0.5);
+ const size=Number(region.parent.grid?.size||1);
+ const x=support?Number(support.x)+Number(support.width??1)*size/2:Number(shape.x);
+ const y=support?Number(support.y)+Number(support.height??1)*size/2:Number(shape.y);
+ return {name:game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name'),x,y,elevation:Number(support?.elevation??info.elevation)||0,hidden,walls:true,vision:false,
   config:{bright:illumination?illumination.bright*scale:radius,dim:illumination?illumination.dim*scale:0,angle:360,
    ...(flame?{color:'#ffb347',alpha:0.1,attenuation:0,animation:{type:'flame',speed:3,intensity:4}}:{color:null,attenuation:0})},
   flags:{[S]:{spellZoneLight:{regionUuid:region.uuid}}}};

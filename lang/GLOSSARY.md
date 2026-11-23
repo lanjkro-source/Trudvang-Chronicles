@@ -16871,6 +16871,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
 | `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |
+| `TRUDVANG.SpellZone.AttachLight` | Attach to an object | Attacher à un objet |
+| `TRUDVANG.SpellZone.LightSupport` | Token representing the object | Token représentant l’objet |
+| `TRUDVANG.SpellZone.ExtinguishFire` | Extinguish a fire | Éteindre un foyer |
+| `TRUDVANG.SpellZone.FireSource` | Fire light | Lumière du foyer |
+| `TRUDVANG.SpellZone.UnnamedFire` | Scene light | Lumière de scène |
+| `TRUDVANG.SpellZone.FireAtPoint` | {name} ({x}, {y}) | {name} ({x}, {y}) |
 | `TRUDVANG.SpellZone.PlaceLight` | Place the light | Placer la lumière |
 | `TRUDVANG.SpellZone.Instruction` | Each creature’s owner or the GM may make their test. | Le contrôleur de chaque créature ou le MJ peut faire son test. |
 | `TRUDVANG.SpellZone.Test` | Resist earthquake | Résister au séisme |

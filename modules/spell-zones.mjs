@@ -3,7 +3,7 @@ import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {TABLET_BY_ID,powerItemData} from './tablet-catalog.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
-import {earthquakeProfile,earthquakeTest,fixedLightProfile,fogRadius,spellZoneExpired,spellZonePhase,spellZoneRange,zonePixelScale} from './rules/spell-zones.mjs';
+import {earthquakeProfile,earthquakeTest,fireTamerId,fixedLightProfile,fogRadius,spellZoneExpired,spellZonePhase,spellZoneRange,zonePixelScale} from './rules/spell-zones.mjs';
 import {createSpellZoneRangeGuide} from './spell-zone-range-guide.mjs';
 import {addSpellWallBlock,spellWallBlockPoint,spellWallColumns} from './rules/spell-walls.mjs';
 import {cleanupOrphanSpellWalls,spellWallInfo,syncSpellWall} from './spell-walls.mjs';
@@ -132,6 +132,7 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   const info=infoOf(region);
   if(removed||!regionPresent(region)){await clearSpellZoneRecipients(region,info);await syncZoneLight(region,{removed:true});await syncSpellWall(region,{removed:true});return;}
   if(spellZoneExpired(info,clock(info))){await clearSpellZoneRecipients(region,info,{expired:true});await deleteZoneOnce(region);return;}
+  if(info.lightTokenId&&!region.parent.tokens?.get(info.lightTokenId)){await deleteZoneOnce(region);return;}
   if(!enabled(region)){await clearSpellZoneRecipients(region,info);await syncZoneLight(region,{removed:true});await syncSpellWall(region,{removed:true});return;}
   if(info.wall){
    if(info.wall.sections.every(section=>section.hp<=0))await deleteZoneOnce(region);
@@ -191,11 +192,43 @@ function placementFeedback(result){
  if(result.reason)ui.notifications.warn(local(result.reason));
  else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='invalidArea'?'DarknessAreaInvalid':result.status==='fogMoveTooFar'?'FogMoveTooFar':result.status==='outOfRange'?'OutOfRange':'Unavailable'));
 }
+function successfulZoneCast(message,ready){
+ const die=Number(message?.rolls?.[0]?.total);
+ return Boolean(ready&&Number.isInteger(die)&&die>=1&&die<=19&&(die===1||die<=ready.target));
+}
+
+function fireLightInReach(scene,light,token,profile){
+ if(light.hidden||!(Math.max(Number(light.config?.bright)||0,Number(light.config?.dim)||0)>0))return false;
+ const regionUuid=light.flags?.[S]?.spellZoneLight?.regionUuid;
+ if(regionUuid){
+  const zone=values(scene.regions).find(region=>region.uuid===regionUuid);
+  const other=infoOf(zone)?.profile;
+  if(other?.kind!=='fire'&&!other?.illumination?.flame)return false;
+ }
+ return pointInRange(placementLimit(scene,token,profile),light);
+}
+
+export async function extinguishFireTamerLight(message,scene,tokenId,lightId){
+ const cast=message?.flags?.[S]?.ruleTestContext;
+ const token=scene?.tokens?.get(tokenId);
+ const profile=fixedLightProfile(cast);
+ if(!game.user?.isGM||cast?.sourceId!==fireTamerId||!successfulZoneCast(message,message.flags?.[S]?.spellZoneCasting)||
+   !token?.actor||token.actor.uuid!==cast.casterUuid)return {status:'unavailable'};
+ return serial('extinguish:'+scene.id+':'+lightId,async()=>{
+  const light=scene.lights?.get(lightId);
+  if(!light||!fireLightInReach(scene,light,token,profile))return {status:'unavailable'};
+  const regionUuid=light.flags?.[S]?.spellZoneLight?.regionUuid;
+  const region=regionUuid&&values(scene.regions).find(candidate=>candidate.uuid===regionUuid);
+  // Keep the zone and its rules, but preserve the GM's decision in later lighting refreshes.
+  if(region)await region.update({['flags.'+S+'.spellZone.lightExtinguished']:true});
+  await light.update({hidden:true});
+  return {status:'extinguished'};
+ });
+}
 export async function createSpellZoneOnAuthority(payload){
  const message=game.messages.get(payload.messageId),cast=message?.flags?.[S]?.ruleTestContext,ready=message?.flags?.[S]?.spellZoneCasting,user=game.users.get(payload.userId);
  const actor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null,definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast)??fixedLightProfile(cast);
- const die=Number(message?.rolls?.[0]?.total);
- if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!ready||!profile||!Number.isInteger(die)||die<1||die>19||(die!==1&&die>ready.target))return {status:'unavailable'};
+ if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
  return withMaintainedZoneCasting(actor,cast,()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}));
 }
 async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}){
@@ -214,7 +247,10 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  const solar=profile.requiresDaylight?cast.lightSite:null;
  if(profile.requiresDaylight&&(!payload.daylight||!solar||solar.sceneId!==scene?.id||solar.tokenId!==token?.id))
   return {status:'unavailable'};
- const point=solar??payload.point;
+ const support=payload.lightTokenId?scene?.tokens?.get(payload.lightTokenId):null;
+ if(payload.lightTokenId&&(!profile.attachable||!support||support.id===token?.id||support.level!==token?.level||support.hidden&&!user.isGM))
+  return {status:'unavailable'};
+ const point=support?center(support,scene):solar??payload.point;
  if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||(!solar&&!pointInRange(placementLimit(scene,token,profile),point)))return {status:'outOfRange'};
  const darkness=profile.kind==='darkness',scale=zonePixelScale(scene);
  const footprint=darkness?darknessPlacementShape(payload.shape,profile.area,scale):null;
@@ -225,12 +261,14 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
  const info={context:structuredClone(cast),profile,elevation:Number(solar?.elevation??token.elevation)||0,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
+ if(support)info.lightTokenId=support.id;
  if(wall)info.wall=wall;
  info.createdRound=Number(combat?.round)||0;
  info.lastMovedPhase=spellZonePhase(info,clock(info));
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  const darkMode=darkness?globalThis.CONFIG?.RegionBehavior?.dataModels?.adjustDarknessLevel?.MODES?.OVERRIDE:undefined;
  if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
+  ...(support?{attachment:{token:support.id}}:{}),
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
   behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
  if(!region)throw Error('Spell zone creation failed');
@@ -424,7 +462,39 @@ export async function openSpellWallDamage(message){
  ui.notifications.info(local(result.destroyed?'WallDestroyed':'WallSection',{n:result.index+1,hp:result.hp,max:result.max}));
  return result;
 }
-export async function placeSpellZone(message){
+async function chooseSceneDocument(title,label,rows){
+ if(!rows.length){ui.notifications.warn(local('Unavailable'));return null;}
+ return foundry.applications.api.DialogV2.wait({
+  window:{title},
+  content:'<div class="form-group"><label for="trudvang-light-choice">'+escapeHtml(label)+'</label><select id="trudvang-light-choice" name="lightChoice">'+
+    rows.map(({id,name})=>'<option value="'+escapeAttribute(id)+'">'+escapeHtml(name)+'</option>').join('')+'</select></div>',
+  buttons:[{action:'choose',label:game.i18n.localize('TRUDVANG.Action.Continue'),default:true,callback:(_event,button)=>button.form.elements.lightChoice.value},
+   {action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>null}],
+  rejectClose:false
+ });
+}
+
+export async function openFireTamerExtinguish(message){
+ if(!game.user?.isGM)return null;
+ const cast=message.flags?.[S]?.ruleTestContext;
+ if(cast?.sourceId!==fireTamerId)return null;
+ const board=globalThis.canvas,scene=board?.scene;
+ const actor=await foundry.utils.fromUuid(cast.casterUuid);
+ const token=actor&&auraCasterToken(actor,board?.tokens?.controlled,actor.getActiveTokens?.(false,true));
+ if(!scene||token?.parent?.id!==scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
+ const lights=values(scene.lights).filter(light=>fireLightInReach(scene,light,token,fixedLightProfile(cast)));
+ const options=lights.map(light=>{
+  const name=light.name||local('UnnamedFire');
+  return {id:light.id,name:local('FireAtPoint',{name,x:Math.round(light.x),y:Math.round(light.y)})};
+ });
+ const lightId=await chooseSceneDocument(local('ExtinguishFire'),local('FireSource'),options);
+ if(!lightId||board.scene!==scene)return null;
+ const result=await extinguishFireTamerLight(message,scene,token.id,lightId);
+ if(result.status!=='extinguished')ui.notifications.warn(local('Unavailable'));
+ return result;
+}
+
+export async function placeSpellZone(message,{attachLight=false}={}){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
  const board=globalThis.canvas,scene=board?.scene;
  if(!profile||!actor?.isOwner||!scene){ui.notifications.warn(local('Unavailable'));return null;}
@@ -444,8 +514,15 @@ export async function placeSpellZone(message){
   const choice=await foundry.applications.api.DialogV2.wait({window:{title:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(local('Profile',{radius:profile.radius,rounds:profile.rounds}))+'</p><label class="checkbox"><input type="checkbox" name="underground">'+escapeHtml(local('Underground',{chance:profile.collapseChance}))+'</label></div>',buttons:[{action:'continue',label:game.i18n.localize('TRUDVANG.Action.Continue'),default:true,callback:(_e,b)=>({underground:b.form.querySelector('[name=underground]').checked})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false}],close:()=>false,rejectClose:false});
   if(!choice||typeof choice!=='object')return null;underground=choice.underground;
  }
- let point=center(token,scene),footprint;
- if(!profile.centered){
+ let point=center(token,scene),footprint,lightTokenId;
+ if(attachLight){
+  if(!profile.attachable)return null;
+  const limit=placementLimit(scene,token,profile);
+  const supports=values(scene.tokens).filter(support=>support.id!==token.id&&support.level===token.level&&
+   (game.user.isGM||!support.hidden&&support.object?.visible!==false)&&pointInRange(limit,center(support,scene)));
+  lightTokenId=await chooseSceneDocument(local('AttachLight'),local('LightSupport'),supports);
+  if(!lightTokenId)return null;
+ }else if(!profile.centered){
   const movingFog=profile.kind==='fog'&&previous?.region;
   if(movingFog&&movingFog.parent.id!==scene.id){placementFeedback({status:'outOfRange'});return null;}
   const darkness=profile.kind==='darkness';
@@ -493,7 +570,7 @@ export async function placeSpellZone(message){
   if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,scale);
  }
  if(board.scene!==scene)return null;
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);
@@ -527,6 +604,17 @@ export function registerSpellZoneSupport(){
  const flightChanged=(effect,changes={})=>{if(changes.statuses!==undefined||values(effect.statuses).some(id=>['fly','hover','flying','hovering'].includes(id)))safely();};
  for(const hook of ['createActiveEffect','updateActiveEffect','deleteActiveEffect'])Hooks.on(hook,flightChanged);
  Hooks.on('updateRegion',region=>{if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone update failed',error));});
+ const refreshAttachedLights=token=>{
+  if(!writer())return;
+  for(const region of values(token.parent?.regions)){
+   if(infoOf(region)?.lightTokenId!==token.id)continue;
+   void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Attached light update failed',error));
+  }
+ };
+ Hooks.on('updateToken',(token,changes)=>{
+  if(['x','y','elevation','width','height','level','hidden'].some(key=>changes[key]!==undefined))refreshAttachedLights(token);
+ });
+ Hooks.on('deleteToken',refreshAttachedLights);
  Hooks.on('deleteRegion',region=>{
   const info=infoOf(region);
   if(!info)return;

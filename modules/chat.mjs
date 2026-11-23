@@ -1,4 +1,4 @@
-import {endFog,openSpellWallDamage,placeSpellZone,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
+import {endFog,openFireTamerExtinguish,openSpellWallDamage,placeSpellZone,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
@@ -307,6 +307,23 @@ function attachListeners(message, html) {
       });
     }
   }
+  const extinguishButton=html.querySelector?.('[data-action="extinguish-spell-fire"]');
+  if(extinguishButton&&game.user.isGM){
+    extinguishButton.hidden=false;
+    extinguishButton.addEventListener('click',async event=>{
+      event.preventDefault();
+      extinguishButton.disabled=true;
+      try{await openFireTamerExtinguish(message);}
+      finally{extinguishButton.disabled=false;}
+    });
+  }
+  const attachLightButton=html.querySelector?.('[data-action="attach-spell-light"]');
+  if(attachLightButton)attachLightButton.addEventListener('click',async event=>{
+    event.preventDefault();
+    attachLightButton.disabled=true;
+    try{await placeSpellZone(message,{attachLight:true});}
+    finally{attachLightButton.disabled=false;}
+  });
   let wallVolume=html.querySelector?.('[data-wall-block-volume]');
   html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>{
     const refresh=()=>{

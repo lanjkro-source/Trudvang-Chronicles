@@ -50,6 +50,46 @@ test('a detached torch creates one fixed light, then removes it at expiration',a
  assert.equal(scene.lights.size,0);
 });
 
+test('an attached Spark follows the chosen support and disappears when the support is deleted',async()=>{
+ const spark='vitner-flame-craft:spark:1';
+ const payload=setup(spark,{[spark+':4']:1});
+ const support=scene.tokens.get('target');
+ support.x=150;
+ assert.equal((await createSpellZoneOnAuthority({...payload,lightTokenId:support.id})).status,'outOfRange');
+ support.x=100;
+ const result=await createSpellZoneOnAuthority({...payload,lightTokenId:support.id});
+ assert.equal(result.status,'placed');
+ const region=await foundry.utils.fromUuid(result.regionUuid);
+ assert.equal(region.attachment.token,support.id);
+ const light=[...scene.lights.values()][0];
+ support.x=300;
+ support.elevation=2;
+ await reconcileSpellZone(region);
+ assert.deepEqual([light.x,light.elevation,scene.lights.size],[350,2,1]);
+ scene.tokens.delete(support.id);
+ await reconcileSpellZone(region);
+ assert.equal(scene.lights.size,0);
+ assert.equal(regions.size,0);
+});
+
+test('only a GM may extinguish an existing fire and reconciliation keeps it out',async()=>{
+ const fireTamer='holy-toikalokke-master-of-elements:fire-tamer:4';
+ const payload=setup(fireTamer);
+ const result=await createSpellZoneOnAuthority(payload);
+ const region=await foundry.utils.fromUuid(result.regionUuid);
+ const light=[...scene.lights.values()][0];
+ const {extinguishFireTamerLight}=await import('../modules/spell-zones.mjs');
+ game.user=owner;
+ assert.equal((await extinguishFireTamerLight(message,scene,payload.tokenId,light.id)).status,'unavailable');
+ assert.equal(light.hidden,false);
+ game.user=gm;
+ assert.equal((await extinguishFireTamerLight(message,scene,payload.tokenId,light.id)).status,'extinguished');
+ assert.equal(light.hidden,true);
+ await reconcileSpellZone(region);
+ assert.equal(light.hidden,true);
+ assert.equal(scene.lights.size,1);
+});
+
 test('Sunray uses the original casting site and resumes daylight only while the zone is active',async()=>{
  const payload=setup('holy-gerbanis-warmth-of-sunvei:sunray:1');
  const cast=message.flags[S].ruleTestContext;

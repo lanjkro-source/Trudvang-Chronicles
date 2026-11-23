@@ -23,7 +23,7 @@ import {allocatedCombatVC} from "./rules/attack-size.mjs";
 import {transformationLinks,transformationKeys,applyTransformation} from "./transformations.mjs";
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {auraCasterToken,auraSite} from "./aura.mjs";
-import {fixedLightProfile} from "./rules/spell-zones.mjs";
+import {fireTamerId,fixedLightProfile} from "./rules/spell-zones.mjs";
 import {weatherTemperatureLimits} from "./rules/weather-wards.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
@@ -165,6 +165,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     magicFear: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll),
     spellZone:Boolean(!pendingPerfect&&success&&hasSpellZone()),
     fixedLight:!pendingPerfect&&Boolean(fixedLightProfile(ruleTestContext)),
+    attachLight:!pendingPerfect&&success&&Boolean(fixedLightProfile(ruleTestContext)?.attachable),
+    extinguishFire:!pendingPerfect&&success&&ruleTestContext?.sourceId===fireTamerId,
     fogZone:!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog',
     wallZone:!pendingPerfect&&success&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='earthWall',
     magicDamage: Boolean(!pendingPerfect && item && success && ["spell","divine","rune"].includes(kind) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack && POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
@@ -228,6 +230,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.spellZone=hasSpellZone();
     card.fixedLight=Boolean(fixedLightProfile(ruleTestContext));
+    card.attachLight=Boolean(fixedLightProfile(ruleTestContext)?.attachable);
+    card.extinguishFire=ruleTestContext?.sourceId===fireTamerId;
     card.fogZone=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='fog';
     card.wallZone=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone?.kind==='earthWall';
     card.magicDamage=Boolean(!card.spellZone&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.requiresAttack&&POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic);
