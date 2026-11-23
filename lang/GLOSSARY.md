@@ -16893,15 +16893,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.SpellZone.BoilingPlace` | Place the boiling water | Placer l’eau bouillante |
-| `TRUDVANG.SpellZone.BoilingProfile` | Up to {liters} L of water for {minutes} min. | Jusqu’à {liters} L d’eau pendant {minutes} min. |
-| `TRUDVANG.SpellZone.BoilingAvailable` | Available water (L) | Eau disponible (L) |
-| `TRUDVANG.SpellZone.BoilingDepth` | Water depth (cm) | Profondeur de l’eau (cm) |
-| `TRUDVANG.SpellZone.BoilingSurface` | Water surface elevation | Altitude de la surface de l’eau |
-| `TRUDVANG.SpellZone.BoilingInvalid` | Enter positive values for water volume and depth, and a valid elevation. | Indiquez une quantité et une profondeur d’eau positives ainsi qu’une altitude valide. |
-| `TRUDVANG.SpellZone.BoilingPlaced` | {liters} L of water brought to a boil. | {liters} L d’eau portés à ébullition. |
-| `TRUDVANG.SpellZone.BoilingProtected` | Insulated by armor | Armure isolante |
-| `TRUDVANG.SpellZone.BoilingBurned` | Scalded | Brûlé |
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
 | `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |
@@ -16983,5 +16974,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.WaterPurification.Heating` | Up to {litres} L of water · {minutes} min · Range {range} | Jusqu’à {litres} L d’eau · {minutes} min · Portée {range} |
 | `TRUDVANG.WaterPurification.Capacity` | Volume that can be purified: {value}. | Volume purifiable : {value}. |
 | `TRUDVANG.WaterPurification.Lake` | a small lake | un petit lac |

@@ -11609,37 +11609,15 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-flame-craft:heat-water:0": {
     "isRune": false,
     "level": 1,
-    "spellZone": {
-      "kind": "boilingWater",
+    "heating": {
+      "litres": 5,
+      "minutes": 5,
       "durationOptionId": "vitner-flame-craft:heat-water:0:0",
       "rangeOptionId": "vitner-flame-craft:heat-water:0:1",
-      "volumeOptions": [
-        {
-          "id": "vitner-flame-craft:heat-water:0:2",
-          "liters": 1
-        },
-        {
-          "id": "vitner-flame-craft:heat-water:0:3",
-          "liters": 10
-        },
-        {
-          "id": "vitner-flame-craft:heat-water:0:4",
-          "liters": 100
-        }
-      ]
-    },
-    "damageRoll": {
-      "steps": [
-        {
-          "formula": "1d6",
-          "openRoll": 0
-        }
-      ],
-      "qualification": {
-        "nature": "normal",
-        "delivery": "other",
-        "type": "fire",
-        "protection": "none"
+      "increments": {
+        "vitner-flame-craft:heat-water:0:2": 1,
+        "vitner-flame-craft:heat-water:0:3": 10,
+        "vitner-flame-craft:heat-water:0:4": 100
       }
     },
     "damageQualification": {

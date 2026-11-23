@@ -198,3 +198,7 @@ Le palier 73 de `modules/content-importer.mjs` importe la torche et la lanterne 
 ## Cartes de zone antérieures à la 0.249.0
 
 `initialResistanceArea()` reprend la carte d’origine des décharges 53 de la 0.248.0 à partir de l’identifiant du test. Lorsque le type du test manque, `ruleTestsForDocument()` reconnaît le test de trait sans compétence. `applyZoneDamage()` réutilise les anciennes cartes de dégâts encore liées à une application en cours pour éviter une seconde perte de PS. Les replis `TEMPORARY WORLD MIGRATION` et les paramètres `legacyEvent` pourront être supprimés avec ces anciennes cartes. Les résultats par cible et le registre des dégâts restent nécessaires.
+
+## Ébullition de la 0.250.0
+
+Dans `modules/spell-zones.mjs`, le repli `TEMPORARY WORLD MIGRATION` supprime les régions créées par Ébullition en 0.250.0 avant qu’elles puissent traiter un nouveau contact. Dans `modules/chat.mjs`, le repli portant le même marqueur remplace l’ancien bouton de placement par le bilan du sortilège. Retirer ces deux replis avec les anciens mondes. La présentation du volume, de la durée et de la portée sur les nouvelles cartes reste nécessaire.

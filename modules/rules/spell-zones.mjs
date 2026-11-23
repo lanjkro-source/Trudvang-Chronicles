@@ -27,11 +27,6 @@ export function fixedLightProfile(context = {}){
 export function earthquakeProfile(definition,context={}){
  if(!definition)return null;
  const count=id=>Math.max(0,Math.trunc(Number(context.countsById?.[id]??context.counts?.[Number(id?.split(':').at(-1))])||0));
- if(definition.kind==='boilingWater')return {
-  kind:'boilingWater', range:5*count(definition.rangeOptionId)||1,
-  rounds:60+12*count(definition.durationOptionId),
-  maxLiters:5+definition.volumeOptions.reduce((total,row)=>total+row.liters*count(row.id),0)
- };
  if(definition.kind==='earthWall')return {
   kind:'earthWall',range:2,volume:1+count(definition.volumeOptionId),hitPoints:30,
   rounds:360+360*count(definition.durationOptionId)+2160*count(definition.hoursOptionId)
@@ -62,13 +57,7 @@ export function earthquakeProfile(definition,context={}){
 export function earthquakeSizeIndex(size){const n=Number(size)||1;return n<1/3?0:n<.5?1:n<1.5?2:n<3?3:n<5?4:n<10?5:6;}
 export function earthquakeTest(profile,size){const i=earthquakeSizeIndex(size);return profile.kind==='runeEarthquake'?(profile.sizeSV[i]===null?{immune:true}:{sv:profile.sizeSV[i]+profile.levelModifier*profile.level}):{modifier:profile.sizeModifiers[i]+profile.severityModifier*profile.severity};}
 export function spellZoneExpired(info,{time=0,combat}={}){if(info.profile?.instant)return false;return Number(time)>=info.until||(info.combatId&&combat?.id===info.combatId&&Number(combat.round)>=info.expiresRound);}
-export function spellZonePhase(info,{time=0,combat}={}){
- if(info.profile?.instant)return 'instant';
- const round=info.combatId&&combat?.id===info.combatId?Number(combat.round):null;
- const elapsed=Math.floor((Number(time)-info.createdAt)/5);
- if(info.profile?.kind==='boilingWater')return 'contact:'+Math.max(0,elapsed,round===null?0:round-info.createdRound);
- return round===null?'time:'+elapsed:'round:'+round;
-}
+export function spellZonePhase(info,{time=0,combat}={}){if(info.profile?.instant)return 'instant';return info.combatId&&combat?.id===info.combatId?'round:'+Number(combat.round):'time:'+Math.floor((Number(time)-info.createdAt)/5);}
 export function fogRadius(info,{time=0,combat}={}){
  const elapsed=Math.max(0,Math.floor((time-info.createdAt)/5),combat&&combat.id===info.combatId?combat.round-info.createdRound:0);
  return info.profile.radius*Math.min(1,(elapsed+1)/3);

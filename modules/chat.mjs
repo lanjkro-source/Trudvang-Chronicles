@@ -21,6 +21,7 @@ import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {renderFatalResultAction} from "./fatal-result-chat.mjs";
 import {zoneAction, zoneOutcome} from "./zone-chat.mjs";
 import {rollOutcomeText} from "./rules/roll-outcome-view.mjs";
+import {heatingConsequence} from "./water-purification.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -342,18 +343,17 @@ function attachListeners(message, html) {
   });
   let wallVolume=html.querySelector?.('[data-wall-block-volume]');
   html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>{
+    // TEMPORARY WORLD MIGRATION — replace the obsolete Heat Water placement control in 0.250.0 chat cards.
+    const heat = heatingConsequence(message.flags?.["trudvang-chronicles"]?.ruleTestContext);
+    if (heat) {
+      const summary = document.createElement("p");
+      summary.className = "success-consequence";
+      summary.textContent = heat;
+      button.replaceWith(summary);
+      return;
+    }
     const refresh=()=>{
       const wall=spellWallCardState(message);
-      const waterLiters=message.flags?.["trudvang-chronicles"]?.spellZoneCasting?.waterLiters;
-      if(waterLiters>0){
-        if(!button.hidden){
-          const notice=document.createElement('p');
-          notice.textContent=game.i18n.format('TRUDVANG.SpellZone.BoilingPlaced',{liters:waterLiters});
-          button.before(notice);
-          button.hidden=true;
-        }
-        return;
-      }
       // TEMPORARY WORLD MIGRATION — reuse unplaced rolls rendered before the block card existed.
       if(wall&&!wallVolume){
         wallVolume=document.createElement('p');

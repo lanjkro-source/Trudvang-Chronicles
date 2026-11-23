@@ -33,67 +33,39 @@ function setup(id=vitner,counts={},runeLevel=1){
 const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
 const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
-const heatWater='vitner-flame-craft:heat-water:0';
 
-test('boiling water uses purchased capacity, actual volume and depth without inventing water',async()=>{
- const {boilingWaterPlacement}=await import('../modules/rules/boiling-water.mjs');
- const definition=POWER_DETAILS_BY_ID[heatWater].spellZone;
- const context={countsById:{[heatWater+':0']:2,[heatWater+':1']:2,[heatWater+':2']:2,[heatWater+':3']:1,[heatWater+':4']:1}};
- const profile=earthquakeProfile(definition,context);
- assert.deepEqual(profile,{kind:'boilingWater',range:10,rounds:84,maxLiters:117});
- assert.equal(boilingWaterPlacement(profile,{availableLiters:250,depthCm:5,elevation:0}).liters,117);
- const water=boilingWaterPlacement(profile,{availableLiters:2,depthCm:5,elevation:0});
- assert.equal(water.liters,2);
- assert.ok(Math.abs(Math.PI*water.radius**2-.04)<1e-10);
- assert.equal(boilingWaterPlacement(profile,{availableLiters:2,depthCm:0,elevation:0}),null);
+test('Heat Water only reports the combined volume, duration and range',async()=>{
+ const id='vitner-flame-craft:heat-water:0',old=globalThis.Roll;
+ setup();
+ const {heatingConsequence}=await import('../modules/water-purification.mjs');
+ assert.match(heatingConsequence({sourceId:id}),/5 L.*5 min.*contact/i);
+ const countsById={[id+':0']:2,[id+':1']:2,[id+':2']:2,[id+':3']:1,[id+':4']:1};
+ assert.match(heatingConsequence({sourceId:id,countsById}),/117 L.*7 min.*10 m/);
+ assert.equal(POWER_DETAILS_BY_ID[id].spellZone,undefined);
+ assert.equal(POWER_DETAILS_BY_ID[id].damageRoll,undefined);
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=5;}};
+ try{
+  const {rollUnder}=await import('../modules/dice.mjs');
+  await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.heat',name:'Ébullition',type:'spell',actor:caster,system:{catalogId:id,level:1}},
+   label:'Ébullition',powerLevelCounts:[2,2,2,1,1],target:12,kind:'spell'});
+  const card=[...game.messages.values()].find(m=>m.id!=='cast');
+  assert.match(card.content,/117 L.*7 min.*10 m/);
+  assert.doesNotMatch(card.content,/place-spell-zone|magic-damage|data-transformation-key/);
+  assert.equal(regions.size,0);
+ }finally{globalThis.Roll=old;}
 });
 
-test('boiling water tracks actual exposure and armor insulation through rounds and re-entry',async()=>{
- const previous=globalThis.Roll;
- globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;}};
- try{
-  const cast=setup(heatWater);
-  const casterToken=scene.tokens.get('caster'),targetToken=scene.tokens.get('target');
-  targetToken.testInsideRegion=()=>true;
-  casterToken.testInsideRegion=()=>true;
-  casterToken.elevation=1;
-  target.items.push(
-   {type:'armor',system:{equipped:true,material:'steel',breach:{value:50,max:50}}},
-   {type:'armor',system:{equipped:true,material:'leather',breach:{value:20,max:20}}}
-  );
-  const {waterArmorRounds}=await import('../modules/rules/boiling-water.mjs');
-  const rounds=waterArmorRounds(target);
-  assert.ok(rounds>0);
-  assert.equal(waterArmorRounds({items:[target.items[0]]}),0);
-  assert.equal((await createSpellZoneOnAuthority({...cast,water:{availableLiters:0,depthCm:5,elevation:0}})).reason,'BoilingInvalid');
-  assert.equal((await createSpellZoneOnAuthority({...cast,water:{availableLiters:2,depthCm:5,elevation:0}})).status,'placed');
-  const region=[...regions.values()][0];
-  const contact=()=>Object.values(region.flags[S].spellZone.contacts)[0];
-  assert.equal(message.flags[S].spellZoneCasting.waterLiters,2);
-  assert.equal(region.highlightMode,'shapes');
-  assert.equal(contact().rounds,1);
-  assert.equal(contact().protected,true);
-  assert.equal(target.system.resources.body.value,20);
-  await reconcileSpellZone(region,{leaving:targetToken});
-  await reconcileSpellZone(region,{entering:targetToken});
-  assert.equal(contact().rounds,1);
-  for(let round=2;round<=rounds+1;round++){
-   game.combat.round=round;
-   game.time.worldTime=5*(round-1);
-   await reconcileSpellZone(region);
-   await reconcileSpellZone(region);
-  }
-  assert.equal(contact().rounds,rounds+1);
-  assert.equal(target.system.resources.body.value,16);
-  assert.equal(caster.system.resources.body.value,20);
-  targetToken.elevation=1;
-  game.combat.round++;
-  await reconcileSpellZone(region);
-  assert.equal(target.system.resources.body.value,16);
-  game.time.worldTime=300;
-  await reconcileSpellZone(region);
-  assert.equal(regions.size,0);
- }finally{globalThis.Roll=previous;}
+test('only saved Heat Water regions are retired by the compatibility cleanup',async()=>{
+ await createSpellZoneOnAuthority(setup());
+ const [other]=regions.values();
+ const [obsolete]=await scene.createEmbeddedDocuments('Region',[{
+  flags:{[S]:{spellZone:{profile:{kind:'boilingWater'},context:{sourceId:'vitner-flame-craft:heat-water:0'}}}},
+  behaviors:other.behaviors
+ }]);
+ await reconcileSpellZone(obsolete);
+ assert.equal(regions.has(obsolete.id),false);
+ assert.equal(regions.get(other.id),other);
+ assert.equal(target.system.resources.body.value,20);
 });
 
 test('a detached torch creates one fixed light, then removes it at expiration',async()=>{

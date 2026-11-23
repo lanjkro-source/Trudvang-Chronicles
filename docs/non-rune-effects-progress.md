@@ -453,8 +453,13 @@ Pour les zones instantanées à confirmer, un clic du lanceur ou du MJ confirme 
 
 ### Ébullition
 
-Le placement définit l’eau déjà présente, sa profondeur et l’altitude de sa surface. La zone fixe est un cercle de même surface que le volume réellement chauffé à la profondeur indiquée. La portée de contact utilise la convention de 1 m depuis le centre du token et passe à 5 m par amélioration. Le plafond est de 5 L plus les achats de 1, 10 et 100 L. La zone expire après cinq minutes plus une minute par amélioration de durée.
+La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et 100 L), la durée (5 minutes plus les améliorations) et la portée (contact ou 5 m par achat). Le MJ arbitre la quantité d’eau présente et les éventuels dégâts. Références dans le Livre des règles, p. 167 PDF, et le Player’s Handbook, p. 110 imprimée.
 
-Les créatures en contact reçoivent 1d6 dégâts ordinaires de feu par tour exposé. L’acier, le bronze et les autres matériaux métalliques ne protègent pas. Les armures isolantes portées protègent pendant un nombre de tours égal à leur VP effective. La sortie suspend l’exposition et la rentrée dans la même eau reprend le compteur. Sortir puis rentrer dans le même tour ne double pas les dégâts. Les créatures en vol ou hors de la colonne d’eau sont exclues. L’armure ou les dégâts apparaissent par cible sur la carte de zone. Le MJ décrit le refroidissement après la fin du sort.
+### Chantiers encore ouverts
 
-Références : Livre des règles, p. 167 PDF, et Player’s Handbook, p. 110 imprimée.
+- **Sceau** — lier un sortilège déjà lancé à un objet, définir son déclencheur, puis libérer le sortilège une seule fois. Le MJ valide les circonstances particulières.
+- **Bouclier d’air et Mur de vitner** — placer une barrière, détecter sa traversée ou le passage d’un projectile et proposer la protection ou le test prévu.
+- **Emprisonnement** — appliquer aux traversées forcées la décharge qui leur est propre. Le contact avec la paroi dispose déjà de dégâts.
+- **Tête du huvfurwurm** — traiter le coup fatal, le seuil amélioré, la consommation unique et le réveil après hibernation. Le don existe sous forme de rappel.
+- **Invocations et reliques des noajs de Haminges** — vérifier les profils invoqués et traiter les propriétés mécaniques des reliques qui restent manuelles. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
+- **Révision du catalogue** — distinguer les effets purement descriptifs des effets pour lesquels un jet, un suivi d’état ou un calcul manque encore. La compatibilité avec les tables de Stormlands reste une vérification distincte.

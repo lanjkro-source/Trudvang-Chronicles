@@ -19100,15 +19100,6 @@
       "Unavailable": "Target unavailable"
     },
     "SpellZone": {
-      "BoilingPlace": "Place the boiling water",
-      "BoilingProfile": "Up to {liters} L of water for {minutes} min.",
-      "BoilingAvailable": "Available water (L)",
-      "BoilingDepth": "Water depth (cm)",
-      "BoilingSurface": "Water surface elevation",
-      "BoilingInvalid": "Enter positive values for water volume and depth, and a valid elevation.",
-      "BoilingPlaced": "{liters} L of water brought to a boil.",
-      "BoilingProtected": "Insulated by armor",
-      "BoilingBurned": "Scalded",
       "Place": "Place / move the area",
       "ConfirmOutdoorDaylight": "Was the casting site outdoors in daylight?",
       "BurningStatus": "On fire",
@@ -19184,6 +19175,7 @@
       "WeaponLock": "Burning Hand: weapons cannot be used during the casting round."
     },
     "WaterPurification": {
+      "Heating": "Up to {litres} L of water · {minutes} min · Range {range}",
       "Capacity": "Volume that can be purified: {value}.",
       "Lake": "a small lake"
     }

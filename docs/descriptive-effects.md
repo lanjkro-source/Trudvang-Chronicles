@@ -152,7 +152,7 @@ Souffle du hrimtroll et Corps de glace du hrimtroll : aura native mobile, bloqu�
 
 Les dégâts sans résistance ni choix sont appliqués automatiquement aux PS, avec le résultat sur la carte d’origine. Une résistance laisse le choix de la tenter avant application ; une fois tentée, son résultat est appliqué automatiquement lorsqu’aucune autre réduction n’est à choisir. Les réservations côté MJ évitent que plusieurs propriétaires lancent des résistances simultanées pour le même événement. Les cartes restent utilisables si leur effet d’origine a expiré, car leur test et leur contexte sont capturés.
 
-Ébullition déclenche ses dégâts de contact depuis une zone fixe. Main brûlante les déclenche lors d’une attaque ou d’un contact, Emprisonnement au contact ou à la traversée de la paroi. Les anciens effets déjà appliqués ne rejouent pas leur dégât initial au chargement. Les sauts de temps hors combat restent gérés par les horloges propres aux extraits et aux soins. Les cartes de dégâts par round ne simulent pas des rounds de combat historiques lors d’un simple passage de durée.
+Ébullition affiche son volume, sa durée et sa portée dans le chat. Main brûlante déclenche des dégâts lors d’une attaque ou d’un contact. Emprisonnement propose les dégâts de contact, et la traversée forcée reste à déclencher séparément. Les anciens effets déjà appliqués ne rejouent pas leur dégât initial au chargement. Les sauts de temps hors combat restent gérés par les horloges propres aux extraits et aux soins.
 
 ## Conséquences automatiques des résistances de Nid — 5 novembre 2026
 

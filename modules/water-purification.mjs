@@ -12,6 +12,19 @@ export function purificationConsequence(context) {
   return game.i18n.format("TRUDVANG.WaterPurification.Capacity", {value});
 }
 
+export function heatingConsequence(context) {
+  const profile = POWER_DETAILS_BY_ID[context?.sourceId]?.heating;
+  if (!profile) return "";
+  const count = id => Math.max(0, Number(context.countsById?.[id] ?? context.counts?.[Number(id.split(":").at(-1))]) || 0);
+  const litres = Object.entries(profile.increments)
+    .reduce((total, [id, perLevel]) => total + count(id) * perLevel, profile.litres);
+  const metres = 5 * count(profile.rangeOptionId);
+  const range = metres ? `${metres} m` : game.i18n.localize("TRUDVANG.Revelation.Contact");
+  return game.i18n.format("TRUDVANG.WaterPurification.Heating", {
+    litres, range, minutes: profile.minutes + count(profile.durationOptionId)
+  });
+}
+
 // TEMPORARY WORLD MIGRATION — remove object markers generated in 0.227.1.
 export async function removeObsoletePurificationMarkers() {
   if (!game.users?.activeGM?.isSelf) return;

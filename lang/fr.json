@@ -19100,15 +19100,6 @@
       "Unavailable": "Cible indisponible"
     },
     "SpellZone": {
-      "BoilingPlace": "Placer l’eau bouillante",
-      "BoilingProfile": "Jusqu’à {liters} L d’eau pendant {minutes} min.",
-      "BoilingAvailable": "Eau disponible (L)",
-      "BoilingDepth": "Profondeur de l’eau (cm)",
-      "BoilingSurface": "Altitude de la surface de l’eau",
-      "BoilingInvalid": "Indiquez une quantité et une profondeur d’eau positives ainsi qu’une altitude valide.",
-      "BoilingPlaced": "{liters} L d’eau portés à ébullition.",
-      "BoilingProtected": "Armure isolante",
-      "BoilingBurned": "Brûlé",
       "Place": "Placer / déplacer la zone",
       "ConfirmOutdoorDaylight": "Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ?",
       "BurningStatus": "En feu",
@@ -19184,6 +19175,7 @@
       "WeaponLock": "Main brûlante : aucune arme utilisable pendant le round du lancement."
     },
     "WaterPurification": {
+      "Heating": "Jusqu’à {litres} L d’eau · {minutes} min · Portée {range}",
       "Capacity": "Volume purifiable : {value}.",
       "Lake": "un petit lac"
     }
