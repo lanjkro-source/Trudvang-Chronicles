@@ -12,6 +12,8 @@ import {fearTargetRow} from './magic-fear.mjs';
 import {applyFatalVitnerArea, cleanupFatalVitnerPreviews, clearFatalVitnerPreview} from "./fatal-vitner-area.mjs";
 import {FATAL_MAGIC_ROWS, fatalMagicHasArea} from "./rules/fatal-magic.mjs";
 import {applyFatalEnclosure, registerFatalEnclosures} from "./fatal-enclosure.mjs";
+import {applyFatalPortal} from "./fatal-catastrophes.mjs";
+import {matchesFatalResult} from "./rules/fatal-table.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -36,7 +38,8 @@ export function hasChatApplication(message, actorUuid, channel, itemUuid = "") {
 function responderFor(message) {
   const users = Array.from(game.users?.values?.() ?? game.users ?? []);
   const author = users.find(user => user.id === authorId(message));
-  if (FATAL_MAGIC_ROWS[message?.getFlag?.(SYSTEM_ID, "fatalMagicResult")?.row]?.enclosure) {
+  const rule = FATAL_MAGIC_ROWS[message?.getFlag?.(SYSTEM_ID, "fatalMagicResult")?.row];
+  if (rule?.enclosure || rule?.orb) {
     return game.users?.activeGM ?? users.filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
   }
   if (author?.active && author.isGM) return author;
@@ -65,10 +68,18 @@ async function applyFatalVitnerAreaOnGM(payload) {
   const result = message.getFlag(SYSTEM_ID, "fatalMagicResult");
   const actor = result?.actorUuid ? await foundry.utils.fromUuid(result.actorUuid) : null;
   if (!actor?.canUserModify?.(user, "update")) return {status: "unavailable"};
-  if (FATAL_MAGIC_ROWS[result.row]?.enclosure) return applyFatalEnclosure(message, {
+  const rule = FATAL_MAGIC_ROWS[result.row];
+  if (rule?.portal) {
+    if (result.applied) return {status: "alreadyApplied"};
+    if (!matchesFatalResult(message, result, rule)) return {status: "invalidResult"};
+    const token = result.tokenUuid ? await foundry.utils.fromUuid(result.tokenUuid) : null;
+    await applyFatalPortal(actor, message, token);
+    return {status: "applied"};
+  }
+  if (rule?.enclosure) return applyFatalEnclosure(message, {
     pulse: payload.pulse === true, cost: payload.cost, sequence: payload.sequence
   });
-  return applyFatalVitnerArea(message, {prepareOnly: payload.prepareOnly === true});
+  return applyFatalVitnerArea(message, {prepareOnly: payload.prepareOnly === true, cost: payload.cost});
 }
 
 export function canManageFearTargets(message,user) {
@@ -357,10 +368,18 @@ export function registerChatApplicationSocket() {
   registered = true;
   const prepare = message => {
     const result = message?.getFlag?.(SYSTEM_ID, "fatalMagicResult");
-    if (!fatalMagicHasArea(FATAL_MAGIC_ROWS[result?.row]) || result.applied || !result.tokenUuid
+    const rule = FATAL_MAGIC_ROWS[result?.row];
+    if (!fatalMagicHasArea(rule) || result.applied || !result.tokenUuid || (rule.orb && !result.preview?.sceneId)
         || !game.user.isGM || responderFor(message)?.id !== game.user.id) return;
     void applyChatApplication({type: "chatApplyFatalVitnerArea", prepareOnly: true,
-      messageId: message.id, userId: authorId(message)}).catch(error => console.error("Trudvang | Fatal area preview failed", error));
+      messageId: message.id, userId: game.user.id}).catch(error => console.error("Trudvang | Fatal area preview failed", error));
+  };
+  const advanceOrbs = () => {
+    if (!game.user.isGM) return;
+    for (const message of game.messages.values()) {
+      const result = message.getFlag(SYSTEM_ID, "fatalMagicResult");
+      if (FATAL_MAGIC_ROWS[result?.row]?.orb && result.preview?.remaining > 0) prepare(message);
+    }
   };
   const restorePreviews = () => {
     if (game.user.isGM) for (const message of game.messages?.values?.() ?? []) prepare(message);
@@ -369,6 +388,11 @@ export function registerChatApplicationSocket() {
     }
   };
   globalThis.Hooks?.on("createChatMessage", prepare);
+  globalThis.Hooks?.on("updateWorldTime", advanceOrbs);
+  globalThis.Hooks?.on("deleteCombat", advanceOrbs);
+  globalThis.Hooks?.on("updateCombat", (_combat, changes) => {
+    if (Object.hasOwn(changes, "round")) advanceOrbs();
+  });
   if (globalThis.Hooks) registerFatalEnclosures();
   globalThis.Hooks?.on("updateUser", restorePreviews);
   globalThis.Hooks?.on("deleteChatMessage", message => {

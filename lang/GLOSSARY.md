@@ -16430,6 +16430,24 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FatalMagic.Penalty` | −2 to tests and initiative. | −2 aux tests et à l’initiative. |
 | `TRUDVANG.FatalMagic.Loss` | Vitner reserve reduced by {points} points (minimum capacity 1). | Réserve de vitner réduite de {points} PV (capacité minimale de 1). |
 | `TRUDVANG.FatalMagic.NoRecovery` | Vitner capacity drops to 1. Recovery is blocked while the effect lasts. | La capacité de vitner tombe à 1. La récupération est bloquée pendant l’effet. |
+| `TRUDVANG.FatalMagic.RecoveryBlocked` | Vitner recovery blocked | Récupération du vitner bloquée |
+| `TRUDVANG.FatalMagic.RecoveryBlockedRule` | The burst drained half of the remaining Vitner Points. The weaver cannot recover Vitner Points for one week. | La décharge a absorbé la moitié des points de vitner restants. Le tisseur ne peut pas en récupérer pendant une semaine. |
+| `TRUDVANG.FatalMagic.Burst` | Vitner burst | Décharge de vitner |
+| `TRUDVANG.FatalMagic.BurstRule` | The burst is centered on the weaver. Check the area before applying it. | La décharge est centrée sur le tisseur. Vérifiez la zone avant de l’appliquer. |
+| `TRUDVANG.FatalMagic.BlindFlash` | Blinded by the burst | Cécité causée par la décharge |
+| `TRUDVANG.FatalMagic.BlindFlashRule` | The burst blinds the victim for 1d5 minutes if they fail the situation roll. | La décharge aveugle la victime pendant 1d5 minutes si elle rate son test de situation. |
+| `TRUDVANG.FatalMagic.ResistFlash` | Resist the blinding light | Résister à la lumière aveuglante |
+| `TRUDVANG.FatalMagic.Portal` | Swallowed by Blotheim | Englouti par Blotheim |
+| `TRUDVANG.FatalMagic.PortalRule` | A portal of mist swallowed the weaver. The GM decides what happens to them in Blotheim. | Un portail de brume a englouti le tisseur. Le MJ décide de ce qui lui arrive à Blotheim. |
+| `TRUDVANG.FatalMagic.Orb` | Vitner orb | Orbe de vitner |
+| `TRUDVANG.FatalMagic.OrbRule` | The weaver has turned into an orb until it explodes. | Le tisseur est transformé en orbe jusqu’à l’explosion. |
+| `TRUDVANG.FatalMagic.StartOrb` | Form the orb | Former l’orbe |
+| `TRUDVANG.FatalMagic.OrbCountdown` | Explodes in {remaining} round(s). | Explosion dans {remaining} tour(s). |
+| `TRUDVANG.FatalMagic.OrbRadius` | The blast has a radius of {radius} m. | Explosion dans un rayon de {radius} m. |
+| `TRUDVANG.FatalMagic.OrbBands` | Full damage within {inner} m, half damage out to {radius} m. | Dégâts entiers jusqu’à {inner} m, demi-dégâts jusqu’à {radius} m. |
+| `TRUDVANG.FatalMagic.OrbDetonate` | Apply the explosion | Appliquer l’explosion |
+| `TRUDVANG.FatalMagic.Disappeared` | Disappeared after the explosion | Disparu après l’explosion |
+| `TRUDVANG.FatalMagic.DisappearedRule` | The orb exploded and the weaver disappeared without a trace. | L’orbe a explosé et le tisseur a disparu sans laisser de trace. |
 | `TRUDVANG.FatalMagic.BlindnessEffect` | Vitner Blindness | Perception du vitner perdue |
 | `TRUDVANG.FatalMagic.Blindness` | Vitner blindness prevents spellcasting. | La perte de perception du vitner empêche de lancer des sortilèges. |
 | `TRUDVANG.FatalMagic.NoOrigin` | The discharge needs the weaver’s token on the scene where the roll was made. | La décharge nécessite le token du tisseur sur la scène du jet. |

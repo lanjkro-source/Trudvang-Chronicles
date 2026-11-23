@@ -112,14 +112,14 @@ test("an actionable divine draw keeps core chat visibility, the actual roll and 
 test("fatal magic table attaches the caster only for rows with implemented effects", async () => {
   const table = new TrudvangRollTable();
   table.flags = {starterId: "fatal-magic-effects"};
-  table.results = [{range: [25, 28]}, {range: [51, 51]}];
+  table.results = [{range: [1, 20]}, {range: [25, 28]}];
   const actor = {uuid: "Actor.weaver"};
   globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.uuid})};
   canvas.tokens.controlled = [{actor}];
   await table.draw({roll: {total: 27, _evaluated: true}});
   assert.deepEqual(table.message.options.messageData.flags["trudvang-chronicles"].fatalMagicResult,
     {row: 25, actorUuid: actor.uuid});
-  await table.draw({roll: {total: 51, _evaluated: true}});
+  await table.draw({roll: {total: 10, _evaluated: true}});
   assert.equal(table.message.options.messageData.flags, undefined);
   canvas.tokens.controlled = [];
 });

@@ -1,6 +1,6 @@
 const SCOPE = "trudvang-chronicles";
 
-// Livre des règles pp. 144–145 / Player's Handbook pp. 84–85.
+// Livre des règles pp. 144–145 / Player's Handbook pp. 84–86.
 export const FATAL_MAGIC_ROWS = Object.freeze({
   21: {duration: "1d3", lethargy: true},
   23: {duration: "1d3", reduction: "1d10"},
@@ -20,15 +20,21 @@ export const FATAL_MAGIC_ROWS = Object.freeze({
   48: {medical: true, condition: "amnesia", duration: "1d3", units: "days"},
   49: {days: 7, depleted: true},
   50: {last: 50, enclosure: {radius: "1d10x>=9", damage: "1d10", protection: "mundane", charge: 1}},
+  51: {last: 51, burst: {damage: "1d10", recoveryDays: 7}},
   52: {medical: true, condition: "unconscious", duration: "1d10", units: "minutes", costDamage: true, depletionDays: 7},
+  53: {last: 53, burst: {blind: true, costDamage: true}, medical: true, condition: "unconscious", duration: "1d10x>=9", units: "minutes", costDamage: true, depletionDays: 7},
   54: {medical: true, condition: "coma", duration: "1d10", units: "days", damage: "2d10x>=10"},
+  55: {last: 55, burst: {othersHalf: true, costDamage: true}, medical: true, condition: "unconscious", duration: "1d10x>=7", units: "minutes", costDamage: true, depletionDays: 14},
   56: {medical: true, condition: "unconscious", duration: "1d10", units: "days", damage: "2d10x>=9", intellect: true},
-  57: {medical: true, damage: "1d10x>=6", depletionDays: 14}
+  57: {medical: true, damage: "1d10x>=6", depletionDays: 14},
+  58: {last: 58, portal: true},
+  59: {last: 59, orb: {duration: "2d6", radius: 50, damage: "1d10x>=7"}},
+  60: {last: Infinity, orb: {duration: "1d6", radius: 100, outer: 300, damage: "1d10x>=5"}}
 });
 
 export async function planFatalMagic(row, roll) {
   const rule = FATAL_MAGIC_ROWS[row];
-  if (!rule || fatalMagicHasArea(rule) || rule.medical || rule.enclosure) return null;
+  if (!rule || fatalMagicHasArea(rule) || rule.medical || rule.enclosure || rule.portal) return null;
   const duration = rule.days ? {value: rule.days, units: "days"}
     : {value: await roll(rule.duration), units: "hours"};
   return {
@@ -37,7 +43,7 @@ export async function planFatalMagic(row, roll) {
   };
 }
 
-export const fatalMagicHasArea = rule => Boolean(rule?.drain || rule?.negation);
+export const fatalMagicHasArea = rule => Boolean(rule?.drain || rule?.negation || rule?.burst || rule?.orb);
 
 export const fatalNegationAppearance = die => ["Bark", "Fingers", "Grass", "Fur"][Math.floor((die - 1) / 2)] ?? "";
 
@@ -53,6 +59,20 @@ export function fatalSpellBlindness(actor) {
 
 export function fatalAmnesia(actor) {
   return activeFatalMagic(actor).some(effect => effect.amnesia);
+}
+
+export function fatalAbsence(actor) {
+  return activeFatalMagic(actor).some(effect => effect.absent || effect.orb);
+}
+
+export function fatalRecoveryBlocked(actor) {
+  return activeFatalMagic(actor).some(effect => effect.depleted || effect.recoveryBlocked);
+}
+
+export function fatalOrbRemaining(orb, time, combat) {
+  const elapsed = Math.max(0, Number(time) - orb.startTime,
+    combat?.id && combat.id === orb.combatId ? 5 * (Number(combat.round) - orb.startRound) : 0);
+  return Math.max(0, Math.ceil((orb.rounds * 5 - elapsed) / 5));
 }
 
 export async function planFatalMedical(row, roll, cost) {

@@ -53,7 +53,9 @@ export function resolveInitialResistanceOnAuthority(payload){
    for(const status of state.payload.nativeStatuses)await effect.parent.toggleStatusEffect(status,{active:true});
    await effect.delete();return 'activated';
   }
-  await effect.update({name:state.payload.name,description:state.payload.description,statuses:state.payload.statuses,'system.changes':state.payload.changes,['flags.'+S+'.transformation.summary']:state.payload.summary,['flags.'+S+'.transformation.summaryResolved']:state.payload.summaryResolved,['flags.'+S+'.initialResistance.resolved']:true});
+  await effect.update({name:state.payload.name,description:state.payload.description,statuses:state.payload.statuses,'system.changes':state.payload.changes,
+   ...(state.payload.duration ? {duration:state.payload.duration,start:foundry.documents.ActiveEffect.implementation.getEffectStart()} : {}),
+   ['flags.'+S+'.transformation.summary']:state.payload.summary,['flags.'+S+'.transformation.summaryResolved']:state.payload.summaryResolved,['flags.'+S+'.initialResistance.resolved']:true});
   return 'activated';
  });
  jobs.set(payload.effectUuid,job);return job.finally(()=>{if(jobs.get(payload.effectUuid)===job)jobs.delete(payload.effectUuid);});

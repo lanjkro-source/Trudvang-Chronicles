@@ -39,6 +39,12 @@ export async function applyDivineFailure(message) {
   const result = message.getFlag(SCOPE, FLAG);
   const rule = DIVINE_FAILURE_ROWS[result?.row];
   if (!rule || !result.actorUuid || result.applied) return false;
+  if (rule.portal) {
+    const response = await requestFatalVitnerArea(message);
+    if (["applied", "alreadyApplied"].includes(response.status)) return true;
+    ui.notifications.warn(game.i18n.localize(areaWarnings[response.status] ?? "TRUDVANG.FatalMagic.AreaUnavailable"));
+    return false;
+  }
   applying.add(message.id);
   try {
     const actor = await foundry.utils.fromUuid(result.actorUuid);
@@ -95,7 +101,9 @@ export async function applyFatalMagic(message) {
     return false;
   }
   if (fatalMagicHasArea(rule)) {
-    const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview});
+    const cost = rule.burst?.costDamage && result.preview ? result.cost ?? await askFatalSpellCost() : undefined;
+    if (rule.burst?.costDamage && result.preview && (!Number.isInteger(cost) || cost < 0)) return false;
+    const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview, cost});
     if (["prepared", "applied", "alreadyApplied"].includes(response.status)) return true;
     ui.notifications.warn(game.i18n.localize(areaWarnings[response.status] ?? "TRUDVANG.FatalMagic.AreaUnavailable"));
     return false;
@@ -162,7 +170,7 @@ function renderAreaOutcome(result, content) {
     if (outcome.hidden && !game.user.isGM && !actor?.isOwner) continue;
     const row = document.createElement("p");
     const receipt = game.user.isGM || actor?.isOwner ? actor?.getFlag(SCOPE, "fatalVitnerLoss")?.[result.messageId] : null;
-    const key = receipt ? (receipt.resource === "vitner" ? "VitnerDrained" : "HealthDrained") : "Affected";
+    const key = receipt?.resource === "vitner" ? "VitnerDrained" : receipt?.resource === "health" ? "HealthDrained" : "Affected";
     row.textContent = game.i18n.format(`TRUDVANG.FatalMagic.${key}`, {...outcome, amount: receipt?.amount});
     content.append(row);
   }
@@ -185,20 +193,32 @@ export function renderFatalResultAction(message, html) {
   }
   if (!result.applied && fatalMagicHasArea(rule)) {
     const note = document.createElement("p");
-    const key = rule.negation ? "ThirdLost" : rule.excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
+    const key = rule.orb ? "OrbRule" : rule.burst ? "BurstRule"
+      : rule.negation ? "ThirdLost" : rule.excludeCaster ? "AreaExceptCaster" : "AreaIncludesCaster";
     note.textContent = game.i18n.localize(`TRUDVANG.FatalMagic.${key}`);
     content.append(note);
     if (result.preview) {
       const summary = document.createElement("p");
       if (result.preview.radius) {
-        summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaPending", {radius: result.preview.radius});
+        const areaKey = rule.orb ? result.preview.inner < result.preview.radius
+          ? "OrbBands" : "OrbRadius" : "AreaPending";
+        summary.textContent = game.i18n.format(`TRUDVANG.FatalMagic.${areaKey}`, result.preview);
         content.append(summary);
+      }
+      if (rule.orb && result.preview.remaining > 0) {
+        const countdown = document.createElement("p");
+        countdown.textContent = game.i18n.format("TRUDVANG.FatalMagic.OrbCountdown", result.preview);
+        content.append(countdown);
+        return;
       }
       renderTargets(result.preview.targets, content);
     }
   }
   if (result.applied) {
-    if (rule?.drain && result.radius) return renderAreaOutcome({...result, messageId: message.id}, content);
+    if ((rule?.drain || rule?.burst || rule?.orb) && result.radius) {
+      renderAreaOutcome({...result, messageId: message.id}, content);
+      if (!rule.orb) return;
+    }
     const note = document.createElement("p");
     note.textContent = i18n("Applied", {effect: result.applied});
     content.append(note);
@@ -207,7 +227,8 @@ export function renderFatalResultAction(message, html) {
   if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
   const button = document.createElement("button");
   button.type = "button";
-  button.textContent = rule?.enclosure ? game.i18n.localize(result.enclosure
+  button.textContent = rule?.orb ? game.i18n.localize(`TRUDVANG.FatalMagic.${result.preview ? "OrbDetonate" : "StartOrb"}`)
+    : rule?.enclosure ? game.i18n.localize(result.enclosure
     ? "TRUDVANG.FatalMagic.Discharge" : "TRUDVANG.FatalMagic.CreateEnclosure") : fatalMagicHasArea(rule) && !result.preview
     ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea") : i18n("Apply");
   button.addEventListener("click", async () => {

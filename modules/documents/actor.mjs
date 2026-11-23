@@ -21,7 +21,7 @@ import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { divinePowerId } from "../rules/divine-failure.mjs";
-import {fatalAmnesia, fatalVitnerState, storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
+import {fatalAbsence, fatalAmnesia, fatalRecoveryBlocked, fatalVitnerState, storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
 import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
@@ -343,6 +343,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   canPerformAction({movement = false, skill = false} = {}) {
+    if (fatalAbsence(this)) return false;
     if (isIncapacitated(this)) return false;
     if (skill && fatalAmnesia(this)) return false;
     if (movement && isImmobilized(this)) return false;
@@ -376,7 +377,7 @@ export class TrudvangActor extends BaseActor {
 
   async restoreVitner() {
     if (!this.isOwner || this.unlimitedVitner) return null;
-    if (this.fatalVitnerState?.depleted) return ui.notifications.warn(game.i18n.localize("TRUDVANG.FatalMagic.NoRecovery"));
+    if (fatalRecoveryBlocked(this)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.FatalMagic.RecoveryBlocked"));
     const {max, current} = this.system.resources.vitner;
     if (current >= max) return null;
     return this.update({"system.resources.vitner.value": storedVitnerForCurrent(this, max)});
@@ -1817,7 +1818,8 @@ export class TrudvangActor extends BaseActor {
     const divinityBefore = Number(this.system.resources.divinity.value || 0);
     const divinityTemporary = Number(this.system.resources.divinity.temporary || 0);
     const vitnerMax = Number(this.system.resources.vitner.max || 0);
-    const vitnerAfter = this.fatalVitnerState?.depleted ? vitnerBefore : vitnerMax;
+    const vitnerBlocked = fatalRecoveryBlocked(this);
+    const vitnerAfter = vitnerBlocked ? vitnerBefore : vitnerMax;
     const divinityMax = Number(this.system.resources.divinity.max || 0);
     const isThuuldom = this.selectedReligion?.id === "thuuldom";
     const temporaryDivinityLost = this.selectedReligion?.id === "ealdTradition" ? 0 : Math.min(1, Math.max(0, divinityTemporary));
@@ -1827,7 +1829,7 @@ export class TrudvangActor extends BaseActor {
       ...bodyHealthUpdate(this,Math.min(bodyMax,bodyBefore+healthRecovered)),
       "system.resources.divinity.temporary": divinityTemporary - temporaryDivinityLost
     };
-    if (!this.fatalVitnerState?.depleted) updates["system.resources.vitner.value"] = storedVitnerForCurrent(this, vitnerAfter);
+    if (!vitnerBlocked) updates["system.resources.vitner.value"] = storedVitnerForCurrent(this, vitnerAfter);
     if (bodyBefore <= 0 && bodyBefore + healthRecovered > 0) updates["system.survivalRounds"] = -1;
     if (!isThuuldom) updates["system.resources.divinity.value"] = divinityMax;
     await this.update(updates);

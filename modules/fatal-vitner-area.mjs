@@ -1,8 +1,11 @@
-import {FATAL_MAGIC_ROWS, absorbsVitnerFrom, fatalMagicHasArea, fatalNegationAppearance} from "./rules/fatal-magic.mjs";
+import {FATAL_MAGIC_ROWS, absorbsVitnerFrom, fatalMagicHasArea, fatalNegationAppearance, fatalOrbRemaining, planFatalMedical} from "./rules/fatal-magic.mjs";
 import {fatalBodyLossUpdates} from "./rules/fatal-body-loss.mjs";
 import {zonePixelScale} from "./rules/spell-zones.mjs";
 import {auraColor} from "./aura.mjs";
 import {matchesFatalResult} from "./rules/fatal-table.mjs";
+import {commitFatalMedical} from "./fatal-medical.mjs";
+import {applyFatalMagicalDamage, blockFatalRecovery, clearFatalOrb, fatalCondition, fatalHealthLoss,
+  finishFatalOrb, offerFatalBlindness} from "./fatal-catastrophes.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const RESULT = `flags.${SCOPE}.fatalMagicResult`;
@@ -137,6 +140,16 @@ export async function prepareFatalVitnerArea(message) {
   if (!plan) {
     if (rule.negation) {
       plan = await planNegation(source, rule);
+    } else if (rule.burst) {
+      const radius = await rollTotal("2d6");
+      const victims = fatalVitnerRecipients(source, radius, Boolean(rule.burst.othersHalf));
+      if (rule.burst.blind) for (const victim of victims) victim.blindMinutes = await rollTotal("1d5");
+      plan = {radius, victims};
+    } else if (rule.orb) {
+      const combat = game.combat?.scene?.id === scene.id ? game.combat : null;
+      plan = {radius: rule.orb.outer ?? rule.orb.radius, inner: rule.orb.radius, victims: [],
+        rounds: await rollTotal(rule.orb.duration), startTime: Number(game.time.worldTime),
+        combatId: combat?.id ?? null, startRound: Number(combat?.round ?? 0)};
     } else {
       const radius = await rollTotal("1d10x>=10");
       const victims = fatalVitnerRecipients(source, radius, rule.excludeCaster);
@@ -148,35 +161,69 @@ export async function prepareFatalVitnerArea(message) {
     await scene.update({[planPath]: plan});
   }
   if (plan.row !== result.row || plan.casterUuid !== caster.uuid) return null;
-  if (plan.radius > 0 && !regionFor(scene, message.id)) {
+  let remaining;
+  if (rule.orb) {
+    if (!plan.ready) await fatalCondition(caster, message, "Orb", {flags: {orb: true}});
+    const combat = plan.combatId ? game.combats?.get(plan.combatId) : null;
+    const now = Number(game.time.worldTime);
+    if (plan.combatId && !combat) {
+      const latest = plan.latestClock ?? {time: plan.startTime, remaining: plan.rounds};
+      plan.startTime = Math.min(plan.startTime, latest.time - 5 * (plan.rounds - latest.remaining));
+      plan.combatId = null;
+      await scene.update({[planPath]: plan});
+    }
+    remaining = plan.ready ? 0 : fatalOrbRemaining(plan, now, combat);
+    if (combat && remaining > 0 && remaining !== (plan.latestClock?.remaining ?? plan.rounds)) {
+      plan.latestClock = {time: now, remaining};
+      await scene.update({[planPath]: plan});
+    }
+    if (!remaining && !plan.ready) {
+      const origin = {parent: scene, actor: caster, level: plan.level, getCenterPoint: () => plan.center};
+      const total = await rollTotal(rule.orb.damage);
+      const full = new Set(fatalVitnerRecipients(origin, plan.inner, true).map(victim => victim.actorUuid));
+      plan.victims = fatalVitnerRecipients(origin, plan.radius, true).map(victim => ({
+        ...victim, amount: full.has(victim.actorUuid) ? total : Math.ceil(total / 2)
+      }));
+      plan.ready = true;
+      await scene.update({[planPath]: plan});
+    }
+  }
+  if (plan.radius > 0 && !regionsFor(scene, message.id).length) {
     const restricted = message.blind || message.whisper?.length;
     const recipients = [message.author?.id, ...Array.from(message.whisper ?? [], user => user.id ?? user)].filter(Boolean);
-    const [region] = await scene.createEmbeddedDocuments("Region", [{
-      name: game.i18n.localize(rule.negation ? "TRUDVANG.FatalMagic.Negation" : "TRUDVANG.FatalMagic.AreaName"), color: auraColor(),
+    const radii = rule.orb?.outer ? [plan.radius, plan.inner] : [plan.radius];
+    const regions = await scene.createEmbeddedDocuments("Region", radii.map(radius => ({
+      name: game.i18n.localize(rule.orb ? "TRUDVANG.FatalMagic.Orb" : rule.negation
+        ? "TRUDVANG.FatalMagic.Negation" : "TRUDVANG.FatalMagic.AreaName"), color: auraColor(),
       highlightMode: scene.grid?.isGridless ? "shapes" : "coverage", locked: true,
       levels: plan.level ? [plan.level] : [],
       visibility: message.blind ? CONST.REGION_VISIBILITY.GAMEMASTER
         : restricted ? CONST.REGION_VISIBILITY.OBSERVER : CONST.REGION_VISIBILITY.ALWAYS,
       ...(restricted ? {ownership: Object.fromEntries(recipients.map(id => [id, CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER]))} : {}),
-      shapes: [{type: "circle", ...plan.center, radius: plan.radius * zonePixelScale(scene)}],
+      shapes: [{type: "circle", ...plan.center, radius: radius * zonePixelScale(scene)}],
       flags: {[SCOPE]: {fatalVitnerMessageId: message.id}}
-    }]);
-    if (!region) throw Error("Fatal vitner area was not created");
+    })));
+    if (regions.length !== radii.length) throw Error("Fatal vitner area was not created");
   }
-  if (!result.preview?.sceneId) await message.update({[`${RESULT}.preview`]: {
+  if (!result.preview?.sceneId || (rule.orb && result.preview.remaining !== remaining)) await message.update({[`${RESULT}.preview`]: {
     sceneId: scene.id, level: plan.level, radius: plan.radius,
+    ...(rule.orb ? {remaining, inner: plan.inner} : {}),
     targets: plan.victims.filter(victim => !victim.hidden).map(({name, tokenUuid}) => ({name, tokenUuid}))
   }});
-  return {plan, caster, scene};
+  return {plan, caster, scene, source};
 }
 
-function regionFor(scene, messageId) {
-  return Array.from(scene?.regions?.values?.() ?? []).find(region => region.flags?.[SCOPE]?.fatalVitnerMessageId === messageId);
+function regionsFor(scene, messageId) {
+  return Array.from(scene?.regions?.values?.() ?? []).filter(region => region.flags?.[SCOPE]?.fatalVitnerMessageId === messageId);
 }
 
 export async function clearFatalVitnerPreview(message, scene = game.scenes?.get(message.getFlag(SCOPE, "fatalMagicResult")?.preview?.sceneId)) {
-  const region = regionFor(scene, message.id);
-  if (region) await removePreviewRegion(region);
+  for (const region of regionsFor(scene, message.id)) await removePreviewRegion(region);
+  const result = message.getFlag(SCOPE, "fatalMagicResult");
+  if (FATAL_MAGIC_ROWS[result?.row]?.orb && !result.applied) {
+    const caster = await foundry.utils.fromUuid(result.actorUuid);
+    if (caster) await clearFatalOrb(caster, message);
+  }
 }
 
 async function removePreviewRegion(region) {
@@ -199,9 +246,10 @@ export async function cleanupFatalVitnerPreviews() {
   }
 }
 
-export async function applyFatalVitnerArea(message, {prepareOnly = false} = {}) {
+export async function applyFatalVitnerArea(message, {prepareOnly = false, cost} = {}) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
-  if (!matchesFatalResult(message, result, FATAL_MAGIC_ROWS[result?.row])) return {status: "invalidResult"};
+  const rule = FATAL_MAGIC_ROWS[result?.row];
+  if (!matchesFatalResult(message, result, rule)) return {status: "invalidResult"};
   if (result?.applied) {
     await clearFatalVitnerPreview(message);
     return {status: "alreadyApplied"};
@@ -210,8 +258,35 @@ export async function applyFatalVitnerArea(message, {prepareOnly = false} = {}) 
   const prepared = await prepareFatalVitnerArea(message);
   if (!prepared) return {status: "noOrigin"};
   if (prepareOnly || !wasVisible) return {status: "prepared"};
-  const {plan, caster, scene} = prepared;
-  if (FATAL_MAGIC_ROWS[result.row].negation) {
+  const {plan, caster, scene, source} = prepared;
+  if (rule.orb || rule.burst) {
+    if (rule.orb && !plan.ready) return {status: "prepared"};
+    if (rule.medical && !plan.medical) {
+      plan.medical = await planFatalMedical(result.row, rollTotal, result.cost ?? cost);
+      if (!plan.medical) return {status: "invalidResult"};
+      await scene.update({[`flags.${SCOPE}.fatalVitnerPlans.${message.id}.medical`]: plan.medical});
+    }
+    if (plan.medical && !await commitFatalMedical(caster, message, plan.medical)) return {status: "unavailable"};
+    if (rule.burst?.recoveryDays) await blockFatalRecovery(caster, message, rule.burst.recoveryDays);
+    const outcomes = [];
+    for (const victim of plan.victims) {
+      const actor = await foundry.utils.fromUuid(victim.actorUuid);
+      if (!actor) continue;
+      if (rule.burst?.blind) await offerFatalBlindness(actor, message, victim.blindMinutes);
+      else if (rule.burst?.damage) {
+        const token = await foundry.utils.fromUuid(victim.tokenUuid) ?? {actor, name: victim.name, hidden: victim.hidden};
+        await applyFatalMagicalDamage(actor, token, message, rule.burst.damage);
+      } else await fatalHealthLoss(actor, message, rule.orb ? victim.amount : Math.ceil(plan.medical.damage / 2));
+      const {actorUuid, name, hidden} = victim;
+      outcomes.push({actorUuid, name, hidden});
+    }
+    const applied = rule.orb ? await finishFatalOrb(caster, message, source)
+      : game.i18n.localize("TRUDVANG.FatalMagic.Burst");
+    await message.update({[`${RESULT}.outcomes`]: outcomes, [`${RESULT}.radius`]: plan.radius, [`${RESULT}.applied`]: applied});
+    await clearFatalVitnerPreview(message, scene);
+    return {status: "applied"};
+  }
+  if (rule.negation) {
     await applyNegation(caster, message, plan);
     await message.update({[`${RESULT}.applied`]: game.i18n.localize("TRUDVANG.FatalMagic.Negation"),
       [`${RESULT}.radius`]: plan.radius});

@@ -52,6 +52,18 @@ export async function applyFatalMedical(actor, message, result) {
     await message.update({[`${RESULT}.medical`]: plan});
   }
 
+  if (!await commitFatalMedical(actor, message, plan)) return false;
+  const descriptions = [
+    ...(plan.condition ? [local(labels[plan.condition])] : []),
+    ...(plan.damage ? [game.i18n.format("TRUDVANG.FatalMagic.MedicalDamage", {points: plan.damage})] : []),
+    ...(plan.intellect ? [local("IntellectLost")] : []),
+    ...(plan.depletionDays ? [local("Depletion")] : [])
+  ];
+  await message.update({[`${RESULT}.applied`]: descriptions.join(" · ")});
+  return true;
+}
+
+export async function commitFatalMedical(actor, message, plan) {
   const receipt = actor.getFlag(SCOPE, "fatalVitnerLoss")?.[message.id];
   if (!receipt) {
     if (plan.condition && !await ensureMedicalEffect(actor, message, plan)) return false;
@@ -71,12 +83,5 @@ export async function applyFatalMedical(actor, message, result) {
     };
     await actor.update(updates);
   }
-  const descriptions = [
-    ...(plan.condition ? [local(labels[plan.condition])] : []),
-    ...(plan.damage ? [game.i18n.format("TRUDVANG.FatalMagic.MedicalDamage", {points: plan.damage})] : []),
-    ...(plan.intellect ? [local("IntellectLost")] : []),
-    ...(plan.depletionDays ? [local("Depletion")] : [])
-  ];
-  await message.update({[`${RESULT}.applied`]: descriptions.join(" · ")});
   return true;
 }

@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {applyFatalVitnerArea, fatalVitnerRecipients} from "../modules/fatal-vitner-area.mjs";
-import {fatalSpellBlindness, absorbsVitnerFrom} from "../modules/rules/fatal-magic.mjs";
+import {fatalSpellBlindness, absorbsVitnerFrom, fatalAbsence, fatalRecoveryBlocked} from "../modules/rules/fatal-magic.mjs";
+import {applyFatalPortal, blockFatalRecovery} from "../modules/fatal-catastrophes.mjs";
 
 const scope = "trudvang-chronicles";
 const id = "fatalmessage0001";
@@ -11,13 +12,18 @@ const actor = (name, vitner = 0, max = vitner) => {
   const source = {uuid: `Actor.${name}`, name, type: "npc", isOwner: true, effects: new Map(),
     system: {resources}, _source: {system: {resources}}, getFlag: () => receipts};
   source.update = async changes => {
-    receipts[id] = changes[`flags.${scope}.fatalVitnerLoss.${id}`];
+    for (const [key, value] of Object.entries(changes)) if (key.startsWith(`flags.${scope}.`)) receipts[id] = value;
     for (const key of ["vitner", "body"]) {
       const value = changes[`system.resources.${key}.value`];
       if (value !== undefined) resources[key].value = resources[key].current = value;
     }
   };
-  source.createTrudvangEffect = async data => {source.effects.set(data._id, data); return data;};
+  source.createTrudvangEffect = async data => {
+    const key = data._id ?? data.system.stackId;
+    const effect = {...data, delete: async () => source.effects.delete(key)};
+    source.effects.set(key, effect);
+    return effect;
+  };
   return source;
 };
 const token = (actor, x, level = "ground", hidden = false) => ({
@@ -126,5 +132,110 @@ test("45 creates a 10 m preview on a 10 and only the tisseur loses one third", a
   assert.match(ally.effects.get(id).description, /Grass/);
   assert.deepEqual(ally.effects.get(id).duration, {value: 4, units: "days"});
   assert.equal(outside.effects.size, 0);
+  assert.equal(regions.size, 0);
+});
+
+function catastrophe(row, dice, positions, cost) {
+  const mage = actor("mage", 17);
+  const source = token(mage, 0);
+  const victims = positions.map((position, index) => token(actor(`target${index}`), position));
+  const regions = new Map();
+  const plans = {};
+  const scene = {id: "scene", regions, grid: {size: 100, distance: 1, units: "m"}, tokens: [source, ...victims],
+    getFlag: () => plans,
+    update: async data => {
+      const [key, value] = Object.entries(data)[0];
+      if (key.endsWith(".medical")) plans[id].medical = value;
+      else plans[id] = value;
+    },
+    createEmbeddedDocuments: async (_type, entries) => entries.map((entry, index) => {
+      const region = {...entry, delete: async () => regions.delete(index)};
+      regions.set(index, region);
+      return region;
+    })};
+  source.parent = scene;
+  source.update = async changes => Object.assign(source, changes);
+  const combat = {id: "combat", scene, round: 2};
+  const docs = new Map(scene.tokens.flatMap(token => [[token.uuid, token], [token.actor.uuid, token.actor]]));
+  globalThis.CONST = {REGION_VISIBILITY: {ALWAYS: 2}};
+  globalThis.game = {scenes: new Map([[scene.id, scene]]), combats: new Map([[combat.id, combat]]), combat,
+    time: {worldTime: 10}, i18n: {localize: key => key}};
+  globalThis.foundry = {utils: {fromUuid: async uuid => docs.get(uuid)}};
+  const formulas = [];
+  globalThis.Roll = class {
+    constructor(formula) {formulas.push(formula);}
+    async evaluate() {return {total: dice.shift()};}
+  };
+  const result = {row, cost, actorUuid: mage.uuid, tokenUuid: source.uuid};
+  const message = {id, rolls: [{total: row}], getFlag: () => result,
+    update: async data => Object.entries(data).forEach(([path, value]) => {result[path.split(".").at(-1)] = value;})};
+  return {message, result, mage, source, victims, regions, combat, formulas};
+}
+
+test("55 freezes the spell cost, then applies full caster damage and half to the other creatures once", async () => {
+  const {message, mage, victims, regions, formulas} = catastrophe(55, [4, 12], [400, 500], 9);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "prepared"});
+  assert.equal(regions.size, 1);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "applied"});
+  assert.deepEqual(formulas, ["2d6", "1d10x>=7"]);
+  assert.equal(mage.system.resources.body.current, 11);
+  assert.equal(mage.system.resources.vitner.current, 1);
+  assert.equal(fatalRecoveryBlocked(mage), true);
+  assert.equal(victims[0].actor.system.resources.body.current, 15);
+  assert.equal(victims[1].actor.system.resources.body.current, 20);
+  assert.equal(regions.size, 0);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "alreadyApplied"});
+  assert.equal(victims[0].actor.system.resources.body.current, 15);
+});
+
+test("51 takes half the remaining vitner once and blocks recovery without lowering capacity", async () => {
+  const {message, mage} = catastrophe(51, [], []);
+  await blockFatalRecovery(mage, message, 7);
+  await blockFatalRecovery(mage, message, 7);
+  assert.equal(mage.system.resources.vitner.current, 9);
+  assert.equal(mage.system.resources.vitner.max, 17);
+  assert.equal(mage.effects.size, 1);
+  const [effect] = mage.effects.values();
+  assert.equal(effect.duration.value, 7);
+  assert.equal(fatalRecoveryBlocked(mage), true);
+  effect.duration.expired = true;
+  assert.equal(fatalRecoveryBlocked(mage), false);
+});
+
+test("58 records the absence and hides the caster token without deleting the actor", async () => {
+  const {message, result, mage, source} = catastrophe(58, [], []);
+  source.canUserModify = () => true;
+  await applyFatalPortal(mage, message, source);
+  assert.equal(source.hidden, true);
+  assert.equal(mage.effects.size, 1);
+  assert.equal(fatalAbsence(mage), true);
+  assert.equal(result.applied, "TRUDVANG.FatalMagic.Portal");
+});
+
+test("60+ waits for the countdown, freezes one roll across both bands and keeps both regions until application", async () => {
+  const {message, result, mage, source, victims, regions, combat, formulas} = catastrophe(60, [2, 15], [9900, 18000, 40000]);
+  message.rolls[0].total = 1200;
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "prepared"});
+  assert.equal(result.preview.remaining, 2);
+  assert.equal(fatalAbsence(mage), true);
+  assert.equal(regions.size, 2);
+  combat.round++;
+  game.time.worldTime += 5;
+  await applyFatalVitnerArea(message, {prepareOnly: true});
+  assert.equal(result.preview.remaining, 1);
+  combat.round++;
+  await applyFatalVitnerArea(message, {prepareOnly: true});
+  assert.equal(result.preview.remaining, 0);
+  assert.equal(result.preview.targets.length, 2);
+  assert.equal(regions.size, 2);
+  assert.equal(victims[0].actor.system.resources.body.current, 20);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "applied"});
+  assert.deepEqual(formulas, ["1d6", "1d10x>=5"]);
+  assert.equal(victims[0].actor.system.resources.body.current, 5);
+  assert.equal(victims[1].actor.system.resources.body.current, 12);
+  assert.equal(victims[2].actor.system.resources.body.current, 20);
+  assert.equal(source.hidden, true);
+  assert.equal(mage.effects.size, 1);
+  assert.equal(fatalAbsence(mage), true);
   assert.equal(regions.size, 0);
 });

@@ -107,7 +107,8 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     if (actor?.uuid && (divine ? DIVINE_FAILURE_ROWS[row] : FATAL_MAGIC_ROWS[row])) {
       const flag = divine ? "divineFailureResult" : "fatalMagicResult";
       const rule = FATAL_MAGIC_ROWS[row];
-      const origin = !divine && (fatalMagicHasArea(rule) || rule?.enclosure) ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
+      const origin = !divine && (fatalMagicHasArea(rule) || rule?.enclosure || rule?.portal)
+        ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
       messageData.flags = {"trudvang-chronicles": {[flag]: {
         actorUuid: actor.uuid, row, ...origin, ...(divine ? {power: power ?? null} : {}),
         ...(!divine && Number.isInteger(cost) ? {cost} : {}),
