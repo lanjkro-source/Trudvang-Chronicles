@@ -1168,7 +1168,7 @@ export class TrudvangActor extends BaseActor {
     if (!options) return null;
     const pools = resolveCombatPools({actor: this}).active;
     if (this.isOwner) await this.spendCombatPoints(Object.fromEntries(pools.map(pool => [pool.id, pool.current])));
-    return rollUnder({blessing:options.blessing, actor: this, label, target, modifier: options.modifier, kind: "dodge",resolveProcedure:context.resolveProcedure, flavor: rollModifierFlavor(modifierRows)});
+    return rollUnder({blessing:options.blessing, actor: this, label, target, modifier: options.modifier, kind: "dodge",resolveProcedure:context.resolveProcedure,publishMessage:context.publishMessage, flavor: rollModifierFlavor(modifierRows)});
   }
 
   async rollWrestlingAction(kind = "grapple", {defaultPoints = 10} = {}) {

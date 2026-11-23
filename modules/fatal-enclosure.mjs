@@ -4,6 +4,7 @@ import {fatalVitnerRecipients} from "./fatal-vitner-area.mjs";
 import {FATAL_MAGIC_ROWS, absorbsVitnerFrom} from "./rules/fatal-magic.mjs";
 import {zonePixelScale} from "./rules/spell-zones.mjs";
 import {matchesFatalResult} from "./rules/fatal-table.mjs";
+import {applyZoneDamage} from "./zone-damage.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const TAG = "fatalEnclosure";
@@ -47,7 +48,8 @@ async function publish(region, state, message) {
   const previous = message.getFlag(SCOPE, "fatalMagicResult")?.enclosure;
   const next = {radius: state.radius, remaining: state.remaining, maximum: state.maximum,
     sceneId: region.parent.id, level: state.level, live: true, pending: state.pending.length > 0, sequence: state.sequence,
-    targets: state.pending.filter(row => !row.hidden).map(({name, tokenUuid}) => ({name, tokenUuid}))};
+    targets: state.pending.filter(row => !row.hidden).map(({actorUuid, name, tokenUuid}) => ({actorUuid, name, tokenUuid})),
+    outcomes: state.outcomes ?? []};
   if (JSON.stringify(previous) !== JSON.stringify(next)) await message.update({[CARD_STATE]: next});
 }
 
@@ -60,7 +62,7 @@ async function close(region) {
   const current = message?.getFlag(SCOPE, "fatalMagicResult")?.enclosure ?? {};
   if (message && current.live !== false) await message.update({[CARD_STATE]: {
     ...current, radius: state.radius, remaining: state.remaining, maximum: state.maximum,
-    live: false, pending: false, targets: []
+    live: false, pending: false, targets: [], sequence: state.sequence, outcomes: state.outcomes ?? current.outcomes ?? []
   }});
 }
 
@@ -169,8 +171,7 @@ async function discharge(region, message, state, rule) {
     state = {...state, pulse};
     await region.update({[REGION_STATE]: state});
   }
-  const {rollDamage} = await import("./dice.mjs");
-  const {requestChatApplication} = await import("./chat-application.mjs");
+  const outcomes = [];
   let inflicted = 0;
   let remaining = state.remaining;
   const chargedPerTarget = rule.charge != null;
@@ -185,32 +186,16 @@ async function discharge(region, message, state, rule) {
       state = {...state, pulse};
       await region.update({[REGION_STATE]: state});
     }
-    const token = await foundry.utils.fromUuid(target.tokenUuid) ?? {actor, name: target.name};
-    const event = `fatal-enclosure:${message.id}:${state.sequence}:${target.actorUuid}`;
-    let card = values(game.messages).find(row => row.getFlag?.(SCOPE, "persistentDamageEvent") === event);
-    if (!card) {
-      const damage = await rollDamage({
-        actor, item: {name: local("Enclosure"), img: "icons/svg/aura.svg",
-          system: {category: "magic", damage: rule.damage, openRoll: 0, strengthApplies: false}},
-        context: {usage: "magic", automatic: true, ignoreActorDamage: true, returnMessage: true, boundActorUuid: actor.uuid,
-          persistentDamageEvent: event, qualification: {nature: "magical", delivery: "other", protection: rule.protection},
-          targets: [token], protectionLocked: true,
-          ...(message.blind || message.whisper?.length || target.hidden
-            ? {whisper: [...new Set([...values(game.users).filter(user => user.isGM).map(user => user.id),
-              ...(!message.blind && !target.hidden ? Array.from(message.whisper ?? [], user => user.id ?? user) : []),
-              ...(!message.blind && !target.hidden && message.author?.id ? [message.author.id] : [])])]} : {})}
-      });
-      card = damage?.message;
-    }
-    if (!card) throw Error("Fatal enclosure damage card missing");
-    const result = await requestChatApplication({message: card, actor, token, channel: "body"});
-    if (!["applied", "alreadyApplied"].includes(result.status)) throw Error("Fatal enclosure damage application failed");
-    inflicted += (card.getFlag(SCOPE, "applications") ?? []).find(row => row.actorUuid === actor.uuid && row.channel === "body")?.impactDamage ?? 0;
+    const damage = await applyZoneDamage({actor, message, formula: rule.damage, pulse: state.sequence,
+      qualification: {nature: "magical", delivery: "other", protection: rule.protection},
+      legacyEvent: `fatal-enclosure:${message.id}:${state.sequence}:${target.actorUuid}`});
+    inflicted += damage.amount + damage.temporary;
+    outcomes.push({...target, pulse: state.sequence});
     if (chargedPerTarget) remaining -= pulse.charges[index];
   }
   const hit = new Set(pulse.targets.map(row => row.actorUuid));
   const next = {...state, sequence: state.sequence + 1, remaining: Math.max(0, chargedPerTarget ? remaining : state.remaining - inflicted),
-    pending: state.pending.filter(row => !hit.has(row.actorUuid)), pulse: null};
+    pending: state.pending.filter(row => !hit.has(row.actorUuid)), pulse: null, outcomes};
   await region.update({[REGION_STATE]: next});
   if (!next.remaining) await retire(region);
   else await publish(region, next, message);

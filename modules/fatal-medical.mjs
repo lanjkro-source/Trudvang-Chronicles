@@ -71,6 +71,8 @@ export async function commitFatalMedical(actor, message, plan) {
       duration: {value: plan.depletionDays, units: "days"}})) return false;
     const intelligence = actor._source.system.traits?.intelligence ?? 0;
     const current = actor._source.system.traitCurrent?.intelligence;
+    const currentVitner = Math.max(0, Number(actor.system.resources.vitner?.current) || 0);
+    const lostVitner = plan.depletionDays ? Math.max(0, currentVitner - 1) : 0;
     const updates = {
       ...fatalBodyLossUpdates(actor, plan.damage),
       ...(plan.depletionDays ? {"system.resources.vitner.value": storedVitnerForCurrent(actor,
@@ -79,7 +81,8 @@ export async function commitFatalMedical(actor, message, plan) {
         "system.traits.intelligence": lowerIntelligence(intelligence),
         ...(current == null ? {} : {"system.traitCurrent.intelligence": lowerIntelligence(current)})
       } : {}),
-      [`flags.${SCOPE}.fatalVitnerLoss.${message.id}`]: true
+      [`flags.${SCOPE}.fatalVitnerLoss.${message.id}`]: plan.damage || plan.depletionDays
+        ? {resource: "health", amount: plan.damage, lostVitner} : true
     };
     await actor.update(updates);
   }

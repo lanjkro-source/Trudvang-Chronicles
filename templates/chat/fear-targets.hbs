@@ -4,9 +4,11 @@
     <button type="button" class="damage-target-edit" data-action="add-fear-targets" title="{{localize 'TRUDVANG.MagicFear.AddTargets'}}" aria-label="{{localize 'TRUDVANG.MagicFear.AddTargets'}}" hidden><i class="fas fa-plus" aria-hidden="true"></i></button>
   </div>
   {{#each targets}}
-  <div class="damage-target" {{#if hidden}}data-fear-hidden hidden{{/if}}>
+  <div class="zone-target-row" data-zone-fear-actor="{{actorUuid}}" {{#if hidden}}data-fear-hidden hidden{{/if}}>
     <button type="button" class="trait-situation-token damage-target-name" data-action="locate-trait-situation-token" data-token-uuid="{{tokenUuid}}" title="{{localize 'TRUDVANG.Dialog.TraitSituationTokenHint'}}">{{name}}</button>
-    <button type="button" class="damage-target-edit" data-action="remove-fear-target" data-actor-uuid="{{actorUuid}}" title="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" aria-label="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" hidden><i class="fas fa-minus" aria-hidden="true"></i></button>
+    <span class="zone-target-details">
+      <button type="button" class="damage-target-edit" data-action="remove-fear-target" data-actor-uuid="{{actorUuid}}" title="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" aria-label="{{localize 'TRUDVANG.Damage.RemoveTarget'}}" hidden><i class="fas fa-minus" aria-hidden="true"></i></button>
+    </span>
   </div>
   {{/each}}
   {{#unless targets}}<p>{{localize "TRUDVANG.MagicFear.NoTargets"}}</p>{{/unless}}

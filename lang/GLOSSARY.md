@@ -16882,6 +16882,24 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Impact.Projected` | Prone · thrown: {distance} m | À terre · projection : {distance} m |
 | `TRUDVANG.Impact.Defenses` | Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty. | Impossible à parer. Protection passive du bouclier applicable ; esquive possible avant toute action, avec le malus d’initiative prévu par le sort. |
 
+## `TRUDVANG.AreaChat`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.AreaChat.Apply` | Apply to the whole area | Appliquer à toute la zone |
+| `TRUDVANG.AreaChat.Affected` | Affected | Affecté |
+| `TRUDVANG.AreaChat.HealthLoss` | −{amount} BP | −{amount} PS |
+| `TRUDVANG.AreaChat.TemporaryHealthLoss` | −{amount} temporary BP | −{amount} PS temporaires |
+| `TRUDVANG.AreaChat.VitnerLoss` | −{amount} VP | −{amount} PV |
+| `TRUDVANG.AreaChat.FearGain` | +{amount} Fear | +{amount} Peur |
+| `TRUDVANG.AreaChat.PendingResistance` | Resistance pending | Résistance en attente |
+| `TRUDVANG.AreaChat.Resist` | Resist | Résister |
+| `TRUDVANG.AreaChat.Resisted` | Resisted | Résisté |
+| `TRUDVANG.AreaChat.Blinded` | Failure · blinded | Échec · aveuglé |
+| `TRUDVANG.AreaChat.Prone` | Prone | À terre |
+| `TRUDVANG.AreaChat.Stunned` | Stunned | Étourdi |
+| `TRUDVANG.AreaChat.Unavailable` | Target unavailable | Cible indisponible |
+
 ## `TRUDVANG.SpellZone`
 
 | Clé | English | Français |
@@ -16946,6 +16964,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.FireAvoided` | Flames avoided | Flammes évitées |
 | `TRUDVANG.SpellZone.FireEvade` | Evade | Esquiver |
 | `TRUDVANG.SpellZone.FireAccept` | Take damage | Subir les dégâts |
+| `TRUDVANG.SpellZone.FireDeclineEvade` | Skip Evade | Renoncer à l’esquive |
 | `TRUDVANG.SpellZone.FireCannotEvade` | Cannot evade: the specialty is required and, in combat, all CP pools and actions must be unspent. | Esquive impossible : la spécialité est requise et, en combat, toutes les réserves de PC et les actions doivent être intactes. |
 | `TRUDVANG.SpellZone.FireInitiative` | Difference from the current initiative | Écart avec l’initiative actuelle |
 | `TRUDVANG.SpellZone.CastingFinished` | This casting’s area has already ended. Cast the spell again to create a new area. | La zone de ce lancement est déjà terminée. Relancez le sort pour créer une nouvelle zone. |

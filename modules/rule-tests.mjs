@@ -3,7 +3,7 @@ import {TRANSFORMATION_TEMPLATES,TRANSFORMATIONS_BY_SOURCE} from "./transformati
 import {diseaseResultPublisher} from './disease-resistance-chat.mjs';
 import {withFollowupTest} from './followup-tests.mjs';
 import {followupRollTest,followupPolicy} from './rules/followup-tests.mjs';
-import {withInitialResistance,initialResistanceTestDisabled} from './initial-resistance.mjs';
+import {withInitialResistance,initialResistanceArea,initialResistanceTestDisabled} from './initial-resistance.mjs';
 import {withDiseaseResistance} from "./disease-resistance.mjs";
 import {applyRoundResistanceRelief} from "./round-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
@@ -22,7 +22,12 @@ function flag(document, key) {
 export function ruleTestsForDocument(document) {
   if(document?.flags?.[SYSTEM_ID]?.transformation?.resistanceConsequence)return [];
   const configured = document?.flags?.[SYSTEM_ID]?.consequenceTests;
-  if (Array.isArray(configured)) return configured.map(test => ({...test, action: test.actionKey ? game.i18n.localize(test.actionKey) : test.action}));
+  if (Array.isArray(configured)) return configured.map(test => ({
+    ...test,
+    // TEMPORARY WORLD MIGRATION: the 0.248.0 flash omitted the resistance kind.
+    kind: test.kind ?? (test.trait && !test.skill ? "resist" : "skill"),
+    action: test.actionKey ? game.i18n.localize(test.actionKey) : test.action
+  }));
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
@@ -256,7 +261,13 @@ export async function performRuleTest({document, index, actor = testActorForUser
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
     if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting});}
-    const result=await withFollowupTest(document,Number(index),actor,()=>withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resolveProcedure:followupPolicy(document,Number(index))?()=>({flags:{followupTest:{effectUuid:document.uuid,index:Number(index)}}}):null,reactive:Boolean(document?.flags?.[SYSTEM_ID]?.initialResistance),resistedEffect:document,resistanceContext:casting,publishMessage:document?.flags?.[SYSTEM_ID]?.diseaseIncubation?diseaseResultPublisher(document,actor,resultMessage):null}),resultMessage)));
+    const initial = document?.flags?.[SYSTEM_ID]?.initialResistance;
+    const areaMessage = initialResistanceArea(document);
+    const publishMessage = areaMessage ? async () => ({
+      message: areaMessage,
+      whisper: Array.from(game.users.values()).filter(user => user.isGM || actor.testUserPermission(user, "OWNER")).map(user => user.id)
+    }) : document?.flags?.[SYSTEM_ID]?.diseaseIncubation ? diseaseResultPublisher(document,actor,resultMessage) : null;
+    const result=await withFollowupTest(document,Number(index),actor,()=>withInitialResistance(document,Number(index),actor,()=>withDiseaseResistance(document,Number(index),actor,()=>rollConfiguredTraitSituation({actor, test, sourceName: document?.name ?? "",resolveProcedure:followupPolicy(document,Number(index))?()=>({flags:{followupTest:{effectUuid:document.uuid,index:Number(index)}}}):null,reactive:Boolean(initial),resistedEffect:document,resistanceContext:casting,publishMessage}),resultMessage)));
     if(result)await applyRoundResistanceRelief(document,Number(index),result);
     return result;
   }

@@ -36,7 +36,7 @@ function runtime(t, kind = "damage") {
     : template("damage-card")({actorName: "Attacker", itemName: "Sword", total: 8,
       targetsHTML: template("damage-targets")({total: 8, targets: []})}),
     getFlag: (_scope, key) => flags[key], update: async changes => {
-      updates.push(changes); message.content = changes.content;
+      updates.push(changes); if (changes.content !== undefined) message.content = changes.content;
       for (const [key, value] of Object.entries(changes)) if (key.startsWith("flags.trudvang-chronicles.")) flags[key.split(".").at(-1)] = value;
     }};
   messages.set(message.id, message);

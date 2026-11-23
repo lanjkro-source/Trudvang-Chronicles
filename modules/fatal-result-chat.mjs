@@ -4,6 +4,8 @@ import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
 import {FATAL_MAGIC_ROWS, fatalMagicHasArea, planFatalMagic, storedVitnerForCurrent} from "./rules/fatal-magic.mjs";
 import {requestFatalVitnerArea} from "./chat-application.mjs";
 import {applyFatalMedical, askFatalSpellCost} from "./fatal-medical.mjs";
+import {zoneOutcome, zoneTargetList} from "./zone-chat.mjs";
+import {zoneDamageReceipt} from "./zone-damage.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const FLAG = "divineFailureResult";
@@ -149,31 +151,39 @@ export async function applyFatalMagic(message) {
   }
 }
 
-function renderTargets(targets, content) {
-  for (const target of targets) {
-    const row = document.createElement("button");
-    row.type = "button";
-    row.className = "trait-situation-token";
-    row.dataset.action = "locate-trait-situation-token";
-    row.dataset.tokenUuid = target.tokenUuid;
-    row.textContent = target.name;
-    content.append(row);
-  }
+function areaDetails(result, message, row) {
+  const actor = foundry.utils.fromUuidSync(row.actorUuid);
+  const own = game.user.isGM || actor?.isOwner;
+  const receipt = own ? actor?.getFlag(SCOPE, "fatalVitnerLoss")?.[message.id] : null;
+  const damage = own ? zoneDamageReceipt(actor, message.id, row.pulse ?? 0) : null;
+  const amount = damage?.amount ?? (receipt?.resource ? receipt.amount : null);
+  const resource = receipt?.resource === "vitner" ? "VitnerLoss" : "HealthLoss";
+  const additionalVitner = own && result.row === 51 && row.actorUuid === result.actorUuid
+    ? actor?.getFlag(SCOPE, "fatalRecoveryLoss")?.[message.id]?.amount : receipt?.lostVitner;
+  const consequence = (amount == null ? "" : zoneOutcome(game.i18n.format(`TRUDVANG.AreaChat.${resource}`, {amount})))
+    + (damage?.temporary ? zoneOutcome(game.i18n.format("TRUDVANG.AreaChat.TemporaryHealthLoss", {amount: damage.temporary})) : "")
+    + (additionalVitner > 0 ? zoneOutcome(game.i18n.format("TRUDVANG.AreaChat.VitnerLoss", {amount: additionalVitner})) : "");
+  if (result.row !== 53) return consequence + (row.consequenceKeys?.map(key => zoneOutcome(game.i18n.localize(key))).join("")
+    || (!consequence ? zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.Affected")) : ""));
+  const flash = actor?.getFlag(SCOPE, "fatalFlash")?.[message.id];
+  const resisted = result.flashResults?.[encodeURIComponent(row.actorUuid).replaceAll(".", "%2E")] ?? flash?.success;
+  if (typeof resisted === "boolean") return consequence + zoneOutcome(game.i18n.localize(
+    resisted ? "TRUDVANG.AreaChat.Resisted" : "TRUDVANG.AreaChat.Blinded"
+  ), resisted);
+  const effectUuid = flash?.effectUuid ?? actor?.effects.get(message.id)?.uuid;
+  if (!own || !effectUuid) return consequence + zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.PendingResistance"));
+  return consequence + `<button type="button" data-rule-document-uuid="${escapeAttribute(effectUuid)}" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20" aria-hidden="true"></i> ${escapeHtml(game.i18n.localize("TRUDVANG.AreaChat.Resist"))}</button>`;
 }
 
-function renderAreaOutcome(result, content) {
-  const summary = document.createElement("p");
-  summary.textContent = game.i18n.format("TRUDVANG.FatalMagic.AreaApplied", {radius: result.radius});
-  content.append(summary);
-  for (const outcome of result.outcomes ?? []) {
-    const actor = foundry.utils.fromUuidSync(outcome.actorUuid);
-    if (outcome.hidden && !game.user.isGM && !actor?.isOwner) continue;
-    const row = document.createElement("p");
-    const receipt = game.user.isGM || actor?.isOwner ? actor?.getFlag(SCOPE, "fatalVitnerLoss")?.[result.messageId] : null;
-    const key = receipt?.resource === "vitner" ? "VitnerDrained" : receipt?.resource === "health" ? "HealthDrained" : "Affected";
-    row.textContent = game.i18n.format(`TRUDVANG.FatalMagic.${key}`, {...outcome, amount: receipt?.amount});
-    content.append(row);
-  }
+function renderAreaRows(message, result, content) {
+  const enclosure = result.enclosure;
+  const pending = enclosure?.targets ?? result.preview?.targets ?? [];
+  const outcomes = enclosure?.outcomes ?? (result.applied ? result.outcomes : null) ?? [];
+  const rows = [
+    ...pending.filter(row => !result.applied).map(row => ({...row, pending: true})),
+    ...outcomes.filter(row => !pending.some(target => !result.applied && (target.actorUuid || target.tokenUuid) === (row.actorUuid || row.tokenUuid)))
+  ].filter(row => !row.hidden || game.user.isGM || foundry.utils.fromUuidSync(row.actorUuid)?.isOwner);
+  content.insertAdjacentHTML("beforeend", zoneTargetList(rows, row => row.pending ? "" : areaDetails(result, message, row)));
 }
 
 export function renderFatalResultAction(message, html) {
@@ -189,7 +199,10 @@ export function renderFatalResultAction(message, html) {
       ? game.i18n.format("TRUDVANG.FatalMagic.EnclosureStatus", result.enclosure)
       : game.i18n.localize("TRUDVANG.FatalMagic.EnclosureEnded");
     content.append(summary);
-    if (rule.enclosure.automatic || !result.enclosure.live || !result.enclosure.pending) return;
+    if (rule.enclosure.automatic || !result.enclosure.live || !result.enclosure.pending) {
+      renderAreaRows(message, result, content);
+      return;
+    }
   }
   if (!result.applied && fatalMagicHasArea(rule)) {
     const note = document.createElement("p");
@@ -211,12 +224,11 @@ export function renderFatalResultAction(message, html) {
         content.append(countdown);
         return;
       }
-      renderTargets(result.preview.targets, content);
     }
   }
   if (result.applied) {
-    if ((rule?.drain || rule?.burst || rule?.orb) && result.radius) {
-      renderAreaOutcome({...result, messageId: message.id}, content);
+    if (fatalMagicHasArea(rule)) {
+      renderAreaRows(message, result, content);
       if (!rule.orb) return;
     }
     const note = document.createElement("p");
@@ -224,13 +236,17 @@ export function renderFatalResultAction(message, html) {
     content.append(note);
     return;
   }
-  if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) return;
+  if (!result.actorUuid || !(divine ? DIVINE_FAILURE_ROWS[result.row] : FATAL_MAGIC_ROWS[result.row]) || !canApply(message)) {
+    if (fatalMagicHasArea(rule) || result.enclosure) renderAreaRows(message, result, content);
+    return;
+  }
   const button = document.createElement("button");
   button.type = "button";
   button.textContent = rule?.orb ? game.i18n.localize(`TRUDVANG.FatalMagic.${result.preview ? "OrbDetonate" : "StartOrb"}`)
     : rule?.enclosure ? game.i18n.localize(result.enclosure
     ? "TRUDVANG.FatalMagic.Discharge" : "TRUDVANG.FatalMagic.CreateEnclosure") : fatalMagicHasArea(rule) && !result.preview
-    ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea") : i18n("Apply");
+    ? game.i18n.localize("TRUDVANG.FatalMagic.ShowArea")
+    : fatalMagicHasArea(rule) ? game.i18n.localize("TRUDVANG.AreaChat.Apply") : i18n("Apply");
   button.addEventListener("click", async () => {
     button.disabled = true;
     try {
@@ -243,4 +259,5 @@ export function renderFatalResultAction(message, html) {
     }
   });
   content.append(button);
+  if (fatalMagicHasArea(rule) || result.enclosure) renderAreaRows(message, result, content);
 }

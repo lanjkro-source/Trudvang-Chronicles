@@ -80,14 +80,14 @@ export function calculateArmoredDamage({damage, totalProtection, armor = [], out
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification,minimumAfterArmor=0,components=null,prepareOnly=false,spentProtection} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true, damageType = "", usage = "", magicalWeapon = false, qualification,minimumAfterArmor=0,components=null,prepareOnly=false,spentProtection,receipt} = {}) {
   if (!actor?.isOwner) return null;
   if(components?.length){
     const budget=new Map(),prepared=[];const sum=components.reduce((n,c)=>n+number(c.damage),0);
     for(const [index,component]of components.entries())prepared.push(await applyDamageToActor({actor,damage:component.excludedActorUuid&&component.excludedActorUuid===actor.uuid?0:Math.max(0,number(component.damage)+(index===0?number(damage)-sum:0)),qualification:component.qualification,usage,ignoreArmor,announce:false,prepareOnly:true,spentProtection:budget}));
     const armor=new Map();for(const part of prepared)for(const row of part.armorDamage){const previous=armor.get(row.item)??{...row,integrityLoss:0};previous.integrityLoss+=row.integrityLoss;previous.integrity=integrity(row.item)-previous.integrityLoss;armor.set(row.item,previous);}
     const result={bodyDamage:prepared.reduce((n,r)=>n+r.bodyDamage,0),armorDamage:[...armor.values()],resistances:prepared.flatMap(r=>r.resistances),qualification,components:prepared};
-    return commitActorDamage(actor,result,{ignoreArmor,announce});
+    return commitActorDamage(actor,result,{ignoreArmor,announce,receipt});
   }
   const qualified = damageQualification({context: {magicalWeapon, qualification: {type: damageType, ...qualification}}, usage});
   ignoreArmor ||= qualified.protection === "none";
@@ -130,9 +130,9 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   result.resistances.push(...bodyResistance.applied);
   result.bodyDamage = Math.ceil(bodyResistance.amount * (actor.transformationProfile?.damageTakenFactor ?? 1));
   if(prepareOnly)return result;
-  return commitActorDamage(actor,result,{ignoreArmor,announce});
+  return commitActorDamage(actor,result,{ignoreArmor,announce,receipt});
 }
-async function commitActorDamage(actor,result,{ignoreArmor=false,announce=true}={}){
+async function commitActorDamage(actor,result,{ignoreArmor=false,announce=true,receipt}={}){
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, ...itemIntegrityUpdate(entry.item,entry.integrity)}));
@@ -149,11 +149,24 @@ async function commitActorDamage(actor,result,{ignoreArmor=false,announce=true}=
   }
   const reserve=temporaryHealthState(actor);
   result.temporaryDamage=Math.min(reserve.current,result.bodyDamage);
-  if(result.temporaryDamage)await actor.update(temporaryHealthUpdate(actor,reserve.current-result.temporaryDamage));
   result.bodyDamage-=result.temporaryDamage;
-  if(result.temporaryDamage&&reserve.current===result.temporaryDamage)for(const effect of activeTransformations(actor))if(effectRules(effect).endAtEmptyHP)await effect.delete();
-  const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? actor._source?.system?.resources?.body?.value);
-  if (result.bodyDamage) await actor.update(bodyHealthUpdate(actor,body-result.bodyDamage));
+  const endEmptyReserve = async () => {
+    if (result.temporaryDamage && reserve.current === result.temporaryDamage) {
+      for (const effect of activeTransformations(actor)) if (effectRules(effect).endAtEmptyHP) await effect.delete();
+    }
+  };
+  const bodyUpdate = () => bodyHealthUpdate(actor,
+    number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? actor._source?.system?.resources?.body?.value) - result.bodyDamage);
+  if(receipt){
+    await actor.update({[receipt]:{amount:result.bodyDamage,temporary:result.temporaryDamage},
+      ...(result.temporaryDamage?temporaryHealthUpdate(actor,reserve.current-result.temporaryDamage):{}),
+      ...(result.bodyDamage?bodyUpdate():{})});
+    await endEmptyReserve();
+  }else{
+    if(result.temporaryDamage)await actor.update(temporaryHealthUpdate(actor,reserve.current-result.temporaryDamage));
+    await endEmptyReserve();
+    if(result.bodyDamage)await actor.update(bodyUpdate());
+  }
   if(result.bodyDamage+result.temporaryDamage>0){
     const ending=activeTransformations(actor).filter(effect=>TRANSFORMATION_TEMPLATES[effect.flags?.[TRANSFORMATION_SCOPE]?.transformation?.key]?.breakOnDamage===true);
     for(const effect of ending)await effect.delete();

@@ -19093,6 +19093,21 @@
       "Projected": "Prone · thrown: {distance} m",
       "Defenses": "Cannot be parried. Shield passive protection applies; Evade is possible before acting, with the spell’s initiative penalty."
     },
+    "AreaChat": {
+      "Apply": "Apply to the whole area",
+      "Affected": "Affected",
+      "HealthLoss": "−{amount} BP",
+      "TemporaryHealthLoss": "−{amount} temporary BP",
+      "VitnerLoss": "−{amount} VP",
+      "FearGain": "+{amount} Fear",
+      "PendingResistance": "Resistance pending",
+      "Resist": "Resist",
+      "Resisted": "Resisted",
+      "Blinded": "Failure · blinded",
+      "Prone": "Prone",
+      "Stunned": "Stunned",
+      "Unavailable": "Target unavailable"
+    },
     "SpellZone": {
       "Place": "Place / move the area",
       "ConfirmOutdoorDaylight": "Was the casting site outdoors in daylight?",
@@ -19154,6 +19169,7 @@
       "FireAvoided": "Flames avoided",
       "FireEvade": "Evade",
       "FireAccept": "Take damage",
+      "FireDeclineEvade": "Skip Evade",
       "FireCannotEvade": "Cannot evade: the specialty is required and, in combat, all CP pools and actions must be unspent.",
       "FireInitiative": "Difference from the current initiative",
       "CastingFinished": "This casting’s area has already ended. Cast the spell again to create a new area.",

@@ -1015,6 +1015,15 @@
 .trudvang.chat-card .name-roll-parts { margin: 0 8px 8px; color: var(--trudvang-muted); font-size: .8rem; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card .trait-situation-results { margin: 2px 8px 8px; padding: 0; list-style: none; }
+.zone-target-list { margin: .2em 0; padding: 0; list-style: none; }
+.zone-target-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .4em; align-items: center; padding: .12em .3em; }
+.zone-target-row[hidden], .zone-target-details > button[hidden] { display: none; }
+.zone-target-row > .trait-situation-token { justify-self: start; text-align: left; width: auto; overflow-wrap: anywhere; }
+.zone-target-details { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: .25em; }
+.zone-target-details > button { min-height: 0; width: auto; padding: 0 .4em; font-size: .9em; }
+.zone-outcome.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
+.zone-outcome.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
+.zone-outcome.success, .zone-outcome.failure { padding: 0 .25em; border-radius: 3px; }
 .trudvang.chat-card .trait-situation-consequence { margin: 4px 8px; padding: 4px 7px; border-left: 2px solid currentColor; background: color-mix(in srgb, currentColor 8%, var(--trudvang-paper-light)); }
 .trudvang.chat-card .trait-situation-consequence--success { color: var(--trudvang-positive); }
 .trudvang.chat-card .trait-situation-consequence--failure { color: var(--trudvang-negative); }

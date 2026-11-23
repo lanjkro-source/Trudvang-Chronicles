@@ -4,8 +4,9 @@ import {zonePixelScale} from "./rules/spell-zones.mjs";
 import {auraColor} from "./aura.mjs";
 import {matchesFatalResult} from "./rules/fatal-table.mjs";
 import {commitFatalMedical} from "./fatal-medical.mjs";
-import {applyFatalMagicalDamage, blockFatalRecovery, clearFatalOrb, fatalCondition, fatalHealthLoss,
+import {blockFatalRecovery, clearFatalOrb, fatalCondition, fatalHealthLoss,
   finishFatalOrb, offerFatalBlindness} from "./fatal-catastrophes.mjs";
+import {applyZoneDamage} from "./zone-damage.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const RESULT = `flags.${SCOPE}.fatalMagicResult`;
@@ -208,7 +209,8 @@ export async function prepareFatalVitnerArea(message) {
   if (!result.preview?.sceneId || (rule.orb && result.preview.remaining !== remaining)) await message.update({[`${RESULT}.preview`]: {
     sceneId: scene.id, level: plan.level, radius: plan.radius,
     ...(rule.orb ? {remaining, inner: plan.inner} : {}),
-    targets: plan.victims.filter(victim => !victim.hidden).map(({name, tokenUuid}) => ({name, tokenUuid}))
+    targets: (rule.burst?.othersHalf ? [targetRow(source), ...plan.victims] : plan.victims)
+      .filter(victim => !victim.hidden).map(({actorUuid, name, tokenUuid}) => ({actorUuid, name, tokenUuid}))
   }});
   return {plan, caster, scene, source};
 }
@@ -269,16 +271,17 @@ export async function applyFatalVitnerArea(message, {prepareOnly = false, cost} 
     if (plan.medical && !await commitFatalMedical(caster, message, plan.medical)) return {status: "unavailable"};
     if (rule.burst?.recoveryDays) await blockFatalRecovery(caster, message, rule.burst.recoveryDays);
     const outcomes = [];
+    if (rule.burst?.othersHalf) outcomes.push(targetRow(source));
     for (const victim of plan.victims) {
       const actor = await foundry.utils.fromUuid(victim.actorUuid);
       if (!actor) continue;
       if (rule.burst?.blind) await offerFatalBlindness(actor, message, victim.blindMinutes);
-      else if (rule.burst?.damage) {
-        const token = await foundry.utils.fromUuid(victim.tokenUuid) ?? {actor, name: victim.name, hidden: victim.hidden};
-        await applyFatalMagicalDamage(actor, token, message, rule.burst.damage);
-      } else await fatalHealthLoss(actor, message, rule.orb ? victim.amount : Math.ceil(plan.medical.damage / 2));
-      const {actorUuid, name, hidden} = victim;
-      outcomes.push({actorUuid, name, hidden});
+      else if (rule.burst?.damage) await applyZoneDamage({actor, message, formula: rule.burst.damage,
+        qualification: {nature: "magical", delivery: "other", protection: "magical"},
+        legacyEvent: `fatal-burst:${message.id}:${actor.uuid}`});
+      else await fatalHealthLoss(actor, message, rule.orb ? victim.amount : Math.ceil(plan.medical.damage / 2));
+      const {actorUuid, name, hidden, tokenUuid} = victim;
+      outcomes.push({actorUuid, name, hidden, tokenUuid});
     }
     const applied = rule.orb ? await finishFatalOrb(caster, message, source)
       : game.i18n.localize("TRUDVANG.FatalMagic.Burst");
@@ -288,8 +291,15 @@ export async function applyFatalVitnerArea(message, {prepareOnly = false, cost} 
   }
   if (rule.negation) {
     await applyNegation(caster, message, plan);
+    const affected = plan.victims.some(victim => victim.actorUuid === caster.uuid) ? plan.victims : [targetRow(source), ...plan.victims];
     await message.update({[`${RESULT}.applied`]: game.i18n.localize("TRUDVANG.FatalMagic.Negation"),
-      [`${RESULT}.radius`]: plan.radius});
+      [`${RESULT}.radius`]: plan.radius,
+      [`${RESULT}.outcomes`]: affected.map(({appearance, ...target}) => ({
+        ...target, consequenceKeys: [
+          ...(target.actorUuid === caster.uuid ? ["TRUDVANG.FatalMagic.ThirdLost"] : []),
+          ...(appearance ? [`TRUDVANG.FatalMagic.Cosmetic.${appearance}`] : [])
+        ]
+      }))});
     await clearFatalVitnerPreview(message, scene);
     return {status: "applied"};
   }

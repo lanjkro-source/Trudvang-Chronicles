@@ -5,6 +5,14 @@ let registered=false;
 const local=key=>game.i18n.localize('TRUDVANG.InitialResistance.'+key);
 const stateOf=effect=>effect?.flags?.[S]?.initialResistance;
 const authority=()=>Boolean(game.users?.activeGM?.isSelf);
+export function initialResistanceArea(effect){
+ const state=stateOf(effect),messages=globalThis.game?.messages;
+ const explicit=state?.areaMessageId&&messages?.get(state.areaMessageId);
+ if(explicit)return explicit;
+ // TEMPORARY WORLD MIGRATION: a 0.248.0 flash stored the area only as its state ID.
+ const legacy=state?.id&&messages?.get(state.id);
+ return legacy?.getFlag?.(S,'fatalMagicResult')?.row===53?legacy:null;
+}
 /** Preserve the resolved payload, never put live native changes on a pending target.
  * A copy to another recipient needs its own resistance; renewing on the same
  * recipient preserves its decision and cannot provide another saving throw. */
@@ -47,7 +55,15 @@ export function resolveInitialResistanceOnAuthority(payload){
   const effect=await foundry.utils.fromUuid(payload.effectUuid),state=stateOf(effect),user=game.users?.get(payload.userId)??(game.user?.id===payload.userId?game.user:null);
   if(!user||(!authority()&&game.users?.activeGM)||!effect?.parent?.canUserModify?.(user,'update'))return 'unavailable';
   if(!state||state.id!==payload.id||state.resolved||!live(effect)||typeof payload.success!=='boolean')return 'changed';
-  if(payload.success){await effect.delete();return 'resisted';}
+  const area=initialResistanceArea(effect),areaId=state.areaMessageId||area?.id;
+  const previous=areaId&&effect.parent.getFlag(S,'fatalFlash')?.[areaId];
+  const success=previous?.success??payload.success;
+  const key=encodeURIComponent(effect.parent.uuid).replaceAll('.','%2E');
+  const refreshArea=async()=>{if(area)await area.update({['flags.'+S+'.fatalMagicResult.flashResults.'+key]:success});};
+  if(areaId)await effect.parent.update({
+   ['flags.'+S+'.fatalFlash.'+areaId]:{effectUuid:effect.uuid,success}
+  });
+  if(success){await effect.delete();await refreshArea();return 'resisted';}
   if(state.payload.nativeStatuses){
    // Native posture outlives the instantaneous spell, without duplicate prone markers.
    for(const status of state.payload.nativeStatuses)await effect.parent.toggleStatusEffect(status,{active:true});
@@ -56,6 +72,7 @@ export function resolveInitialResistanceOnAuthority(payload){
   await effect.update({name:state.payload.name,description:state.payload.description,statuses:state.payload.statuses,'system.changes':state.payload.changes,
    ...(state.payload.duration ? {duration:state.payload.duration,start:foundry.documents.ActiveEffect.implementation.getEffectStart()} : {}),
    ['flags.'+S+'.transformation.summary']:state.payload.summary,['flags.'+S+'.transformation.summaryResolved']:state.payload.summaryResolved,['flags.'+S+'.initialResistance.resolved']:true});
+  await refreshArea();
   return 'activated';
  });
  jobs.set(payload.effectUuid,job);return job.finally(()=>{if(jobs.get(payload.effectUuid)===job)jobs.delete(payload.effectUuid);});

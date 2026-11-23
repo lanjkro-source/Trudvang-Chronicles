@@ -10,9 +10,16 @@ const actor = (name, vitner = 0, max = vitner) => {
   const receipts = {};
   const resources = {vitner: {value: vitner, current: vitner, max}, body: {value: 20, current: 20, max: 20}};
   const source = {uuid: `Actor.${name}`, name, type: "npc", isOwner: true, effects: new Map(),
-    system: {resources}, _source: {system: {resources}}, getFlag: () => receipts};
+    system: {resources}, _source: {system: {resources}}, documentName: "Actor",
+    canUserModify: user => user.isGM || user.id === name, getFlag: (_scope, key) => receipts[key]};
   source.update = async changes => {
-    for (const [key, value] of Object.entries(changes)) if (key.startsWith(`flags.${scope}.`)) receipts[id] = value;
+    for (const [key, value] of Object.entries(changes)) {
+      if (!key.startsWith(`flags.${scope}.`)) continue;
+      const parts = key.split(".").slice(2);
+      const field = parts.pop();
+      const parent = parts.reduce((object, part) => object[part] ??= {}, receipts);
+      parent[field] = value;
+    }
     for (const key of ["vitner", "body"]) {
       const value = changes[`system.resources.${key}.value`];
       if (value !== undefined) resources[key].value = resources[key].current = value;
@@ -20,7 +27,8 @@ const actor = (name, vitner = 0, max = vitner) => {
   };
   source.createTrudvangEffect = async data => {
     const key = data._id ?? data.system.stackId;
-    const effect = {...data, delete: async () => source.effects.delete(key)};
+    const effect = {...data, uuid: `${source.uuid}.ActiveEffect.${key}`, parent: source,
+      delete: async () => source.effects.delete(key)};
     source.effects.set(key, effect);
     return effect;
   };
@@ -238,4 +246,44 @@ test("60+ waits for the countdown, freezes one roll across both bands and keeps 
   assert.equal(mage.effects.size, 1);
   assert.equal(fatalAbsence(mage), true);
   assert.equal(regions.size, 0);
+});
+
+test("53 queues one Psychisme test per target on the area card and resolves each blindness separately", async () => {
+  const {message, result, mage, victims, regions} = catastrophe(53, [5, 4, 1, 3, 12], [200, 300], 8);
+  game.i18n.format = key => key;
+  const gm = {id: "gm", isGM: true, isSelf: true};
+  const owner = {id: victims[0].actor.name};
+  game.users = new Map([[gm.id, gm], [owner.id, owner]]);
+  game.users.activeGM = gm;
+  game.messages = new Map([[message.id, message]]);
+  game.user = gm;
+  const originalLookup = foundry.utils.fromUuid;
+  foundry.utils.fromUuid = async uuid => {
+    const subject = [mage, ...victims.map(token => token.actor)].find(actor => actor.effects.get(id)?.uuid === uuid);
+    return subject?.effects.get(id) ?? originalLookup(uuid);
+  };
+  foundry.documents = {ActiveEffect: {implementation: {getEffectStart: () => ({time: 20})}}};
+  globalThis.ChatMessage = {create: () => assert.fail("the flash must use the existing area card")};
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "prepared"});
+  assert.equal(result.preview.targets.length, 3);
+  assert.deepEqual(await applyFatalVitnerArea(message), {status: "applied"});
+  assert.equal(regions.size, 0);
+  assert.equal(mage.system.resources.body.current, 12);
+  const {resolveInitialResistanceOnAuthority} = await import("../modules/initial-resistance.mjs");
+  const [success, failure] = victims.map(token => token.actor.effects.get(id));
+  assert.equal(success.flags[scope].consequenceTests[0].kind, "resist");
+  assert.deepEqual(success.flags[scope].consequenceTests[0].trait, ["psyche"]);
+  assert.equal(success.flags[scope].initialResistance.areaMessageId, message.id);
+  let applied;
+  failure.update = async changes => { applied = changes; };
+  assert.equal(await resolveInitialResistanceOnAuthority({effectUuid:failure.uuid,id,userId:owner.id,success:true}), "unavailable");
+  assert.deepEqual(await Promise.all([
+    resolveInitialResistanceOnAuthority({effectUuid:success.uuid,id,userId:owner.id,success:true}),
+    resolveInitialResistanceOnAuthority({effectUuid:failure.uuid,id,userId:gm.id,success:false})
+  ]), ["resisted", "activated"]);
+  assert.equal(success.parent.effects.has(id), false);
+  assert.deepEqual(applied.statuses, ["blind"]);
+  assert.deepEqual(applied.start, {time: 20});
+  assert.equal(success.parent.getFlag(scope,"fatalFlash")[id].success, true);
+  assert.equal(failure.parent.getFlag(scope,"fatalFlash")[id].success, false);
 });

@@ -1,10 +1,10 @@
-import {endFog,openFireTamerExtinguish,openSpellWallDamage,placeSpellZone,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
+import {decorateSpellZoneRows,endFog,openFireTamerExtinguish,openSpellWallDamage,placeSpellZone,requestInstantSpellZoneApplication,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
 import {registerInitialResistanceSocket} from './initial-resistance.mjs';
 import {registerDispelSocket} from './dispel.mjs';
 import {registerDiseaseResistanceSocket} from './disease-resistance-chat.mjs';
-import {canManageFearTargets, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval, requestFearBatch, requestFearTargetEdit} from "./chat-application.mjs";
+import {canManageFearTargets, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageResistance, requestDamageTargets, requestDamageTargetRemoval, requestFearBatch, requestFearResistance, requestFearTargetEdit} from "./chat-application.mjs";
 import {registerMagicFearPreview} from "./magic-fear-preview.mjs";
 import {isConsumable} from "./consumables.mjs";
 import {canConsumeSharedItem,requestSharedConsumption} from "./shared-consumption.mjs";
@@ -19,6 +19,8 @@ import {performRuleTest} from "./rule-tests.mjs";
 import {canManageEffectTargets,effectTargetsFor,effectTargetListHTML,registerEffectTargetSocket,requestEffectTargetUpdate} from "./effect-targets.mjs";
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {renderFatalResultAction} from "./fatal-result-chat.mjs";
+import {zoneOutcome} from "./zone-chat.mjs";
+import {rollOutcomeText} from "./rules/roll-outcome-view.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -78,6 +80,13 @@ function attachListeners(message, html) {
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
   renderFatalResultAction(message, html);
+  decorateSpellZoneRows(message, html);
+  html.querySelector?.('[data-action="apply-spell-zone"]')?.addEventListener("click", async event => {
+    const button = event.currentTarget;
+    button.disabled = true;
+    try { await requestInstantSpellZoneApplication(message); }
+    finally { button.disabled = false; }
+  });
   void canManageEffectTargets(message,game.user).then(editable=>{
     for(const button of html.querySelectorAll("[data-transformation-key]")){
       const key=button.dataset.transformationKey;
@@ -413,6 +422,34 @@ function attachListeners(message, html) {
       name.textContent = token?.name ?? game.i18n.localize("TRUDVANG.MagicFear.HiddenTarget");
     });
   }
+  const scope = "trudvang-chronicles";
+  const fearContext = message.getFlag(scope, "fearContext");
+  const fearApplied = message.getFlag(scope, "fearBatchApplied");
+  if (fearContext?.grouped && html.querySelector?.("[data-zone-fear-actor]")) {
+    for (const section of html.querySelectorAll("[data-application-results], [data-fear-resistance-results]")) section.hidden = true;
+    if (fearApplied) for (const row of html.querySelectorAll("[data-zone-fear-actor]")) {
+      const actorUuid = row.dataset.zoneFearActor;
+      const actor = foundry.utils.fromUuidSync(actorUuid);
+      const details = row.querySelector(".zone-target-details");
+      const outcome = message.getFlag(scope, "fearResistanceResults")?.find(result => result.actorUuid === actorUuid);
+      const application = message.getFlag(scope, "applications")?.find(result => result.actorUuid === actorUuid && result.channel === "fear");
+      if (outcome) details.insertAdjacentHTML("beforeend", zoneOutcome(rollOutcomeText(outcome.outcome ?? {}, key => game.i18n.localize(key)), outcome.success));
+      if (application) {
+        details.insertAdjacentHTML("beforeend", zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.Affected")));
+        if (game.user.isGM || actor?.isOwner) details.lastElementChild.textContent = game.i18n.format("TRUDVANG.AreaChat.FearGain", application);
+      } else if (fearContext.resistance && actor?.isOwner) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = game.i18n.localize("TRUDVANG.AreaChat.Resist");
+        button.addEventListener("click", async () => {
+          button.disabled = true;
+          try { await requestFearResistance({message, actor}); }
+          finally { button.disabled = false; }
+        });
+        details.append(button);
+      } else if (fearContext.resistance) details.insertAdjacentHTML("beforeend", zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.PendingResistance")));
+    }
+  }
   if (canManageFearTargets(message,game.user)) {
     for (const button of html.querySelectorAll("[data-action='add-fear-targets'],[data-action='remove-fear-target']")) {
       button.hidden = false;
@@ -431,7 +468,7 @@ function attachListeners(message, html) {
   }
   for (const button of html.querySelectorAll("[data-action='apply-fear-batch']")) {
     const canApply = canManageFearTargets(message,game.user);
-    button.hidden = false;
+    button.hidden = !canApply || Boolean(fearApplied);
     button.disabled = !canApply;
     if (message.getFlag("trudvang-chronicles","fearBatchApplied")) {
       button.querySelector("span").textContent = game.i18n.localize("TRUDVANG.MagicFear.BatchApplied");

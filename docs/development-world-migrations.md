@@ -194,3 +194,7 @@ Le rattrapage dans `modules/damage-qualification-migration.mjs` corrige les qual
 ## Éclairage d’équipement et retrait des marqueurs d’eau
 
 Le palier 73 de `modules/content-importer.mjs` importe la torche et la lanterne dans les mondes existants. Le nettoyage au démarrage dans `modules/water-purification.mjs` retire uniquement les effets d’objet de Purification de l’eau générés en 0.227.1. Retirer ce palier, la fonction de nettoyage et son appel dans `trudvang.mjs` lorsque les mondes de développement auront été mis à jour ou supprimés.
+
+## Cartes de zone antérieures à la 0.249.0
+
+`initialResistanceArea()` reprend la carte d’origine des décharges 53 de la 0.248.0 à partir de l’identifiant du test. Lorsque le type du test manque, `ruleTestsForDocument()` reconnaît le test de trait sans compétence. `applyZoneDamage()` réutilise les anciennes cartes de dégâts encore liées à une application en cours pour éviter une seconde perte de PS. Les replis `TEMPORARY WORLD MIGRATION` et les paramètres `legacyEvent` pourront être supprimés avec ces anciennes cartes. Les résultats par cible et le registre des dégâts restent nécessaires.

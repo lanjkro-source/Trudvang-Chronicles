@@ -143,7 +143,7 @@ async function applyFearBatchOnGM(payload) {
     const actor = await foundry.utils.fromUuid(target.actorUuid);
     if (!actor) continue;
     const result = await applyOnGM({...payload,channel:"fear",actorUuid:target.actorUuid,tokenUuid:target.tokenUuid},{grouped:true});
-    if (!["applied","alreadyApplied"].includes(result.status)) return {status:"unavailable"};
+    if (!["applied","alreadyApplied","resistanceRequired"].includes(result.status)) return {status:"unavailable"};
   }
   const content = message.content.replace('data-action="apply-fear-batch"','data-action="apply-fear-batch" data-fear-batch-applied');
   await message.update({content,[`flags.${SYSTEM_ID}.fearBatchApplied`]:true});
@@ -308,6 +308,12 @@ async function damageResistanceOnGM(payload){
  const context=message.getFlag(SYSTEM_ID,fear?'fearContext':'damageContext'),actor=await foundry.utils.fromUuid(payload.actorUuid);
  if(!context?.resistance||(!fear&&context.boundActorUuid!==actor?.uuid)||!actor?.testUserPermission(user,'OWNER')||(fear?!canReceiveFear(message,actor)||hasChatApplication(message,actor.uuid,'fear'):!['presence','consequence'].includes(context.resistance.scope)&&hasChatApplication(message,actor.uuid,'body')))return {status:'unavailable'};
  const existing=message.getFlag(SYSTEM_ID,resultKey)?.find(row=>row.actorUuid===actor.uuid);
+ const grouped=fear&&context.grouped;
+ if(grouped&&!message.getFlag(SYSTEM_ID,'fearBatchApplied'))return {status:'unavailable'};
+ if(grouped&&existing){
+  const result=await applyOnGM({...payload,channel:'fear'},{grouped:true});
+  return result.status==='applied'?{status:'resolved'}:result;
+ }
  if(existing)return {status:'alreadyRolled'};
  const key=`${message.id}:${actor.uuid}`,lock=resistanceLocks.get(key);
  if(payload.action==='begin'){
@@ -336,7 +342,11 @@ async function damageResistanceOnGM(payload){
  if(fear){
   const previous=String(message.content),section=/<section data-fear-resistance-results>[\s\S]*?<\/section>/;
   const html=pendingFearResults(results,rowsFor(message));
-  await message.update({content:section.test(previous)?previous.replace(section,()=>html):previous.replace(/<\/article>\s*$/,html+'</article>'),...(inlineRoll?{rolls:[...(message.rolls??[]),inlineRoll],'flags.dice-so-nice.skip':true}:{}),[`flags.${SYSTEM_ID}.${resultKey}`]:results});
+  await message.update({...(grouped?{}:{content:section.test(previous)?previous.replace(section,()=>html):previous.replace(/<\/article>\s*$/,html+'</article>')}),...(inlineRoll?{rolls:[...(message.rolls??[]),inlineRoll],'flags.dice-so-nice.skip':true}:{}),[`flags.${SYSTEM_ID}.${resultKey}`]:results});
+  if(grouped){
+   const result=await applyOnGM({...payload,channel:'fear'},{grouped:true});
+   if(!['applied','alreadyApplied'].includes(result.status))return result;
+  }
  }else{
  await message.update({content:String(message.content).replace(/(<span\b[^>]*data-damage-resistance-result[^>]*>)[\s\S]*?<\/span>/,(_,open)=>`${open}<strong class="test-outcome ${flags.rollOutcome.success?'success':'failure'}">${escapeHtml(rollOutcomeText(flags.rollOutcome,key=>game.i18n.localize(key)))}</strong> — ${escapeHtml(label)}</span>`).replace(/(<button\b[^>]*data-action="resist-damage"[^>]*)(>)/,'$1 disabled$2'),[`flags.${SYSTEM_ID}.damageResistanceResults`]:results});
  }
@@ -451,7 +461,7 @@ export async function requestFearResistance({message,actor,token}){
   };
   const result=await rollConfiguredTraitSituation({actor,reactive:true,test:context.resistance.test,sourceName:context.resistance.sourceName+' — '+actor.name,resistanceContext:context.resistance.casting,publishMessage});
   if(!result)return {status:'cancelled'};
-  return requestChatApplication({message,actor,token,channel:'fear'});
+  return context.grouped ? resolution : requestChatApplication({message,actor,token,channel:'fear'});
  }finally{await requestChatUpdate(message,{...payload,action:'cancel',token:begin.token});}
 }
 
@@ -516,6 +526,10 @@ async function requestChatUpdate(message, payload) {
 }
 
 async function refreshApplications(message,rows,{rolls=[]}={}){
+  if(message.getFlag(SYSTEM_ID,"fearContext")?.grouped){
+    await message.update({[`flags.${SYSTEM_ID}.applications`]:rows});
+    return;
+  }
   const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
     rows: rows.map(row => {
       const resistance=row.channel==='fear'?message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(r=>r.actorUuid===row.actorUuid):null;
