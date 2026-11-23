@@ -11398,17 +11398,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.SourcePage` | 138 | 166 |
 | `TRUDVANG.Content.Transformation.vitner-water-craft:wave-master:8#objects-adverse.Duration` | 1 hour | 1 hour |
 
-## `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Name` | Heat Water | Ébullition |
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Description` | By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water. | En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante. |
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourceName` | Heat Water | Ébullition |
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourceBook` | Player's Handbook | Livre des règles |
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.SourcePage` | 109 | 167 |
-| `TRUDVANG.Content.Transformation.vitner-flame-craft:heat-water:0#effect.Duration` | 5 minutes | 5 minutes |
-
 ## `TRUDVANG.Content.Transformation.vitner-flame-craft:spark:1#effect`
 
 | Clé | English | Français |
@@ -16904,6 +16893,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.SpellZone.BoilingPlace` | Place the boiling water | Placer l’eau bouillante |
+| `TRUDVANG.SpellZone.BoilingProfile` | Up to {liters} L of water for {minutes} min. | Jusqu’à {liters} L d’eau pendant {minutes} min. |
+| `TRUDVANG.SpellZone.BoilingAvailable` | Available water (L) | Eau disponible (L) |
+| `TRUDVANG.SpellZone.BoilingDepth` | Water depth (cm) | Profondeur de l’eau (cm) |
+| `TRUDVANG.SpellZone.BoilingSurface` | Water surface elevation | Altitude de la surface de l’eau |
+| `TRUDVANG.SpellZone.BoilingInvalid` | Enter positive values for water volume and depth, and a valid elevation. | Indiquez une quantité et une profondeur d’eau positives ainsi qu’une altitude valide. |
+| `TRUDVANG.SpellZone.BoilingPlaced` | {liters} L of water brought to a boil. | {liters} L d’eau portés à ébullition. |
+| `TRUDVANG.SpellZone.BoilingProtected` | Insulated by armor | Armure isolante |
+| `TRUDVANG.SpellZone.BoilingBurned` | Scalded | Brûlé |
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
 | `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |

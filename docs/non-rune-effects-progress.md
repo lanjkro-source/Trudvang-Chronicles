@@ -450,3 +450,11 @@ Les orbes du 59 et du 60+ restent visibles pendant leur compte à rebours et jus
 Les cartes de magie funeste, de peur de zone, de feu, de séisme et de sauvetage dans le bourbier utilisent des lignes compactes par cible. Les points exacts restent affichés au MJ et aux propriétaires de l’acteur. Les résistances restent individuelles. Le 53 propose le test de Psychisme dans la ligne du bénéficiaire et y affiche « Résisté » ou « Échec · aveuglé ». Les décharges et les dégâts de feu ou de chute figurent directement dans la ligne de la victime.
 
 Pour les zones instantanées à confirmer, un clic du lanceur ou du MJ confirme la liste et retire le marqueur. Pour le feu, une cible pouvant esquiver décide ensuite sur sa propre ligne. Les enceintes automatiques, les effets périodiques et les durées des zones persistantes suivent les déclencheurs existants. Les auras continues et les zones de décor ou d’éclairage sans résolution par cible conservent leur fonctionnement.
+
+### Ébullition
+
+Le placement définit l’eau déjà présente, sa profondeur et l’altitude de sa surface. La zone fixe est un cercle de même surface que le volume réellement chauffé à la profondeur indiquée. La portée de contact utilise la convention de 1 m depuis le centre du token et passe à 5 m par amélioration. Le plafond est de 5 L plus les achats de 1, 10 et 100 L. La zone expire après cinq minutes plus une minute par amélioration de durée.
+
+Les créatures en contact reçoivent 1d6 dégâts ordinaires de feu par tour exposé. L’acier, le bronze et les autres matériaux métalliques ne protègent pas. Les armures isolantes portées protègent pendant un nombre de tours égal à leur VP effective. La sortie suspend l’exposition et la rentrée dans la même eau reprend le compteur. Sortir puis rentrer dans le même tour ne double pas les dégâts. Les créatures en vol ou hors de la colonne d’eau sont exclues. L’armure ou les dégâts apparaissent par cible sur la carte de zone. Le MJ décrit le refroidissement après la fin du sort.
+
+Références : Livre des règles, p. 167 PDF, et Player’s Handbook, p. 110 imprimée.

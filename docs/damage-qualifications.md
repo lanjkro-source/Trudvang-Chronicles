@@ -10,7 +10,7 @@ La qualification magique n’est attribuée automatiquement ni aux dégâts des 
 
 Éruption et Mer de flammes acceptent seulement les protections magiques ; Ténèbres de Dimhall accepte aussi le grindsilver. Une armure possède un matériau et un indicateur de protection magique. Une bénédiction dont la description donne un bonus réduit contre la magie utilise ce bonus, sans rendre automatiquement magique toute l’armure. Le bouton « sans armure » continue d’ignorer toutes les protections, y compris les barrières de pierre ; il ne supprime pas les véritables immunités aux types de dégâts.
 
-**Cas conservé pour arbitrage : Ébullition.** La protection limitée dans le temps des armures non métalliques demande un suivi de l’exposition. Le dialogue rappelle cette règle ; il ne prétend pas automatiser ce suivi.
+**Ébullition.** L’eau inflige des dégâts ordinaires de feu. La zone suit les tours de contact et applique d’abord la protection d’une armure non métallique portée, pendant autant de tours que sa VP. Une fois cette durée épuisée, le 1d6 s’applique sans réduction par l’armure.
 
 ## Ordre de résolution
 

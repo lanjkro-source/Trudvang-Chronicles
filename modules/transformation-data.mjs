@@ -1091,30 +1091,6 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     ]
   },
-  "vitner-flame-craft:heat-water:0#effect": {
-    "id": "effect",
-    "icon": "icons/svg/aura.svg",
-    "duration": "5 minutes",
-    "priority": 10,
-    "statuses": [],
-    "related": [],
-    "changes": [],
-    "displayPowerOptions": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "sourceId": "vitner-flame-craft:heat-water:0",
-    "parameters": [
-      {
-        "index": 0,
-        "target": "duration",
-        "value": 60,
-        "optionId": "vitner-flame-craft:heat-water:0:0"
-      }
-    ]
-  },
   "vitner-flame-craft:spark:1#effect": {
     "id": "effect",
     "icon": "icons/svg/aura.svg",
@@ -16200,9 +16176,6 @@ export const TRANSFORMATIONS_BY_SOURCE = {
     "vitner-water-craft:wave-master:8#creatures-adverse",
     "vitner-water-craft:wave-master:8#objects-favorable",
     "vitner-water-craft:wave-master:8#objects-adverse"
-  ],
-  "vitner-flame-craft:heat-water:0": [
-    "vitner-flame-craft:heat-water:0#effect"
   ],
   "vitner-flame-craft:spark:1": [
     "vitner-flame-craft:spark:1#effect"

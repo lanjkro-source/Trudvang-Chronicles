@@ -344,6 +344,16 @@ function attachListeners(message, html) {
   html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>{
     const refresh=()=>{
       const wall=spellWallCardState(message);
+      const waterLiters=message.flags?.["trudvang-chronicles"]?.spellZoneCasting?.waterLiters;
+      if(waterLiters>0){
+        if(!button.hidden){
+          const notice=document.createElement('p');
+          notice.textContent=game.i18n.format('TRUDVANG.SpellZone.BoilingPlaced',{liters:waterLiters});
+          button.before(notice);
+          button.hidden=true;
+        }
+        return;
+      }
       // TEMPORARY WORLD MIGRATION — reuse unplaced rolls rendered before the block card existed.
       if(wall&&!wallVolume){
         wallVolume=document.createElement('p');

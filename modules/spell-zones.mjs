@@ -18,6 +18,8 @@ import {trackSpellZoneRemoval,withMaintainedZoneCasting} from './maintained-spel
 import {isInventoryTransferItem} from './inventory-transfer.mjs';
 import {zoneAction,zoneOutcome,zoneTargetList} from './zone-chat.mjs';
 import {applyZoneDamage,zoneDamageReceipt} from './zone-damage.mjs';
+import {boilingWaterPlacement,touchesBoilingWater} from './rules/boiling-water.mjs';
+import {resolveBoilingWaterContact} from './boiling-water.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -26,7 +28,14 @@ const clock=info=>({time:Number(game.time?.worldTime)||0,combat:game.combats?.ge
 const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=>{}).then(work);jobs.set(key,job);return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});};
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
-const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog','darkness'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&(info.profile.kind==='quagmire'||!earthquakeTest(info.profile,impactSize(actor)).immune)));
+function eligible(token,info){
+ const actor=token.actor,kind=info.profile.kind;
+ if(!actor||!['character','npc'].includes(actor.type)||(info.profile.excludeCaster&&actor.uuid===info.context.casterUuid))return false;
+ if(['fire','fog','darkness'].includes(kind))return true;
+ if(['fly','hover','flying','hovering'].some(status=>actor.statuses?.has?.(status)))return false;
+ if(kind==='boilingWater')return touchesBoilingWater(token,info);
+ return kind==='quagmire'||!earthquakeTest(info.profile,impactSize(actor)).immune;
+}
 const lastsAfterCombat=profile=>['fog','darkness','quagmire','earthWall','fixedLight'].includes(profile.kind);
 // Region.tokens can still be empty while native creation events are being processed.
 // Query the public containment API against scene documents before freezing a burst.
@@ -34,7 +43,7 @@ const members=(region,{entering,leaving}={})=>{
  const info=infoOf(region),sceneTokens=values(region.parent?.tokens);
  if(info.profile.instant&&info.initialTokens)return new Map(info.initialTokens.map(row=>[row.actorUuid,sceneTokens.find(t=>t.uuid===row.tokenUuid)]).filter(([,t])=>t?.actor));
  const inside=sceneTokens.filter(t=>typeof t.testInsideRegion==='function'?t.testInsideRegion(region):values(region.tokens).some(r=>r.uuid===t.uuid));
- return new Map([...inside.filter(t=>t.uuid!==leaving?.uuid),...(entering?[entering]:[])].filter(t=>eligible(t.actor,info)).map(t=>[t.actor.uuid,t]));
+ return new Map([...inside.filter(t=>t.uuid!==leaving?.uuid),...(entering?[entering]:[])].filter(t=>eligible(t,info)).map(t=>[t.actor.uuid,t]));
 };
 const enabled=region=>!region.behaviors||values(region.behaviors).some(b=>b.type===TYPE&&!b.disabled);
 const effectsFor=(actor,region)=>values(actor.effects).filter(e=>e.flags?.[S]?.spellZoneRecipient?.regionUuid===region.uuid);
@@ -100,6 +109,8 @@ function promptHTML(info,state){
  return '<article class="trudvang chat-card spell-zone-card"><header><h3>'+escapeHtml(nameOf(info))+'</h3></header>'+apply+zoneTargetList(state.recipients,row=>{
   if(state.awaitingApplication)return '';
   const response=state.responses[responseKey(row.actorUuid)],outcome=response?.outcome;
+  if(info.profile.kind==='boilingWater')return response
+   ? zoneOutcome(local(response.protected?'BoilingProtected':'BoilingBurned'),response.protected) : '';
   if(response?.unavailable)return zoneOutcome(game.i18n.localize('TRUDVANG.AreaChat.Unavailable'));
   const control=(choice,label)=>zoneAction(local(label),{
    action:'spell-zone-test','zone-choice':choice,'actor-uuid':row.actorUuid
@@ -186,6 +197,18 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   if(info.profile.kind==='quagmire'){await promptMembers(region,info,new Map([...tokens].filter(([,token])=>ropeRecipient(region,token.actor))));return;}
   if(lastsAfterCombat(info.profile))return;
   const prompt=await promptMembers(region,info,tokens);
+  if(info.profile.kind==='boilingWater'&&prompt){
+   const state=structuredClone(prompt.flags[S].spellZoneTest);
+   let changed=false;
+   for(const [uuid,token] of tokens){
+    const key=responseKey(uuid);
+    if(state.responses[key]?.resolved)continue;
+    state.responses[key]=await resolveBoilingWaterContact({region,actor:token.actor,message:prompt,phase:state.phase,key});
+    changed=true;
+   }
+   if(changed)await updatePrompt(prompt,info,state);
+   return;
+  }
   if(info.profile.instant){
    const saved=prompt??values(game.messages).find(m=>m.flags?.[S]?.spellZoneTest?.regionUuid===region.uuid);
    await finishInstantZone(region,saved?.flags?.[S]?.spellZoneTest);
@@ -298,6 +321,12 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
   await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};
  }
  const scene=game.scenes.get(payload.sceneId),token=scene?.tokens?.get(payload.tokenId);
+ const boiling=profile.kind==='boilingWater';
+ if(boiling){
+  const water=boilingWaterPlacement(profile,payload.water);
+  if(!water)return {status:'unavailable',reason:'BoilingInvalid'};
+  Object.assign(profile,water);
+ }
  if(scene&&profile.attachable&&findPlacedInventoryLight(message.id,scene)){
   await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,inventoryLightPlaced:true}});
   return {status:'alreadyPlaced',reason:'AlreadyPlaced'};
@@ -335,14 +364,14 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  info.lastMovedPhase=spellZonePhase(info,clock(info));
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  const darkMode=darkness?globalThis.CONFIG?.RegionBehavior?.dataModels?.adjustDarknessLevel?.MODES?.OVERRIDE:undefined;
- if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
+ if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall||boiling?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
   ...(support?{attachment:{token:support.id}}:{}),
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
   behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
  if(!region)throw Error('Spell zone creation failed');
  if(wall)await reconcileSpellZone(region);
  const placed=spellWallInfo(region)?.sections.length;
- await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,regionUuid:region.uuid,...(wall?{wallBlocksPlaced:placed}:{})}});
+ await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,regionUuid:region.uuid,...(wall?{wallBlocksPlaced:placed}:{}),...(boiling?{waterLiters:profile.liters}:{})}});
  if(payload.underground===true&&profile.kind==='earthquake'&&!infoOf(region).collapseRolled){
   const {openDice}=await import('./dice.mjs');const result=await openDice({dice:1,faces:20,threshold:0});
   await region.update({['flags.'+S+'.spellZone.collapseRolled']:true});
@@ -631,6 +660,22 @@ export async function openFireTamerExtinguish(message){
  return result;
 }
 
+function chooseBoilingWater(profile,token){
+ const input=(name,key,value,min='')=>`<label class="form-group"><span>${escapeHtml(local(key))}</span><input type="number" name="${name}" value="${value}" step="any" ${min} required></label>`;
+ return foundry.applications.api.DialogV2.wait({
+  window:{title:local('BoilingPlace')},classes:['trudvang','dialog'],
+  content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(local('BoilingProfile',{liters:profile.maxLiters,minutes:profile.rounds/12}))+'</p>'
+   +input('availableLiters','BoilingAvailable',profile.maxLiters,'min="0"')
+   +input('depthCm','BoilingDepth',5,'min="0"')
+   +input('elevation','BoilingSurface',Number(token.elevation)||0)+'</div>',
+  buttons:[{action:'place',default:true,label:game.i18n.localize('TRUDVANG.Action.Continue'),callback:(_event,button)=>{
+   const data=new FormData(button.form);
+   return Object.fromEntries(['availableLiters','depthCm','elevation'].map(key=>[key,Number(data.get(key))]));
+  }},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>null}],
+  rejectClose:false
+ });
+}
+
 export async function placeSpellZone(message,{attachLight=false,attachInventoryLight=false}={}){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
  const board=globalThis.canvas,scene=board?.scene;
@@ -638,6 +683,14 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
  const previous=await previousPlacement(message.flags?.[S]?.spellZoneCasting);if(previous?.reason){const result={status:'alreadyPlaced',reason:previous.reason};placementFeedback(result);return result;}
  const token=auraCasterToken(actor,board.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
  let underground=false,daylight=false;
+ let water;
+ if(profile.kind==='boilingWater'){
+  water=await chooseBoilingWater(profile,token);
+  if(!water)return null;
+  const placement=boilingWaterPlacement(profile,water);
+  if(!placement){ui.notifications.warn(local('BoilingInvalid'));return null;}
+  Object.assign(profile,placement);
+ }
  if(profile.requiresDaylight){
   const site=context.lightSite;
   if(!site||site.sceneId!==scene.id||site.tokenId!==token.id){ui.notifications.warn(local('Unavailable'));return null;}
@@ -689,7 +742,7 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   try {
    preview=await board.regions.placeRegion({
     name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:auraColor(),
-    levels:token.level?[token.level]:[],highlightMode:darkness||wall?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
+    levels:token.level?[token.level]:[],highlightMode:darkness||wall||water?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
    },{
     create:false,attachToToken:false,allowRotation:darkness&&shape.type==='rectangle',
     onMove:({position,snap,shape,preview})=>{
@@ -720,7 +773,7 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,scale);
  }
  if(board.scene!==scene)return null;
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,inventoryItemId,inventoryTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,inventoryItemId,inventoryTokenId,...(water?{water}:{}),...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);
@@ -771,7 +824,7 @@ export function registerSpellZoneSupport(){
  const refreshAttachedLights=token=>{
   if(!writer())return;
   for(const region of values(token.parent?.regions)){
-   if(infoOf(region)?.lightTokenId!==token.id)continue;
+   if(infoOf(region)?.lightTokenId!==token.id&&infoOf(region)?.profile.kind!=='boilingWater')continue;
    void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Attached light update failed',error));
   }
  };

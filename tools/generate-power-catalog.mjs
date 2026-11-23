@@ -123,7 +123,13 @@ for (const id of [...french.keys()].sort()) {
   if(f.spellZone?.kind==='fire'&&(!(f.spellZone.radius>0)||!(f.spellZone.radiusStep>0)||!(f.spellZone.range>=0)||typeof f.spellZone.movable!=='boolean'||!Number.isFinite(f.spellZone.visibilityPenalty)||!f.damageRoll))fail(`${id}: invalid fire zone`);
   if(f.spellZone?.kind==='earthquake'&&(!Array.isArray(f.spellZone.sizeModifiers)||f.spellZone.sizeModifiers.length!==7||f.spellZone.sizeModifiers.some(n=>!Number.isFinite(n))||!Number.isFinite(f.spellZone.severityModifier)||!Number.isFinite(f.spellZone.penalty)||!(f.spellZone.radius>0)||!(f.spellZone.range>=0)))fail(`${id}: invalid earthquake profile`);
   if(f.spellZone?.kind==='runeEarthquake'&&(!Array.isArray(f.spellZone.sizeSV)||f.spellZone.sizeSV.length!==7||f.spellZone.sizeSV.some(n=>n!==null&&!Number.isFinite(n))||!Number.isFinite(f.spellZone.levelModifier)||!(f.spellZone.stunRounds>0)||!(f.spellZone.radiusPerLevel>0)||!(f.spellZone.rangePerAdditionalLevel>=0)))fail(`${id}: invalid rune earthquake profile`);
-  if(f.spellZone&&!['earthquake','runeEarthquake','fire','fog','darkness','quagmire','earthWall'].includes(f.spellZone.kind))fail(`${id}: invalid spell zone`);
+  if(f.spellZone&&!['earthquake','runeEarthquake','fire','fog','darkness','quagmire','earthWall','boilingWater'].includes(f.spellZone.kind))fail(`${id}: invalid spell zone`);
+  if(f.spellZone?.kind==='boilingWater'){
+    const {durationOptionId,rangeOptionId,volumeOptions}=f.spellZone;
+    const known=optionId=>f.powerLevels.some(option=>option.optionId===optionId);
+    if(!known(durationOptionId)||!known(rangeOptionId)||!Array.isArray(volumeOptions)||volumeOptions.length!==3
+      ||volumeOptions.some(option=>!known(option.id)||!Number.isInteger(option.liters)||option.liters<=0))fail(`${id}: invalid boiling water profile`);
+  }
   const quagmireOptions=['rangeOptionId','radiusOptionId','depthOptionId','durationOptionId','hoursOptionId'];
   if(f.spellZone)for(const key of [...quagmireOptions,'severityOptionId','thicknessOptionId','areaOptionId','volumeOptionId'])if(f.spellZone[key]&&!f.powerLevels.some(p=>p.optionId===f.spellZone[key]))fail(`${id}: invalid zone option`);
   if(f.spellZone?.kind==='quagmire'&&quagmireOptions.some(key=>!f.spellZone[key]))fail(`${id}: missing quagmire option`);
