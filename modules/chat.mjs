@@ -324,6 +324,13 @@ function attachListeners(message, html) {
     try{await placeSpellZone(message,{attachLight:true});}
     finally{attachLightButton.disabled=false;}
   });
+  const inventoryLightButton=html.querySelector?.('[data-action="attach-inventory-light"]');
+  if(inventoryLightButton)inventoryLightButton.addEventListener('click',async event=>{
+    event.preventDefault();
+    inventoryLightButton.disabled=true;
+    try{await placeSpellZone(message,{attachInventoryLight:true});}
+    finally{inventoryLightButton.disabled=false;}
+  });
   let wallVolume=html.querySelector?.('[data-wall-block-volume]');
   html.querySelectorAll('[data-action="place-spell-zone"]').forEach(button=>{
     const refresh=()=>{

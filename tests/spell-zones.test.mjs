@@ -50,6 +50,25 @@ test('a detached torch creates one fixed light, then removes it at expiration',a
  assert.equal(scene.lights.size,0);
 });
 
+test('an inventory Spark consumes the placement once and stores its duration on the object',async()=>{
+ const spark='vitner-flame-craft:spark:1';
+ const payload=setup(spark,{[spark+':4']:1,[spark+':0']:2});
+ const item={id:'item',documentName:'Item',type:'gear',parent:caster,system:{quantity:1},effects:[],
+  canUserModify:user=>user.id===owner.id,async createEmbeddedDocuments(type,[effect]){
+   assert.equal(type,'ActiveEffect');
+   const created={...effect,uuid:'Actor.caster.Item.item.ActiveEffect.spark'};
+   this.effects.push(created);
+   return [created];
+  }};
+ caster.items.push(item);
+ const result=await createSpellZoneOnAuthority({...payload,inventoryTokenId:'caster',inventoryItemId:item.id});
+ assert.equal(result.status,'placed');
+ assert.deepEqual(item.effects[0].duration,{value:36,units:'rounds'});
+ assert.equal(scene.lights.size,0);
+ assert.equal((await createSpellZoneOnAuthority(payload)).status,'alreadyPlaced');
+ assert.equal(item.effects.length,1);
+});
+
 test('an attached Spark follows the chosen support and disappears when the support is deleted',async()=>{
  const spark='vitner-flame-craft:spark:1';
  const payload=setup(spark,{[spark+':4']:1});

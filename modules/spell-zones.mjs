@@ -15,6 +15,7 @@ import {auraCasterToken,auraColor} from './aura.mjs';
 import {darknessPlacementShape} from './rules/jorn-darkness.mjs';
 import {quagmireRecipient} from './rules/quagmire.mjs';
 import {trackSpellZoneRemoval,withMaintainedZoneCasting} from './maintained-spell-tracking.mjs';
+import {isInventoryTransferItem} from './inventory-transfer.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -179,6 +180,7 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
 }
 /** A casting is single-use even after its instantaneous region has disappeared. */
 async function previousPlacement(ready){
+ if(ready?.inventoryLightPlaced)return {reason:'AlreadyPlaced'};
  if(!ready?.regionUuid)return null;
  const region=await foundry.utils.fromUuid(ready.regionUuid),info=infoOf(region);
  const finished=!info||!regionPresent(region)||spellZoneExpired(info,clock(info));
@@ -231,7 +233,42 @@ export async function createSpellZoneOnAuthority(payload){
  if(!writer()||!user?.active||!message||!canRead(message,user)||!actor?.testUserPermission(user,'OWNER')||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
  return withMaintainedZoneCasting(actor,cast,()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}));
 }
+
+function sparkInventoryItem(item,user){
+ return isInventoryTransferItem(item)&&Number(item.system?.quantity??1)>0&&
+  !item.flags?.[S]?.inventoryTransfer&&Boolean(user.isGM||item.canUserModify?.(user,'update'));
+}
+
+function findPlacedInventoryLight(messageId,scene){
+ const actors=new Set(values(game.actors));
+ for(const area of new Set([...values(game.scenes),scene])){
+  for(const token of values(area?.tokens))if(token.actor)actors.add(token.actor);
+ }
+ for(const actor of actors)for(const item of values(actor.items)){
+  if(values(item.effects).some(effect=>effect.flags?.[S]?.sparkInventoryLight===messageId))return true;
+ }
+ return false;
+}
+
+async function placeInventorySpark(item,profile,cast,message,ready){
+ const start=foundry.documents.ActiveEffect.implementation.getEffectStart();
+ const name=game.i18n.localize('TRUDVANG.Content.Power.'+cast.sourceId+'.Name');
+ const [effect]=await item.createEmbeddedDocuments('ActiveEffect',[{
+  name,type:'effect',img:'icons/svg/fire.svg',transfer:false,start,
+  duration:{value:profile.rounds,units:'rounds'},
+  system:{stackId:'spark-inventory:'+message.id,stacking:'replace',changes:[]},
+  flags:{[S]:{sparkInventoryLight:message.id,transformation:{
+   sourceId:cast.sourceId,resolved:true,appliedAt:Number(game.time?.worldTime)||0,
+   ruleTestContext:structuredClone(cast)
+  }}}
+ }]);
+ if(!effect)throw Error('Failed to attach Spark to inventory item');
+ await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,inventoryLightPlaced:true}});
+ return {status:'placed',effectUuid:effect.uuid};
+}
+
 async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile}){
+ if(ready.inventoryLightPlaced)return {status:'alreadyPlaced',reason:'AlreadyPlaced'};
  if(ready.regionUuid){
   const previous=await previousPlacement(ready),existing=previous.region,info=infoOf(existing);
   if(previous.reason)return {status:'alreadyPlaced',reason:previous.reason,regionUuid:ready.regionUuid};
@@ -244,6 +281,19 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
   await reconcileSpellZone(existing);return {status:'placed',regionUuid:existing.uuid};
  }
  const scene=game.scenes.get(payload.sceneId),token=scene?.tokens?.get(payload.tokenId);
+ if(scene&&profile.attachable&&findPlacedInventoryLight(message.id,scene)){
+  await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,inventoryLightPlaced:true}});
+  return {status:'alreadyPlaced',reason:'AlreadyPlaced'};
+ }
+ if(payload.inventoryItemId){
+  if(!profile.attachable||payload.lightTokenId||!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid)
+   return {status:'unavailable'};
+  const carrier=scene.tokens.get(payload.inventoryTokenId);
+  const item=carrier&&values(carrier.actor?.items).find(candidate=>candidate.id===payload.inventoryItemId);
+  if(!carrier||carrier.level!==token.level||carrier.hidden&&!user.isGM||!sparkInventoryItem(item,user))return {status:'unavailable'};
+  if(!pointInRange(placementLimit(scene,token,profile),center(carrier,scene)))return {status:'outOfRange'};
+  return placeInventorySpark(item,profile,cast,message,ready);
+ }
  const solar=profile.requiresDaylight?cast.lightSite:null;
  if(profile.requiresDaylight&&(!payload.daylight||!solar||solar.sceneId!==scene?.id||solar.tokenId!==token?.id))
   return {status:'unavailable'};
@@ -494,7 +544,7 @@ export async function openFireTamerExtinguish(message){
  return result;
 }
 
-export async function placeSpellZone(message,{attachLight=false}={}){
+export async function placeSpellZone(message,{attachLight=false,attachInventoryLight=false}={}){
  const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context),actor=context?.casterUuid?await foundry.utils.fromUuid(context.casterUuid):null;
  const board=globalThis.canvas,scene=board?.scene;
  if(!profile||!actor?.isOwner||!scene){ui.notifications.warn(local('Unavailable'));return null;}
@@ -514,8 +564,21 @@ export async function placeSpellZone(message,{attachLight=false}={}){
   const choice=await foundry.applications.api.DialogV2.wait({window:{title:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name')},classes:['trudvang','dialog'],content:'<div class="trudvang roll-dialog"><p>'+escapeHtml(local('Profile',{radius:profile.radius,rounds:profile.rounds}))+'</p><label class="checkbox"><input type="checkbox" name="underground">'+escapeHtml(local('Underground',{chance:profile.collapseChance}))+'</label></div>',buttons:[{action:'continue',label:game.i18n.localize('TRUDVANG.Action.Continue'),default:true,callback:(_e,b)=>({underground:b.form.querySelector('[name=underground]').checked})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false}],close:()=>false,rejectClose:false});
   if(!choice||typeof choice!=='object')return null;underground=choice.underground;
  }
- let point=center(token,scene),footprint,lightTokenId;
- if(attachLight){
+ let point=center(token,scene),footprint,lightTokenId,inventoryItemId,inventoryTokenId;
+ if(attachInventoryLight){
+  if(!profile.attachable)return null;
+  const limit=placementLimit(scene,token,profile);
+  const supports=values(scene.tokens).filter(support=>support.level===token.level&&
+   (support.id===token.id||game.user.isGM||!support.hidden&&support.object?.visible!==false)&&pointInRange(limit,center(support,scene)));
+  const choices=supports.flatMap(support=>values(support.actor?.items).filter(item=>sparkInventoryItem(item,game.user))
+   .map(item=>({item,support,name:local('InventoryLightItem',{item:item.name,carrier:support.name})})));
+  const picked=await chooseSceneDocument(local('AttachInventoryLight'),local('InventoryLightSupport'),
+   choices.map(({name},index)=>({id:String(index),name})));
+  const choice=picked==null?null:choices[picked];
+  if(!choice)return null;
+  inventoryItemId=choice.item.id;
+  inventoryTokenId=choice.support.id;
+ }else if(attachLight){
   if(!profile.attachable)return null;
   const limit=placementLimit(scene,token,profile);
   const supports=values(scene.tokens).filter(support=>support.id!==token.id&&support.level===token.level&&
@@ -570,7 +633,7 @@ export async function placeSpellZone(message,{attachLight=false}={}){
   if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,scale);
  }
  if(board.scene!==scene)return null;
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,inventoryItemId,inventoryTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);

@@ -32,6 +32,22 @@ test('a player gives an owned stack to a read-only recipient; source is removed 
  assert.equal((await r.transfer(source,b)).status,'ok');assert.equal(a.items.length,0);assert.equal(b.items.length,1);
  const given=b.items[0];assert.equal(given.system.quantity,3);assert.equal(given.system.equipped,false);assert.deepEqual(given.system.breach,{value:50,max:80});assert.equal(given.effects[0]._id,'buff');assert.deepEqual(given.effects[0].duration,original.effects[0].duration);assert.deepEqual(given.flags[S].integritySpent,original.flags[S].integritySpent);assert.equal(given.flags[S].inventoryTransfer,undefined);
 });
+test('a transferred Flammèche lights its new carrier without being equipped or restarting its clock',async t=>{
+ const r=runtime(t),a=r.actor('a','a'),b=r.actor('b','b');
+ const {carriedMagicLightRadii}=await import('../modules/aura.mjs');
+ const sourceId='vitner-flame-craft:spark:1';
+ const source=r.item(a,{effects:[{type:'effect',start:{time:0},duration:{value:12,units:'rounds'},
+  flags:{[S]:{sparkInventoryLight:'cast',transformation:{sourceId,resolved:true,appliedAt:0,
+   ruleTestContext:{sourceId,countsById:{[sourceId+':3']:1,[sourceId+':4']:1}}}}},system:{changes:[]}}]});
+ const light=(actor,time)=>carriedMagicLightRadii({actor,parent:{grid:{units:'m'}}},{time});
+ assert.deepEqual(light(a,30),{bright:3,dim:6});
+ assert.equal((await r.transfer(source,b)).status,'ok');
+ assert.equal(b.items[0].system.equipped,false);
+ assert.deepEqual(light(a,30),{bright:0,dim:0});
+ assert.deepEqual(light(b,59),{bright:3,dim:6});
+ assert.deepEqual(light(b,60),{bright:0,dim:0});
+});
+
 test('players cannot take someone else’s objects, while the GM may transfer between any actors',async t=>{
  const r=runtime(t),a=r.actor('a','a'),b=r.actor('b','b'),c=r.actor('c','b'),source=r.item(b);
  assert.equal((await r.transfer(source,a,'a')).status,'denied');assert.equal(b.items.length,1);assert.equal(a.items.length,0);

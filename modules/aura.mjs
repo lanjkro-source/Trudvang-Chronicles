@@ -5,6 +5,7 @@ import {magicDamageProfile} from './magic-damage.mjs';
 import {itemEffectRemainingSeconds,normalizeEffectDuration} from './rules/effect-duration.mjs';
 import {weatherWard} from './rules/weather-wards.mjs';
 import {syncSpellZoneFireLight} from "./fire-zones.mjs";
+import {fixedLightProfile} from "./rules/spell-zones.mjs";
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
 const jobs=new Map();
@@ -203,6 +204,15 @@ export function carriedMagicLightRadii(token, {time, combat} = {}) {
   if(night && item.type === "creatureAbility" && item.system?.catalogId === "LTLHNqSnToUpVqWr") dim = Math.max(dim, 3);
   const effects = Array.from(item.effects ?? []);
   if(effects.some(effect => sourceMeta(effect)?.sourceId === healingRune && emitting(effect))) dim = Math.max(dim, 1);
+  if(!item.flags?.[S]?.inventoryTransfer&&Number(item.system?.quantity??1)>0){
+   for(const effect of effects){
+    if(!effect.flags?.[S]?.sparkInventoryLight||!emitting(effect))continue;
+    const profile=fixedLightProfile(sourceMeta(effect)?.ruleTestContext);
+    if(!profile?.attachable)continue;
+    bright=Math.max(bright,profile.illumination.bright);
+    dim=Math.max(dim,profile.illumination.dim);
+   }
+  }
   if(!item.system?.equipped || Number(item.system.quantity ?? 1) <= 0) continue;
   if(effects.some(effect => knightLights.has(sourceMeta(effect)?.sourceId) && emitting(effect))) {
    dim = Math.max(dim, 1);

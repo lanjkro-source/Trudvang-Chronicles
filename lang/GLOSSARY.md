@@ -16872,6 +16872,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
 | `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |
 | `TRUDVANG.SpellZone.AttachLight` | Attach to an object | Attacher à un objet |
+| `TRUDVANG.SpellZone.AttachInventoryLight` | Attach to an inventory item | Attacher à un objet d’inventaire |
+| `TRUDVANG.SpellZone.InventoryLightSupport` | Inventory item within reach | Objet d’inventaire à portée |
+| `TRUDVANG.SpellZone.InventoryLightItem` | {item} ({carrier}) | {item} ({carrier}) |
 | `TRUDVANG.SpellZone.LightSupport` | Token representing the object | Token représentant l’objet |
 | `TRUDVANG.SpellZone.ExtinguishFire` | Extinguish a fire | Éteindre un foyer |
 | `TRUDVANG.SpellZone.FireSource` | Fire light | Lumière du foyer |
