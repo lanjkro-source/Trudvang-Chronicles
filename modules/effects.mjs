@@ -288,6 +288,10 @@ export function finishExpiredEffect(effect, options = {}) {
         && (effect.transfer || effect.flags?.["trudvang-chronicles"]?.transformation?.resolved));
     if (!game.users?.activeGM?.isSelf || !["base", "effect"].includes(effect.type)
       || !applied || parent?.type === "effect" || effect.inCompendium) return;
+    if(effect.flags?.["trudvang-chronicles"]?.huvfurwurmHibernation){
+      const {finishHuvfurwurmHibernation}=await import("./huvfurwurm-head.mjs");
+      return finishHuvfurwurmHibernation(effect);
+    }
     if (effect.flags?.["trudvang-chronicles"]?.consequenceClock) {
       return processWorldConsequences();
     }
@@ -321,6 +325,11 @@ export function finishExpiredEffect(effect, options = {}) {
 }
 
 export function registerEffectHooks() {
+  Hooks.on("updateActor", (actor,changes) => {
+    if(!game.users?.activeGM?.isSelf || (changes.system?.survivalRounds??changes["system.survivalRounds"])!==0) return;
+    void import("./huvfurwurm-head.mjs").then(({resolveHuvfurwurmDeath})=>resolveHuvfurwurmDeath(actor))
+      .catch(error=>console.error("Trudvang | Huvfurwurm death resolution failed",error));
+  });
   Hooks.on("deleteActiveEffect", announceEffectExpiration);
   registerPersistentDamageHooks({effects:appliedWorldEffects,expireEffects:expireAppliedEffects});
   registerConsequenceHooks(appliedWorldEffects);

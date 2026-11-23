@@ -9603,7 +9603,8 @@
             "3": "Increase the duration by 1 hour",
             "4": "Increase the range by 5 meters",
             "5": "Increase the wall’s diameter by 1 meter",
-            "6": "Increase the spell's range by 5 meters"
+            "6": "Increase the wall’s diameter by 5 meters",
+            "7": "Change the spell’s type from preserving to lasting"
           }
         },
         "vitner-vitner-of-objects:alarm-object:4": {
@@ -18947,6 +18948,25 @@
       "UnwillingTarget": "Unwilling target",
       "AwareUnwillingTarget": "Target aware of the spell and unwilling"
     },
+    "SpellBarrier": {
+      "AirProfile": "{protection} PV · Size {size} · {rounds} rounds",
+      "WallProfile": "{radius} m radius · {rounds} rounds · Test bonus +{bonus}",
+      "CrossAir": "Break through the air shield",
+      "TestWall": "{wall} · Level {level} spell",
+      "Blocked": "The wall stops the spell.",
+      "Passed": "The spell passes through the wall."
+    },
+    "HuvfurwurmHead": {
+      "FatalBlow": "Confirm a fatal blow",
+      "FatalBlowConfirm": "Confirm that the blow would kill {actor}. The power will trigger its survival roll.",
+      "Failed": "{actor}’s head fails to grow back.",
+      "Survived": "{actor} is beheaded and enters a month of hibernation.",
+      "Awoke": "{actor}’s head has regrown. The hibernation ends.",
+      "Hibernation": "Huvfurwurm hibernation",
+      "HibernationDescription": "The character appears dead and wakes after a month, once their head has regrown.",
+      "Cracked": "Cracked relic · Power of the Dragon",
+      "CrackedDescription": "The Power of the Dragon relic has cracked. The GM can remove this effect after a new relic has been made."
+    },
     "FollowupTest": {
       "PrisonPull": "Pull the prisoner out",
       "PrisonPullConfirm": "Confirm that four adults of normal strength can pull {actor} through the wall. This deals 1d10 damage.",
@@ -19106,6 +19126,7 @@
       "Unavailable": "Target unavailable"
     },
     "SpellZone": {
+      "BarrierBlocked": "The Wall of Vitner keeps the spell from reaching this point.",
       "Place": "Place / move the area",
       "ConfirmOutdoorDaylight": "Was the casting site outdoors in daylight?",
       "BurningStatus": "On fire",

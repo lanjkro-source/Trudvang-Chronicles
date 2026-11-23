@@ -13,6 +13,7 @@ import {TRUDVANG} from "../config.mjs";
 import {magicDamageProfile,rollMagicDamage} from "../magic-damage.mjs";
 import {releaseSealedSpell,sealSheetView,weaveSealedSpell} from "../magic-seal.mjs";
 import {canPullPrisoner,pullPrisoner} from "../followup-tests.mjs";
+import {canConfirmHuvfurwurmBlow,confirmHuvfurwurmBlow} from "../huvfurwurm-head.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -51,7 +52,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       "roll-conditional-situation": TrudvangEffectSheet.onRollConditionalSituation,
       "weave-sealed-spell": TrudvangEffectSheet.onWeaveSealedSpell,
       "release-sealed-spell": TrudvangEffectSheet.onReleaseSealedSpell,
-      "pull-prisoner": TrudvangEffectSheet.onPullPrisoner
+      "pull-prisoner": TrudvangEffectSheet.onPullPrisoner,
+      "confirm-fatal-blow": TrudvangEffectSheet.onConfirmFatalBlow
     }
   };
 
@@ -119,6 +121,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       partContext.origin = this.document.origin || "";
       partContext.seal = sealSheetView(this.document);
       partContext.canPullPrisoner = canPullPrisoner(this.document);
+      partContext.canConfirmFatalBlow = canConfirmHuvfurwurmBlow(this.document);
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
         const id = status.id ?? key;
@@ -344,6 +347,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
   static async onPullPrisoner() {
     if (await pullPrisoner(this.document)==="resolved") await this.close();
+  }
+
+  static async onConfirmFatalBlow() {
+    if (await confirmHuvfurwurmBlow(this.document)) await this.close();
   }
 
   static async onRollRuleTest(event, target) {

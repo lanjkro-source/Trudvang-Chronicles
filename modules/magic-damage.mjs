@@ -47,7 +47,7 @@ export function magicDamageExplanations(document,damage){
 }
 
 /** Use the same confirmation and target application card as weapon damage. */
-export async function rollMagicDamage({document,actor,context,targets,baseOnly=false,sealMessage=null}={}) {
+export async function rollMagicDamage({document,actor,context,targets,baseOnly=false,sourceMessage=null,sealMessage=null}={}) {
   if(!actor||(!actor.isOwner&&!canResolveReleasedSeal(sealMessage)))return null;
   if(POWER_DETAILS_BY_ID[ruleTestSourceId(document)]?.damageRoll?.requiresAttack)return ui.notifications.warn(game.i18n.localize("TRUDVANG.MagicDamage.AttackRequired"));
   if(baseOnly&&!magicDamageHasBaseTargets(document,context))return null;
@@ -56,5 +56,5 @@ export async function rollMagicDamage({document,actor,context,targets,baseOnly=f
   const {rollDamage}=await import("./dice.mjs");
   const definition=POWER_DETAILS_BY_ID[ruleTestSourceId(document)].damageRoll;
   const damageExplanations=magicDamageExplanations(document,damage);
-  return rollDamage({actor,item,context:{usage:"magic",targets,minimumAfterArmor:damage.minimumAfterArmor,impact:damage.impact,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
+  return rollDamage({actor,item,context:{usage:"magic",targets,sourceMessageId:sourceMessage?.id,minimumAfterArmor:damage.minimumAfterArmor,impact:damage.impact,targetTags:definition.targetTags,damageExplanations,qualification:document.system?.damageQualification ?? damage.qualification,qualificationNote:document.system?.damageQualificationNote}});
 }

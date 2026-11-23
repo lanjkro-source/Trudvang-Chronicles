@@ -16707,6 +16707,31 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.InitialResistance.UnwillingTarget` | Unwilling target | Cible non consentante |
 | `TRUDVANG.InitialResistance.AwareUnwillingTarget` | Target aware of the spell and unwilling | Cible consciente du sort et non consentante |
 
+## `TRUDVANG.SpellBarrier`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.SpellBarrier.AirProfile` | {protection} PV · Size {size} · {rounds} rounds | {protection} VP · Taille {size} · {rounds} tours |
+| `TRUDVANG.SpellBarrier.WallProfile` | {radius} m radius · {rounds} rounds · Test bonus +{bonus} | Rayon {radius} m · {rounds} tours · Bonus au test +{bonus} |
+| `TRUDVANG.SpellBarrier.CrossAir` | Break through the air shield | Franchir le bouclier d’air |
+| `TRUDVANG.SpellBarrier.TestWall` | {wall} · Level {level} spell | {wall} · Sortilège de niveau {level} |
+| `TRUDVANG.SpellBarrier.Blocked` | The wall stops the spell. | Le mur arrête le sortilège. |
+| `TRUDVANG.SpellBarrier.Passed` | The spell passes through the wall. | Le sortilège franchit le mur. |
+
+## `TRUDVANG.HuvfurwurmHead`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.HuvfurwurmHead.FatalBlow` | Confirm a fatal blow | Confirmer un coup fatal |
+| `TRUDVANG.HuvfurwurmHead.FatalBlowConfirm` | Confirm that the blow would kill {actor}. The power will trigger its survival roll. | Confirmez que le coup devrait tuer {actor}. Le pouvoir déclenchera son jet de survie. |
+| `TRUDVANG.HuvfurwurmHead.Failed` | {actor}’s head fails to grow back. | La tête de {actor} ne repousse pas. |
+| `TRUDVANG.HuvfurwurmHead.Survived` | {actor} is beheaded and enters a month of hibernation. | La tête de {actor} est tranchée. Une hibernation d’un mois commence. |
+| `TRUDVANG.HuvfurwurmHead.Awoke` | {actor}’s head has regrown. The hibernation ends. | La tête de {actor} a repoussé. L’hibernation prend fin. |
+| `TRUDVANG.HuvfurwurmHead.Hibernation` | Huvfurwurm hibernation | Hibernation du huvfurwurm |
+| `TRUDVANG.HuvfurwurmHead.HibernationDescription` | The character appears dead and wakes after a month, once their head has regrown. | Le personnage semble mort. Il se réveille après un mois, lorsque sa tête a repoussé. |
+| `TRUDVANG.HuvfurwurmHead.Cracked` | Cracked relic · Power of the Dragon | Relique fendue · Puissance du dragon |
+| `TRUDVANG.HuvfurwurmHead.CrackedDescription` | The Power of the Dragon relic has cracked. The GM can remove this effect after a new relic has been made. | La relique de Puissance du dragon est fendue. Le MJ peut retirer cet effet après la création d’une nouvelle relique. |
+
 ## `TRUDVANG.FollowupTest`
 
 | Clé | English | Français |
@@ -16899,6 +16924,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.SpellZone.BarrierBlocked` | The Wall of Vitner keeps the spell from reaching this point. | Le Mur de vitner empêche le sortilège d’atteindre ce point. |
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |
 | `TRUDVANG.SpellZone.BurningStatus` | On fire | En feu |

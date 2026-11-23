@@ -257,6 +257,10 @@ export async function performRuleTest({document, index, actor = testActorForUser
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
     return null;
   }
+  if(resultMessage&&context?.kind==="spell"&&document?.documentName!=="ActiveEffect"){
+    const {checkVitnerWall}=await import("./spell-zones.mjs");
+    if(await checkVitnerWall(resultMessage,actor))return null;
+  }
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});

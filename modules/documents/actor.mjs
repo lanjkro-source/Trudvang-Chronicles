@@ -1516,6 +1516,11 @@ export class TrudvangActor extends BaseActor {
     if (seal && !canBindSpell(seal,this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
     const currentAvailability=spellAvailability(this,item,{sealed:Boolean(seal)});
     if(!currentAvailability.ok)return ui.notifications.warn(game.i18n.format(currentAvailability.reason,currentAvailability.data));
+    const counts=options.costBreakdown.entries.map(entry=>Number(entry.count)||0);
+    const {VITNER_WALL,spellBarrierProfile}=await import("../rules/spell-barriers.mjs");
+    const wall=item.system.catalogId===VITNER_WALL;
+    const lastingWall=counts=>wall&&spellBarrierProfile({sourceId:VITNER_WALL,counts})?.persistent;
+    if(lastingWall(counts)&&activeSpellInstances(this).length>=activeSpellLimit)return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     if (!seal && transformationKeys(item).some(key=>TRANSFORMATION_TEMPLATES[key]?.aura?.fixed)
       && !auraCasterToken(this,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables)) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoFixedSite"));
@@ -1573,18 +1578,20 @@ export class TrudvangActor extends BaseActor {
     const fatalKind = isDivine ? "faith" : "vitner";
     // Allocate before publishing the card so its effects and maintained record
     // share the identity of this particular casting, even for the same spell.
-    const castingId = seal || trackedPersistent || POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting ? foundry.utils.randomID() : "";
+    const castingId = seal || wall || trackedPersistent || POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting ? foundry.utils.randomID() : "";
     const levelSnapshot = options.costBreakdown.entries.map((entry, index) => ({
       id: entry.id || "", index, description: entry.effect || "", count: Number(entry.count) || 0, unitCost: Number(entry.unitCost) || 0
     }));
     const result = await rollUnder({blessing:options.blessing, actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
-      flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      flavor, item, powerLevelCounts: counts, castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
       seal: seal ? {effect: seal, token: sealToken, cost: options.cost, levels: levelSnapshot} : null,
       resolvePerfectSuccess:isDivine?null:async()=>{
         const bonusRoll=await new Roll("1d10+1").evaluate();
         await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]});
-        const selection=await perfectSuccessDialog({title:item.name,powerLevels,entries:options.costBreakdown.entries,bonus:Number(bonusRoll.total)});
+        const availableLevels=wall&&activeSpellInstances(this).length>=activeSpellLimit
+          ?powerLevels.map((level,index)=>index===7?{...level,maxCount:0}:level):powerLevels;
+        const selection=await perfectSuccessDialog({title:item.name,powerLevels:availableLevels,entries:options.costBreakdown.entries,bonus:Number(bonusRoll.total)});
         const details=selection.counts.map((count,index)=>({count:count-(Number(options.costBreakdown.entries[index]?.count)||0),level:powerLevels[index]})).filter(row=>row.count>0);
         return {...selection,flavor:details.map(row=>escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectLevel",{count:row.count,effect:row.level.effect}))).join("<br>")};
       },
@@ -1603,7 +1610,7 @@ export class TrudvangActor extends BaseActor {
         });
       } else if (!this.unlimitedVitner) await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
-    if (trackedPersistent && result?.success && this.isOwner) {
+    if ((trackedPersistent||lastingWall(result.perfectSelection?.counts??counts)) && result?.success && this.isOwner) {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
         id: castingId, itemId: item.id, cost: options.cost,
         effectUuids:result.automaticEffectUuids??[],effectsApplied:Boolean(result.automaticEffectUuids?.length),

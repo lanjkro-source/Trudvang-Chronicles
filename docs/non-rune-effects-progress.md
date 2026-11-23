@@ -457,8 +457,6 @@ La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et
 
 ### Chantiers encore ouverts
 
-- **Bouclier d’air et Mur de vitner** — placer une barrière, détecter sa traversée ou le passage d’un projectile et proposer la protection ou le test prévu.
-- **Tête du huvfurwurm** — traiter le coup fatal, le seuil amélioré, la consommation unique et le réveil après hibernation. Le don existe sous forme de rappel.
 - **Invocations et reliques des noajs de Haminges** — vérifier les profils invoqués et traiter les propriétés mécaniques des reliques qui restent manuelles. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
 - **Révision du catalogue** — distinguer les effets purement descriptifs des effets pour lesquels un jet, un suivi d’état ou un calcul manque encore. La compatibilité avec les tables de Stormlands reste une vérification distincte.
 
@@ -473,3 +471,11 @@ Toute personne pouvant ouvrir l’objet peut utiliser **Libérer le sortilège**
 Le test de situation de l’effet utilise le Psychisme prévu par l’édition française (Livre des règles p. 196). Une charge réussie applique la décharge de la paroi, dont les dégâts et le JO reprennent les améliorations du lancement, puis retire Emprisonnement. Un échec inflige 1d10 et laisse le prisonnier enfermé. Le temps du monde détermine la journée et chaque prison permet deux tentatives par jour. Annuler le jet laisse le compteur intact.
 
 L’action **Extraire le prisonnier** est réservée au MJ. Elle confirme l’aide de quatre adultes de force normale, inflige 1d10 et retire Emprisonnement. La validation de cette aide et les déplacements sur la scène relèvent du MJ. Le bouton de dégâts existant sert toujours au simple contact avec la paroi. Le Player’s Handbook (Imprison, p. 100) utilise la Force pour la charge.
+
+### Bouclier d’air, Mur de vitner et Tête du huvfurwurm
+
+Le Bouclier d’air (Livre des règles p. 171) est une région fixe orientable. Sa protection dépend de l’épaisseur achetée et réduit les dégâts à distance qui traversent son segment sur le même niveau de scène. La traversée d’un token entièrement couvert ouvre un test de Force selon sa taille, avec la VP du bouclier en malus. Le mouvement reprend sur réussite. À défaut d’une longueur définie en mètres par le livre, la région représente la taille par une longueur proportionnelle au gabarit humain.
+
+Le Mur de vitner (p. 154) est un anneau fixe. Le test du tisseur utilise la table des niveaux de sortilège adverse et le bonus acheté. Le système conserve le résultat par mur et par lancement adverse pour les cibles qui se trouvent derrière la paroi. Les sorts directs, le placement et les cibles des zones sont soumis à ce test. Les sources FR et EN incluent le diamètre de +5 m et la conversion en sortilège persistant, qui l’ajoute alors au suivi des sortilèges actifs.
+
+La Tête du huvfurwurm (p. 279) déclenche son d10 à la mort effective ou quand le MJ confirme un coup fatal. Le seuil est de 9, ajustable jusqu’à 6. La réussite consomme le pouvoir, inflige un mois d’hibernation et marque la relique de Puissance du dragon comme fendue. Le MJ retire la marque après création d’une nouvelle relique. Le personnage se réveille avec au moins 1 PS. Ce point permet de sortir de l’état Mourant dans Foundry et le livre ne fixe pas les PS de réveil.

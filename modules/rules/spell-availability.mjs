@@ -6,6 +6,7 @@ import {resolveVitnerSacrifice} from "./magic-power-resolver.mjs";
 import {knowledgeRank} from "./magic-resistance.mjs";
 import {divineFailureRestriction, divinePowerId} from "./divine-failure.mjs";
 import {fatalAmnesia, fatalSpellBlindness} from "./fatal-magic.mjs";
+import {DRAGON_TABLET,dragonRelicCracked} from "./huvfurwurm-head.mjs";
 
 export function spellActorForItem(item,{user=game.user,controlled=globalThis.canvas?.tokens?.controlled??[]}={}){
  const owner=item?.actor??(item?.parent?.documentName==="Actor"?item.parent:null);
@@ -33,6 +34,7 @@ export function spellAvailability(actor,item,{sealed=false}={}){
  if(grant&&!Array.from(actor.allApplicableEffects?.()??actor.effects??[]).some(e=>e.id===grant&&!e.disabled&&!e.isSuppressed&&!e.duration?.expired))return deny("TRUDVANG.Transformation.Restricted");
  const divine=item.type==="divineFeat",items=Array.from(actor.items??[]),discipline=divine?"invoke":"vitnerShaping";
  const tabletId=item.system.tabletId||(item.system.catalogId?.includes(":")?item.system.catalogId.split(":")[0]:"");
+ if(divine&&tabletId===DRAGON_TABLET&&dragonRelicCracked(actor))return deny("TRUDVANG.HuvfurwurmHead.CrackedDescription");
  const definition=TABLET_BY_ID.get(tabletId),tablet=items.find(i=>i.type==="tablet"&&(i.system.catalogId===tabletId||i.name===item.system.tablet));
  const religion=item.system.religion||definition?.religion||tablet?.system.religion;
  const specialties=divine?(TRUDVANG.religions[religion]&&!grant?[TRUDVANG.religions[religion].specialty]:Object.values(TRUDVANG.religions).map(r=>r.specialty)):["galding","sejding","vyrding"];

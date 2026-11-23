@@ -226,6 +226,11 @@ async function applyOnGM(payload,{grouped=false}={}) {
   let fearAdjustment=null;
   if(payload.channel==="fear"){
    const context=message.getFlag(SYSTEM_ID,'fearContext');
+   const source=context?.originMessageId&&game.messages.get(context.originMessageId);
+   if(source?.flags?.[SYSTEM_ID]?.ruleTestContext?.kind==="spell"){
+    const {checkVitnerWall}=await import("./spell-zones.mjs");
+    if(await checkVitnerWall(source,actor,payload.tokenUuid))return {status:"ineligibleTarget"};
+   }
    if(context?.grouped&&!grouped)return {status:'unavailable'};
    if(!canReceiveFear(message,actor))return {status:'ineligibleTarget'};
    const result=message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(row=>row.actorUuid===actor.uuid);
@@ -272,6 +277,28 @@ async function applyOnGM(payload,{grouped=false}={}) {
   let appliedRow = pending.find(row => row.actorUuid === actor.uuid && row.channel === payload.channel
     && (payload.channel !== "defense" || row.itemUuid === item?.uuid));
   if (!appliedRow) {
+    const context=message.getFlag(SYSTEM_ID,"damageContext");
+    const targetUuid=payload.tokenUuid||message.getFlag(SYSTEM_ID,"damageTargets")?.find(row=>row.actorUuid===actor.uuid)?.tokenUuid;
+    const source=context?.sourceMessageId&&game.messages.get(context.sourceMessageId);
+    if(source&&payload.channel!=="fear"){
+      const {checkVitnerWall}=await import("./spell-zones.mjs");
+      if(await checkVitnerWall(source,actor,targetUuid))return {status:"ineligibleTarget"};
+    }
+    let cover=[];
+    const beforeCover=amount;
+    if(payload.channel!=="fear"&&context?.rangedTokenUuid&&targetUuid){
+      const snapshot=context.rangedCover?.find(row=>row.tokenUuid===targetUuid);
+      const to=await foundry.utils.fromUuid(targetUuid);
+      if(to?.actor?.uuid===actor.uuid){
+        if(snapshot)cover=snapshot.barriers;
+        else{
+          const from=await foundry.utils.fromUuid(context.rangedTokenUuid);
+          const {airShieldCover}=await import("./spell-barriers.mjs");
+          cover=airShieldCover(from,to);
+        }
+        amount=Math.max(0,amount-cover.reduce((total,row)=>total+row.value,0));
+      }
+    }
     const reservation=payload.channel==='fear'?await reserveFearRecipient(message,actor):null;
     if(reservation?.status)return reservation;
     let result;
@@ -283,7 +310,8 @@ async function applyOnGM(payload,{grouped=false}={}) {
     if (!result) return {status: "unavailable"};
     appliedRow = {actorUuid: actor.uuid, tokenUuid: "", name: actor.name, channel: payload.channel,
       itemUuid: item?.uuid ?? "", itemName: item?.name ?? "",
-      calculation: payload.channel === "body" ? [game.i18n.format("TRUDVANG.Damage.Application",{before:amount,after:result.bodyDamage,temporary:result.temporaryDamage??0}),
+      calculation: payload.channel === "body" ? [game.i18n.format("TRUDVANG.Damage.Application",{before:beforeCover,after:result.bodyDamage,temporary:result.temporaryDamage??0}),
+        ...cover.map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.name,protection:row.value})),
         ...(result.armorDamage??[]).map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.item.name??"",protection:row.protection})),
         ...(result.resistances??[]).map(row=>`${row.source} ×${row.factor}`)].join(" · ") : "",
       ...(payload.channel==='fear'&&fearAdjustment?{calculation:game.i18n.format('TRUDVANG.MagicFear.ProtectedFactor',{factor:fearAdjustment.profile.dice?`${fearAdjustment.profile.dice}d${fearAdjustment.profile.faces}${fearAdjustment.profile.threshold?' '+game.i18n.localize('TRUDVANG.Field.OpenRollShort')+' '+fearAdjustment.profile.threshold:''}${fearAdjustment.profile.modifier?' + '+fearAdjustment.profile.modifier:''}`:'0',amount:fearAdjustment.amount})}:{}),

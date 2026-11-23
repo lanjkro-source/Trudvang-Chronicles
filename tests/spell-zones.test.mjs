@@ -6,6 +6,9 @@ import {targetDefenseRows} from '../modules/rules/attack-size.mjs';
 import {quagmireMovement,quagmireTravelBudget} from '../modules/rules/quagmire.mjs';
 import {addSpellWallBlock,spellWallBlockPoint,spellWallColumns} from '../modules/rules/spell-walls.mjs';
 import {endMaintainedSpellOnGM,recoverMaintainedSpellZones} from '../modules/maintained-spell-tracking.mjs';
+import {AIR_SHIELD,VITNER_WALL,airShieldTest,spellBarrierProfile,vitnerWallTest} from '../modules/rules/spell-barriers.mjs';
+import {airShieldCover,interceptAirShieldMovement,vitnerWallBlocks} from '../modules/spell-barriers.mjs';
+import {activeSpellInstances} from '../modules/rules/active-spell-resolver.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('<','&lt;').replaceAll('>','&gt;')}})};
@@ -33,6 +36,130 @@ function setup(id=vitner,counts={},runeLevel=1){
 const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
 const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
+
+test('Air Shield has directional cover, applies its official Size table and expires with its region',async()=>{
+ const counts={[AIR_SHIELD+':3']:2,[AIR_SHIELD+':5']:2};
+ const request=setup(AIR_SHIELD,counts);
+ const profile=spellBarrierProfile(message.flags[S].ruleTestContext);
+ assert.equal(profile.size,1.5);
+ assert.deepEqual([.2,.4,1,1.5,3,5,10].map(size=>airShieldTest(profile,size)),[1,3,7,11,15,19,23]);
+ const placed=await createSpellZoneOnAuthority({...request,point:{x:100,y:50},shape:{rotation:90}});
+ assert.equal(placed.status,'placed');
+ const [region]=regions.values();
+ assert.equal(region.shapes[0].width,150);
+ assert.equal(region.shapes[0].rotation,90);
+ assert.equal(airShieldCover(scene.tokens.get('caster'),scene.tokens.get('target'))[0].value,3);
+ scene.tokens.get('target').level='other';
+ assert.deepEqual(airShieldCover(scene.tokens.get('caster'),scene.tokens.get('target')),[]);
+ game.combat.round+=5;
+ await reconcileSpellZone(region);
+ assert.equal(regions.size,0);
+});
+
+test('Air Shield waits for a Strength roll and replays the same path only after success',async()=>{
+ const request=setup(AIR_SHIELD,{[AIR_SHIELD+':5']:1});
+ assert.equal((await createSpellZoneOnAuthority({...request,point:{x:100,y:50},shape:{rotation:90}})).status,'placed');
+ const token=scene.tokens.get('caster');
+ token.actor.getRollModifier=()=>0;
+ token.actor.getTraitValue=()=>2;
+ token.actor.canPerformAction=()=>true;
+ const oldRoll=globalThis.Roll,api=foundry.applications.api;
+ let confirmDialog, die=19, attempts=0, moved=0;
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=die;}};
+ foundry.applications.api={DialogV2:class{static wait(options){return new Promise(resolve=>{
+  attempts++;
+  confirmDialog=()=>resolve(options.buttons[0].callback(null,{form:{querySelector:()=>({value:'0'})}}));
+ });}}};
+ const movement={origin:{x:0,y:0},destination:{x:100,y:0},pending:{waypoints:[{x:100,y:0}]}};
+ token.move=async path=>{
+  assert.equal(path[0].x,100);
+  assert.equal(interceptAirShieldMovement(token,movement),undefined);
+  moved++;
+ };
+ try{
+  assert.equal(interceptAirShieldMovement(token,movement),false);
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(attempts,1);
+  confirmDialog();
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(moved,0);
+  die=1;
+  assert.equal(interceptAirShieldMovement(token,movement),false);
+  await new Promise(resolve=>setImmediate(resolve));
+  confirmDialog();
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(moved,1);
+ }finally{globalThis.Roll=oldRoll;foundry.applications.api=api;}
+});
+
+test('Wall of Vitner blocks across the ring once per spell, with a lasting upgrade and bounded damage paths',async()=>{
+ const options={[VITNER_WALL+':0']:2,[VITNER_WALL+':6']:1};
+ const request=setup(VITNER_WALL,options),profile=spellBarrierProfile(message.flags[S].ruleTestContext);
+ assert.equal(profile.radius,3.5);
+ assert.deepEqual([1,2,3,4,5].map(level=>vitnerWallTest(profile,level)),[14,12,10,8,6]);
+ assert.equal((await createSpellZoneOnAuthority(request)).status,'placed');
+ const oldRoll=globalThis.Roll;
+ let rolls=0;
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){rolls++;this.total=7;}};
+ try{
+  const source={id:'incoming',flags:{[S]:{ruleTestContext:{kind:'spell',sourceLevel:3}}}};
+  const incoming={scene,origin:{x:500,y:50},target:{x:75,y:50},message:source};
+  assert.equal(await vitnerWallBlocks(incoming),true);
+  assert.equal(await vitnerWallBlocks(incoming),true);
+  assert.equal(rolls,1);
+  assert.equal(await vitnerWallBlocks({...incoming,target:{x:450,y:200}}),false);
+  source.flags[S].ruleTestContext.kind='divine';
+  assert.equal(await vitnerWallBlocks(incoming),false);
+  assert.equal(rolls,1);
+  caster.items.push({type:'spell',id:'wall',system:{spellType:'sustained',catalogId:VITNER_WALL}});
+  caster.system.activeSpellCastingsMigrated=true;
+  caster.system.activeSpellCastings=[{id:'base',itemId:'wall',powerLevelCounts:[]},
+   {id:'upgrade',itemId:'wall',powerLevelCounts:[0,0,0,0,0,0,0,1]}];
+  assert.deepEqual(activeSpellInstances(caster).map(row=>row.id),['upgrade']);
+ }finally{globalThis.Roll=oldRoll;}
+});
+
+test('Huvfurwurm Head consumes one improved guard, blocks its tablet and wakes after the hibernation clock',async()=>{
+ const {HUVFURWURM_HEAD,dragonRelicCracked,huvfurwurmGuard}=await import('../modules/rules/huvfurwurm-head.mjs');
+ setup(HUVFURWURM_HEAD);
+ const {resolveHuvfurwurmDeath}=await import('../modules/huvfurwurm-head.mjs');
+ foundry.data.ActiveEffectTypeDataModel=class {};
+ foundry.documents.ActiveEffect=Object.assign(class {},foundry.documents.ActiveEffect);
+ game.actors=new Set([caster,target]);
+ game.scenes=new Set();
+ const {expireAppliedEffects}=await import('../modules/effects.mjs');
+ const {spellAvailability}=await import('../modules/rules/spell-availability.mjs');
+ const oldRoll=globalThis.Roll,processed=[];
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){processed.push(this.formula);this.total=6;return this;}toJSON(){return {formula:this.formula,total:this.total};}};
+ caster.system.resources.body.value=-4;
+ caster.system.survivalRounds=0;
+ const update=caster.update;
+ caster.update=async changes=>{await update(changes);if('system.survivalRounds' in changes)caster.system.survivalRounds=changes['system.survivalRounds'];};
+ caster.createEmbeddedDocuments=async (type,effects)=>{
+  assert.equal(type,'ActiveEffect');
+  return Promise.all(effects.map(data=>caster.createTrudvangEffect(data)));
+ };
+ const guard=await caster.createTrudvangEffect({flags:{[S]:{transformation:{sourceId:HUVFURWURM_HEAD,
+  ruleTestContext:{countsById:{[HUVFURWURM_HEAD+':2']:3}}}}}});
+ guard.update=async changes=>Object.assign(guard.flags[S],{huvfurwurmRoll:changes['flags.'+S+'.huvfurwurmRoll']});
+ try{
+  assert.deepEqual(await Promise.all([resolveHuvfurwurmDeath(caster),resolveHuvfurwurmDeath(caster)]),[true,true]);
+  assert.deepEqual(processed,['1d10']);
+  assert.equal(dragonRelicCracked(caster),true);
+  assert.equal(huvfurwurmGuard(caster),null);
+  assert.equal(caster.effects.filter(e=>e.flags[S].huvfurwurmHibernation).length,1);
+  assert.equal(spellAvailability(caster,{type:'divineFeat',system:{catalogId:HUVFURWURM_HEAD}}).reason,'TRUDVANG.HuvfurwurmHead.CrackedDescription');
+  game.time.worldTime=29*86400;
+  await expireAppliedEffects({time:game.time.worldTime});
+  assert.equal(caster.system.resources.body.value,-4);
+  game.time.worldTime=30*86400;
+  await expireAppliedEffects({time:game.time.worldTime});
+  assert.equal(caster.system.resources.body.value,1);
+  assert.equal(caster.system.survivalRounds,-1);
+  assert.equal(caster.effects.length,1);
+  assert.equal(dragonRelicCracked(caster),true);
+ }finally{globalThis.Roll=oldRoll;}
+});
 
 test('Heat Water only reports the combined volume, duration and range',async()=>{
  const id='vitner-flame-craft:heat-water:0',old=globalThis.Roll;

@@ -13708,6 +13708,11 @@ export const POWER_DETAILS_BY_ID = {
         "id": "vitner-vitner-craft:wall-of-vitner:8:6",
         "cost": 10,
         "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:7",
+        "cost": 5,
+        "maxCount": 1
       }
     ],
     "spellType": "sustained",

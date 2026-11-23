@@ -1,3 +1,5 @@
+import {VITNER_WALL,spellBarrierProfile} from "./spell-barriers.mjs";
+
 /** Resolve one independently terminable casting per entry on the actor. */
 export function activeSpellInstances(actor) {
   const items = Array.from(actor?.items ?? []);
@@ -7,7 +9,8 @@ export function activeSpellInstances(actor) {
     : legacyActiveSpellCastings(items);
   return castings.flatMap(casting => {
     const item = byId.get(casting.itemId);
-    if (item?.type !== "spell" || item.system?.spellType !== "lasting") return [];
+    const wall = item?.system?.catalogId===VITNER_WALL && spellBarrierProfile({sourceId:VITNER_WALL,counts:casting.powerLevelCounts})?.persistent;
+    if (item?.type !== "spell" || (item.system?.spellType !== "lasting"&&!wall)) return [];
     return [{id: casting.id, item, cost: Math.max(0, Number(casting.cost) || 0),
       startedAt: Number(casting.startedAt) || 0, duration: String(casting.duration || ""),
       effectUuids: Array.from(casting.effectUuids ?? []), effectsApplied: Boolean(casting.effectsApplied),

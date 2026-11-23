@@ -19,6 +19,8 @@ import {isInventoryTransferItem} from './inventory-transfer.mjs';
 import {zoneAction,zoneOutcome,zoneTargetList} from './zone-chat.mjs';
 import {applyZoneDamage,zoneDamageReceipt} from './zone-damage.mjs';
 import {canResolveReleasedSeal} from './magic-seal.mjs';
+import {airShieldShape,spellBarrierProfile,tokenBarrierCenter,VITNER_WALL} from './rules/spell-barriers.mjs';
+import {interceptAirShieldMovement,vitnerWallBlocks} from './spell-barriers.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -28,7 +30,9 @@ const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
 const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog','darkness'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&(info.profile.kind==='quagmire'||!earthquakeTest(info.profile,impactSize(actor)).immune)));
-const lastsAfterCombat=profile=>['fog','darkness','quagmire','earthWall','fixedLight'].includes(profile.kind);
+const lastsAfterCombat=profile=>['fog','darkness','quagmire','earthWall','fixedLight','airShield','vitnerWall'].includes(profile.kind);
+const zoneProfile=(context)=>earthquakeProfile(POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,context)
+ ??fixedLightProfile(context)??spellBarrierProfile(context);
 // Region.tokens can still be empty while native creation events are being processed.
 // Query the public containment API against scene documents before freezing a burst.
 const members=(region,{entering,leaving}={})=>{
@@ -168,8 +172,13 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
    if(shape&&Math.abs(shape.radius-radius)>.01)await region.update({shapes:[{type:'circle',x:shape.x,y:shape.y,radius}]});
   }
   await syncZoneLight(region);
-  if(info.profile.kind==='fixedLight')return;
+  if(['fixedLight','airShield','vitnerWall'].includes(info.profile.kind))return;
   let tokens=members(region,{entering,leaving});
+  if(info.context.kind==='spell'){
+   const source=game.messages?.get(info.messageId),origin=values(region.shapes)[0];
+   for(const [uuid,token]of tokens)if(await vitnerWallBlocks({scene:region.parent,level:token.level,origin,
+    target:tokenBarrierCenter(token),message:source}))tokens.delete(uuid);
+  }
   if(info.profile.instant&&!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
   for(const actor of actors.values())if(!tokens.has(actor.uuid))for(const effect of effectsFor(actor,region))await deleteEffectOnce(effect);
@@ -203,6 +212,7 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
 }
 /** A casting is single-use even after its instantaneous region has disappeared. */
 async function previousPlacement(ready){
+ if(ready?.barrierBlocked)return {reason:'CastingFinished'};
  if(ready?.inventoryLightPlaced)return {reason:'AlreadyPlaced'};
  if(!ready?.regionUuid)return null;
  const region=await foundry.utils.fromUuid(ready.regionUuid),info=infoOf(region);
@@ -254,11 +264,12 @@ export async function createSpellZoneOnAuthority(payload){
  const message=game.messages.get(payload.messageId),cast=message?.flags?.[S]?.ruleTestContext,ready=message?.flags?.[S]?.spellZoneCasting,user=game.users.get(payload.userId);
  const released=message?.flags?.[S]?.releasedSeal,castActor=cast?.casterUuid?await foundry.utils.fromUuid(cast.casterUuid):null;
  const actor=released?.actorUuid?await foundry.utils.fromUuid(released.actorUuid):castActor;
- const definition=POWER_DETAILS_BY_ID[cast?.sourceId]?.spellZone,profile=earthquakeProfile(definition,cast)??fixedLightProfile(cast);
+ const profile=zoneProfile(cast);
  const canPlace=actor&&user&&(actor.testUserPermission(user,'OWNER')||canResolveReleasedSeal(message,user));
  if(!writer()||!user?.active||!message||!canRead(message,user)||!canPlace||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
  const place=()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile});
- return released&&!released.tracked ? place() : withMaintainedZoneCasting(castActor,cast,place);
+ return released&&!released.tracked||profile.kind==='vitnerWall'&&!profile.persistent
+  ? place() : withMaintainedZoneCasting(castActor,cast,place);
 }
 
 function sparkInventoryItem(item,user){
@@ -329,11 +340,17 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
   return {status:'unavailable'};
  const point=support?center(support,scene):solar??payload.point;
  if(!scene||scene.testUserPermission&&!scene.testUserPermission(user,'OBSERVER')||token?.actor?.uuid!==actor.uuid||(!solar&&!pointInRange(placementLimit(scene,token,profile),point)))return {status:'outOfRange'};
- const darkness=profile.kind==='darkness',scale=zonePixelScale(scene);
- const footprint=darkness?darknessPlacementShape(payload.shape,profile.area,scale):null;
+ const darkness=profile.kind==='darkness',air=profile.kind==='airShield',scale=zonePixelScale(scene);
+ const footprint=darkness?darknessPlacementShape(payload.shape,profile.area,scale)
+  :air?airShieldShape(profile,point,scene,Number(payload.shape?.rotation)||0):null;
  if(darkness&&(!footprint||footprint.x!==payload.point.x||footprint.y!==payload.point.y))return {status:'invalidArea'};
  const wall=profile.kind==='earthWall'?addSpellWallBlock(null,payload.point,scale,profile,scene.grid):null;
  if(wall&&!pointInRange(placementLimit(scene,token,profile),wall.origin))return {status:'outOfRange'};
+ if(await vitnerWallBlocks({scene,level:token.level,origin:tokenBarrierCenter(token),target:point,message})){
+  await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,barrierBlocked:true}});
+  void trackSpellZoneRemoval(cast);
+  return {status:'blocked',reason:'BarrierBlocked'};
+ }
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
@@ -345,7 +362,7 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  info.lastMovedPhase=spellZonePhase(info,clock(info));
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  const darkMode=darkness?globalThis.CONFIG?.RegionBehavior?.dataModels?.adjustDarknessLevel?.MODES?.OVERRIDE:undefined;
- if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
+ if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
   ...(support?{attachment:{token:support.id}}:{}),
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
   behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
@@ -536,13 +553,14 @@ export function resolveSpellZoneRequest(payload){return serial('request:'+(paylo
  if(payload.type==='endFog')return endFogOnAuthority(payload);
  if(payload.type==='damageSpellWall')return damageSpellWallOnAuthority(payload);
  if(payload.type==='applyInstantSpellZone')return applyInstantSpellZone(payload);
+ if(payload.type==='checkVitnerWall')return checkVitnerWallOnAuthority(payload);
  return resolveSpellZoneTestOnAuthority(payload);
 });}
 function registerSocket(){
  if(socketReady||!game.socket)return;socketReady=true;
  game.socket.on(channel,async payload=>{
   if(payload?.type==='spellZoneReply'&&payload.userId===game.user.id){const p=replies.get(payload.requestId);if(p){clearTimeout(p.timer);replies.delete(payload.requestId);p.resolve(payload.result);}return;}
-  if(!['createSpellZone','spellZoneTest','endFog','applyInstantSpellZone'].includes(payload?.type)||!writer())return;
+  if(!['createSpellZone','spellZoneTest','endFog','applyInstantSpellZone','checkVitnerWall'].includes(payload?.type)||!writer())return;
   let result;try{result=await resolveSpellZoneRequest(payload);}catch(error){console.error('Trudvang | Spell zone failed',error);result={status:'unavailable'};}
   game.socket.emit(channel,{type:'spellZoneReply',requestId:payload.requestId,userId:payload.userId,result});
  });
@@ -551,6 +569,27 @@ async function request(payload){
  payload={...payload,userId:game.user.id,requestId:crypto.randomUUID()};if(writer()){try{return await resolveSpellZoneRequest(payload);}catch(error){console.error('Trudvang | Spell zone failed',error);return {status:'unavailable'};}}
  if(!game.users?.activeGM||!game.socket)return {status:'unavailable'};registerSocket();
  return new Promise(resolve=>{const timer=setTimeout(()=>{replies.delete(payload.requestId);resolve({status:'unavailable'});},30000);replies.set(payload.requestId,{resolve,timer});game.socket.emit(channel,payload);});
+}
+async function checkVitnerWallOnAuthority({messageId,tokenUuid,userId}){
+ const message=game.messages.get(messageId),user=game.users.get(userId),token=await foundry.utils.fromUuid(tokenUuid);
+ if(!message||!user?.active||!canRead(message,user)||token?.documentName!=='Token'||
+   (!user.isGM&&(token.hidden&&!token.actor?.testUserPermission(user,'OWNER'))))return {status:'unavailable'};
+ const casting=message.flags?.[S]?.ruleTestContext,site=casting?.barrierOrigin;
+ if(!site||site.sceneId!==token.parent.id||site.level!==(token.level??null))return {status:'pass'};
+ if(!(user.isGM||message.author?.id===user.id||token.actor?.testUserPermission(user,'OWNER')))return {status:'unavailable'};
+ const blocked=await vitnerWallBlocks({scene:token.parent,level:token.level,origin:site,target:tokenBarrierCenter(token),message});
+ return {status:blocked?'blocked':'pass'};
+}
+
+export async function checkVitnerWall(message,actor,tokenUuid){
+ const site=message?.flags?.[S]?.ruleTestContext?.barrierOrigin;
+ if(!site||message.flags[S].ruleTestContext.kind!=='spell')return false;
+ const scene=game.scenes?.get(site.sceneId);
+ const token=tokenUuid?await foundry.utils.fromUuid(tokenUuid):values(scene?.tokens).find(row=>row.actor?.uuid===actor.uuid&&(row.level??null)===site.level);
+ if(token?.actor?.uuid!==actor.uuid||(token.level??null)!==site.level||!values(scene?.regions).some(region=>infoOf(region)?.profile.kind==='vitnerWall'))return false;
+ const result=await request({type:'checkVitnerWall',messageId:message.id,tokenUuid:token.uuid});
+ if(result.status==='unavailable')ui.notifications.warn(local('Unavailable'));
+ return result.status!=='pass';
 }
 export async function endFog(message){
  const result=await request({type:'endFog',messageId:message.id});
@@ -642,7 +681,7 @@ export async function openFireTamerExtinguish(message){
 }
 
 export async function placeSpellZone(message,{attachLight=false,attachInventoryLight=false}={}){
- const context=message.flags?.[S]?.ruleTestContext,definition=POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,profile=earthquakeProfile(definition,context)??fixedLightProfile(context);
+ const context=message.flags?.[S]?.ruleTestContext,profile=zoneProfile(context);
  const actorUuid=message.flags?.[S]?.releasedSeal?.actorUuid??context?.casterUuid,actor=actorUuid?await foundry.utils.fromUuid(actorUuid):null;
  const board=globalThis.canvas,scene=board?.scene;
  if(!profile||!actor||(!actor.isOwner&&!canResolveReleasedSeal(message))||!scene){ui.notifications.warn(local('Unavailable'));return null;}
@@ -687,12 +726,13 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   const movingFog=profile.kind==='fog'&&previous?.region;
   if(movingFog&&movingFog.parent.id!==scene.id){placementFeedback({status:'outOfRange'});return null;}
   const darkness=profile.kind==='darkness';
+  const air=profile.kind==='airShield';
   const wall=profile.kind==='earthWall';
   if(wall&&previous?.region&&previous.region.parent.id!==scene.id){placementFeedback({status:'outOfRange'});return null;}
   const radius=profile.kind==='fog'?(movingFog?fogRadius(infoOf(movingFog),clock(infoOf(movingFog))):profile.radius/3):profile.radius;
   const scale=zonePixelScale(scene),wallState=spellWallInfo(previous?.region);
   const shape=wall?{type:'rectangle',x:0,y:0,width:scale,height:scale,anchorX:.5,anchorY:.5}
-   :darkness?await chooseDarknessShape(profile,scene):{type:'circle',x:0,y:0,radius:radius*scale};
+   :air?airShieldShape(profile,{x:0,y:0},scene):darkness?await chooseDarknessShape(profile,scene):{type:'circle',x:0,y:0,radius:radius*scale};
   if(!shape||board.scene!==scene)return null;
   const guide=createSpellZoneRangeGuide(board);
   const limit=()=>placementLimit(scene,token,profile,movingFog);
@@ -700,9 +740,9 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   try {
    preview=await board.regions.placeRegion({
     name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:auraColor(),
-    levels:token.level?[token.level]:[],highlightMode:darkness||wall?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
+    levels:token.level?[token.level]:[],highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
    },{
-    create:false,attachToToken:false,allowRotation:darkness&&shape.type==='rectangle',
+    create:false,attachToToken:false,allowRotation:air||darkness&&shape.type==='rectangle',
     onMove:({position,snap,shape,preview})=>{
      pointer={x:position.x,y:position.y};
      const range=limit(),snapped=wall?spellWallBlockPoint(wallState,pointer,scale,scene.grid):snap?board.regions.getSnappedPoint?.(position):null;
@@ -729,6 +769,7 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   if(wall&&!confirmed)return null;
   point=wall?confirmed:{x:preview.shapes[0].x,y:preview.shapes[0].y};
   if(darkness)footprint=darknessPlacementShape(preview.shapes[0],profile.area,scale);
+  if(air)footprint={rotation:Number(preview.shapes[0].rotation)||0};
  }
  if(board.scene!==scene)return null;
  const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,inventoryItemId,inventoryTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
@@ -775,6 +816,7 @@ export function registerSpellZoneSupport(){
  const Base=foundry.data?.regionBehaviors?.RegionBehaviorType;if(!Base)return;
  class SpellZoneBehavior extends Base{static defineSchema(){return {};};static events={tokenEnter:async function(e){await reconcileSpellZone(e.region,{entering:e.data.token});},tokenExit:async function(e){await reconcileSpellZone(e.region,{leaving:e.data.token});},behaviorActivated:async function(e){await reconcileSpellZone(e.region);},behaviorDeactivated:async function(e){await reconcileSpellZone(e.region,{removed:true});}};}
  CONFIG.RegionBehavior.dataModels[TYPE]=SpellZoneBehavior;CONFIG.RegionBehavior.typeLabels[TYPE]='TRUDVANG.SpellZone.Behavior';CONFIG.RegionBehavior.typeIcons[TYPE]='fa-solid fa-house-crack';
+ Hooks.on('preMoveToken',interceptAirShieldMovement);
  const safely=()=>{if(writer())for(const scene of values(game.scenes)){void cleanupOrphanSpellZoneLights(scene).catch(error=>console.error('Trudvang | Orphan area light cleanup failed',error));for(const region of values(scene.regions))if(infoOf(region))void reconcileSpellZone(region).catch(error=>console.error('Trudvang | Zone reconciliation failed',error));}};
  const flightChanged=(effect,changes={})=>{if(changes.statuses!==undefined||values(effect.statuses).some(id=>['fly','hover','flying','hovering'].includes(id)))safely();};
  for(const hook of ['createActiveEffect','updateActiveEffect','deleteActiveEffect'])Hooks.on(hook,flightChanged);
@@ -812,6 +854,8 @@ export function registerSpellZoneSupport(){
  Hooks.once('ready',async()=>{registerSocket();
   // TEMPORARY WORLD MIGRATION — remove with the pre-zone development worlds.
   try{await migrateToikalokkeEarthquake();}catch(error){console.error('Trudvang | Earthquake catalogue migration failed',error);}
+  // TEMPORARY WORLD MIGRATION — add the missing power option to existing Wall of Vitner items.
+  try{await migrateVitnerWallOptions();}catch(error){console.error('Trudvang | Vitner wall catalogue migration failed',error);}
   if(writer())for(const scene of values(game.scenes))try{await cleanupOrphanSpellWalls(scene);}catch(error){console.error('Trudvang | Orphan magical wall cleanup failed',error);}
   safely();});
 }
@@ -833,6 +877,11 @@ async function continueAreaOutsideCombat(region,combat){
  await reconcileSpellZone(region);
 }
 
+function worldCatalogItems(){
+ const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(scene=>values(scene.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));
+ return new Map([...values(game.items),...[...actors.values()].flatMap(a=>values(a.items))].filter(Boolean).map(i=>[i.uuid,i])).values();
+}
+
 /** TEMPORARY WORLD MIGRATION — harmonize old catalogue-owned Toikalokke copies.
  * The old level/cost/modifier tuple identifies the previous development profile;
  * completed casts and their saved costs are deliberately not rewritten. */
@@ -840,12 +889,25 @@ export async function migrateToikalokkeEarthquake(){
  if(!writer())return;
  const id='holy-toikalokke-master-of-elements:earthquake:7',tablet=TABLET_BY_ID.get(id.split(':')[0]),power=tablet?.powers.find(p=>p.id===id);
  if(!power)return;const canonical=powerItemData(power,tablet);
- const actors=new Map([...values(game.actors),...values(game.scenes).flatMap(scene=>values(scene.tokens).map(t=>t.actor))].filter(Boolean).map(a=>[a.uuid,a]));
- const items=new Map([...values(game.items),...[...actors.values()].flatMap(a=>values(a.items))].filter(Boolean).map(i=>[i.uuid,i]));
- for(const item of items.values()){
+ for(const item of worldCatalogItems()){
   const original=item._source?.system??item.system;
   if(!['spell','divineFeat'].includes(item.type)||original?.catalogId!==id||Number(original.level)!==3||Number(original.cost)!==6||Number(original.modifier)!==-6)continue;
   const update={};for(const field of ['level','cost','modifier','duration','range','weavingTime','powerLevels','summary','description','source'])update['system.'+field]=canonical.system[field];
   await item.update(update);
+ }
+}
+
+/** TEMPORARY WORLD MIGRATION — update only the known seven-option catalogue copies. */
+export async function migrateVitnerWallOptions(){
+ if(!writer())return;
+ const tablet=TABLET_BY_ID.get(VITNER_WALL.split(':')[0]),power=tablet?.powers.find(row=>row.id===VITNER_WALL);
+ if(!power)return;
+ const canonical=powerItemData(power,tablet).system.powerLevels;
+ for(const item of worldCatalogItems()){
+  const original=item._source?.system??item.system;
+  const levels=Array.from(original?.powerLevels??[]);
+  if(item.type!=='spell'||original?.catalogId!==VITNER_WALL||levels.length!==7||
+    !levels.every((level,index)=>level.id===canonical[index].id&&level.cost===canonical[index].cost))continue;
+  await item.update({'system.powerLevels':[...levels.slice(0,6),...canonical.slice(6)]});
  }
 }

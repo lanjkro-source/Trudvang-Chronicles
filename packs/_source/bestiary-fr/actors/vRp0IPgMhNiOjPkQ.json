@@ -3152,7 +3152,13 @@
             "id": "vitner-vitner-craft:wall-of-vitner:8:6",
             "cost": 10,
             "maxCount": null,
-            "effect": "Augmente la portée du sort de : 5 mètres"
+            "effect": "Augmente le diamètre du mur de 5 mètres"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:7",
+            "cost": 5,
+            "maxCount": 1,
+            "effect": "Change le type du sort de soutenu à persistant"
           }
         ],
         "source": "Livre des règles, p. 154",

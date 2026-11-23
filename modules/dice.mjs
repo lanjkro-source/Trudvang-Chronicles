@@ -25,6 +25,7 @@ import {transformationLinks,transformationKeys,applyTransformation} from "./tran
 import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {auraCasterToken,auraSite} from "./aura.mjs";
 import {fireTamerId,fixedLightProfile} from "./rules/spell-zones.mjs";
+import {spellBarrierProfile,tokenBarrierCenter} from "./rules/spell-barriers.mjs";
 import {weatherTemperatureLimits} from "./rules/weather-wards.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
@@ -112,6 +113,14 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   let ruleTestContext=releasedSeal ? structuredClone(releasedSeal.spell.context)
     : item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
+  if(ruleTestContext?.kind==="spell"){
+    const found=mapToken(),token=found?.document??found;
+    delete ruleTestContext.barrierOrigin;
+    if(token?.parent?.id){
+      const {x,y}=tokenBarrierCenter(token);
+      ruleTestContext.barrierOrigin={x,y,sceneId:token.parent.id,level:token.level??null};
+    }
+  }
   if(ruleTestContext?.sourceId?.startsWith("holy-")){
     const faith=Number(actor.getSkillValue?.("faith"))||0;
     if(fixedLightProfile({...ruleTestContext,lightFaith:faith})?.requiresDaylight){
@@ -121,7 +130,12 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       if(site)ruleTestContext.lightSite={...site, tokenId:token.id, elevation:Number(token.elevation)||0};
     }
   }
-  const hasSpellZone=()=>Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone||fixedLightProfile(ruleTestContext));
+  const barrier=Boolean(spellBarrierProfile(ruleTestContext));
+  const barrierSummary=()=>{
+    const profile=spellBarrierProfile(ruleTestContext);
+    return profile ? game.i18n.format(`TRUDVANG.SpellBarrier.${profile.kind==="airShield"?"AirProfile":"WallProfile"}`,profile) : "";
+  };
+  const hasSpellZone=()=>Boolean(barrier||POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone||fixedLightProfile(ruleTestContext));
   const roll = releasedSeal ? Roll.fromData(releasedSeal.spell.roll) : await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
@@ -176,7 +190,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor: [flavor, ...attackTargets.flatMap(row => (row.defenseRows || []).map(effect => `${escapeHtml(row.name)} · ${escapeHtml(effect.label)}: ${signedModifier(effect.value)}`))].filter(Boolean).join("<br>"),
-    successConsequence: consequenceText(runeAllocation?runeConsequenceText(runeDetails,ruleTestContext):procedure?.text && outcome.success ? procedure.text : !pendingPerfect&&success && (purificationConsequence(ruleTestContext)||heatingConsequence(ruleTestContext)||magicRevelation(ruleTestContext)) || successConsequence),
+    successConsequence: consequenceText(runeAllocation?runeConsequenceText(runeDetails,ruleTestContext):procedure?.text && outcome.success ? procedure.text : !pendingPerfect&&success && (barrierSummary()||purificationConsequence(ruleTestContext)||heatingConsequence(ruleTestContext)||magicRevelation(ruleTestContext)) || successConsequence),
     failureConsequence: consequenceText(procedure?.text && !outcome.success ? procedure.text : failureConsequence),
     criticalSuccessConsequence: consequenceText(criticalSuccessConsequence),
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
@@ -184,8 +198,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     attackTargets: targetResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
-    transformationLinks: !auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
-    ruleTests: !pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
+    transformationLinks: !barrier&&!auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
+    ruleTests: !barrier&&!pendingPerfect&&success && item && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
     magicDamageBase: Boolean(!pendingPerfect && success && item && magicDamageHasBaseTargets(item,ruleTestContext) && !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic),
@@ -264,9 +278,9 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
     if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
-    card.successConsequence=consequenceText(purificationConsequence(ruleTestContext)||heatingConsequence(ruleTestContext)||magicRevelation(ruleTestContext)||card.successConsequence);
-    card.transformationLinks=auraKey||selfOnly?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
-    card.ruleTests=POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
+    card.successConsequence=consequenceText(barrierSummary()||purificationConsequence(ruleTestContext)||heatingConsequence(ruleTestContext)||magicRevelation(ruleTestContext)||card.successConsequence);
+    card.transformationLinks=barrier||auraKey||selfOnly?"":transformationLinks(item,powerLevelCounts,{context:ruleTestContext});
+    card.ruleTests=barrier||POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic?[]:ruleTestActionViews(item);
     card.magicDamageBase=magicDamageHasBaseTargets(item,ruleTestContext)&&!POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.damageRoll?.automatic;
     card.spellZone=hasSpellZone();
     card.fixedLight=Boolean(fixedLightProfile(ruleTestContext));
@@ -793,7 +807,8 @@ export async function rollDamage({actor, item, context = {}}) {
     total = Math.ceil(total / 2);
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
-  const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
+  const targetTokens = Array.from(context.targets ?? game.user?.targets ?? []);
+  const targets = prepareDamageTargets(targetTokens);
   const damageEffects=weaponDamageEffects(item,actor,{explosions});
   const conditionalDamage=context.usage==="magic"?[]:creatureConditionalBonuses(actor,item).filter(row=>row.damage>0).map(row=>({...row,displayTag:game.i18n.lang==="fr"?row.tags[0]:row.tags.at(-1)}));
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {
@@ -817,7 +832,17 @@ export async function rollDamage({actor, item, context = {}}) {
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
   });
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, ...(context.whisper?.length ? {whisper: context.whisper} : {}), flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,protectionLocked:context.protectionLocked===true,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const rangedOrigin=choice.qualification?.delivery==="ranged"
+    ? auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables) : null;
+  let rangedCover;
+  if(rangedOrigin){
+    const {airShieldCover}=await import("./spell-barriers.mjs");
+    rangedCover=targets.map(target=>{
+      const token=targetTokens.find(row=>(row.document??row).uuid===target.tokenUuid);
+      return {tokenUuid:target.tokenUuid,barriers:airShieldCover(rangedOrigin,token?.document??token)};
+    });
+  }
+  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, ...(context.whisper?.length ? {whisper: context.whisper} : {}), flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,protectionLocked:context.protectionLocked===true,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification,sourceMessageId:context.sourceMessageId,rangedTokenUuid:rangedOrigin?.uuid,rangedCover},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
   return context.returnMessage?{total,message}:total;
 }
 

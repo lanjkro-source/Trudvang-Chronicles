@@ -92,6 +92,17 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
  const eligible=inside&&active(source)&&!(self&&getAura(source)?.excludeSource)
   &&(getAura(source)?.recipients!=='allies'||allies)&&(!getAura(source)?.requiresHearing||(!actor.statuses?.has('deaf')&&!actor.statuses?.has('deafened')&&!source.parent?.statuses?.has('silenced')));
  if(!eligible){if(children.length)await removeAuraRecipients(actor,children);return;}
+ const casting=sourceMeta(source)?.ruleTestContext;
+ const message=casting?.kind==="spell"&&game.messages?.get(casting.messageId);
+ if(message){
+  const {vitnerWallBlocks}=await import("./spell-barriers.mjs");
+  const {tokenBarrierCenter}=await import("./rules/spell-barriers.mjs");
+  const origin=Array.from(region.shapes??[])[0];
+  if(await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message})){
+   if(children.length)await removeAuraRecipients(actor,children);
+   return;
+  }
+ }
  const aura=getAura(source),fearLight=aura?.light===true;
  const changes=Array.from(sourceMeta(source)?.auraChanges??source.system?.changes??[]).filter(row=>!fearLight||row.key==="system.transformation.ignoreFearPenalty"||(allies&&row.key==="system.modifiers.rolls.allActions"));
  const descriptionKey=!fearLight||allies?sourceMeta(source)?.key:`${sourceMeta(source)?.sourceId}#fear-only`;

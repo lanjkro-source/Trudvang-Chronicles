@@ -206,3 +206,7 @@ Dans `modules/spell-zones.mjs`, le repli `TEMPORARY WORLD MIGRATION` supprime le
 ## Sceaux de la 0.251.0
 
 Dans `modules/magic-seal.mjs`, le repli `TEMPORARY WORLD MIGRATION` autorise le propriétaire du tisseur d’origine à remplir un ancien sceau dépourvu de l’identifiant du joueur qui l’a créé. Retirer ce repli avec les anciens mondes. Les nouveaux sceaux enregistrent cet identifiant au dépôt sur un objet.
+
+## Mur de vitner
+
+`migrateVitnerWallOptions()` dans `modules/spell-zones.mjs` complète les anciennes copies du catalogue reconnaissables à leurs sept options d’origine. Elle corrige l’option de diamètre et ajoute la conversion en sortilège persistant dans les objets du monde, des acteurs et des tokens indépendants. Retirer la fonction et son appel au démarrage avec ces anciens mondes. Les sources FR et EN générées gardent les huit options.

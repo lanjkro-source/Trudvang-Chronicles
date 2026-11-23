@@ -9603,7 +9603,8 @@
             "3": "Augmente la durée du sort de : 1 heure",
             "4": "Augmente la portée du sort de : 5 mètres",
             "5": "Augmente le diamètre du mur de : 1 mètre",
-            "6": "Augmente la portée du sort de : 5 mètres"
+            "6": "Augmente le diamètre du mur de 5 mètres",
+            "7": "Change le type du sort de soutenu à persistant"
           }
         },
         "vitner-vitner-of-objects:alarm-object:4": {
@@ -18947,6 +18948,25 @@
       "UnwillingTarget": "Cible non consentante",
       "AwareUnwillingTarget": "Cible consciente du sort et non consentante"
     },
+    "SpellBarrier": {
+      "AirProfile": "{protection} VP · Taille {size} · {rounds} tours",
+      "WallProfile": "Rayon {radius} m · {rounds} tours · Bonus au test +{bonus}",
+      "CrossAir": "Franchir le bouclier d’air",
+      "TestWall": "{wall} · Sortilège de niveau {level}",
+      "Blocked": "Le mur arrête le sortilège.",
+      "Passed": "Le sortilège franchit le mur."
+    },
+    "HuvfurwurmHead": {
+      "FatalBlow": "Confirmer un coup fatal",
+      "FatalBlowConfirm": "Confirmez que le coup devrait tuer {actor}. Le pouvoir déclenchera son jet de survie.",
+      "Failed": "La tête de {actor} ne repousse pas.",
+      "Survived": "La tête de {actor} est tranchée. Une hibernation d’un mois commence.",
+      "Awoke": "La tête de {actor} a repoussé. L’hibernation prend fin.",
+      "Hibernation": "Hibernation du huvfurwurm",
+      "HibernationDescription": "Le personnage semble mort. Il se réveille après un mois, lorsque sa tête a repoussé.",
+      "Cracked": "Relique fendue · Puissance du dragon",
+      "CrackedDescription": "La relique de Puissance du dragon est fendue. Le MJ peut retirer cet effet après la création d’une nouvelle relique."
+    },
     "FollowupTest": {
       "PrisonPull": "Extraire le prisonnier",
       "PrisonPullConfirm": "Confirmez que quatre adultes de force normale peuvent tirer {actor} à travers la paroi. L’extraction inflige 1d10 dégâts.",
@@ -19106,6 +19126,7 @@
       "Unavailable": "Cible indisponible"
     },
     "SpellZone": {
+      "BarrierBlocked": "Le Mur de vitner empêche le sortilège d’atteindre ce point.",
       "Place": "Placer / déplacer la zone",
       "ConfirmOutdoorDaylight": "Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ?",
       "BurningStatus": "En feu",
