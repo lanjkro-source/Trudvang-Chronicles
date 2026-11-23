@@ -457,9 +457,14 @@ La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et
 
 ### Chantiers encore ouverts
 
-- **Sceau** — lier un sortilège déjà lancé à un objet, définir son déclencheur, puis libérer le sortilège une seule fois. Le MJ valide les circonstances particulières.
 - **Bouclier d’air et Mur de vitner** — placer une barrière, détecter sa traversée ou le passage d’un projectile et proposer la protection ou le test prévu.
 - **Emprisonnement** — appliquer aux traversées forcées la décharge qui leur est propre. Le contact avec la paroi dispose déjà de dégâts.
 - **Tête du huvfurwurm** — traiter le coup fatal, le seuil amélioré, la consommation unique et le réveil après hibernation. Le don existe sous forme de rappel.
 - **Invocations et reliques des noajs de Haminges** — vérifier les profils invoqués et traiter les propriétés mécaniques des reliques qui restent manuelles. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
 - **Révision du catalogue** — distinguer les effets purement descriptifs des effets pour lesquels un jet, un suivi d’état ou un calcul manque encore. La compatibilité avec les tables de Stormlands reste une vérification distincte.
+
+### Sceau
+
+Après un lancement réussi de Sceau, le MJ choisit un objet depuis la carte. **Tisser le sortilège à sceller**, dans la description de l’effet, lance la fenêtre habituelle pour un sortilège instantané ou persistant connu du tisseur et compatible avec le niveau du sceau. Le lancement dépense normalement le vitner et un échec laisse le sceau vide. Une réussite conserve le jet, le contexte du tisseur et les niveaux de puissance choisis, y compris ceux du succès critique. Le sortilège reste en attente.
+
+**Libérer le sortilège** ouvre sa carte de résolution avec les valeurs stockées, sans relancer le dé ni dépenser de vitner. Les cibles et les zones se résolvent depuis cette carte. L’effet porté par l’objet disparaît après publication. Le MJ choisit les conditions et le moment de la libération. Le Sceau suit son objet dans les transferts d’inventaire. Références dans le Livre des règles, entrée Sceau, et le Player’s Handbook, entrée Seal.

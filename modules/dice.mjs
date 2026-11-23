@@ -1,5 +1,6 @@
 import {withConditionalEffectConsumption} from './rules/effect-conditional-tests.mjs';
 import {heatingConsequence,purificationConsequence} from './water-purification.mjs';
+import {sealPreparation as prepareSealData, storeSealedSpell} from './magic-seal.mjs';
 import {magicRevelation} from './magic-revelations.mjs';
 import {applyPersonalCasting} from './self-effects.mjs';
 import {actorForResistance} from "./resistance-actor.mjs";
@@ -83,9 +84,18 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null,publishMessage=null}) {
+async function choosePerfectLevels(resolve) {
+  try { return await resolve(); }
+  catch (error) {
+    console.error("Trudvang | Perfect-success allocation failed", error);
+    ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidPerfectBudget"));
+    return null;
+  }
+}
+
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = "", powerLevelCounts = [], castingId = "", resolveProcedure = null, resolvePerfectSuccess = null, blessing = null,damageResistanceFor=null,publishMessage=null,seal=null,releasedSeal=null}) {
   if(blessing?.consumeEffectIds?.length){
-    const repeat={actor,label,target,modifier,kind,flavor,item,perfectSuccessMax,automaticSuccessMax,fatalEffect,feint,usage,longRange,animateWithDiceSoNice,successConsequence,failureConsequence,criticalSuccessConsequence,criticalFailureConsequence,effectTarget,attackTargets,targetName,powerLevelCounts,castingId,resolveProcedure,resolvePerfectSuccess,blessing:{...blessing,consumeEffectIds:[]},damageResistanceFor,publishMessage};
+    const repeat={actor,label,target,modifier,kind,flavor,item,perfectSuccessMax,automaticSuccessMax,fatalEffect,feint,usage,longRange,animateWithDiceSoNice,successConsequence,failureConsequence,criticalSuccessConsequence,criticalFailureConsequence,effectTarget,attackTargets,targetName,powerLevelCounts,castingId,resolveProcedure,resolvePerfectSuccess,blessing:{...blessing,consumeEffectIds:[]},damageResistanceFor,publishMessage,seal,releasedSeal};
     return withConditionalEffectConsumption(actor,blessing.consumeEffectIds.map(consumeEffectId=>({consumeEffectId})),()=>rollUnder(repeat));
   }
   if(blessing)flavor+='<br>'+rollModifierFlavor([blessing]);
@@ -99,7 +109,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   const fixedSite=auraSite(fixedToken);
   if(auraKey&&!castingId)castingId=foundry.utils.randomID();
   if(kind==='rune'&&runeConsequenceDefinition(POWER_DETAILS_BY_ID[item?.system?.catalogId])&&!castingId)castingId=foundry.utils.randomID();
-  let ruleTestContext=item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
+  let ruleTestContext=releasedSeal ? structuredClone(releasedSeal.spell.context)
+    : item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
   if(ruleTestContext?.sourceId?.startsWith("holy-")){
     const faith=Number(actor.getSkillValue?.("faith"))||0;
@@ -111,7 +122,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     }
   }
   const hasSpellZone=()=>Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone||fixedLightProfile(ruleTestContext));
-  const roll = await evaluate("1d20");
+  const roll = releasedSeal ? Roll.fromData(releasedSeal.spell.roll) : await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
   const {critical, margin} = outcome;
@@ -124,6 +135,23 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
+  if(seal&&success){
+    const perfectSelection=pendingPerfect?await choosePerfectLevels(resolvePerfectSuccess):null;
+    const counts=perfectSelection?.counts??powerLevelCounts;
+    const context=withCastingCounts(ruleTestContext,counts);
+    const stored=await storeSealedSpell(seal.effect,actor,item,{roll,target:finalTarget,context,cost:seal.cost,
+      levels:seal.levels.map((entry,index)=>({...entry,count:counts[index]??0}))});
+    if(!stored)throw Error(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+    const content=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",{
+      actorName:actor.name,actorImg:actor.img,label,kind,result,target:finalTarget,success,critical,
+      ...rollOutcomeView({result,target:finalTarget,success}),
+      flavor:[flavor,...(perfectSelection?.flavor??[])].filter(Boolean).join("<br>"),
+      successConsequence:game.i18n.format("TRUDVANG.Seal.Bound",{object:seal.effect.parent.name})
+    });
+    try { await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content,rolls:[roll]}); }
+    catch(error) { console.error("Trudvang | Could not publish sealed spell",error); }
+    return {roll,result,target:finalTarget,success,critical,margin,perfectSelection,automaticEffectUuids};
+  }
   if(ruleTestContext&&item?.flags?.[SYSTEM_ID]?.runeActivation)Object.assign(ruleTestContext,{kind:'rune',runeLevel:item.flags[SYSTEM_ID].runeActivation.level,runeObjectUuid:item.flags[SYSTEM_ID].runeActivation.objectUuid});
   const runeDetails=kind==='rune'&&success?POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]:null;
   const runeAllocation=runeDetails?runeConsequenceAllocation(runeDetails,ruleTestContext,{time:game.time?.worldTime,combat:game.combat}):null;
@@ -174,6 +202,9 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     usage,
     longRange: Boolean(longRange)
   };
+  if(releasedSeal)card.successConsequence=[
+    game.i18n.format("TRUDVANG.Seal.Released",{object:releasedSeal.objectName}),card.successConsequence
+  ].filter(Boolean).join(" ");
   const speaker = ChatMessage.getSpeaker({actor});
   const describeFearArea = () => {
     if (!card.magicFear || !POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll?.area) return null;
@@ -204,8 +235,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     }} : {})
   };
   if (magicFearArea) messageData.flags[SYSTEM_ID].magicFearArea = magicFearArea;
+  const preparation=success&&!pendingPerfect&&prepareSealData(ruleTestContext,finalTarget);
+  if(preparation)messageData.flags[SYSTEM_ID].sealPreparation=preparation;
+  if(releasedSeal){
+    messageData._id=releasedSeal.id;
+    messageData.flags[SYSTEM_ID].releasedSeal=releasedSeal.spell;
+    messageData.flags["dice-so-nice"]={skip:true};
+  }
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
-  const message=publication?.message??await ChatMessage.create(messageData);
+  const message=publication?.message??await ChatMessage.create(messageData,releasedSeal?{keepId:true}:{});
   if(magicFearArea){
     try{await synchronizeMagicFearRegion(message.id);}
     catch(error){console.error("Trudvang | Fear area display failed",error);}
@@ -219,8 +257,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   }
   let perfectSelection=null;
   if(pendingPerfect){
-    try{perfectSelection=await resolvePerfectSuccess();}
-    catch(error){console.error("Trudvang | Perfect-success allocation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidPerfectBudget"));}
+    perfectSelection=await choosePerfectLevels(resolvePerfectSuccess);
     if(perfectSelection?.counts)powerLevelCounts=perfectSelection.counts;
     if(perfectSelection?.flavor)card.flavor=[card.flavor,perfectSelection.flavor].filter(Boolean).join("<br>");
     ruleTestContext=withCastingCounts(ruleTestContext,powerLevelCounts);
@@ -239,7 +276,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const area = describeFearArea();
     const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
-    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
+    const preparation=prepareSealData(ruleTestContext,finalTarget);
+    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(preparation?{[`flags.${SYSTEM_ID}.sealPreparation`]:preparation}:{}),...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
   }
   if(success&&selfOnly&&!auraKey){
    try{

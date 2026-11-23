@@ -262,7 +262,8 @@ function enqueuePreviousReference(effectUuid, currentContext) {
 }
 
 export function registerMaintainedSpellTracking() {
- const tracked=effect=>effect.parent?.documentName==="Actor"||(effect.parent?.documentName==="Item"&&effect.parent.parent?.documentName==="Actor");
+ const tracked=effect=>effect.parent?.documentName==="Actor"||(effect.parent?.documentName==="Item"&&
+  (effect.parent.parent?.documentName==="Actor"||effect.flags?.["trudvang-chronicles"]?.magicSeal));
  Hooks.on("createActiveEffect", effect => {if (tracked(effect)) void enqueueContext(contextOf(effect), {effectCreated:true});});
  Hooks.on("preUpdateActiveEffect", effect => {if (tracked(effect)) oldContexts.set(effect, structuredClone(contextOf(effect) ?? null));});
  Hooks.on("updateActiveEffect", effect => {
@@ -274,7 +275,7 @@ export function registerMaintainedSpellTracking() {
   void enqueueContext(current);
  });
  Hooks.on("deleteActiveEffect", effect => {if (tracked(effect)) void enqueueContext(contextOf(effect), {removed:true});});
- Hooks.on("deleteItem", item=>{if(item.parent?.documentName==="Actor"||item.flags?.['trudvang-chronicles']?.conjuredConsumable)for(const effect of item.effects??[])void enqueueContext(contextOf(effect),{removed:true});});
+ Hooks.on("deleteItem", item=>{for(const effect of item.effects??[])if(tracked(effect)||item.flags?.['trudvang-chronicles']?.conjuredConsumable)void enqueueContext(contextOf(effect),{removed:true});});
  Hooks.on("updateActor", (actor, changed, options) => {
   if (options?.trudvangSpellTracking || (!changed.system?.activeSpellCastings && !Object.hasOwn(changed, "system.activeSpellCastings"))) return;
   for (const record of activeSpellRecords(actor)) void enqueue(actor.uuid, record.id);

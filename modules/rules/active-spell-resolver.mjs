@@ -74,7 +74,8 @@ export function maintainedSpellEffects({actors = [], scenes = [],items=[]} = {},
       result.push({actorUuid: actor.uuid, effectUuid: effect.uuid});
     }
   }
-  for(const item of items)if(item.flags?.['trudvang-chronicles']?.conjuredConsumable)for(const effect of item.effects??[]){
+  for(const item of items)for(const effect of item.effects??[]){
+    if(!item.flags?.['trudvang-chronicles']?.conjuredConsumable&&!effect.flags?.['trudvang-chronicles']?.magicSeal)continue;
     const context=effect.flags?.['trudvang-chronicles']?.transformation?.ruleTestContext;
     if(context?.casterUuid===casterUuid&&context?.castingId===castingId&&effect.uuid&&!seenEffects.has(effect.uuid)){
       seenEffects.add(effect.uuid);result.push({actorUuid:'',effectUuid:effect.uuid});

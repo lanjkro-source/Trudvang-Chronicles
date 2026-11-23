@@ -22,7 +22,7 @@ let gm,owner,observer,scene,caster,target,message,regions;
 function setup(id=vitner,counts={},runeLevel=1){
  docs.clear();hooks.clear();language='fr';gm={id:'gm',isGM:true,active:true,isSelf:true};owner={id:'owner',active:true};observer={id:'observer',active:true};const users=new Map([gm,owner,observer].map(u=>[u.id,u]));users.activeGM=gm;
  globalThis.game={user:gm,users,actors:new Map(),scenes:new Map(),messages:new Map(),time:{worldTime:0},combat:{id:'combat',round:1,started:true},i18n:{localize:k=>get(langs[language],k)??k,format:(k,d)=>String(get(langs[language],k)??k).replace(/\{(\w+)\}/g,(_,k)=>d[k]??'')}};
- globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.uuid}),create:async data=>{const m={...data,id:'message-'+game.messages.size,author:gm,getFlag:(_s,k)=>m.flags?.[S]?.[k],async update(data){if(data.content!==undefined)m.content=data.content;for(const[k,v]of Object.entries(data))if(k.startsWith('flags.'+S+'.')){m.flags??={};m.flags[S]??={};m.flags[S][k.slice(('flags.'+S+'.').length)]=v;}}};game.messages.set(m.id,m);return m;}};
+ globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.uuid}),create:async data=>{const m={...data,id:data._id??'message-'+game.messages.size,author:gm,getFlag:(_s,k)=>m.flags?.[S]?.[k],async update(data){if(data.content!==undefined)m.content=data.content;for(const[k,v]of Object.entries(data))if(k.startsWith('flags.'+S+'.')){m.flags??={};m.flags[S]??={};m.flags[S][k.slice(('flags.'+S+'.').length)]=v;}}};game.messages.set(m.id,m);return m;}};
  const actor=(id,size=1)=>{const a={uuid:'Actor.'+id,name:id,type:'npc',documentName:'Actor',isOwner:true,effects:[],items:[],statuses:new Set(),system:{details:{size},protection:0,resources:{body:{value:20}}},getTraitValue:()=>0,flags:{},getFlag:(scope,key)=>a.flags[scope]?.[key],async update(changes){if(changes['system.resources.body.value']!==undefined)a.system.resources.body.value=changes['system.resources.body.value'];for(const [key,value] of Object.entries(changes)){if(!key.startsWith('flags.'))continue;const parts=key.split('.').slice(1),field=parts.pop(),parent=parts.reduce((object,part)=>object[part]??={},a.flags);parent[field]=value;}},testUserPermission:u=>u.isGM||u.id===owner.id,async createTrudvangEffect(data){const e={...data,id:'effect-'+effectIndex++,uuid:a.uuid+'.ActiveEffect.'+effectIndex,parent:a,documentName:'ActiveEffect',async delete(){a.effects=a.effects.filter(x=>x!==e);docs.delete(e.uuid);}};a.effects.push(e);docs.set(e.uuid,e);return e;},async clone(changes){return {...a,effects:changes.effects};}};docs.set(a.uuid,a);game.actors.set(a.uuid,a);return a;};
  caster=actor('caster');target=actor('target');regions=new Map();scene={id:'scene',grid:{size:100,distance:1,units:'m'},regions,lights:new Map(),tokens:new Map(),async createEmbeddedDocuments(type,data){if(type==='AmbientLight'){const light={...structuredClone(data[0]),id:'light-'+scene.lights.size,parent:scene,async update(data){Object.assign(this,structuredClone(data));},async delete(){assert.equal(scene.lights.get(this.id),this,'Light deleted twice');scene.lights.delete(this.id);}};scene.lights.set(light.id,light);return [light];}assert.equal(type,'Region');const manifest=JSON.parse(fs.readFileSync('system.json','utf8'));for(const behavior of data[0].behaviors)assert.ok(Object.hasOwn(manifest.documentTypes.RegionBehavior,behavior.type),'Region behavior must be declared in the package manifest: '+behavior.type);const r={...data[0],id:'r'+regionIndex++,uuid:'Scene.scene.Region.'+regionIndex,parent:scene,tokens:new Set(scene.tokens.values()),async update(data){for(const[k,v]of Object.entries(data))if(k.startsWith('flags.'+S+'.spellZone.'))r.flags[S].spellZone[k.slice(('flags.'+S+'.spellZone.').length)]=v;else if(k==='shapes')r.shapes=v;},async delete(){assert.equal(regions.get(r.id),r,"region deleted twice");regions.delete(r.id);docs.delete(r.uuid);}};regions.set(r.id,r);docs.set(r.uuid,r);return [r];}};game.scenes.set(scene.id,scene);
  for(const [id,a,x]of [['caster',caster,0],['target',target,100]]){const t={id,uuid:'Scene.scene.Token.'+id,parent:scene,actor:a,x,y:0,width:1,height:1,name:a.name};scene.tokens.set(id,t);docs.set(t.uuid,t);}
@@ -66,6 +66,77 @@ test('only saved Heat Water regions are retired by the compatibility cleanup',as
  assert.equal(regions.has(obsolete.id),false);
  assert.equal(regions.get(other.id),other);
  assert.equal(target.system.resources.body.value,20);
+});
+
+test('Seal defers a successful spell, freezes critical improvements and releases exactly once without rolling again',async()=>{
+ const castId='vitner-flame-craft:heat-water:0',sealId='vitner-vitner-craft:seal:5';
+ const previous=globalThis.Roll;
+ globalThis.Roll=class{
+  static fromData(data){return data;}
+  constructor(formula){this.formula=formula;}
+  async evaluate(){this.total=1;this.evaluated=true;}
+  toJSON(){return {formula:this.formula,total:this.total};}
+ };
+ try{
+  setup();
+  const {releaseSealedSpell,sealPreparation,sealSheetView}=await import('../modules/magic-seal.mjs');
+  const {rollUnder}=await import('../modules/dice.mjs');
+  const seal={uuid:'Actor.caster.Item.vessel.ActiveEffect.seal',parent:{documentName:'Item',type:'gear',name:'Vessel'},
+   flags:{[S]:{magicSeal:{...sealPreparation({sourceId:sealId,kind:'spell',casterUuid:caster.uuid}),releaseMessageId:'release-seal'}}},
+   async update(changes){this.flags[S].magicSeal.spell=changes['flags.'+S+'.magicSeal.spell'];},
+   async delete(){this.disabled=true;}};
+  const item={uuid:'Actor.caster.Item.heat',id:'heat',name:'Ébullition',actor:caster,type:'spell',
+   system:{catalogId:castId,level:1,spellType:'lasting',powerLevels:[{effect:'Plus longue'},{effect:'Plus loin'},{effect:'Plus d’eau'},{effect:'Dix litres'},{effect:'Cent litres'}]},
+   toObject(){return {system:structuredClone(this.system)};}};
+  const result=await rollUnder({actor:caster,item,kind:'spell',label:item.name,target:10,castingId:'bound-cast',
+   powerLevelCounts:[1,0,0,0,0],seal:{effect:seal,cost:3,levels:[{id:castId+':0'}]},
+   resolvePerfectSuccess:async()=>({counts:[2,2,2,1,1]})});
+  assert.equal(result.success,true);
+  const stored=seal.flags[S].magicSeal.spell;
+  assert.equal(stored.context.countsById[castId+':4'],1);
+  assert.equal(stored.levels[0].count,2);
+  assert.equal(sealSheetView(seal).improvements.length,5);
+  assert.doesNotMatch([...game.messages.values()].at(-1).content,/117 L|place-spell-zone|magic-damage/);
+  globalThis.Roll=class{static fromData(data){return data;}constructor(){throw Error('Release must use the saved roll');}};
+  const released=await Promise.all([releaseSealedSpell(seal),releaseSealedSpell(seal)]);
+  assert.equal(released.filter(Boolean).length,1);
+  assert.equal(game.messages.get('release-seal').rolls[0].total,1);
+  assert.match(game.messages.get('release-seal').content,/117 L.*7 min.*10 m/);
+  assert.equal(seal.disabled,true);
+ }finally{globalThis.Roll=previous;}
+});
+
+test('a successful Seal prepares a single non-transferring effect on the chosen item',async()=>{
+ setup();
+ const {prepareMagicSeal,sealPreparation}=await import('../modules/magic-seal.mjs');
+ const id='vitner-vitner-craft:seal:5', scope='flags.'+S+'.sealPreparation.';
+ const context={sourceId:id,kind:'spell',casterUuid:caster.uuid,castingId:'seal-cast',countsById:{[id+':2']:2}};
+ const state=sealPreparation(context,10);
+ const item={documentName:'Item',uuid:'Item.box',name:'Box',type:'gear',effects:[],
+  async createEmbeddedDocuments(_type,[data]){const effect={...data,uuid:this.uuid+'.ActiveEffect.seal',parent:this};this.effects.push(effect);return [effect];}};
+ game.items=new Map([[item.uuid,item]]);
+ message.isContentVisible=true;
+ message.flags[S].ruleTestContext=context;
+ message.flags[S].sealPreparation=state;
+ message.update=async changes=>{for(const [key,value] of Object.entries(changes))state[key.slice(scope.length)]=value;};
+ const saved={...foundry.utils,apps:foundry.applications.api};
+ Object.assign(foundry.utils,{deepClone:structuredClone,randomID:()=> 'release'});
+ foundry.applications.api={DialogV2:{wait:async()=>item.uuid}};
+ try{
+  game.user=owner;
+  assert.equal(await prepareMagicSeal(message),null);
+  game.user=gm;
+  const effect=await prepareMagicSeal(message);
+  assert.equal(effect.transfer,false);
+  assert.equal(effect.flags[S].magicSeal.maximum,3);
+  assert.equal(effect.flags[S].magicSeal.spell,null);
+  assert.equal(effect.flags[S].transformation.ruleTestContext.castingId,'seal-cast');
+  assert.equal(await prepareMagicSeal(message),null);
+  assert.equal(item.effects.length,1);
+ }finally{
+  delete foundry.utils.deepClone;delete foundry.utils.randomID;
+  const {apps,...utils}=saved;Object.assign(foundry.utils,utils);foundry.applications.api=apps;
+ }
 });
 
 test('a detached torch creates one fixed light, then removes it at expiration',async()=>{

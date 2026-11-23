@@ -18,6 +18,7 @@ import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-r
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
 import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
+import {canBindSpell} from "../magic-seal.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { divinePowerId } from "../rules/divine-failure.mjs";
@@ -1443,8 +1444,9 @@ export class TrudvangActor extends BaseActor {
     });
   }
 
-  async rollSpell(item) {
-    const availability=spellAvailability(this,item);
+  async rollSpell(item, {seal = null} = {}) {
+    if (seal && !canBindSpell(seal,this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+    const availability=spellAvailability(this,item,{sealed:Boolean(seal)});
     if(!availability.ok)return ui.notifications.warn(game.i18n.format(availability.reason,availability.data));
     const isDivine = item.type === "divineFeat";
     const resource = isDivine ? "divinity" : "vitner";
@@ -1474,7 +1476,7 @@ export class TrudvangActor extends BaseActor {
     const strenuousMax = Number(this.findRuleKnowledge(strenuousId)?.system.level || 0);
     const activeSpellCount = isDivine ? 0 : activeSpellInstances(this).length;
     const persistent = item.system.spellType === "lasting";
-    const trackedPersistent = persistent && !isDivine;
+    const trackedPersistent = persistent && !isDivine && !seal;
     const activeSpellLimit = this.activeSpellLimit;
     if (trackedPersistent && activeSpellCount >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const vitnerType = this.selectedVitnerType;
@@ -1506,14 +1508,15 @@ export class TrudvangActor extends BaseActor {
       strenuousLabel: isDivine ? "TRUDVANG.Knowledge.rigorous" : "TRUDVANG.Dialog.Strenuous",
       strenuousResource: isDivine ? "TRUDVANG.Resource.Divinity" : "TRUDVANG.Resource.Vitner",
       activeSpellCount,
-      persistent,
+      persistent: persistent && !seal,
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"),
       sacrifice: offerVitner
     });
     if (!options) return null;
-    const currentAvailability=spellAvailability(this,item);
+    if (seal && !canBindSpell(seal,this,item)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+    const currentAvailability=spellAvailability(this,item,{sealed:Boolean(seal)});
     if(!currentAvailability.ok)return ui.notifications.warn(game.i18n.format(currentAvailability.reason,currentAvailability.data));
-    if (transformationKeys(item).some(key=>TRANSFORMATION_TEMPLATES[key]?.aura?.fixed)
+    if (!seal && transformationKeys(item).some(key=>TRANSFORMATION_TEMPLATES[key]?.aura?.fixed)
       && !auraCasterToken(this,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables)) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.NoFixedSite"));
     }
@@ -1570,10 +1573,14 @@ export class TrudvangActor extends BaseActor {
     const fatalKind = isDivine ? "faith" : "vitner";
     // Allocate before publishing the card so its effects and maintained record
     // share the identity of this particular casting, even for the same spell.
-    const castingId = trackedPersistent || POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting ? foundry.utils.randomID() : "";
+    const castingId = seal || trackedPersistent || POWER_DETAILS_BY_ID[item.system.catalogId]?.targeting ? foundry.utils.randomID() : "";
+    const levelSnapshot = options.costBreakdown.entries.map((entry, index) => ({
+      id: entry.id || "", index, description: entry.effect || "", count: Number(entry.count) || 0, unitCost: Number(entry.unitCost) || 0
+    }));
     const result = await rollUnder({blessing:options.blessing, actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
       flavor, item, powerLevelCounts: options.costBreakdown.entries.map(entry => Number(entry.count) || 0), castingId, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      seal: seal ? {effect: seal, cost: options.cost, levels: levelSnapshot} : null,
       resolvePerfectSuccess:isDivine?null:async()=>{
         const bonusRoll=await new Roll("1d10+1").evaluate();
         await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]});
@@ -1602,7 +1609,7 @@ export class TrudvangActor extends BaseActor {
         effectUuids:result.automaticEffectUuids??[],effectsApplied:Boolean(result.automaticEffectUuids?.length),
         startedAt: Number(game.time?.worldTime || 0), duration: String(item.system.duration || ""),
         powerLevelCounts: result.perfectSelection?.counts ?? options.costBreakdown.entries.map(entry => Number(entry.count) || 0),
-        powerLevelSnapshot: options.costBreakdown.entries.map((entry, index) => ({id: entry.id || "", index, description: entry.effect || "", count: result.perfectSelection?.counts[index] ?? (Number(entry.count) || 0), unitCost: Number(entry.unitCost) || 0}))
+        powerLevelSnapshot: levelSnapshot.map((entry,index) => ({...entry,count:result.perfectSelection?.counts[index]??entry.count}))
       }], "system.activeSpellCastingsMigrated": true});
     }
     return result;

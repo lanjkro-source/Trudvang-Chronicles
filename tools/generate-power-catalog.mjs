@@ -103,6 +103,9 @@ for (const id of [...french.keys()].sort()) {
     }
   if(!same(f.purification,e.purification))fail(id+': unaligned purification');
   if(!same(f.heating,e.heating))fail(id+': unaligned heating');
+  if(!same(f.seal,e.seal))fail(id+': unaligned seal');
+  if(f.seal&&(!Number.isInteger(f.seal.maximum)||f.seal.maximum<=0||
+    !f.powerLevels.some(option=>option.optionId===f.seal.levelOptionId)))fail(id+': invalid seal profile');
   if(f.heating){
     const {litres,minutes,durationOptionId,rangeOptionId,increments}=f.heating;
     const known=optionId=>f.powerLevels.some(option=>option.optionId===optionId);
@@ -191,6 +194,7 @@ for (const id of [...french.keys()].sort()) {
     ...(f.casterFirstEffects?{casterFirstEffects:f.casterFirstEffects}:{}),
     ...(f.purification?{purification:f.purification}:{}),
     ...(f.heating?{heating:f.heating}:{}),
+    ...(f.seal?{seal:f.seal}:{}),
     ...(f.revelation?{revelation:f.revelation}:{}),
     ...(f.spellZone?{spellZone:f.spellZone}:{}),
     ...(f.damageRoll ? {damageRoll:f.damageRoll} : {}),

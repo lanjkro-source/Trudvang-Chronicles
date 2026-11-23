@@ -16970,6 +16970,27 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.BurningHand.Profile` | {hands} burning hand(s): punch + {fire} fire for the first; second hand: {second} if present. | {hands} main(s) embrasée(s) : coup de poing + {fire} feu pour la première ; seconde main : {second} si présente. |
 | `TRUDVANG.BurningHand.WeaponLock` | Burning Hand: weapons cannot be used during the casting round. | Main brûlante : aucune arme utilisable pendant le round du lancement. |
 
+## `TRUDVANG.Seal`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Seal.Name` | Seal | Sceau |
+| `TRUDVANG.Seal.Prepare` | Place the seal | Apposer le sceau |
+| `TRUDVANG.Seal.Object` | Choose the object to seal | Choisir l’objet à sceller |
+| `TRUDVANG.Seal.Description` | The seal can store a successful spell casting. The GM decides when to release it. | Le sceau peut contenir un sortilège réussi. Le MJ décide quand le libérer. |
+| `TRUDVANG.Seal.Empty` | Empty seal | Sceau vide |
+| `TRUDVANG.Seal.Maximum` | Maximum spell level {level} | Sortilège de niveau {level} maximum |
+| `TRUDVANG.Seal.ChooseSpell` | Choose the spell to seal | Choisir le sortilège à sceller |
+| `TRUDVANG.Seal.Bind` | Weave the spell to seal | Tisser le sortilège à sceller |
+| `TRUDVANG.Seal.Release` | Release the spell | Libérer le sortilège |
+| `TRUDVANG.Seal.Stored` | Sealed spell · {spell} | Sortilège scellé · {spell} |
+| `TRUDVANG.Seal.Bound` | The spell is sealed into {object}. | Le sortilège est scellé dans {object}. |
+| `TRUDVANG.Seal.Released` | The seal on {object} releases the spell. | Le sceau de {object} libère le sortilège. |
+| `TRUDVANG.Seal.NoObject` | No eligible item. If needed, select the carrier’s token. | Aucun objet disponible. Sélectionnez au besoin le token du porteur. |
+| `TRUDVANG.Seal.NoSpell` | The weaver knows no spell compatible with this seal. | Le tisseur ne connaît aucun sortilège compatible avec ce sceau. |
+| `TRUDVANG.Seal.NoCaster` | The weaver of the seal could not be found. | Le tisseur du sceau est introuvable. |
+| `TRUDVANG.Seal.Unavailable` | The seal is unavailable. Check the item and the active GM. | Le sceau est indisponible. Vérifiez l’objet et le MJ actif. |
+
 ## `TRUDVANG.WaterPurification`
 
 | Clé | English | Français |

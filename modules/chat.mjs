@@ -22,6 +22,7 @@ import {renderFatalResultAction} from "./fatal-result-chat.mjs";
 import {zoneAction, zoneOutcome} from "./zone-chat.mjs";
 import {rollOutcomeText} from "./rules/roll-outcome-view.mjs";
 import {heatingConsequence} from "./water-purification.mjs";
+import {prepareMagicSeal, sealedSpellSource} from "./magic-seal.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -81,6 +82,27 @@ function attachListeners(message, html) {
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
   renderFatalResultAction(message, html);
+  const sealCard = message.flags?.["trudvang-chronicles"]?.sealPreparation;
+  if (game.user?.isGM && sealCard && !sealCard.effectUuid && message.isContentVisible) {
+    const card = html.querySelector?.(".trudvang.chat-card");
+    if (card) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = game.i18n.localize("TRUDVANG.Seal.Prepare");
+      button.addEventListener("click", async () => {
+        button.disabled = true;
+        try {
+          const effect = await prepareMagicSeal(message);
+          if (effect) await effect.sheet?.render({force:true});
+        }
+        catch (error) {
+          console.error("Trudvang | Seal preparation failed", error);
+          ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+        } finally { button.disabled = false; }
+      });
+      card.append(button);
+    }
+  }
   decorateSpellZoneRows(message, html);
   html.querySelector?.('[data-action="apply-spell-zone"]')?.addEventListener("click", async event => {
     const button = event.currentTarget;
@@ -148,7 +170,7 @@ function attachListeners(message, html) {
     button.addEventListener("click",async event=>{
       event.preventDefault();
       const actor=await foundry.utils.fromUuid(button.dataset.actorUuid);
-      const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
+      const item=sealedSpellSource(message,actor)??await foundry.utils.fromUuid(button.dataset.itemUuid);
       if(!actor?.isOwner||!item)return;
       const {rollMagicDamage}=await import("./magic-damage.mjs");
       await rollMagicDamage({document:item,actor,context:message.flags?.["trudvang-chronicles"]?.ruleTestContext,baseOnly:button.dataset.baseOnly==="true"});
@@ -161,7 +183,7 @@ function attachListeners(message, html) {
       button.disabled=true;
       try {
         const actor=await foundry.utils.fromUuid(button.dataset.actorUuid);
-        const item=await foundry.utils.fromUuid(button.dataset.itemUuid);
+        const item=sealedSpellSource(message,actor)??await foundry.utils.fromUuid(button.dataset.itemUuid);
         if(!actor?.isOwner||!item)return;
         const {rollMagicFear}=await import('./magic-fear.mjs');
         await rollMagicFear({document:item,actor,speaker:message.speaker,castArea:message.getFlag('trudvang-chronicles','magicFearArea'),
@@ -244,7 +266,10 @@ function attachListeners(message, html) {
     button.addEventListener("click", async event => {
       event.preventDefault();
       if (button.disabled) return;
-      const document = await foundry.utils.fromUuid(button.closest("[data-rule-document-uuid]")?.dataset.ruleDocumentUuid);
+      const uuid = button.closest("[data-rule-document-uuid]")?.dataset.ruleDocumentUuid;
+      const released = message.flags?.["trudvang-chronicles"]?.releasedSeal;
+      const sealCaster = released && await foundry.utils.fromUuid(released.context.casterUuid);
+      const document = (sealCaster && sealedSpellSource(message,sealCaster)) || await foundry.utils.fromUuid(uuid);
       if (!document) return;
       button.disabled = true;
       try {

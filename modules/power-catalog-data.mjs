@@ -13554,6 +13554,10 @@ export const POWER_DETAILS_BY_ID = {
   "vitner-vitner-craft:seal:5": {
     "isRune": false,
     "level": 4,
+    "seal": {
+      "maximum": 1,
+      "levelOptionId": "vitner-vitner-craft:seal:5:2"
+    },
     "powerLevels": [
       {
         "id": "vitner-vitner-craft:seal:5:0",

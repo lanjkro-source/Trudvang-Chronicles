@@ -19174,6 +19174,24 @@
       "Profile": "{hands} burning hand(s): punch + {fire} fire for the first; second hand: {second} if present.",
       "WeaponLock": "Burning Hand: weapons cannot be used during the casting round."
     },
+    "Seal": {
+      "Name": "Seal",
+      "Prepare": "Place the seal",
+      "Object": "Choose the object to seal",
+      "Description": "The seal can store a successful spell casting. The GM decides when to release it.",
+      "Empty": "Empty seal",
+      "Maximum": "Maximum spell level {level}",
+      "ChooseSpell": "Choose the spell to seal",
+      "Bind": "Weave the spell to seal",
+      "Release": "Release the spell",
+      "Stored": "Sealed spell · {spell}",
+      "Bound": "The spell is sealed into {object}.",
+      "Released": "The seal on {object} releases the spell.",
+      "NoObject": "No eligible item. If needed, select the carrier’s token.",
+      "NoSpell": "The weaver knows no spell compatible with this seal.",
+      "NoCaster": "The weaver of the seal could not be found.",
+      "Unavailable": "The seal is unavailable. Check the item and the active GM."
+    },
     "WaterPurification": {
       "Heating": "Up to {litres} L of water · {minutes} min · Range {range}",
       "Capacity": "Volume that can be purified: {value}.",

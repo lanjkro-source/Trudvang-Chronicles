@@ -19174,6 +19174,24 @@
       "Profile": "{hands} main(s) embrasée(s) : coup de poing + {fire} feu pour la première ; seconde main : {second} si présente.",
       "WeaponLock": "Main brûlante : aucune arme utilisable pendant le round du lancement."
     },
+    "Seal": {
+      "Name": "Sceau",
+      "Prepare": "Apposer le sceau",
+      "Object": "Choisir l’objet à sceller",
+      "Description": "Le sceau peut contenir un sortilège réussi. Le MJ décide quand le libérer.",
+      "Empty": "Sceau vide",
+      "Maximum": "Sortilège de niveau {level} maximum",
+      "ChooseSpell": "Choisir le sortilège à sceller",
+      "Bind": "Tisser le sortilège à sceller",
+      "Release": "Libérer le sortilège",
+      "Stored": "Sortilège scellé · {spell}",
+      "Bound": "Le sortilège est scellé dans {object}.",
+      "Released": "Le sceau de {object} libère le sortilège.",
+      "NoObject": "Aucun objet disponible. Sélectionnez au besoin le token du porteur.",
+      "NoSpell": "Le tisseur ne connaît aucun sortilège compatible avec ce sceau.",
+      "NoCaster": "Le tisseur du sceau est introuvable.",
+      "Unavailable": "Le sceau est indisponible. Vérifiez l’objet et le MJ actif."
+    },
     "WaterPurification": {
       "Heating": "Jusqu’à {litres} L d’eau · {minutes} min · Portée {range}",
       "Capacity": "Volume purifiable : {value}.",

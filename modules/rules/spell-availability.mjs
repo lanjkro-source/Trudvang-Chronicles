@@ -16,7 +16,7 @@ export function spellActorForItem(item,{user=game.user,controlled=globalThis.can
 
 /** Read-only prerequisites shared by the sheet and the actual launch. Costs
  * include the existing optional health sacrifice; never disable it for low vitner. */
-export function spellAvailability(actor,item){
+export function spellAvailability(actor,item,{sealed=false}={}){
  const deny=(reason,data={})=>({ok:false,reason,data});
  if(item?.system?.isRune)return deny("TRUDVANG.Power.RuneObjectNeeded");
  if(!actor||!["character","npc"].includes(actor.type))return deny("TRUDVANG.Warning.SpellCasterRequired");
@@ -44,7 +44,7 @@ export function spellAvailability(actor,item){
   const required=Number(item.system.level)||1;
   if(Number(tablet.system.level||0)<required)return deny("TRUDVANG.Warning.SpellTabletLevelRequired",{level:required});
  }
- if(!divine&&item.system.spellType==="lasting"&&activeSpellInstances(actor).length>=actor.activeSpellLimit)return deny("TRUDVANG.Warning.ActiveSpellLimit");
+ if(!sealed&&!divine&&item.system.spellType==="lasting"&&activeSpellInstances(actor).length>=actor.activeSpellLimit)return deny("TRUDVANG.Warning.ActiveSpellLimit");
  const cost=Number(item.system.cost??TRUDVANG.spellCosts[item.system.level]??0);
  const resource=actor.system.resources?.[divine?"divinity":"vitner"]??{};
  const available=Number(resource.current??resource.value??0)+(divine?Number(resource.temporary||0):0);

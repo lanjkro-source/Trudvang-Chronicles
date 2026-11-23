@@ -11,6 +11,7 @@ import {conditionalSituationBonuses} from "../rules/effect-conditional-tests.mjs
 import {npcBookSkillRows} from "../rules/npc-summary.mjs";
 import {TRUDVANG} from "../config.mjs";
 import {magicDamageProfile,rollMagicDamage} from "../magic-damage.mjs";
+import {releaseSealedSpell,sealSheetView,weaveSealedSpell} from "../magic-seal.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -46,7 +47,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       saveDescription: TrudvangEffectSheet.onSaveDescription,
       "roll-rule-test": TrudvangEffectSheet.onRollRuleTest,
       "roll-magic-damage": TrudvangEffectSheet.onRollMagicDamage,
-      "roll-conditional-situation": TrudvangEffectSheet.onRollConditionalSituation
+      "roll-conditional-situation": TrudvangEffectSheet.onRollConditionalSituation,
+      "weave-sealed-spell": TrudvangEffectSheet.onWeaveSealedSpell,
+      "release-sealed-spell": TrudvangEffectSheet.onReleaseSealedSpell
     }
   };
 
@@ -112,6 +115,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         ? conditionalSituationBonuses(this.document).map((bonus,index)=>({index,bonus})).filter(({bonus})=>!bonus.skillOnly&&!bonus.allActions).map(({bonus,index})=>({index,label:bonus.skill||bonus.ability?game.i18n.format(bonus.labelKey,{value:bonus.value}):`${game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")} — ${game.i18n.format(bonus.labelKey,{value:bonus.value})}`})) : [];
       partContext.canRollMagicDamage=this.document.parent?.documentName==="Actor" && this.document.parent.isOwner && Boolean(magicDamageProfile(this.document)) && !POWER_DETAILS_BY_ID[this.document.flags?.["trudvang-chronicles"]?.transformation?.sourceId]?.damageRoll?.automatic;
       partContext.origin = this.document.origin || "";
+      partContext.seal = sealSheetView(this.document);
       const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
       const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
         const id = status.id ?? key;
@@ -338,6 +342,29 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static async onRollRuleTest(event, target) {
     event.preventDefault();
     return performRuleTest({document: this.document, index: target.dataset.testIndex});
+  }
+
+  static async onWeaveSealedSpell(event, target) {
+    event.preventDefault();
+    target.disabled = true;
+    try {
+      if ((await weaveSealedSpell(this.document))?.success) await this.render({force:true});
+    }
+    catch (error) {
+      console.error("Trudvang | Seal binding failed", error);
+      ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+    } finally { target.disabled = false; }
+  }
+
+  static async onReleaseSealedSpell(event, target) {
+    event.preventDefault();
+    target.disabled = true;
+    try {
+      if (await releaseSealedSpell(this.document)) await this.close();
+    } catch (error) {
+      console.error("Trudvang | Seal release failed", error);
+      ui.notifications.warn(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
+    } finally { target.disabled = false; }
   }
 
   static async onRollMagicDamage(event) {
