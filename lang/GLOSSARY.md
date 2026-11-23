@@ -16434,6 +16434,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.FatalMagic.Blindness` | Vitner blindness prevents spellcasting. | La perte de perception du vitner empêche de lancer des sortilèges. |
 | `TRUDVANG.FatalMagic.NoOrigin` | The discharge needs the weaver’s token on the scene where the roll was made. | La décharge nécessite le token du tisseur sur la scène du jet. |
 | `TRUDVANG.FatalMagic.AreaUnavailable` | The discharge could not be applied. Check that the GM is connected. | La décharge n’a pas pu être appliquée. Vérifiez que le MJ est connecté. |
+| `TRUDVANG.FatalMagic.InvalidResult` | The card does not confirm the displayed table row. Draw that row again. | La carte ne confirme pas la ligne affichée de la table. Tirez de nouveau cette ligne. |
 | `TRUDVANG.FatalMagic.AreaExceptCaster` | The weaver is spared. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
 | `TRUDVANG.FatalMagic.AreaIncludesCaster` | The weaver is also affected. Only non-weavers without Vitner Points lose Body Points. | Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS. |
 | `TRUDVANG.FatalMagic.AreaApplied` | Discharge resolved within a radius of {radius} m. | Décharge résolue dans un rayon de {radius} m. |

@@ -13,6 +13,10 @@ const i18n = (key, data) => data
 const canApply = message => message.isContentVisible && (game.user.isGM || message.isAuthor);
 const applying = new Set();
 const roll = async formula => Number((await new Roll(formula).evaluate()).total);
+const areaWarnings = {
+  noOrigin: "TRUDVANG.FatalMagic.NoOrigin",
+  invalidResult: "TRUDVANG.FatalMagic.InvalidResult"
+};
 
 async function choosePower(powers) {
   if (!powers.length) return null;
@@ -87,15 +91,13 @@ export async function applyFatalMagic(message) {
     if (!pulse && (!Number.isInteger(cost) || cost < 0)) return false;
     const response = await requestFatalVitnerArea(message, {pulse, cost, sequence: result.enclosure?.sequence});
     if (["applied", "alreadyApplied"].includes(response.status)) return true;
-    ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
-      ? "TRUDVANG.FatalMagic.NoOrigin" : "TRUDVANG.FatalMagic.AreaUnavailable"));
+    ui.notifications.warn(game.i18n.localize(areaWarnings[response.status] ?? "TRUDVANG.FatalMagic.AreaUnavailable"));
     return false;
   }
   if (fatalMagicHasArea(rule)) {
     const response = await requestFatalVitnerArea(message, {prepareOnly: !result.preview});
     if (["prepared", "applied", "alreadyApplied"].includes(response.status)) return true;
-    ui.notifications.warn(game.i18n.localize(response.status === "noOrigin"
-      ? "TRUDVANG.FatalMagic.NoOrigin" : "TRUDVANG.FatalMagic.AreaUnavailable"));
+    ui.notifications.warn(game.i18n.localize(areaWarnings[response.status] ?? "TRUDVANG.FatalMagic.AreaUnavailable"));
     return false;
   }
   applying.add(message.id);

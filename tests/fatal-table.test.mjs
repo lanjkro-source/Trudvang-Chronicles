@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { fatalRollFormula, fatalTableId } from "../modules/rules/fatal-table.mjs";
+import { fatalRollFormula, fatalTableId, matchesFatalResult } from "../modules/rules/fatal-table.mjs";
 
 test("all fatal JO formulas explode at or above the chosen threshold", () => {
   assert.equal(fatalRollFormula(8, -3), "1d10x>=8 - 3");
@@ -19,7 +19,10 @@ class BaseTable {
   getFlag(namespace, key) { return this.flags?.[key]; }
   getResultsForRoll(value) { return this.results.filter(result => !result.drawn && value >= result.range[0] && value <= result.range[1]); }
   async roll(options) { return {ordinary: true, options}; }
-  async draw(options) { this.drawOptions = options; return this.roll(options); }
+  async draw(options) {
+    this.drawOptions = options;
+    return options.results?.length ? {roll: options.roll, results: options.results} : this.roll(options);
+  }
   async toMessage(results, options) { this.message = {results, options}; }
 }
 globalThis.foundry = {documents: {RollTable: BaseTable}, applications: {api: {DialogV2: {wait: async () => null}}}};
@@ -119,4 +122,39 @@ test("fatal magic table attaches the caster only for rows with implemented effec
   await table.draw({roll: {total: 51, _evaluated: true}});
   assert.equal(table.message.options.messageData.flags, undefined);
   canvas.tokens.controlled = [];
+});
+
+test("a GM-forced 50 keeps the selected row and is actionable without a random roll", async () => {
+  const table = new TrudvangRollTable();
+  table.flags = {starterId: "fatal-magic-effects"};
+  const selected = {range: [50, 50]};
+  const actor = {uuid: "Actor.weaver"};
+  canvas.tokens.controlled = [{actor, document: {uuid: "Scene.test.Token.weaver"}}];
+  game.user = {isGM: true};
+  foundry.applications.api.DialogV2.wait = async () => assert.fail("Forced rows do not need the table roll dialog");
+  const earlierRoll = globalThis.Roll;
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = Number(this.formula); return this; }
+  };
+  try {
+    await table.draw({results: [selected], roll: {total: 7}});
+    assert.equal(table.drawOptions.roll.total, 50);
+    assert.deepEqual(table.message.results, [selected]);
+    assert.equal(table.message.options.roll, undefined);
+    const result = table.message.options.messageData.flags["trudvang-chronicles"].fatalMagicResult;
+    assert.deepEqual(result, {actorUuid: actor.uuid, tokenUuid: "Scene.test.Token.weaver", row: 50, forced: true});
+    assert.equal(matchesFatalResult({author: game.user}, result, {last: 50}), true);
+    assert.equal(matchesFatalResult({author: {isGM: false}}, result, {last: 50}), false);
+    const natural = {total: 50};
+    await table.draw({results: [selected], roll: natural});
+    assert.equal(table.message.options.roll, natural);
+    assert.equal(table.message.options.messageData.flags["trudvang-chronicles"].fatalMagicResult.forced, undefined);
+    await table.postFatalResult({results: [selected], roll: {total: 50, isDeterministic: true}}, {actor});
+    assert.equal(table.message.options.messageData.flags["trudvang-chronicles"].fatalMagicResult.forced, true);
+  } finally {
+    globalThis.Roll = earlierRoll;
+    canvas.tokens.controlled = [];
+    delete game.user;
+  }
 });

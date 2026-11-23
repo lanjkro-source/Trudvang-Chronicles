@@ -18723,6 +18723,7 @@
       "Blindness": "La perte de perception du vitner empêche de lancer des sortilèges.",
       "NoOrigin": "La décharge nécessite le token du tisseur sur la scène du jet.",
       "AreaUnavailable": "La décharge n’a pas pu être appliquée. Vérifiez que le MJ est connecté.",
+      "InvalidResult": "La carte ne confirme pas la ligne affichée de la table. Tirez de nouveau cette ligne.",
       "AreaExceptCaster": "Le tisseur est épargné. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
       "AreaIncludesCaster": "Le tisseur est également touché. Seules les créatures qui ne tissent pas et qui n’ont aucun PV perdent des PS.",
       "AreaApplied": "Décharge résolue dans un rayon de {radius} m.",

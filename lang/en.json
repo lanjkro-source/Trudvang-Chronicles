@@ -18723,6 +18723,7 @@
       "Blindness": "Vitner blindness prevents spellcasting.",
       "NoOrigin": "The discharge needs the weaver’s token on the scene where the roll was made.",
       "AreaUnavailable": "The discharge could not be applied. Check that the GM is connected.",
+      "InvalidResult": "The card does not confirm the displayed table row. Draw that row again.",
       "AreaExceptCaster": "The weaver is spared. Only non-weavers without Vitner Points lose Body Points.",
       "AreaIncludesCaster": "The weaver is also affected. Only non-weavers without Vitner Points lose Body Points.",
       "AreaApplied": "Discharge resolved within a radius of {radius} m.",

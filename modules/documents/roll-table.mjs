@@ -1,7 +1,7 @@
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
-import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
+import { fatalTableId, fatalRollFormula, fatalTotalInRange } from "../rules/fatal-table.mjs";
 import { DIVINE_FAILURE_ROWS } from "../rules/divine-failure.mjs";
 import { FATAL_MAGIC_ROWS, fatalMagicHasArea } from "../rules/fatal-magic.mjs";
 import { fatalAreaOrigin } from "../fatal-vitner-area.mjs";
@@ -44,15 +44,22 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     if (displayChat && this.fatalTableId) {
       const controlled = globalThis.canvas?.tokens?.controlled ?? [];
       const actor = controlled.length === 1 ? controlled[0].actor : null;
+      const selected = options.results?.length === 1 ? options.results[0] : null;
+      const [first, last] = selected?.range ?? [];
+      const forced = this.fatalTableId === "fatal-magic-effects" && game.user?.isGM
+        && Number.isInteger(first) && !fatalTotalInRange(options.roll?.total, first, last);
       let cost;
-      if (!options.roll) {
+      if (forced) {
+        // Preserve the explicitly selected row without rolling a different one.
+        options.roll = await new Roll(String(first)).evaluate();
+      } else if (!options.roll) {
         const choices = await this.#getRollChoices();
         if (!choices) return {roll: {total: NaN}, results: []};
         options.roll = new Roll(fatalRollFormula(choices.threshold, choices.modifier));
         cost = choices.cost;
       }
       const draw = await super.draw({displayChat: false, ...options});
-      if (draw.results.length) await this.postFatalResult(draw, {actor, cost, messageMode: options.messageMode});
+      if (draw.results.length) await this.postFatalResult(draw, {actor, cost, forced, messageMode: options.messageMode});
       return draw;
     }
     if (!extractStageTableId(this)) return super.draw({displayChat, ...options});
@@ -91,9 +98,11 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     return {roll: dieRoll, results: [], message};
   }
 
-  async postFatalResult(draw, {actor, power, cost, messageMode} = {}) {
+  async postFatalResult(draw, {actor, power, cost, forced, messageMode} = {}) {
     const divine = this.fatalTableId === "fatal-failure-effects";
     const row = draw.results[0]?.range?.[0];
+    const fixedResult = !divine && game.user?.isGM && (forced || (draw.roll?.isDeterministic
+      && fatalTotalInRange(draw.roll.total, row, draw.results[0]?.range?.[1])));
     const messageData = actor ? {speaker: ChatMessage.getSpeaker({actor})} : {};
     if (actor?.uuid && (divine ? DIVINE_FAILURE_ROWS[row] : FATAL_MAGIC_ROWS[row])) {
       const flag = divine ? "divineFailureResult" : "fatalMagicResult";
@@ -101,7 +110,8 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
       const origin = !divine && (fatalMagicHasArea(rule) || rule?.enclosure) ? {tokenUuid: fatalAreaOrigin(actor, messageData.speaker)} : {};
       messageData.flags = {"trudvang-chronicles": {[flag]: {
         actorUuid: actor.uuid, row, ...origin, ...(divine ? {power: power ?? null} : {}),
-        ...(!divine && Number.isInteger(cost) ? {cost} : {})
+        ...(!divine && Number.isInteger(cost) ? {cost} : {}),
+        ...(fixedResult ? {forced: true} : {})
       }}};
     }
     const results = divine ? draw.results : draw.results.map(result => {
@@ -110,7 +120,7 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
         ? result.clone({text: game.i18n.localize(`TRUDVANG.Content.Table.FatalMagic.E${row}`)}, {keepId: true})
         : result;
     });
-    return this.toMessage(results, {roll: draw.roll, messageData, messageOptions: {messageMode}});
+    return this.toMessage(results, {roll: fixedResult ? undefined : draw.roll, messageData, messageOptions: {messageMode}});
   }
 
   getResultsForRoll(value) {

@@ -2,6 +2,7 @@ import {FATAL_MAGIC_ROWS, absorbsVitnerFrom, fatalMagicHasArea, fatalNegationApp
 import {fatalBodyLossUpdates} from "./rules/fatal-body-loss.mjs";
 import {zonePixelScale} from "./rules/spell-zones.mjs";
 import {auraColor} from "./aura.mjs";
+import {matchesFatalResult} from "./rules/fatal-table.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const RESULT = `flags.${SCOPE}.fatalMagicResult`;
@@ -118,8 +119,7 @@ async function drainVictim(actor, rolled, messageId) {
 export async function prepareFatalVitnerArea(message) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
-  const total = Number(message.rolls?.[0]?.total);
-  if (!fatalMagicHasArea(rule) || !Number.isInteger(total) || total < result.row || total > rule.last) return null;
+  if (!fatalMagicHasArea(rule) || !matchesFatalResult(message, result, rule)) return null;
   if (result.applied) return null;
   const caster = await foundry.utils.fromUuid(result.actorUuid);
   if (!caster) return null;
@@ -197,6 +197,7 @@ export async function cleanupFatalVitnerPreviews() {
 
 export async function applyFatalVitnerArea(message, {prepareOnly = false} = {}) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
+  if (!matchesFatalResult(message, result, FATAL_MAGIC_ROWS[result?.row])) return {status: "invalidResult"};
   if (result?.applied) {
     await clearFatalVitnerPreview(message);
     return {status: "alreadyApplied"};

@@ -3,6 +3,7 @@ import {deleteEffectOnce} from "./effect-deletion.mjs";
 import {fatalVitnerRecipients} from "./fatal-vitner-area.mjs";
 import {FATAL_MAGIC_ROWS, absorbsVitnerFrom} from "./rules/fatal-magic.mjs";
 import {zonePixelScale} from "./rules/spell-zones.mjs";
+import {matchesFatalResult} from "./rules/fatal-table.mjs";
 
 const SCOPE = "trudvang-chronicles";
 const TAG = "fatalEnclosure";
@@ -190,8 +191,7 @@ export function applyFatalEnclosure(message, {pulse = false, cost, sequence} = {
   return serialize(message.id, async () => {
     const result = message.getFlag(SCOPE, "fatalMagicResult");
     const row = FATAL_MAGIC_ROWS[result?.row];
-    const total = Number(message.rolls?.[0]?.total);
-    if (!row?.enclosure || !Number.isInteger(total) || total < result.row || total > row.last) return {status: "unavailable"};
+    if (!row?.enclosure || !matchesFatalResult(message, result, row)) return {status: "invalidResult"};
     if (!pulse) {
       if (result.enclosure) return {status: "alreadyApplied"};
       const maximum = result.cost ?? cost;

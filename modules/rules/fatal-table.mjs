@@ -16,3 +16,12 @@ export function fatalRollFormula(threshold = 9, modifier = 0) {
   const bonus = Math.trunc(Number(modifier) || 0);
   return `1d10x>=${jo}${bonus < 0 ? ` - ${-bonus}` : bonus > 0 ? ` + ${bonus}` : ""}`;
 }
+
+export function fatalTotalInRange(total, first, last) {
+  return Number.isInteger(total) && total >= first && total <= last;
+}
+
+export function matchesFatalResult(message, result, rule) {
+  return Boolean(result && rule && (fatalTotalInRange(message.rolls?.[0]?.total, result.row, rule.last)
+    || (result.forced === true && message.author?.isGM)));
+}

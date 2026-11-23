@@ -72,9 +72,9 @@ test('Sunray uses the original casting site and resumes daylight only while the 
 test("a 50 enclosure previews its targets, lasts until the second discharge and ignores continuous presence", async () => {
  setup();
  const token=scene.tokens.get("caster"), victim=scene.tokens.get("target");
- const result={row:50,cost:2,actorUuid:caster.uuid,tokenUuid:token.uuid};
+ const result={row:50,forced:true,actorUuid:caster.uuid,tokenUuid:token.uuid};
  message.flags[S].fatalMagicResult=result;
- message.rolls=[{total:50}];
+ message.rolls=[];
  message.getFlag=(_scope,key)=>message.flags[S][key];
  message.update=async data=>{result.enclosure=data[`flags.${S}.fatalMagicResult.enclosure`];};
  const create=scene.createEmbeddedDocuments;
@@ -89,7 +89,7 @@ test("a 50 enclosure previews its targets, lasts until the second discharge and 
  const previous=globalThis.Roll;
  globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;return this;}};
  try {
-  assert.deepEqual(await applyFatalEnclosure(message),{status:"applied"});
+  assert.deepEqual(await applyFatalEnclosure(message,{cost:2}),{status:"applied"});
   assert.equal(regions.get("enclosure").attachment.token,token.id);
   assert.equal(result.enclosure.targets.length,2);
   assert.equal(target.system.resources.body.value,20);
