@@ -59,6 +59,7 @@ function placementLimit(scene,token,profile,movingFog){
  };
 }
 const pointInRange = (limit,point) => spellZoneRange(limit,point)?.inRange === true;
+const zoneColor = profile => profile.kind === 'airShield' ? '#008cff' : auraColor();
 // Lighting failures must not prevent a victim's damage or Evade decision.
 async function syncZoneLight(region,options){try{await syncSpellZoneFireLight(region,options);}catch(error){console.error('Trudvang | Fire area lighting failed',error);}}
 const regionDeletions=new WeakMap();
@@ -362,7 +363,7 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  info.lastMovedPhase=spellZonePhase(info,clock(info));
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
  const darkMode=darkness?globalThis.CONFIG?.RegionBehavior?.dataModels?.adjustDarknessLevel?.MODES?.OVERRIDE:undefined;
- if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:auraColor(),highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
+ if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:zoneColor(profile),highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
   ...(support?{attachment:{token:support.id}}:{}),
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
   behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
@@ -739,7 +740,7 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   let pointer,preview,confirmed;
   try {
    preview=await board.regions.placeRegion({
-    name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:auraColor(),
+    name:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name'),shapes:[shape],color:zoneColor(profile),
     levels:token.level?[token.level]:[],highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS
    },{
     create:false,attachToToken:false,allowRotation:air||darkness&&shape.type==='rectangle',

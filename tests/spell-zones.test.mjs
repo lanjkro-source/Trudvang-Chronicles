@@ -46,6 +46,7 @@ test('Air Shield has directional cover, applies its official Size table and expi
  const placed=await createSpellZoneOnAuthority({...request,point:{x:100,y:50},shape:{rotation:90}});
  assert.equal(placed.status,'placed');
  const [region]=regions.values();
+ assert.equal(region.color,'#008cff');
  assert.equal(region.shapes[0].width,150);
  assert.equal(region.shapes[0].rotation,90);
  assert.equal(airShieldCover(scene.tokens.get('caster'),scene.tokens.get('target'))[0].value,3);
