@@ -37,6 +37,7 @@ export function ruleTestCastingContext(document,{caster,counts,context}={}){
  const specialty=kind==="spell"?"potency":kind==="divine"?"potent":"";
  const selected=Array.from(counts??[],n=>Math.max(0,Number(n)||0));
  return {sourceId,kind,counts:selected,countsById:countsByOption(sourceId,selected),casterUuid:caster?.uuid??"",casterName:caster?.name??"",
+  ...(document?.system?.religion?{religion:document.system.religion}:{}),
   sourceLevel:Number(document?.system?.level??POWER_DETAILS_BY_ID[sourceId]?.level)||0,vitnerType:kind==='spell'?(caster?.selectedVitnerType?.id??''):'',specialty,specialtyLevel:specialty?knowledgeRank(caster,specialty):0};
 }
 /** Only explicitly identified resistance tests receive offensive/defensive ranks.

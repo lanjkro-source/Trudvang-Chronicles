@@ -71,7 +71,7 @@ export async function applyEffectForCasterOnGM({messageId,userId,key,tokenUuid,s
   if(!Number.isInteger(count)||count<0||count>Number(selected[index]??0))return {status:"unavailable"};
  }
  const {applyTransformation}=await import("./transformations.mjs");
- const effect=await applyTransformation(token.actor,key,{source,context:{...context,messageId},counts:selected,targetName:item?.name||token.name||token.actor.name,preselectedAnswers:answers,destinationItem:item});
+ const effect=await applyTransformation(token.actor,key,{source,context:{...context,messageId},counts:selected,targetName:item?.name||token.name||token.actor.name,preselectedAnswers:answers,delegateTokenUuid:token.uuid,destinationItem:item});
  return effect?{status:"applied"}:{status:"unavailable"};
 }
 async function queued(payload){

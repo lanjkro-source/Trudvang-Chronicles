@@ -16711,6 +16711,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.SpellBarrier.NidSanctuaryProfile` | {radius} m radius · {ritualRounds}-round ritual · {penalty} casting SV · +{resistance} Situation Value to resist | Rayon {radius} m · Rituel {ritualRounds} tours · {penalty} VC au lancement · +{resistance} VS pour résister |
+| `TRUDVANG.SpellBarrier.NidResistanceProfile` | {radius} m radius · Situation Value {breach} to breach | Rayon {radius} m · VS de franchissement {breach} |
+| `TRUDVANG.SpellBarrier.NidTarget` | {site} · {penalty} SV · SV {target} | {site} · {penalty} VC · VC {target} |
+| `TRUDVANG.SpellBarrier.NidBreach` | Breach {wall} | Franchir {wall} |
+| `TRUDVANG.SpellBarrier.NidBreached` | The spell crosses and dispels the ward. | Le sortilège franchit la barrière et la dissipe. |
 | `TRUDVANG.SpellBarrier.AirProfile` | {protection} PV · Size {size} · {rounds} rounds | {protection} VP · Taille {size} · {rounds} tours |
 | `TRUDVANG.SpellBarrier.WallProfile` | {radius} m radius · {rounds} rounds · Test bonus +{bonus} | Rayon {radius} m · {rounds} tours · Bonus au test +{bonus} |
 | `TRUDVANG.SpellBarrier.CrossAir` | Break through the air shield | Franchir le bouclier d’air |
@@ -16924,6 +16929,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.SpellZone.NidConfirmSunlight` | Confirm that sunlight reaches the site. The ritual takes {rounds} rounds and deals 1 Body Point of damage to the priest when placed. | Confirmez que le site bénéficie du soleil. Le rituel prend {rounds} tours et inflige 1 PS au prêtre lors du placement. |
+| `TRUDVANG.SpellZone.NidSanctuaryBlocked` | The casting roll is too high for the sanctuary of Nid. | Le jet de lancement est insuffisant dans le sanctuaire de Nid. |
+| `TRUDVANG.SpellZone.NidTemperature` | Temperature change inside the ward (°C) | Écart de température dans la zone (°C) |
 | `TRUDVANG.SpellZone.BarrierBlocked` | The Wall of Vitner keeps the spell from reaching this point. | Le Mur de vitner empêche le sortilège d’atteindre ce point. |
 | `TRUDVANG.SpellZone.Place` | Place / move the area | Placer / déplacer la zone |
 | `TRUDVANG.SpellZone.ConfirmOutdoorDaylight` | Was the casting site outdoors in daylight? | Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ? |

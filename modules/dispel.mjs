@@ -38,12 +38,17 @@ async function chooseEffect(caster,rows,spec,sourceName,vitnerType){
  const content='<div class="trudvang roll-dialog"><div class="form-group"><label>'+escapeHtml(t('Effect'))+'</label><select name="effect">'+rows.map(row=>'<option value="'+escapeAttribute(row.effect.uuid)+'">'+escapeHtml(row.label)+'</option>').join('')+'</select></div><p data-dispel-preview>'+escapeHtml(preview(first))+'</p>'+sameBlock+'</div>';
  return DialogClass.wait({window:{title:sourceName},classes:['trudvang'],position:{width:560},content,buttons:[{action:'continue',label:game.i18n.localize('TRUDVANG.Action.Continue'),default:true,callback:(_event,button)=>({effectUuid:button.form.querySelector('[name=effect]').value,sameVitner:Boolean(button.form.querySelector('[name=sameVitner]')?.checked)})},{action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>false}],close:()=>false,rejectClose:false});
 }
-export async function performDispelTest({document,test,index,actor,context}={}){
+export async function performDispelTest({document,test,index,actor,context,originMessage}={}){
  if(!actor?.isOwner)return null;
  const rows=candidates(actor,test.dispel);if(!rows.length){ui.notifications.warn(t('NoEffect'));return null;}
  const choice=await chooseEffect(actor,rows,test.dispel,document.name,context.vitnerType);if(!choice||typeof choice!=='object')return null;
  const row=rows.find(row=>row.effect.uuid===choice.effectUuid);if(!row)return null;
  const current=dispelCandidate(row.effect,test.dispel);if(!current||current.fingerprint!==row.fingerprint){ui.notifications.warn(t('Changed'));return null;}
+ const recipient=row.effect.parent?.documentName==='Actor'?row.effect.parent:row.effect.parent?.actor;
+ if(originMessage&&recipient){
+  const {magicBlockedForTarget}=await import('./spell-zones.mjs');
+  if(await magicBlockedForTarget(originMessage,recipient))return null;
+ }
  const known=Boolean(row.vitnerType&&context.vitnerType);
  const same=known?vitnerIdentity(row.vitnerType)===vitnerIdentity(context.vitnerType):Boolean(choice.sameVitner);
  const modifiers=localizeResistanceRows(magicResistanceRows(test,{context,actor}));

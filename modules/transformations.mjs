@@ -145,9 +145,9 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  if(reference.armorBlessing&&destinationItem?.type!=="armor"){ui.notifications.warn(local("ArmorTargetRequired"));return null;}
  if(destinationItem&&(destinationItem.parent?.uuid!==actor.uuid||(!delegated&&!destinationItem.canUserModify?.(game.user,"update"))||(reference.instant&&!reference.instant.rune)||reference.onApply))return null;
  const casting=transformationCasting(source??{system:{catalogId:reference.sourceId}},counts,context);
- if(message && casting.kind==="spell"){
-  const {checkVitnerWall}=await import('./spell-zones.mjs');
-  if(await checkVitnerWall(message,actor,delegateTokenUuid||undefined))return null;
+ if(message && ["spell","divine","rune"].includes(casting.kind)){
+  const {magicBlockedForTarget}=await import('./spell-zones.mjs');
+  if(await magicBlockedForTarget(message,actor,delegateTokenUuid||undefined))return null;
  }
  if(reference.weaponHitOnly)throw Error(local('WeaponHitRequired'));
  if(reference.instant?.rune&&(!casting.castingId||!casting.messageId||!game.messages?.get(casting.messageId)?.flags?.[SCOPE]?.runeAllocation))throw Error(game.i18n.localize('TRUDVANG.Warning.MagicAllocationUnavailable'));

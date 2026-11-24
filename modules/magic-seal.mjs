@@ -248,7 +248,11 @@ async function releaseOnAuthority(effect, user, {targetUuid, actorUuid}) {
         releasedSeal: {id: releaseMessageId, spell, objectName: effect.parent.name, userId: user.id, target,
           actorUuid: actor.uuid, tracked}});
       message = game.messages.get(releaseMessageId);
-      if (!released.success || !message) return null;
+      if (!message) return null;
+      if (!released.success && tracked) {
+        await caster.update({"system.activeSpellCastings":activeSpellRecords(caster).filter(row=>row.id!==record.id),
+          "system.activeSpellCastingsMigrated":true});
+      }
     }
     await effect.delete();
     return message;

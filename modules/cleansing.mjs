@@ -19,6 +19,11 @@ export async function performCleansing({document,test,index,actor,context,origin
  if(!choice?.confirmed)return null;
  const row=rows.find(r=>r.effect.uuid===choice.uuid);
  if(!row||cleansingCandidate(row.effect,test.dispel)?.fingerprint!==row.fingerprint)return null;
+ if(originMessage){
+  const token=tokens.find(token=>token.actor?.uuid===row.actor.uuid);
+  const {magicBlockedForTarget}=await import('./spell-zones.mjs');
+  if(await magicBlockedForTarget(originMessage,row.actor,(token?.document??token)?.uuid))return null;
+ }
  const recipients=originMessage?.flags?.[S]?.cleansingRecipients??[];
  if(recipients.length&&recipients[0]!==row.actor.uuid&&test.dispel.roll==='self')context={...context,counts:[],countsById:{}};
  const rollNeeded=test.dispel.roll==='recipient'||test.dispel.roll==='self'&&row.actor.uuid===caster?.uuid;

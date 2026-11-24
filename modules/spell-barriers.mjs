@@ -58,28 +58,40 @@ export async function vitnerWallBlocks({scene, level, origin, target, message}) 
   if(casting?.kind!=="spell" || !Number.isInteger(spellLevel) || spellLevel<1 || spellLevel>5) return false;
   const walls=activeBarriers(scene,"vitnerWall",now(level)).filter(region=>crossesBarrier(region,origin,target));
   for(const region of walls) if(await resolveWallTest(region,message,spellLevel))return true;
+  const wards=activeBarriers(scene,"nidVitnerResistance",now(level)).filter(region=>crossesBarrier(region,origin,target));
+  for(const region of wards)if(await resolveWallTest(region,message,spellLevel,{breach:true}))return true;
   return false;
 }
 
-async function resolveWallTest(region,source,spellLevel) {
+async function resolveWallTest(region,source,spellLevel,{breach=false}={}) {
   const id=deterministicId(`vitner-wall:${region.uuid}:${source.id}`);
   const saved=game.messages.get(id)?.flags?.[scope]?.vitnerWallTest;
-  if(saved) return saved.blocked;
   if(resolving.has(id)) return resolving.get(id);
   const job=(async()=>{
-    const caster=await foundry.utils.fromUuid(info(region).context.casterUuid);
-    if(!caster?.isOwner || caster.canPerformAction?.()===false) return false;
-    const {rollUnder}=await import("./dice.mjs");
-    const result=await rollUnder({actor:caster,label:local("TestWall",{wall:region.name,level:spellLevel}),
-      target:vitnerWallTest(info(region).profile,spellLevel)+Number(caster.getRollModifier?.({kind:"situation"})||0),
-      kind:"situation",successConsequence:local("Blocked"),failureConsequence:local("Passed"),
-      publishMessage:async(data,outcome)=>{
-        const Chat=globalThis.foundry?.documents?.ChatMessage?.implementation??globalThis.ChatMessage;
-        const message=await Chat.create({...data,_id:id,
-          flags:{...data.flags,[scope]:{...data.flags?.[scope],vitnerWallTest:{blocked:outcome.success}}}},{keepId:true});
-        return {message,animate:true};
-      }});
-    return result.success;
+    let blocked=saved?.blocked;
+    if(blocked===undefined){
+      const context=source.flags[scope].ruleTestContext;
+      const caster=await foundry.utils.fromUuid(breach
+        ?source.flags[scope].releasedSeal?.actorUuid??context.casterUuid:info(region).context.casterUuid);
+      if(!caster?.isOwner || caster.canPerformAction?.()===false)return breach;
+      const {rollUnder}=await import("./dice.mjs");
+      const target=breach?info(region).profile.breach:vitnerWallTest(info(region).profile,spellLevel);
+      const result=await rollUnder({actor:caster,label:local(breach?"NidBreach":"TestWall",{wall:region.name,level:spellLevel}),
+        target:target+Number(caster.getRollModifier?.({kind:"situation"})||0),
+        kind:"situation",successConsequence:local(breach?"NidBreached":"Blocked"),failureConsequence:local(breach?"Blocked":"Passed"),
+        publishMessage:async(data,outcome)=>{
+          const Chat=globalThis.foundry?.documents?.ChatMessage?.implementation??globalThis.ChatMessage;
+          const message=await Chat.create({...data,_id:id,
+            flags:{...data.flags,[scope]:{...data.flags?.[scope],vitnerWallTest:{blocked:breach?!outcome.success:outcome.success}}}},{keepId:true});
+          return {message,animate:true};
+        }});
+      blocked=breach?!result.success:result.success;
+    }
+    if(breach&&!blocked){
+      const {removeSpellZone}=await import("./spell-zones.mjs");
+      await removeSpellZone(region);
+    }
+    return blocked;
   })();
   resolving.set(id,job);
   try{return await job;}finally{resolving.delete(id);}

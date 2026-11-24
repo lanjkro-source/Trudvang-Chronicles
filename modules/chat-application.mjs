@@ -227,9 +227,9 @@ async function applyOnGM(payload,{grouped=false}={}) {
   if(payload.channel==="fear"){
    const context=message.getFlag(SYSTEM_ID,'fearContext');
    const source=context?.originMessageId&&game.messages.get(context.originMessageId);
-   if(source?.flags?.[SYSTEM_ID]?.ruleTestContext?.kind==="spell"){
-    const {checkVitnerWall}=await import("./spell-zones.mjs");
-    if(await checkVitnerWall(source,actor,payload.tokenUuid))return {status:"ineligibleTarget"};
+   if(source?.flags?.[SYSTEM_ID]?.ruleTestContext){
+    const {magicBlockedForTarget}=await import("./spell-zones.mjs");
+    if(await magicBlockedForTarget(source,actor,payload.tokenUuid))return {status:"ineligibleTarget"};
    }
    if(context?.grouped&&!grouped)return {status:'unavailable'};
    if(!canReceiveFear(message,actor))return {status:'ineligibleTarget'};
@@ -281,8 +281,8 @@ async function applyOnGM(payload,{grouped=false}={}) {
     const targetUuid=payload.tokenUuid||message.getFlag(SYSTEM_ID,"damageTargets")?.find(row=>row.actorUuid===actor.uuid)?.tokenUuid;
     const source=context?.sourceMessageId&&game.messages.get(context.sourceMessageId);
     if(source&&payload.channel!=="fear"){
-      const {checkVitnerWall}=await import("./spell-zones.mjs");
-      if(await checkVitnerWall(source,actor,targetUuid))return {status:"ineligibleTarget"};
+      const {magicBlockedForTarget}=await import("./spell-zones.mjs");
+      if(await magicBlockedForTarget(source,actor,targetUuid))return {status:"ineligibleTarget"};
     }
     let cover=[];
     const beforeCover=amount;

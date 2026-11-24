@@ -81,7 +81,7 @@ Cri de guerre et Tonnerre victorieux distinguent alliés et ennemis à portée l
 
 ## Sites et protections à automatiser avec les régions
 
-Les rappels chiffrés de Sol protecteur, Foyer béni, Bosquet sacré, Résistance au vitner et des deux Mauvaises récoltes conservent les paramètres du lancement, mais ne créent pas encore de région fixe. Restent à traiter : dessin et position de la zone, conditions de lumière du soleil, entrée/sortie des occupants, modificateurs limités à la magie et aux résistances concernées, stérilité du terrain et dissipation d'une barrière pénétrée. Ils ne doivent pas devenir des auras mobiles suivant le porteur du rappel. La lumière du soleil est un prérequis, pas une lumière émise par ces effets.
+Sol protecteur, Foyer béni, Bosquet sacré et Résistance au vitner disposent de régions fixes. Voir le [suivi des pouvoirs de Nid](non-rune-effects-progress.md#sanctuaires-de-nid-et-résistance-au-vitner). Les deux Mauvaises récoltes conservent leurs rappels chiffrés. La stérilité de leur terrain reste à gérer par le MJ.
 
 Antimagie protège une cible sans aura de voisinage ; son test doit être effectué par le lanceur initial (à sélectionner pour lancer le test), en tenant compte du malus du sort adverse. Son changement éventuel de soutenu à persistant est rappelé parmi les améliorations. Emprisonnement est une prison mentale propre à la victime et non une barrière commune aux passants ; le MJ vérifie Immobilisation préalable, les contacts avec les parois, les dégâts et la limite de deux tentatives de sortie par jour. Ces interactions ne sont pas automatisées par les effets de rappel.
 

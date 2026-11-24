@@ -257,14 +257,14 @@ export async function performRuleTest({document, index, actor = testActorForUser
     if (!actor) ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
     return null;
   }
-  if(resultMessage&&context?.kind==="spell"&&document?.documentName!=="ActiveEffect"){
-    const {checkVitnerWall}=await import("./spell-zones.mjs");
-    if(await checkVitnerWall(resultMessage,actor))return null;
+  if(resultMessage&&context?.kind&&!test.dispel&&document?.documentName!=="ActiveEffect"){
+    const {magicBlockedForTarget}=await import("./spell-zones.mjs");
+    if(await magicBlockedForTarget(resultMessage,actor))return null;
   }
   if (test.kind === "resist") {
     const {rollConfiguredTraitSituation} = await import("./dice.mjs");
     const casting=ruleTestCastingContext(document,{context:context??document?.flags?.[SYSTEM_ID]?.diseaseIncubation?.context});
-    if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting});}
+    if(test.dispel){const {performDispelTest}=await import('./dispel.mjs');return performDispelTest({document,test,index,actor,context:casting,originMessage:resultMessage});}
     const initial = document?.flags?.[SYSTEM_ID]?.initialResistance;
     const areaMessage = initialResistanceArea(document);
     const publishMessage = areaMessage ? async () => ({

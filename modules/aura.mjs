@@ -93,12 +93,14 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
   &&(getAura(source)?.recipients!=='allies'||allies)&&(!getAura(source)?.requiresHearing||(!actor.statuses?.has('deaf')&&!actor.statuses?.has('deafened')&&!source.parent?.statuses?.has('silenced')));
  if(!eligible){if(children.length)await removeAuraRecipients(actor,children);return;}
  const casting=sourceMeta(source)?.ruleTestContext;
- const message=casting?.kind==="spell"&&game.messages?.get(casting.messageId);
+ const message=casting?.messageId&&game.messages?.get(casting.messageId);
  if(message){
   const {vitnerWallBlocks}=await import("./spell-barriers.mjs");
   const {tokenBarrierCenter}=await import("./rules/spell-barriers.mjs");
+  const {nidPreventsCasting,nidTargetModifier}=await import("./rules/nid-zones.mjs");
   const origin=Array.from(region.shapes??[])[0];
-  if(await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message})){
+  if(nidPreventsCasting(message,nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat}))
+    || await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message})){
    if(children.length)await removeAuraRecipients(actor,children);
    return;
   }

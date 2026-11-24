@@ -19,8 +19,9 @@ import {isInventoryTransferItem} from './inventory-transfer.mjs';
 import {zoneAction,zoneOutcome,zoneTargetList} from './zone-chat.mjs';
 import {applyZoneDamage,zoneDamageReceipt} from './zone-damage.mjs';
 import {canResolveReleasedSeal} from './magic-seal.mjs';
-import {airShieldShape,spellBarrierProfile,tokenBarrierCenter,VITNER_WALL} from './rules/spell-barriers.mjs';
+import {activeBarriers,airShieldShape,crossesBarrier,spellBarrierProfile,tokenBarrierCenter,VITNER_WALL} from './rules/spell-barriers.mjs';
 import {interceptAirShieldMovement,vitnerWallBlocks} from './spell-barriers.mjs';
+import {isForeignMagic,nidPreventsCasting,nidSanctuaryAt,nidTargetModifier,nidZoneProfile} from './rules/nid-zones.mjs';
 const S='trudvang-chronicles',TYPE='trudvangSpellZone',channel='system.'+S,jobs=new Map(),locks=new Map(),replies=new Map();let socketReady=false;
 const values=c=>Array.from(c?.values?.()??c??[]),local=(k,d)=>d?game.i18n.format('TRUDVANG.SpellZone.'+k,d):game.i18n.localize('TRUDVANG.SpellZone.'+k);
 const canRead=(message,user)=>user.isGM||(!message.blind&&(!message.whisper?.length||(message.author?.id??message._source?.author)===user.id||values(message.whisper).some(u=>(typeof u==='string'?u:u.id)===user.id)));
@@ -30,9 +31,9 @@ const serial=(key,work)=>{const job=(jobs.get(key)??Promise.resolve()).catch(()=
 const responseKey=uuid=>encodeURIComponent(uuid).replaceAll('.','%2E');
 const nameOf=info=>game.i18n.localize('TRUDVANG.Content.Power.'+info.context.sourceId+'.Name');
 const eligible=(actor,info)=>actor&&['character','npc'].includes(actor.type)&&(!info.profile.excludeCaster||actor.uuid!==info.context.casterUuid)&&(['fire','fog','darkness'].includes(info.profile.kind)||(!['fly','hover','flying','hovering'].some(s=>actor.statuses?.has?.(s))&&(info.profile.kind==='quagmire'||!earthquakeTest(info.profile,impactSize(actor)).immune)));
-const lastsAfterCombat=profile=>['fog','darkness','quagmire','earthWall','fixedLight','airShield','vitnerWall'].includes(profile.kind);
+const lastsAfterCombat=profile=>['fog','darkness','quagmire','earthWall','fixedLight','airShield','vitnerWall','nidSanctuary','nidVitnerResistance'].includes(profile.kind);
 const zoneProfile=(context)=>earthquakeProfile(POWER_DETAILS_BY_ID[context?.sourceId]?.spellZone,context)
- ??fixedLightProfile(context)??spellBarrierProfile(context);
+ ??fixedLightProfile(context)??spellBarrierProfile(context)??nidZoneProfile(context);
 // Region.tokens can still be empty while native creation events are being processed.
 // Query the public containment API against scene documents before freezing a burst.
 const members=(region,{entering,leaving}={})=>{
@@ -173,12 +174,12 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
    if(shape&&Math.abs(shape.radius-radius)>.01)await region.update({shapes:[{type:'circle',x:shape.x,y:shape.y,radius}]});
   }
   await syncZoneLight(region);
-  if(['fixedLight','airShield','vitnerWall'].includes(info.profile.kind))return;
+  if(['fixedLight','airShield','vitnerWall','nidSanctuary','nidVitnerResistance'].includes(info.profile.kind))return;
   let tokens=members(region,{entering,leaving});
-  if(info.context.kind==='spell'){
+  if(isForeignMagic(info.context)){
    const source=game.messages?.get(info.messageId),origin=values(region.shapes)[0];
-   for(const [uuid,token]of tokens)if(await vitnerWallBlocks({scene:region.parent,level:token.level,origin,
-    target:tokenBarrierCenter(token),message:source}))tokens.delete(uuid);
+   for(const [uuid,token]of tokens)if(nidPreventsCasting(source,nidTargetModifier(token,info.context,clock(info)))
+    || await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message:source}))tokens.delete(uuid);
   }
   if(info.profile.instant&&!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}
   const actors=new Map([...values(game.actors),...values(region.parent?.tokens).map(t=>t.actor)].filter(Boolean).map(a=>[a.uuid,a]));
@@ -347,12 +348,21 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  if(darkness&&(!footprint||footprint.x!==payload.point.x||footprint.y!==payload.point.y))return {status:'invalidArea'};
  const wall=profile.kind==='earthWall'?addSpellWallBlock(null,payload.point,scale,profile,scene.grid):null;
  if(wall&&!pointInRange(placementLimit(scene,token,profile),wall.origin))return {status:'outOfRange'};
+ if(profile.kind==='nidSanctuary'&&!payload.daylight)return {status:'unavailable'};
+ const fixedConstruction=['fixedLight','earthWall','airShield','vitnerWall','darkness','fog'].includes(profile.kind);
+ const sanctuary=fixedConstruction&&isForeignMagic(cast)&&nidSanctuaryAt(scene,token.level,point,{time:Number(game.time?.worldTime)||0,combat:game.combat});
+ if(sanctuary&&nidPreventsCasting(message,infoOf(sanctuary).profile)){
+  await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,barrierBlocked:true}});
+  void trackSpellZoneRemoval(cast);
+  return {status:'blocked',reason:'NidSanctuaryBlocked'};
+ }
  if(await vitnerWallBlocks({scene,level:token.level,origin:tokenBarrierCenter(token),target:point,message})){
   await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,barrierBlocked:true}});
   void trackSpellZoneRemoval(cast);
   return {status:'blocked',reason:'BarrierBlocked'};
  }
  const time=Number(game.time?.worldTime)||0,combat=game.combat?.started&&(!game.combat.scene||game.combat.scene.id===scene.id)?game.combat:null;
+ if(profile.kind==='nidVitnerResistance')profile.temperature=Math.max(-40,Math.min(40,Number(payload.temperature)||0));
  if(profile.kind==='earthquake'){const d=POWER_DETAILS_BY_ID[cast.sourceId].damageRoll;profile.damageFormula=d.steps[profile.severity].formula;profile.qualification=structuredClone(d.qualification);}
  if(profile.kind==='fire'){const damage=magicDamageProfile({system:{catalogId:cast.sourceId}},cast);profile.damageFormula=damage.formula;profile.openRoll=damage.openRoll;profile.qualification=structuredClone(damage.qualification);}
  const info={context:structuredClone(cast),profile,elevation:Number(solar?.elevation??token.elevation)||0,createdAt:time,until:time+5*profile.rounds,combatId:combat?.id??null,expiresRound:combat?Number(combat.round)+profile.rounds:null,messageId:message.id};
@@ -368,6 +378,7 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
   behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
  if(!region)throw Error('Spell zone creation failed');
+ if(profile.kind==='nidSanctuary')await applyZoneDamage({actor,message,formula:'1',qualification:{protection:'none'}});
  if(wall)await reconcileSpellZone(region);
  const placed=spellWallInfo(region)?.sections.length;
  await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,regionUuid:region.uuid,...(wall?{wallBlocksPlaced:placed}:{})}});
@@ -582,12 +593,24 @@ async function checkVitnerWallOnAuthority({messageId,tokenUuid,userId}){
  return {status:blocked?'blocked':'pass'};
 }
 
-export async function checkVitnerWall(message,actor,tokenUuid){
- const site=message?.flags?.[S]?.ruleTestContext?.barrierOrigin;
- if(!site||message.flags[S].ruleTestContext.kind!=='spell')return false;
- const scene=game.scenes?.get(site.sceneId);
- const token=tokenUuid?await foundry.utils.fromUuid(tokenUuid):values(scene?.tokens).find(row=>row.actor?.uuid===actor.uuid&&(row.level??null)===site.level);
- if(token?.actor?.uuid!==actor.uuid||(token.level??null)!==site.level||!values(scene?.regions).some(region=>infoOf(region)?.profile.kind==='vitnerWall'))return false;
+export async function magicBlockedForTarget(message,actor,tokenUuid){
+ const casting=message?.flags?.[S]?.ruleTestContext;
+ if(!isForeignMagic(casting))return false;
+ const site=casting.barrierOrigin;
+ const saved=casting.nidTargets?.find(row=>tokenUuid?row.tokenUuid===tokenUuid:row.actorUuid===actor.uuid);
+ const scene=site?game.scenes?.get(site.sceneId):globalThis.canvas?.scene;
+ const token=tokenUuid||saved?.tokenUuid?await foundry.utils.fromUuid(tokenUuid||saved.tokenUuid):
+  actor.token??values(scene?.tokens).find(row=>row.actor?.uuid===actor.uuid&&(!site||(row.level??null)===site.level));
+ if(token?.actor?.uuid!==actor.uuid)return false;
+ const time={time:Number(game.time?.worldTime)||0,combat:game.combat,level:token.level};
+ const modifier=saved??nidTargetModifier(token,casting,time);
+ if(nidPreventsCasting(message,modifier)){
+  ui.notifications.warn(local('NidSanctuaryBlocked'));
+  return true;
+ }
+ if(casting.kind!=='spell'||!site||token.parent?.id!==site.sceneId||(token.level??null)!==site.level)return false;
+ const point=tokenBarrierCenter(token);
+ if(!['vitnerWall','nidVitnerResistance'].some(kind=>activeBarriers(token.parent,kind,time).some(region=>crossesBarrier(region,site,point))))return false;
  const result=await request({type:'checkVitnerWall',messageId:message.id,tokenUuid:token.uuid});
  if(result.status==='unavailable')ui.notifications.warn(local('Unavailable'));
  return result.status!=='pass';
@@ -688,8 +711,24 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
  if(!profile||!actor||(!actor.isOwner&&!canResolveReleasedSeal(message))||!scene){ui.notifications.warn(local('Unavailable'));return null;}
  const previous=await previousPlacement(message.flags?.[S]?.spellZoneCasting);if(previous?.reason){const result={status:'alreadyPlaced',reason:previous.reason};placementFeedback(result);return result;}
  const token=auraCasterToken(actor,board.tokens?.controlled,actor.getActiveTokens?.(false,true));if(!token||token.parent?.id!==scene.id){ui.notifications.warn(local('SelectCaster'));return null;}
- let underground=false,daylight=false;
- if(profile.requiresDaylight){
+ let underground=false,daylight=false,temperature=0;
+ if(profile.kind==='nidSanctuary'){
+  daylight=await foundry.applications.api.DialogV2.confirm({
+   window:{title:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name')},
+   content:'<p>'+escapeHtml(local('NidConfirmSunlight',{rounds:profile.ritualRounds}))+'</p>'
+  });
+  if(daylight!==true)return null;
+ }else if(profile.kind==='nidVitnerResistance'){
+  const selection=await foundry.applications.api.DialogV2.wait({
+   window:{title:game.i18n.localize('TRUDVANG.Content.Power.'+context.sourceId+'.Name')},
+   content:`<label>${escapeHtml(local('NidTemperature'))} <input name="temperature" type="number" min="-40" max="40" value="0"></label>`,
+   buttons:[{action:'continue',default:true,label:game.i18n.localize('TRUDVANG.Action.Continue'),
+    callback:(_event,button)=>({temperature:Number(button.form.elements.temperature.value)})},
+    {action:'cancel',label:game.i18n.localize('TRUDVANG.Action.Cancel'),callback:()=>null}],rejectClose:false
+  });
+  if(!Number.isFinite(selection?.temperature))return null;
+  temperature=selection.temperature;
+ }else if(profile.requiresDaylight){
   const site=context.lightSite;
   if(!site||site.sceneId!==scene.id||site.tokenId!==token.id){ui.notifications.warn(local('Unavailable'));return null;}
   daylight=await foundry.applications.api.DialogV2.confirm({
@@ -773,7 +812,7 @@ export async function placeSpellZone(message,{attachLight=false,attachInventoryL
   if(air)footprint={rotation:Number(preview.shapes[0].rotation)||0};
  }
  if(board.scene!==scene)return null;
- const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,lightTokenId,inventoryItemId,inventoryTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
+ const result=await request({type:'createSpellZone',messageId:message.id,sceneId:scene.id,tokenId:token.id,point,underground,daylight,temperature,lightTokenId,inventoryItemId,inventoryTokenId,...(footprint?{shape:footprint}:{})});placementFeedback(result);return result;
 }
 export async function requestSpellZoneTest(message,actorUuid,choice='test'){
  const state=message.flags?.[S]?.spellZoneTest,region=state?await foundry.utils.fromUuid(state.regionUuid):null,info=state?.instantInfo??infoOf(region),actor=await foundry.utils.fromUuid(actorUuid);

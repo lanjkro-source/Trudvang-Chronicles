@@ -26,6 +26,7 @@ import {TRANSFORMATION_TEMPLATES} from "./transformation-data.mjs";
 import {auraCasterToken,auraSite} from "./aura.mjs";
 import {fireTamerId,fixedLightProfile} from "./rules/spell-zones.mjs";
 import {spellBarrierProfile,tokenBarrierCenter} from "./rules/spell-barriers.mjs";
+import {isForeignMagic,nidTargetModifier,nidZoneProfile,nidResistanceBonus} from "./rules/nid-zones.mjs";
 import {weatherTemperatureLimits} from "./rules/weather-wards.mjs";
 import {initialEffectTargets} from "./effect-targets.mjs";
 import {transformationRollRows} from "./rules/transformation-profile.mjs";
@@ -113,7 +114,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   let ruleTestContext=releasedSeal ? structuredClone(releasedSeal.spell.context)
     : item&&(["spell","divine","rune"].includes(kind)||item.system?.isRune)?ruleTestCastingContext(item,{caster:actor,counts:powerLevelCounts}):null;
   if(ruleTestContext&&castingId)ruleTestContext.castingId=castingId;
-  if(ruleTestContext?.kind==="spell"){
+  if(ruleTestContext&&["spell","divine","rune"].includes(kind)){
+    ruleTestContext.kind=kind;
     const found=mapToken(),token=found?.document??found;
     delete ruleTestContext.barrierOrigin;
     if(token?.parent?.id){
@@ -130,15 +132,38 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       if(site)ruleTestContext.lightSite={...site, tokenId:token.id, elevation:Number(token.elevation)||0};
     }
   }
-  const barrier=Boolean(spellBarrierProfile(ruleTestContext));
+  const siteProfile=()=>spellBarrierProfile(ruleTestContext)??nidZoneProfile(ruleTestContext);
+  const barrier=Boolean(siteProfile());
   const barrierSummary=()=>{
-    const profile=spellBarrierProfile(ruleTestContext);
-    return profile ? game.i18n.format(`TRUDVANG.SpellBarrier.${profile.kind==="airShield"?"AirProfile":"WallProfile"}`,profile) : "";
+    const profile=siteProfile();
+    const keys={airShield:"AirProfile",vitnerWall:"WallProfile",nidSanctuary:"NidSanctuaryProfile",nidVitnerResistance:"NidResistanceProfile"};
+    return profile ? game.i18n.format(`TRUDVANG.SpellBarrier.${keys[profile.kind]}`,profile) : "";
   };
   const hasSpellZone=()=>Boolean(barrier||POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.spellZone||fixedLightProfile(ruleTestContext));
   const roll = releasedSeal ? Roll.fromData(releasedSeal.spell.roll) : await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
+  let nidResults=[];
+  if(!seal&&["spell","divine","rune"].includes(kind)&&isForeignMagic(ruleTestContext)){
+    const options={perfectSuccessMax,automaticSuccessMax};
+    ruleTestContext.nidRoll={target:finalTarget,...options};
+    const direct=!hasSpellZone()&&!auraKey&&!POWER_DETAILS_BY_ID[ruleTestContext.sourceId]?.fearRoll?.area;
+    const targets=releasedSeal?[releasedSeal.target].filter(Boolean):selfOnly?[mapToken()].filter(Boolean):Array.from(game.user?.targets??[]);
+    if(direct){
+      const clock={time:Number(game.time?.worldTime)||0,combat:game.combat};
+      ruleTestContext.nidTargets=targets.map(view=>{
+        const token=view.document??view;
+        return nidTargetModifier(token,ruleTestContext,clock)??{tokenUuid:token.uuid,actorUuid:token.actor?.uuid,penalty:0};
+      });
+      nidResults=ruleTestContext.nidTargets.flatMap((modifier,index)=>{
+        if(!modifier.penalty)return [];
+        const target=finalTarget+modifier.penalty;
+        const {success}=resolveRollUnderOutcome(result,target,options);
+        return [{...modifier,target,siteName:modifier.name,name:targets[index].name??targets[index].actor?.name,
+          ...rollOutcomeView({result,target,success}),success}];
+      });
+    }
+  }
   const {critical, margin} = outcome;
   const procedure = resolveProcedure ? await resolveProcedure({...outcome, result, target: finalTarget}) : null;
   const attackMargin = target => `${target - result >= 0 ? "+" : ""}${target - result}`;
@@ -147,7 +172,9 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     const resolved=resolveRollUnderOutcome(result,target,{perfectSuccessMax,automaticSuccessMax});
     return {...row, target, attackMargin: attackMargin(target), ...resolved,...rollOutcomeView({result,target,success:resolved.success})};
   });
-  const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
+  const allInSanctuary=nidResults.length && nidResults.length===ruleTestContext.nidTargets.length;
+  const success = targetResults.length ? targetResults.some(row => row.success)
+    : allInSanctuary?nidResults.some(row=>row.success):outcome.success;
   const pendingPerfect=Boolean(resolvePerfectSuccess&&critical==="success"&&success);
   if(seal&&success){
     const perfectSelection=pendingPerfect?await choosePerfectLevels(resolvePerfectSuccess):null;
@@ -173,15 +200,16 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
    const source=await createRuneConsequenceSource(runeDetails,ruleTestContext);
    if(source)runeAllocation.sourceEffectUuid=source.uuid;
   }
+  const displayTarget=targetResults.length===1?targetResults[0].target:allInSanctuary?Math.max(...nidResults.map(row=>row.target)):finalTarget;
   const card = {
     actorName: actor.name,
     actorImg: actor.img,
     label,
     result,
-    target: targetResults.length === 1 ? targetResults[0].target : finalTarget,
+    target: displayTarget,
     modifier: Number(modifier || 0),
     success,
-    ...rollOutcomeView({result,target:targetResults.length===1?targetResults[0].target:finalTarget,success}),
+    ...rollOutcomeView({result,target:displayTarget,success}),
     margin,
     attackMargin: attackMargin(finalTarget),
     targetName,
@@ -196,6 +224,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
     effectTarget,
     attackTargets: targetResults,
+    nidResults,
     multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
     transformationLinks: !barrier&&!auraKey&&!selfOnly&&!pendingPerfect&&success && item ? transformationLinks(item, powerLevelCounts,{context:ruleTestContext}) : "",
@@ -377,6 +406,9 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const originalActor=actor;
   if(actor)actor=await actorForResistance(actor,{effect:resistedEffect,effectUuid:resistedEffectUuid,context:resistanceContext});
   if(resistanceContext&&actor&&test)castingModifierRows=localizeResistanceRows(magicResistanceRows(test,{context:resistanceContext,actor}));
+  const targetToken=auraCasterToken(originalActor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables);
+  const nidBonus=nidResistanceBonus(test,resistanceContext,targetToken,{time:Number(game.time?.worldTime)||0,combat:game.combat});
+  if(nidBonus)castingModifierRows.push(nidBonus);
   if(test?.followupBonus)castingModifierRows.push({labelKey:"TRUDVANG.FollowupTest.RecoveryLabel",value:test.followupBonus});
   if (!actor || !test || (!reactive&&!actor.canPerformAction())) return actor?.warnCannotAct?.() ?? null;
   const situation = ruleTestSituationOptions(test);
@@ -517,6 +549,14 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   }).join("");
   const countsFrom = root => powerLevels.map((_, index) => Number(root.querySelector(`[data-power-count="${index}"]`)?.textContent || 0));
   const resistanceContext=ruleDocument?ruleTestCastingContext(ruleDocument,{caster:castingActor}):null;
+  const targetClock={time:Number(game.time?.worldTime)||0,combat:game.combat};
+  const nidTargets=resistanceContext && !nidZoneProfile(resistanceContext) && !POWER_DETAILS_BY_ID[resistanceContext.sourceId]?.spellZone
+    ?Array.from(game.user?.targets??[]).flatMap(view=>{
+      const row=nidTargetModifier(view.document??view,resistanceContext,targetClock);
+      return row?[{...row,targetName:view.name??view.actor?.name}]:[];
+    }):[];
+  const nidTargetsHTML=target=>nidTargets.map(row=>`<p>${escapeHtml(row.targetName)} · ${escapeHtml(game.i18n.format(
+    "TRUDVANG.SpellBarrier.NidTarget",{site:row.name,target:target+row.penalty,penalty:row.penalty}))}</p>`).join("");
   const costFrom = (root, strenuousBonus) => resolvePowerLevelCost({baseCost: defaultCost, powerLevels, counts: countsFrom(root), affinity, strenuousBonus});
   const finalTargetFrom = (root, method, strenuousBonus) => Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + stateModifier
     + strenuousBonus + Number(root.querySelector("[name=modifier]")?.value || 0);
@@ -537,6 +577,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${sacrifice ? `<label class="magic-sacrifice-option" data-sacrifice-option hidden><input type="checkbox" name="sacrifice"><span data-sacrifice-text></span></label>` : ""}
     ${conditionalModifierSection()}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
+    ${nidTargets.length?`<div data-nid-targets>${nidTargetsHTML(initialTarget)}</div>`:""}
   </div>`;
   // Local subclass so the live breakdown refresh (FinalTarget / FinalVitnerCost) survives the
   // AppV1 -> AppV2 migration: DialogV2 exposes the old `render` hook through `_onRender`.
@@ -551,6 +592,8 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         if(resistancePreview&&resistanceContext)resistancePreview.innerHTML=magicResistancePreview(withCastingCounts(resistanceContext,countsFrom(root)));
         const output = root.querySelector("[data-final-target]");
         if (output) output.textContent = finalTargetFrom(root, method, strenuousBonus);
+        const protectedTargets=root.querySelector("[data-nid-targets]");
+        if(protectedTargets)protectedTargets.innerHTML=nidTargetsHTML(finalTargetFrom(root,method,strenuousBonus));
         const finalCost = root.querySelector("[data-final-cost]");
         const levelCost = root.querySelector("[data-level-cost]");
         if (finalCost) {

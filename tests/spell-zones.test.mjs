@@ -9,6 +9,8 @@ import {endMaintainedSpellOnGM,recoverMaintainedSpellZones} from '../modules/mai
 import {AIR_SHIELD,VITNER_WALL,airShieldTest,spellBarrierProfile,vitnerWallTest} from '../modules/rules/spell-barriers.mjs';
 import {airShieldCover,interceptAirShieldMovement,vitnerWallBlocks} from '../modules/spell-barriers.mjs';
 import {activeSpellInstances} from '../modules/rules/active-spell-resolver.mjs';
+import {isForeignMagic,nidResistanceBonus,nidZoneProfile} from '../modules/rules/nid-zones.mjs';
+import {activeWeatherWards} from '../modules/rules/weather-wards.mjs';
 const S='trudvang-chronicles',vitner='vitner-soil-craft:earthquake:2',divine='holy-toikalokke-master-of-elements:earthquake:7',rune='holy-thuuldom-earthquake:earthquake:0';
 const langs=Object.fromEntries(['fr','en'].map(c=>[c,JSON.parse(fs.readFileSync('lang/'+c+'.json','utf8'))]));let language='fr';const get=(o,p)=>p.split('.').reduce((v,k)=>v?.[k],o);
 globalThis.document={createElement:()=>({set textContent(v){this.innerHTML=String(v).replaceAll('<','&lt;').replaceAll('>','&gt;')}})};
@@ -36,6 +38,96 @@ function setup(id=vitner,counts={},runeLevel=1){
 const jorn='holy-gerbanis-influence-of-jorn:';
 const quagmire='vitner-soil-craft:quagmire:3';
 const earthWall='holy-toikalokke-master-of-elements:earth-wall:0';
+const blessedHome='holy-tenetnid-tablet-of-the-sun:blessed-home:5';
+const protectiveGround='holy-tenetnid-tablet-of-the-sun:protective-ground:1';
+const sacredGrove='holy-tenetnid-tablet-of-the-sun:sacred-grove:6';
+const nidWard='holy-tenetnid-tablet-of-the-shield:vitner-resistance:6';
+
+test('Nid uses distinct durations and caps, exempting powers of Nid but not spells or foreign runes',()=>{
+ const base=[protectiveGround,blessedHome,sacredGrove].map(sourceId=>nidZoneProfile({sourceId}));
+ assert.deepEqual(base.map(p=>[p.radius,p.rounds,p.penalty,p.resistance,p.ritualRounds]),[
+   [2,720,-1,2,6],[4,720,-3,6,12],[8,17280,-5,10,24]]);
+ assert.equal(nidZoneProfile({sourceId:protectiveGround,counts:[1,2,20,20]}).penalty,-4);
+ assert.equal(nidZoneProfile({sourceId:blessedHome,counts:[1,2,20,20]}).resistance,10);
+ assert.equal(nidZoneProfile({sourceId:sacredGrove,counts:[0,2,4,3]}).radius,12);
+ assert.equal(isForeignMagic({kind:'divine',sourceId:blessedHome}),false);
+ assert.equal(isForeignMagic({kind:'divine',sourceId:'custom',religion:'tenetNid'}),false);
+ assert.equal(isForeignMagic({kind:'rune',religion:'thuuldom'}),true);
+ assert.equal(isForeignMagic({kind:'spell'}),true);
+});
+
+test('Blessed Home is a fixed daylight rite and applies one DC per target for a shared casting roll',async()=>{
+ const request=setup(blessedHome);
+ message.flags[S].ruleTestContext.kind='divine';
+ const previousRoll=globalThis.Roll;
+ const previousUI=globalThis.ui;
+ globalThis.ui={notifications:{warn:()=>{}}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=this.formula==='1'?1:9;return this;}};
+ try{
+  assert.equal((await createSpellZoneOnAuthority(request)).status,'unavailable');
+  assert.equal(caster.system.resources.body.value,20);
+  assert.equal((await createSpellZoneOnAuthority({...request,daylight:true})).status,'placed');
+  assert.equal(caster.system.resources.body.value,19);
+  assert.equal((await createSpellZoneOnAuthority({...request,daylight:true})).status,'alreadyPlaced');
+  assert.equal(caster.system.resources.body.value,19);
+  const [ward]=regions.values();
+  assert.equal(ward.shapes[0].radius,400);
+  const inside=scene.tokens.get('target'),outside=scene.tokens.get('caster');
+  outside.x=800;
+  assert.equal(ward.shapes[0].x,50);
+  const clock={time:0,combat:game.combat};
+  const context={kind:'spell',sourceId:'vitner-body-vitner:imprison:10'};
+  assert.equal(nidResistanceBonus({magicResistance:true,index:0},context,inside,clock).value,6);
+  assert.equal(nidResistanceBonus({magicResistance:true,index:0},context,outside,clock),null);
+  assert.equal(nidResistanceBonus({magicResistance:true,index:0},{kind:'spell',sourceId:'other'},inside,clock),null);
+  const {rollUnder}=await import('../modules/dice.mjs');
+  const {magicBlockedForTarget}=await import('../modules/spell-zones.mjs');
+  game.user.targets=new Set([inside,outside]);
+  const item={type:'divineFeat',name:'Ability',system:{level:2,catalogId:'custom',religion:'haminges'}};
+  assert.equal((await rollUnder({actor:caster,item,kind:'divine',label:item.name,target:10})).success,true);
+  const card=[...game.messages.values()].at(-1);
+  assert.match(card.content,/target.*Foyer béni.*VC 7/);
+  assert.equal(await magicBlockedForTarget(card,target,inside.uuid),true);
+  assert.equal(await magicBlockedForTarget(card,caster,outside.uuid),false);
+  inside.x=900;
+  assert.equal(await magicBlockedForTarget(card,target,inside.uuid),true,'the target keeps its casting-time VC');
+  inside.x=100;
+  game.user.targets=new Set([inside]);
+  assert.equal((await rollUnder({actor:caster,item,kind:'divine',label:item.name,target:10})).success,false);
+  item.system.religion='tenetNid';
+  assert.equal((await rollUnder({actor:caster,item,kind:'divine',label:item.name,target:10})).success,true);
+ }finally{globalThis.Roll=previousRoll;globalThis.ui=previousUI;}
+});
+
+test('Vitner Resistance protects occupants, then disappears only on a successful spell breach',async()=>{
+ const request=setup(nidWard,{[nidWard+':1']:1,[nidWard+':2']:2});
+ message.flags[S].ruleTestContext.kind='divine';
+ assert.equal((await createSpellZoneOnAuthority({...request,temperature:31})).status,'placed');
+ const [region]=regions.values();
+ assert.equal(region.shapes[0].radius,600);
+ assert.equal(region.flags[S].spellZone.profile.breach,8);
+ target.token=scene.tokens.get('target');
+ assert.equal(activeWeatherWards(target)[0].temperature,31);
+ const oldRoll=globalThis.Roll,rolls=[];
+ let die=9;
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){rolls.push(this.formula);this.total=die;return this;}};
+ const crossing={scene,origin:{x:750,y:50},target:{x:150,y:50}};
+ const cast=(id,kind)=>({id,flags:{[S]:{ruleTestContext:{kind,casterUuid:caster.uuid,sourceLevel:2}}}});
+ try{
+  assert.equal(await vitnerWallBlocks({...crossing,message:cast('power','divine')}),false);
+  assert.equal(await vitnerWallBlocks({...crossing,message:cast('rune','rune')}),false);
+  const resisted=cast('blocked','spell');
+  assert.equal(await vitnerWallBlocks({...crossing,message:resisted}),true);
+  assert.equal(await vitnerWallBlocks({...crossing,message:resisted}),true);
+  assert.equal(regions.size,1);
+  assert.equal(rolls.length,1);
+  die=8;
+  assert.equal(await vitnerWallBlocks({...crossing,message:cast('pierce','spell')}),false);
+  assert.equal(rolls.length,2);
+  assert.equal(regions.size,0);
+  assert.equal(activeWeatherWards(target).length,0);
+ }finally{globalThis.Roll=oldRoll;}
+});
 
 test('Air Shield has directional cover, applies its official Size table and expires with its region',async()=>{
  const counts={[AIR_SHIELD+':3']:2,[AIR_SHIELD+':5']:2};

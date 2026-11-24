@@ -18949,6 +18949,11 @@
       "AwareUnwillingTarget": "Target aware of the spell and unwilling"
     },
     "SpellBarrier": {
+      "NidSanctuaryProfile": "{radius} m radius · {ritualRounds}-round ritual · {penalty} casting SV · +{resistance} Situation Value to resist",
+      "NidResistanceProfile": "{radius} m radius · Situation Value {breach} to breach",
+      "NidTarget": "{site} · {penalty} SV · SV {target}",
+      "NidBreach": "Breach {wall}",
+      "NidBreached": "The spell crosses and dispels the ward.",
       "AirProfile": "{protection} PV · Size {size} · {rounds} rounds",
       "WallProfile": "{radius} m radius · {rounds} rounds · Test bonus +{bonus}",
       "CrossAir": "Break through the air shield",
@@ -19126,6 +19131,9 @@
       "Unavailable": "Target unavailable"
     },
     "SpellZone": {
+      "NidConfirmSunlight": "Confirm that sunlight reaches the site. The ritual takes {rounds} rounds and deals 1 Body Point of damage to the priest when placed.",
+      "NidSanctuaryBlocked": "The casting roll is too high for the sanctuary of Nid.",
+      "NidTemperature": "Temperature change inside the ward (°C)",
       "BarrierBlocked": "The Wall of Vitner keeps the spell from reaching this point.",
       "Place": "Place / move the area",
       "ConfirmOutdoorDaylight": "Was the casting site outdoors in daylight?",

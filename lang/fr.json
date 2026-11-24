@@ -18949,6 +18949,11 @@
       "AwareUnwillingTarget": "Cible consciente du sort et non consentante"
     },
     "SpellBarrier": {
+      "NidSanctuaryProfile": "Rayon {radius} m · Rituel {ritualRounds} tours · {penalty} VC au lancement · +{resistance} VS pour résister",
+      "NidResistanceProfile": "Rayon {radius} m · VS de franchissement {breach}",
+      "NidTarget": "{site} · {penalty} VC · VC {target}",
+      "NidBreach": "Franchir {wall}",
+      "NidBreached": "Le sortilège franchit la barrière et la dissipe.",
       "AirProfile": "{protection} VP · Taille {size} · {rounds} tours",
       "WallProfile": "Rayon {radius} m · {rounds} tours · Bonus au test +{bonus}",
       "CrossAir": "Franchir le bouclier d’air",
@@ -19126,6 +19131,9 @@
       "Unavailable": "Cible indisponible"
     },
     "SpellZone": {
+      "NidConfirmSunlight": "Confirmez que le site bénéficie du soleil. Le rituel prend {rounds} tours et inflige 1 PS au prêtre lors du placement.",
+      "NidSanctuaryBlocked": "Le jet de lancement est insuffisant dans le sanctuaire de Nid.",
+      "NidTemperature": "Écart de température dans la zone (°C)",
       "BarrierBlocked": "Le Mur de vitner empêche le sortilège d’atteindre ce point.",
       "Place": "Placer / déplacer la zone",
       "ConfirmOutdoorDaylight": "Le lieu où le pouvoir a été invoqué est-il à l’extérieur et en plein jour ?",
