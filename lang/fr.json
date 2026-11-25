@@ -1558,6 +1558,45 @@
       "PacksRebuildFailed": "La reconstruction des compendiums a échoué. Consultez la console ; aucun pack supplémentaire ne sera modifié."
     },
     "Content": {
+      "Pregenerated": {
+        "novice-dimwalker": "Arpenteur des brumes débutant (gavlien, Virann)",
+        "experienced-dimwalker": "Arpenteur des brumes expérimenté (stormikjalt, Stormlander)",
+        "novice-bard": "Barde débutant (Zorjorn, Borjornikka)",
+        "experienced-bard": "Barde expérimenté (Skwilda, Mittlander)",
+        "novice-dweller": "Colon débutant (marchand, Mittlander)",
+        "experienced-dweller": "Colon expérimenté (fermier, Stormlander)",
+        "novice-warrior": "Guerrier débutant (pillard, Stormlander)",
+        "experienced-warrior": "Guerrier expérimenté (héros, Mittlander)",
+        "novice-rogue": "Malfrat débutant (canaille, Stormlander)",
+        "experienced-rogue": "Malfrat expérimenté (Eitrspatter, Mittlander)",
+        "novice-ranger": "Rôdeur débutant (Stersluming, Mittlander)",
+        "experienced-ranger": "Rôdeur expérimenté (chasseur, Korpikalla)",
+        "novice-weaver": "Tisseur de vitner débutant (paria, Sauvage)",
+        "experienced-weaver": "Tisseur de vitner expérimenté (Fhomor, Mittlander)",
+        "Age": "Âge",
+        "Rulebook": "Livre des règles",
+        "ProfileSource": "Profil prétiré du Livre des règles, p. {page}.",
+        "Qualifier": {
+          "human": "Humain",
+          "dwarf": "Nain",
+          "elf": "Elfe",
+          "virann": "Virann",
+          "stormlander": "Stormlander",
+          "mittlander": "Mittlander",
+          "wildfolk": "Sauvages",
+          "eika": "eika",
+          "vrok": "vrok",
+          "rona": "rona",
+          "futhark": "futhark",
+          "wild-vrok": "vrok sauvage",
+          "gerbanis": "Gerbanis",
+          "tenetNid": "Doctrine de Nid"
+        },
+        "Equipment": {
+          "BearPaw": "Bjornram (patte d’ours)",
+          "Dagger": "Dague"
+        }
+      },
       "NaturalWeapon": {
         "Bite": {
           "Name": "Morsure"
@@ -1579,6 +1618,8 @@
         }
       },
       "Folder": {
+        "Npcs": "PNJs",
+        "Bestiary": "Bestiaire",
         "GMItems": "Maître de jeu",
         "GMTables": "Maître de jeu",
         "Nature": "Nature",
@@ -18960,6 +19001,12 @@
       "TestWall": "{wall} · Sortilège de niveau {level}",
       "Blocked": "Le mur arrête le sortilège.",
       "Passed": "Le sortilège franchit le mur."
+    },
+    "TokenNames": {
+      "Random": "Créer un nom aléatoire",
+      "Culture": "Table de noms",
+      "Gender": "Sexe du nom",
+      "Auto": "Automatique"
     },
     "NoajRelic": {
       "Title": "Relique de Haminges",

@@ -112,6 +112,18 @@
       "colorRole": "gold",
       "defaultRole": "OBSERVER"
     },
+    "npcs": {
+      "nameKey": "TRUDVANG.Content.Folder.Npcs",
+      "type": "Actor",
+      "colorRole": "muted",
+      "defaultRole": "NONE"
+    },
+    "bestiary": {
+      "nameKey": "TRUDVANG.Content.Folder.Bestiary",
+      "type": "Actor",
+      "colorRole": "red",
+      "defaultRole": "NONE"
+    },
     "gm-macros": {
       "nameKey": "TRUDVANG.Content.Folder.GMMacros",
       "type": "Macro",

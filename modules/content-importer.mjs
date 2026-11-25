@@ -1,3 +1,4 @@
+import {installPregeneratedActors} from "./pregenerated-actors.mjs";
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { CREATURE_NPC_DATA, creatureDataForStarter, featEffectPayload } from "./creature-feats.mjs";
 import { TRUDVANG } from "./config.mjs";
@@ -46,7 +47,7 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // TEMPORARY WORLD MIGRATION — version 72 groups existing name tables under
 // Character Creation / Names; the normal starter import recreates their folder assignment.
 // TEMPORARY WORLD MIGRATION — version 73 imports the torch and lantern in existing worlds.
-const CONTENT_VERSION = 73;
+const CONTENT_VERSION = 74;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -1329,6 +1330,7 @@ export async function importStarterContent({force = false} = {}) {
 
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
+    const pregeneratedActors = await installPregeneratedActors(source.items, folders.npcs, localizeTree);
     await importBestiaryAnimals(folders);
     await upsertJournals();
     await upsertDefaultScene();
@@ -1553,7 +1555,7 @@ export async function importStarterContent({force = false} = {}) {
     ui.notifications.info(game.i18n.format("TRUDVANG.Import.Complete", {
       items: updated + created,
       tables: source.tables.length,
-      actors: source.actors.length
+      actors: source.actors.length + pregeneratedActors
     }));
     return true;
   } catch (error) {

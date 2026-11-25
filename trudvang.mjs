@@ -10,6 +10,7 @@ import { TrudvangItemSheet,registerMagicSheetAvailabilityHooks } from "./modules
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
+import {registerTokenNameOptions} from "./modules/token-names.mjs";
 import { generateRandomName } from "./modules/name-tables.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, ensureUtilityMacros, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import {rollGenericDamage, rollGenericFear, requestGenericSituationRoll} from "./modules/generic-rolls.mjs";
@@ -43,6 +44,7 @@ Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
   registerSacredHooks();
+  registerTokenNameOptions();
   registerDamageEnrichers();
   configureEffects();
   registerAuraSupport();

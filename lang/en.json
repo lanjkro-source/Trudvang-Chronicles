@@ -1558,6 +1558,45 @@
       "PacksRebuildFailed": "Compendium rebuild failed. Check the console; no further packs will be changed."
     },
     "Content": {
+      "Pregenerated": {
+        "novice-dimwalker": "Beginner Dimwalker (Westmarkian Gavlian)",
+        "experienced-dimwalker": "Experienced Dimwalker (Stormlander Stormkelt)",
+        "novice-bard": "Beginner Bard (Borjornikka Zorjorn)",
+        "experienced-bard": "Experienced Bard (Mittlander Skwilda)",
+        "novice-dweller": "Beginner Dweller (Mittlander Trader)",
+        "experienced-dweller": "Experienced Dweller (Stormlander Farmer)",
+        "novice-warrior": "Beginner Warrior (Stormlander Raider)",
+        "experienced-warrior": "Experienced Warrior (Mittlander Hero)",
+        "novice-rogue": "Beginner Rogue (Stormlander Scoundrel)",
+        "experienced-rogue": "Experienced Rogue (Mittlander Eitrspatter)",
+        "novice-ranger": "Beginner Ranger (Mittlander Stersluming)",
+        "experienced-ranger": "Experienced Ranger (Korpikalla Hunter)",
+        "novice-weaver": "Beginner Vitner Weaver (Wildfolk Outcast)",
+        "experienced-weaver": "Experienced Vitner Weaver (Mittlander Fhomor)",
+        "Age": "Age",
+        "Rulebook": "Rules (French edition)",
+        "ProfileSource": "Pregenerated profile from the French rules, p. {page}.",
+        "Qualifier": {
+          "human": "Human",
+          "dwarf": "Dwarf",
+          "elf": "Elf",
+          "virann": "Virann",
+          "stormlander": "Stormlander",
+          "mittlander": "Mittlander",
+          "wildfolk": "Wildfolk",
+          "eika": "Eika",
+          "vrok": "Vrok",
+          "rona": "Rona",
+          "futhark": "Futhark",
+          "wild-vrok": "Wild Vrok",
+          "gerbanis": "Gerbanis",
+          "tenetNid": "Tenet of Nid"
+        },
+        "Equipment": {
+          "BearPaw": "Bjornram (bear’s paw)",
+          "Dagger": "Dagger"
+        }
+      },
       "NaturalWeapon": {
         "Bite": {
           "Name": "Bite"
@@ -1579,6 +1618,8 @@
         }
       },
       "Folder": {
+        "Npcs": "NPCs",
+        "Bestiary": "Bestiary",
         "GMItems": "Game Master",
         "GMTables": "Game Master",
         "Nature": "Nature",
@@ -18960,6 +19001,12 @@
       "TestWall": "{wall} · Level {level} spell",
       "Blocked": "The wall stops the spell.",
       "Passed": "The spell passes through the wall."
+    },
+    "TokenNames": {
+      "Random": "Generate a random name",
+      "Culture": "Name table",
+      "Gender": "Name gender",
+      "Auto": "Automatic"
     },
     "NoajRelic": {
       "Title": "Haminges relic",

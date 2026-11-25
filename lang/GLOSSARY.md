@@ -1807,6 +1807,54 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Import.PacksRebuilt` | Knowledge compendiums rebuilt ({packs} packs). | Compendiums de connaissances reconstruits ({packs} packs). |
 | `TRUDVANG.Import.PacksRebuildFailed` | Compendium rebuild failed. Check the console; no further packs will be changed. | La reconstruction des compendiums a échoué. Consultez la console ; aucun pack supplémentaire ne sera modifié. |
 
+## `TRUDVANG.Content.Pregenerated`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Pregenerated.novice-dimwalker` | Beginner Dimwalker (Westmarkian Gavlian) | Arpenteur des brumes débutant (gavlien, Virann) |
+| `TRUDVANG.Content.Pregenerated.experienced-dimwalker` | Experienced Dimwalker (Stormlander Stormkelt) | Arpenteur des brumes expérimenté (stormikjalt, Stormlander) |
+| `TRUDVANG.Content.Pregenerated.novice-bard` | Beginner Bard (Borjornikka Zorjorn) | Barde débutant (Zorjorn, Borjornikka) |
+| `TRUDVANG.Content.Pregenerated.experienced-bard` | Experienced Bard (Mittlander Skwilda) | Barde expérimenté (Skwilda, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.novice-dweller` | Beginner Dweller (Mittlander Trader) | Colon débutant (marchand, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.experienced-dweller` | Experienced Dweller (Stormlander Farmer) | Colon expérimenté (fermier, Stormlander) |
+| `TRUDVANG.Content.Pregenerated.novice-warrior` | Beginner Warrior (Stormlander Raider) | Guerrier débutant (pillard, Stormlander) |
+| `TRUDVANG.Content.Pregenerated.experienced-warrior` | Experienced Warrior (Mittlander Hero) | Guerrier expérimenté (héros, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.novice-rogue` | Beginner Rogue (Stormlander Scoundrel) | Malfrat débutant (canaille, Stormlander) |
+| `TRUDVANG.Content.Pregenerated.experienced-rogue` | Experienced Rogue (Mittlander Eitrspatter) | Malfrat expérimenté (Eitrspatter, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.novice-ranger` | Beginner Ranger (Mittlander Stersluming) | Rôdeur débutant (Stersluming, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.experienced-ranger` | Experienced Ranger (Korpikalla Hunter) | Rôdeur expérimenté (chasseur, Korpikalla) |
+| `TRUDVANG.Content.Pregenerated.novice-weaver` | Beginner Vitner Weaver (Wildfolk Outcast) | Tisseur de vitner débutant (paria, Sauvage) |
+| `TRUDVANG.Content.Pregenerated.experienced-weaver` | Experienced Vitner Weaver (Mittlander Fhomor) | Tisseur de vitner expérimenté (Fhomor, Mittlander) |
+| `TRUDVANG.Content.Pregenerated.Age` | Age | Âge |
+| `TRUDVANG.Content.Pregenerated.Rulebook` | Rules (French edition) | Livre des règles |
+| `TRUDVANG.Content.Pregenerated.ProfileSource` | Pregenerated profile from the French rules, p. {page}. | Profil prétiré du Livre des règles, p. {page}. |
+
+## `TRUDVANG.Content.Pregenerated.Qualifier`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Pregenerated.Qualifier.human` | Human | Humain |
+| `TRUDVANG.Content.Pregenerated.Qualifier.dwarf` | Dwarf | Nain |
+| `TRUDVANG.Content.Pregenerated.Qualifier.elf` | Elf | Elfe |
+| `TRUDVANG.Content.Pregenerated.Qualifier.virann` | Virann | Virann |
+| `TRUDVANG.Content.Pregenerated.Qualifier.stormlander` | Stormlander | Stormlander |
+| `TRUDVANG.Content.Pregenerated.Qualifier.mittlander` | Mittlander | Mittlander |
+| `TRUDVANG.Content.Pregenerated.Qualifier.wildfolk` | Wildfolk | Sauvages |
+| `TRUDVANG.Content.Pregenerated.Qualifier.eika` | Eika | eika |
+| `TRUDVANG.Content.Pregenerated.Qualifier.vrok` | Vrok | vrok |
+| `TRUDVANG.Content.Pregenerated.Qualifier.rona` | Rona | rona |
+| `TRUDVANG.Content.Pregenerated.Qualifier.futhark` | Futhark | futhark |
+| `TRUDVANG.Content.Pregenerated.Qualifier.wild-vrok` | Wild Vrok | vrok sauvage |
+| `TRUDVANG.Content.Pregenerated.Qualifier.gerbanis` | Gerbanis | Gerbanis |
+| `TRUDVANG.Content.Pregenerated.Qualifier.tenetNid` | Tenet of Nid | Doctrine de Nid |
+
+## `TRUDVANG.Content.Pregenerated.Equipment`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Pregenerated.Equipment.BearPaw` | Bjornram (bear’s paw) | Bjornram (patte d’ours) |
+| `TRUDVANG.Content.Pregenerated.Equipment.Dagger` | Dagger | Dague |
+
 ## `TRUDVANG.Content.NaturalWeapon.Bite`
 
 | Clé | English | Français |
@@ -1847,6 +1895,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.Folder.Npcs` | NPCs | PNJs |
+| `TRUDVANG.Content.Folder.Bestiary` | Bestiary | Bestiaire |
 | `TRUDVANG.Content.Folder.GMItems` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.GMTables` | Game Master | Maître de jeu |
 | `TRUDVANG.Content.Folder.Nature` | Nature | Nature |
@@ -16722,6 +16772,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellBarrier.TestWall` | {wall} · Level {level} spell | {wall} · Sortilège de niveau {level} |
 | `TRUDVANG.SpellBarrier.Blocked` | The wall stops the spell. | Le mur arrête le sortilège. |
 | `TRUDVANG.SpellBarrier.Passed` | The spell passes through the wall. | Le sortilège franchit le mur. |
+
+## `TRUDVANG.TokenNames`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.TokenNames.Random` | Generate a random name | Créer un nom aléatoire |
+| `TRUDVANG.TokenNames.Culture` | Name table | Table de noms |
+| `TRUDVANG.TokenNames.Gender` | Name gender | Sexe du nom |
+| `TRUDVANG.TokenNames.Auto` | Automatic | Automatique |
 
 ## `TRUDVANG.NoajRelic`
 

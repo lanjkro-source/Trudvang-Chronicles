@@ -298,6 +298,9 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         .map(key => [key, new fields.NumberField({required: true, nullable: true, integer: true, initial: null})]))),
       details: schema({
         creatureType: string("humanoid"),
+        race: string(),
+        culture: string(),
+        religion: string(),
         size: string("1t"),
         age: string(),
         fearFactor: string(),

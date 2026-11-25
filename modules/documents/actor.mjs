@@ -53,6 +53,8 @@ import {effectSource} from "../rules/effect-source.mjs";
 import {consumeInventoryItem, isConsumable} from "../consumables.mjs";
 import {consumablePolicy} from "../rules/consumable-effects.mjs";
 
+import {applyRandomTokenName} from "../token-names.mjs";
+
 const BaseActor = foundry.documents.Actor;
 const effectApplicationJobs = new WeakMap();
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -101,13 +103,14 @@ export class TrudvangActor extends BaseActor {
   }
 
   /** Size newly generated creature tokens without changing already placed tokens. */
-  getTokenDocument(data = {}, options = {}) {
+  async getTokenDocument(data = {}, options = {}) {
     const dimensions = this.type === "npc" ? creatureTokenDimensions(this.system.details?.size) : null;
     // Explicit dimensions supplied by a caller take precedence over auto-sizing.
     // Unlinked NPC tokens inherit the model's embedded inventory; Foundry's
     // ActorDelta stores each token's subsequent item edits independently.
     // Explicit linking and any per-token delta supplied by a caller are respected.
-    return super.getTokenDocument(this.type === "npc" ? {actorLink: false, ...dimensions, ...data} : data, options);
+    const token = await super.getTokenDocument(this.type === "npc" ? {actorLink: false, ...dimensions, ...data} : data, options);
+    return applyRandomTokenName(this, token, data);
   }
 
   get isInActiveCombat() {
