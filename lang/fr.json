@@ -18961,6 +18961,32 @@
       "Blocked": "Le mur arrête le sortilège.",
       "Passed": "Le sortilège franchit le mur."
     },
+    "NoajRelic": {
+      "Title": "Relique de Haminges",
+      "Configure": "Définir la relique",
+      "Origin": "Type de créature",
+      "OriginName": "Nom de la créature (facultatif)",
+      "Part": "Partie conservée",
+      "Dwarf": "Nain",
+      "CaveBoar": "Sanglier des cavernes",
+      "Bind": "Lier une relique",
+      "Restore": "Remettre à l’état rangé",
+      "Ritual": "Confirmez que le rituel de liaison a été accompli. S’il n’a jamais vaincu la créature, le noaj doit réussir un test de situation à VS 7 avec Psychisme.",
+      "Defeated": "Le noaj a déjà vaincu cette créature",
+      "Individual": "Choisissez un exemplaire individuel d’équipement ordinaire.",
+      "NoCandidate": "Aucune relique compatible et disponible dans l’inventaire.",
+      "absent": "Relique absente",
+      "stored": "Relique rangée",
+      "worn": "Relique portée",
+      "broken": "Relique brisée",
+      "Casting": {
+        "absent": "Liez une relique à la tablette pour invoquer ce pouvoir.",
+        "stored": "Portez la relique pour invoquer ce pouvoir.",
+        "broken": "La relique est brisée."
+      },
+      "HitIntact": "{name} absorbe le coup et reste intacte (d20 : {die}/{count}).",
+      "HitBroken": "{name} absorbe le coup et se brise (d20 : {die}/{count})."
+    },
     "HuvfurwurmHead": {
       "FatalBlow": "Confirmer un coup fatal",
       "FatalBlowConfirm": "Confirmez que le coup devrait tuer {actor}. Le pouvoir déclenchera son jet de survie.",

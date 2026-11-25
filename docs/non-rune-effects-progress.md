@@ -457,7 +457,7 @@ La carte de réussite affiche le volume maximal (5 L plus les achats de 1, 10 et
 
 ### Chantiers encore ouverts
 
-- **Invocations et reliques des noajs de Haminges** — vérifier les profils invoqués et traiter les propriétés mécaniques des reliques qui restent manuelles. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
+- **Invocations des noajs de Haminges** — vérifier les profils invoqués. Les lances sacrées et les préparations curatives disposent déjà de leur automatisation.
 - **Révision du catalogue** — distinguer les effets purement descriptifs des effets pour lesquels un jet, un suivi d’état ou un calcul manque encore. La compatibilité avec les tables de Stormlands reste une vérification distincte.
 
 ### Sceau
@@ -487,3 +487,9 @@ Sol protecteur, Foyer béni et Bosquet sacré utilisent les valeurs françaises 
 Le sanctuaire réduit la VC du tissage, de l’invocation étrangère ou de la rune lorsque la cible se trouve à l’intérieur. Le dé est commun aux cibles intérieures et extérieures. Les cibles directes connues au jet conservent leur VC, tandis que les nouvelles cibles et les zones utilisent leur point d’application. Le bonus de VS s’applique aux tests contre la restriction ou le contrôle. Deux sanctuaires superposés retiennent la protection la plus élevée. Les pouvoirs de Nid sont exemptés.
 
 Résistance au vitner (Livre des règles p. 258 et Player’s Handbook p. 203) emploie une région fixe avec réglage de température. Elle protège des intempéries. Pour un sortilège qui traverse la région, le tisseur fait le test de franchissement à VS 10, ajustée par ses niveaux de puissance. Un échec bloque le passage. Une réussite supprime la région et laisse le sortilège continuer. Les pouvoirs divins et les runes passent cette barrière librement.
+
+### Reliques de Haminges
+
+Le Livre des règles, p. 265–279, et le Player’s Handbook, section Haminges, donnent les origines admises et le test du rituel. Un équipement individuel peut recevoir une provenance, avec une référence stable au type de créature et le nom facultatif de l’individu. Le MJ confirme la liaison depuis Vitner & Foi. Si le noaj n’a jamais vaincu cette créature, la liaison demande un test de situation à VS 7 avec Psychisme. Un échec rend cet exemplaire inutilisable pour ce noaj. La tablette conserve son niveau et demande une relique portée pour utiliser ses pouvoirs. Un transfert d’inventaire range la relique et détache la liaison à l’ancien porteur.
+
+Lorsqu’on applique une attaque d’arme ou à mains nues au corps, un d20 sélectionne éventuellement l’une des reliques portées. Une relique touchée absorbe tout le coup avant protection, y compris les effets transmis par ce coup. À partir de 5 dégâts elle devient brisée et bloque sa tablette. Le jet est enregistré sur la carte par cible. Le MJ peut remettre la relique à l’état rangé. Si une autre relique occupe déjà la tablette ou le type de créature, la relique restaurée retourne à l’inventaire sans liaison.

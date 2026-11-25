@@ -14,6 +14,7 @@ import {FATAL_MAGIC_ROWS, fatalMagicHasArea} from "./rules/fatal-magic.mjs";
 import {applyFatalEnclosure, registerFatalEnclosures} from "./fatal-enclosure.mjs";
 import {applyFatalPortal} from "./fatal-catastrophes.mjs";
 import {matchesFatalResult} from "./rules/fatal-table.mjs";
+import {relicHitText,resolveNoajRelicHit} from "./noaj-relics.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
@@ -301,8 +302,10 @@ async function applyOnGM(payload,{grouped=false}={}) {
     }
     const reservation=payload.channel==='fear'?await reserveFearRecipient(message,actor):null;
     if(reservation?.status)return reservation;
+    const relic=payload.channel==="body"&&context?.attackDamage?await resolveNoajRelicHit(actor,message,amount):null;
     let result;
-    try{result = payload.channel === "fear" ? (fearAdjustment?.profile.dice===0?{applied:0}:await actor.applyFearFactor(amount, {announce: false}))
+    try{result = relic?.itemId ? {bodyDamage:0,temporaryDamage:0}
+      : payload.channel === "fear" ? (fearAdjustment?.profile.dice===0?{applied:0}:await actor.applyFearFactor(amount, {announce: false}))
       : payload.channel === "defense" ? await applyDamageToDefenseItem({item, damage: amount,qualification:message.getFlag(SYSTEM_ID,"damageContext")?.qualification})
         : await applyDamageToActor({actor, damage: amount, components:message.getFlag(SYSTEM_ID,"damageContext")?.components, ignoreArmor: payload.ignoreArmor === true, qualification: message.getFlag(SYSTEM_ID,"damageContext")?.qualification, usage: message.getFlag(SYSTEM_ID,"damageContext")?.usage??"", magicalWeapon: message.getFlag(SYSTEM_ID,"damageContext")?.magicalWeapon===true, minimumAfterArmor:Number(message.getFlag(SYSTEM_ID,"damageContext")?.minimumAfterArmor)||0, announce: false});
     }catch(error){if(reservation?.rollback)await reservation.rollback();throw error;}
@@ -310,6 +313,7 @@ async function applyOnGM(payload,{grouped=false}={}) {
     if (!result) return {status: "unavailable"};
     appliedRow = {actorUuid: actor.uuid, tokenUuid: "", name: actor.name, channel: payload.channel,
       itemUuid: item?.uuid ?? "", itemName: item?.name ?? "",
+      ...(relic?.itemId?{relicHit:relic}:{}),
       calculation: payload.channel === "body" ? [game.i18n.format("TRUDVANG.Damage.Application",{before:beforeCover,after:result.bodyDamage,temporary:result.temporaryDamage??0}),
         ...cover.map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.name,protection:row.value})),
         ...(result.armorDamage??[]).map(row=>game.i18n.format("TRUDVANG.Damage.ArmorApplied",{name:row.item.name??"",protection:row.protection})),
@@ -322,7 +326,7 @@ async function applyOnGM(payload,{grouped=false}={}) {
       appliedRow.tokenUuid = token.uuid; appliedRow.name = token.name || actor.name;
     }
   }
-  if(payload.channel==='body')await applyWeaponDamageEffects(message,actor,appliedRow);
+  if(payload.channel==='body'&&!appliedRow.relicHit)await applyWeaponDamageEffects(message,actor,appliedRow);
   const rows = [...rowsFor(message), ...pending.filter(row => !hasChatApplication(message, row.actorUuid, row.channel, row.itemUuid))];
   await refreshApplications(message,rows);
   unrecorded.delete(message.id);
@@ -561,7 +565,7 @@ async function refreshApplications(message,rows,{rolls=[]}={}){
   const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/application-results.hbs", {
     rows: rows.map(row => {
       const resistance=row.channel==='fear'?message.getFlag(SYSTEM_ID,'fearResistanceResults')?.find(r=>r.actorUuid===row.actorUuid):null;
-      return {...row,actorUuid:row.actorUuid,impactPending:row.channel==='body'&&message.getFlag(SYSTEM_ID,'damageContext')?.impact?.kind==='windKnockback'&&!row.impact?.resolved,impactText:impactResultText(row),...(resistance?{outcomeText:rollOutcomeText(resistance.outcome??{},key=>game.i18n.localize(key)),outcomeClass:resistance.success?'success':'failure'}:{}),
+      return {...row,actorUuid:row.actorUuid,relicHitText:relicHitText(row.relicHit),impactPending:row.channel==='body'&&!row.relicHit&&message.getFlag(SYSTEM_ID,'damageContext')?.impact?.kind==='windKnockback'&&!row.impact?.resolved,impactText:impactResultText(row),...(resistance?{outcomeText:rollOutcomeText(resistance.outcome??{},key=>game.i18n.localize(key)),outcomeClass:resistance.success?'success':'failure'}:{}),
       label: row.channel === "defense" ? game.i18n.format("TRUDVANG.ChatApplication.DefenseName", {actor: row.name, item: row.itemName}) : row.name,
       icon: row.channel === "fear" ? "fa-face-grimace" : row.channel === "defense" ? "fa-shield" : "fa-heart-crack",
       result: game.i18n.format(`TRUDVANG.ChatApplication.${row.channel === "fear" ? "Fear" : row.channel === "defense" ? "Integrity" : "Body"}Amount`, {amount: row.amount})};})

@@ -16723,6 +16723,38 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.SpellBarrier.Blocked` | The wall stops the spell. | Le mur arrête le sortilège. |
 | `TRUDVANG.SpellBarrier.Passed` | The spell passes through the wall. | Le sortilège franchit le mur. |
 
+## `TRUDVANG.NoajRelic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.NoajRelic.Title` | Haminges relic | Relique de Haminges |
+| `TRUDVANG.NoajRelic.Configure` | Define relic | Définir la relique |
+| `TRUDVANG.NoajRelic.Origin` | Creature type | Type de créature |
+| `TRUDVANG.NoajRelic.OriginName` | Creature name (optional) | Nom de la créature (facultatif) |
+| `TRUDVANG.NoajRelic.Part` | Preserved body part | Partie conservée |
+| `TRUDVANG.NoajRelic.Dwarf` | Dwarf | Nain |
+| `TRUDVANG.NoajRelic.CaveBoar` | Cave boar | Sanglier des cavernes |
+| `TRUDVANG.NoajRelic.Bind` | Bind a relic | Lier une relique |
+| `TRUDVANG.NoajRelic.Restore` | Return to stored | Remettre à l’état rangé |
+| `TRUDVANG.NoajRelic.Ritual` | Confirm that the binding ritual is complete. If the Noaj has never defeated the creature, they must pass a Situation test at SV 7 with Psyche. | Confirmez que le rituel de liaison a été accompli. S’il n’a jamais vaincu la créature, le noaj doit réussir un test de situation à VS 7 avec Psychisme. |
+| `TRUDVANG.NoajRelic.Defeated` | The Noaj has already defeated this creature | Le noaj a déjà vaincu cette créature |
+| `TRUDVANG.NoajRelic.Individual` | Select a single ordinary gear item. | Choisissez un exemplaire individuel d’équipement ordinaire. |
+| `TRUDVANG.NoajRelic.NoCandidate` | No compatible relic is available in the inventory. | Aucune relique compatible et disponible dans l’inventaire. |
+| `TRUDVANG.NoajRelic.absent` | Relic missing | Relique absente |
+| `TRUDVANG.NoajRelic.stored` | Relic stored | Relique rangée |
+| `TRUDVANG.NoajRelic.worn` | Relic worn | Relique portée |
+| `TRUDVANG.NoajRelic.broken` | Relic broken | Relique brisée |
+| `TRUDVANG.NoajRelic.HitIntact` | {name} absorbs the hit and remains intact (d20: {die}/{count}). | {name} absorbe le coup et reste intacte (d20 : {die}/{count}). |
+| `TRUDVANG.NoajRelic.HitBroken` | {name} absorbs the hit and breaks (d20: {die}/{count}). | {name} absorbe le coup et se brise (d20 : {die}/{count}). |
+
+## `TRUDVANG.NoajRelic.Casting`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.NoajRelic.Casting.absent` | Bind a relic to the tablet to invoke this power. | Liez une relique à la tablette pour invoquer ce pouvoir. |
+| `TRUDVANG.NoajRelic.Casting.stored` | Wear the relic to invoke this power. | Portez la relique pour invoquer ce pouvoir. |
+| `TRUDVANG.NoajRelic.Casting.broken` | The relic is broken. | La relique est brisée. |
+
 ## `TRUDVANG.HuvfurwurmHead`
 
 | Clé | English | Français |

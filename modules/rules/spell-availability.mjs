@@ -7,6 +7,7 @@ import {knowledgeRank} from "./magic-resistance.mjs";
 import {divineFailureRestriction, divinePowerId} from "./divine-failure.mjs";
 import {fatalAmnesia, fatalSpellBlindness} from "./fatal-magic.mjs";
 import {DRAGON_TABLET,dragonRelicCracked} from "./huvfurwurm-head.mjs";
+import {noajRelicForTablet,relicStatus} from "./noaj-relics.mjs";
 
 export function spellActorForItem(item,{user=game.user,controlled=globalThis.canvas?.tokens?.controlled??[]}={}){
  const owner=item?.actor??(item?.parent?.documentName==="Actor"?item.parent:null);
@@ -37,6 +38,10 @@ export function spellAvailability(actor,item,{sealed=false}={}){
  if(divine&&tabletId===DRAGON_TABLET&&dragonRelicCracked(actor))return deny("TRUDVANG.HuvfurwurmHead.CrackedDescription");
  const definition=TABLET_BY_ID.get(tabletId),tablet=items.find(i=>i.type==="tablet"&&(i.system.catalogId===tabletId||i.name===item.system.tablet));
  const religion=item.system.religion||definition?.religion||tablet?.system.religion;
+ if(divine&&!grant&&religion==="haminges"){
+  const relic=tablet&&noajRelicForTablet(actor,tablet.id);
+  if(relicStatus(relic)!=="worn")return deny(`TRUDVANG.NoajRelic.Casting.${relicStatus(relic)}`);
+ }
  const specialties=divine?(TRUDVANG.religions[religion]&&!grant?[TRUDVANG.religions[religion].specialty]:Object.values(TRUDVANG.religions).map(r=>r.specialty)):["galding","sejding","vyrding"];
  const innate=actor.type==="npc"&&actor.system.magic?.castingTarget!==null&&actor.system.magic?.castingTarget!==undefined&&Number.isFinite(Number(actor.system.magic.castingTarget));
  if(!innate&&(knowledgeRank(actor,discipline)<1||!specialties.some(id=>knowledgeRank(actor,id)>0)))return deny(actor.type==="npc"?"TRUDVANG.Npc.ConfigureMagicMethod":"TRUDVANG.Warning.MagicMethodRequired");

@@ -13,6 +13,9 @@ const {TrudvangActor}=await import('../modules/documents/actor.mjs');
 const {syncPermanentRunes}=await import('../modules/sacred-objects.mjs');
 const {rollUnder,rollDamage}=await import('../modules/dice.mjs');const {applyTransformation,transformationLinks}=await import('../modules/transformations.mjs');
 const {applyChatApplication}=await import('../modules/chat-application.mjs');
+const {bindNoajRelic,restoreNoajRelic}=await import('../modules/noaj-relics.mjs');
+const {noajRelicForTablet,relicFitsTablet,relicStatus}=await import('../modules/rules/noaj-relics.mjs');
+const {spellAvailability}=await import('../modules/rules/spell-availability.mjs');
 function setup(c='fr'){
  docs.clear();messages.clear();cards.length=0;die=4;serial=0;damageDice=[];const gm={id:'gm',isGM:true,active:true},owner={id:'owner',active:true},users=new Map([[gm.id,gm],[owner.id,owner]]);users.activeGM={isSelf:true};const lookup=k=>k.split('.').reduce((v,k)=>v?.[k],languages[c])??k;
  globalThis.game={user:gm,users,messages,actors:[],scenes:[],time:{worldTime:100},combat:{id:'combat',started:true,round:3},i18n:{lang:c,localize:lookup,format:(k,d={})=>String(lookup(k)).replace(/\{(\w+)\}/g,(_,k)=>d[k])}};
@@ -26,6 +29,99 @@ async function bind(f,level=3){const row=f.weapon.system.sacred.runes[0];row.lev
 async function attack(f,{kind='attack',target=15}={}){await rollUnder({actor:f.caster,item:f.weapon,kind,label:'Hammer attack',target});return cards.at(-1);}
 async function damage(f,values=[9,4]){damageDice=[...values];const {message}=await rollDamage({actor:f.caster,item:f.weapon,context:{automatic:true,returnMessage:true}});return message;}
 function apply(message,target,extra={}){return applyChatApplication({messageId:message.id,userId:game.user.id,actorUuid:target.uuid,channel:'body',...extra});}
+
+function noaj(actor){
+ actor.id='noaj';
+ actor.items.get=id=>actor.items.find(item=>item.id===id);
+ const tablet={id:'tablet',type:'tablet',name:'Puissance du dragon',system:{catalogId:'holy-haminges-power-of-the-dragon',level:2,religion:'haminges'}};
+ actor.items.push(tablet,{type:'ability',system:{catalogId:'invoke',level:1}},{type:'ability',system:{catalogId:'noaj',level:1}});
+ actor.system.resources.divinity={value:10};
+ const power={type:'divineFeat',system:{tabletId:tablet.system.catalogId,level:1,cost:2}};
+ const relic=(id,options={})=>{
+  const item={id,type:'gear',name:id,actor,system:{equipped:true,quantity:1,noajRelic:{enabled:true,
+   creatureId:'CjkhIYqWrXsYtZu0',ownerId:actor.id,tabletId:tablet.id,broken:false,...options}},async update(data){assign(this,data);}};
+  actor.items.push(item);return item;
+ };
+ return {tablet,power,relic};
+}
+
+test('Haminges binds compatible individual origins, keeps tablet levels and restores broken relics as stored for the GM',async()=>{
+ const f=setup(),{tablet,power,relic}=noaj(f.victim),candidate=relic('Croc',{ownerId:'',tabletId:''});
+ const incompatible=relic('Crâne',{creatureId:'elf',ownerId:'',tabletId:''});
+ const base=foundry.applications.api;
+ foundry.applications.api={DialogV2:{wait:async options=>{
+  assert.match(options.content,/Croc/);assert.doesNotMatch(options.content,/Crâne/);
+  return {id:candidate.id,defeated:true};
+ }}};
+ try{
+  assert.equal(relicFitsTablet('elf','holy-haminges-power-of-men'),true);
+  assert.equal(relicFitsTablet('elf','holy-haminges-power-of-trolls'),false);
+  assert.equal(spellAvailability(f.victim,power).reason,'TRUDVANG.NoajRelic.Casting.absent');
+  assert.equal(await bindNoajRelic(f.victim,tablet),candidate);
+  assert.equal(spellAvailability(f.victim,power).ok,true);
+  assert.equal(incompatible.system.noajRelic.ownerId,'');
+  candidate.system.noajRelic.broken=true;
+  assert.equal(spellAvailability(f.victim,power).reason,'TRUDVANG.NoajRelic.Casting.broken');
+  game.user=f.owner;
+  assert.equal(await restoreNoajRelic(candidate),null);
+  game.user=game.users.get('gm');
+  assert.equal(await restoreNoajRelic(candidate),candidate);
+  assert.equal(relicStatus(candidate),'stored');
+  assert.equal(spellAvailability(f.victim,power).reason,'TRUDVANG.NoajRelic.Casting.stored');
+  assert.equal(tablet.system.level,2);
+  candidate.system.noajRelic.broken=true;
+  const replacement=relic('Nouvelle griffe');
+  await restoreNoajRelic(candidate);
+  assert.equal(relicStatus(candidate),'stored');
+  assert.equal(candidate.system.noajRelic.tabletId,'');
+  assert.equal(noajRelicForTablet(f.victim,tablet.id),replacement);
+ }finally{foundry.applications.api=base;}
+});
+
+test('a Noaj relic intercepts the complete hit before armor, breaks at five and does not roll twice on retry',async()=>{
+ const f=setup(),{relic,power}=noaj(f.victim),worn=relic('Croc');
+ f.victim.system.protection=10;
+ die=1;
+ const small=await damage(f,[4]);
+ assert.equal(small.flags[S].damageContext.attackDamage,true);
+ assert.equal((await apply(small,f.victim)).amount,0);
+ assert.equal(relicStatus(worn),'worn');
+ assert.match(small.content,/Croc absorbe le coup et reste intacte/);
+ const threshold=await damage(f,[5]),update=threshold.update;
+ let fail=true;
+ threshold.update=async changes=>{
+  if(fail&&changes.content){fail=false;throw Error('chat write');}
+  return update.call(threshold,changes);
+ };
+ await assert.rejects(apply(threshold,f.victim),/chat write/);
+ assert.equal(relicStatus(worn),'broken');
+ assert.equal(f.victim.system.resources.body.current,100);
+ assert.equal(spellAvailability(f.victim,power).ok,false);
+ die=20;
+ assert.equal((await apply(threshold,f.victim)).amount,0);
+ assert.match(threshold.content,/Croc absorbe le coup et se brise/);
+ assert.equal(Object.values(threshold.flags[S].noajRelicHits)[0].die,1);
+ assert.equal((await apply(threshold,f.victim)).status,'alreadyApplied');
+});
+
+test('a stored relic, unrelated damage and a hit assigned to a shield leave relics untouched',async()=>{
+ const f=setup(),{relic}=noaj(f.victim),worn=relic('Croc');
+ const shield={uuid:f.victim.uuid+'.Item.shield',name:'Shield',type:'shield',isOwner:true,parent:f.victim,
+  system:{equipped:true,breach:{value:50,max:50}},async update(data){assign(this,data);}};
+ docs.set(shield.uuid,shield);f.victim.items.push(shield);
+ die=1;
+ const parried=await damage(f,[5]);
+ await apply(parried,f.victim,{channel:'defense',itemUuid:shield.uuid});
+ assert.equal(parried.flags[S].noajRelicHits,undefined);
+ const unrelated=await damage(f,[5]);unrelated.flags[S].damageContext.attackDamage=false;
+ await apply(unrelated,f.victim);
+ assert.equal(unrelated.flags[S].noajRelicHits,undefined);
+ worn.system.equipped=false;
+ const stored=await damage(f,[5]);
+ await apply(stored,f.victim);
+ assert.equal(stored.flags[S].noajRelicHits,undefined);
+ assert.equal(f.victim.system.resources.body.current,90);
+});
 
 test('permanent inscription installs only its weapon marker once, never incapacitates the bearer and does not offer premature victim links',async()=>{
  const f=setup();await Promise.all([bind(f,4),syncPermanentRunes(f.weapon),syncPermanentRunes(f.weapon)]);assert.equal(f.weapon.effects.length,1);const marker=f.weapon.effects[0];assert.equal(marker.transfer,false);assert.equal(marker.duration.value,null);assert.deepEqual(marker.statuses,[]);assert.deepEqual(marker.system.changes,[]);assert.equal(marker.flags[S].transformation.runeLevel,4);assert.equal(f.caster.effects.length,0);assert.equal(transformationLinks(marker),'');

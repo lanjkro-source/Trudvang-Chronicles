@@ -24,6 +24,7 @@ import {isPermanentMark} from "../rules/effect-stacking.mjs";
 import {customTabletPower,customTabletChild} from "../rules/custom-tablet.mjs";
 import {itemEffectEditState,intrinsicItemSheetUpdate,itemProtectionModifiers} from "../rules/item-magic.mjs";
 import {ITEM_QUALITIES,itemQuality,intrinsicQualityUpdate} from "../rules/item-quality.mjs";
+import {configureNoajRelic,relicItemView,restoreNoajRelic} from "../noaj-relics.mjs";
 
 const isCustomTablet = item => item.type === "tablet" && !TABLET_BY_ID.has(item.system.catalogId || item.getFlag?.("trudvang-chronicles", "catalogId"));
 
@@ -83,6 +84,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       'sacred-invest': function(event,target){return investSacredDialog(this.item,target.dataset.runeId).catch(error=>ui.notifications.warn(error.message));},
       'sacred-inscribe': function(){return inscribeRuneDialog(this.item).catch(error=>ui.notifications.warn(error.message));},
       'sacred-activate': function(event,target){return activateSacredRune(this.item,target.dataset.runeId).catch(error=>ui.notifications.warn(error.message));},
+      "configure-noaj-relic": function(){return configureNoajRelic(this.item);},
+      "restore-noaj-relic": function(){return restoreNoajRelic(this.item);},
       "delete-item": TrudvangItemSheet.#onDeleteItem,
       "effect-add": TrudvangItemSheet.#onEffectAdd,
       "effect-edit": TrudvangItemSheet.#onEffectEdit,
@@ -106,6 +109,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.item = this.item;
+    context.noajRelic=relicItemView(this.item);
+    context.canConfigureNoajRelic=this.isEditable&&this.item.type==="gear"&&
+      (!context.noajRelic||context.noajRelic.canConfigure)&&!this.item.system.consumable&&!this.item.system.sacred?.enabled;
     context.isSacredObject=isSacredObject(this.item);
     context.sacredRunes=context.isSacredObject?sacredRuneViews(this.item):[];
     context.sacredCapacity=context.isSacredObject&&this.item.parent?sacredCapacity(this.item.parent,equipmentCraftMaterial(this.item)):0;
@@ -347,6 +353,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static async #onSubmit(event, form, formData) {
     if (!this.isEditable || !this.item.isOwner) return;
     const updateData = intrinsicQualityUpdate(this.item,intrinsicItemSheetUpdate(foundry.utils.expandObject(formData.object),this._itemEffectEditState));
+    if(this.item.system.noajRelic?.enabled){
+      delete updateData.system?.noajRelic;
+      if(updateData.system){
+        delete updateData.system.quantity;
+        delete updateData.system.consumable;
+        if(this.item.system.noajRelic.broken)delete updateData.system.equipped;
+      }
+    }
     const editedLevels = updateData.system?.powerLevels;
     if (editedLevels && !Array.isArray(editedLevels)) {
       updateData.system.powerLevels = Array.from(this.item.system.powerLevels ?? [], (level, index) => {

@@ -34,6 +34,10 @@ async function perform({sourceItemUuid,targetActorUuid,userId,requestId},authori
  delete data._id;delete data._stats;delete data.folder;delete data.sort;delete data.ownership;
  data.effects=Array.from(item.effects??[],effect=>effectSource(effect));
  data.system.equipped=false;
+ if(data.system.noajRelic?.enabled){
+  data.system.noajRelic.ownerId="";
+  data.system.noajRelic.tabletId="";
+ }
  data.flags??={};data.flags[SCOPE]??={};data.flags[SCOPE].inventoryTransfer={sourceUuid:sourceItemUuid,requestId};
  let created,removed=false;
  try{

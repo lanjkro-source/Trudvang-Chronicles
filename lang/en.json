@@ -18961,6 +18961,32 @@
       "Blocked": "The wall stops the spell.",
       "Passed": "The spell passes through the wall."
     },
+    "NoajRelic": {
+      "Title": "Haminges relic",
+      "Configure": "Define relic",
+      "Origin": "Creature type",
+      "OriginName": "Creature name (optional)",
+      "Part": "Preserved body part",
+      "Dwarf": "Dwarf",
+      "CaveBoar": "Cave boar",
+      "Bind": "Bind a relic",
+      "Restore": "Return to stored",
+      "Ritual": "Confirm that the binding ritual is complete. If the Noaj has never defeated the creature, they must pass a Situation test at SV 7 with Psyche.",
+      "Defeated": "The Noaj has already defeated this creature",
+      "Individual": "Select a single ordinary gear item.",
+      "NoCandidate": "No compatible relic is available in the inventory.",
+      "absent": "Relic missing",
+      "stored": "Relic stored",
+      "worn": "Relic worn",
+      "broken": "Relic broken",
+      "Casting": {
+        "absent": "Bind a relic to the tablet to invoke this power.",
+        "stored": "Wear the relic to invoke this power.",
+        "broken": "The relic is broken."
+      },
+      "HitIntact": "{name} absorbs the hit and remains intact (d20: {die}/{count}).",
+      "HitBroken": "{name} absorbs the hit and breaks (d20: {die}/{count})."
+    },
     "HuvfurwurmHead": {
       "FatalBlow": "Confirm a fatal blow",
       "FatalBlowConfirm": "Confirm that the blow would kill {actor}. The power will trigger its survival roll.",

@@ -210,3 +210,7 @@ Dans `modules/magic-seal.mjs`, le repli `TEMPORARY WORLD MIGRATION` autorise le 
 ## Mur de vitner
 
 `migrateVitnerWallOptions()` dans `modules/spell-zones.mjs` complète les anciennes copies du catalogue reconnaissables à leurs sept options d’origine. Elle corrige l’option de diamètre et ajoute la conversion en sortilège persistant dans les objets du monde, des acteurs et des tokens indépendants. Retirer la fonction et son appel au démarrage avec ces anciens mondes. Les sources FR et EN générées gardent les huit options.
+
+## Premières reliques de Puissance du dragon
+
+Les replis `TEMPORARY WORLD MIGRATION` dans `modules/huvfurwurm-head.mjs` et `modules/noaj-relics.mjs` permettent à une protection déjà active sans relique de se résoudre, puis retirent l’ancien effet de relique fendue à la première liaison d’un objet compatible. Retirer ces replis et la lecture de l’ancien marqueur `dragonRelicCracked` après mise à niveau des mondes de développement. L’état de la relique portée est désormais écrit sur l’objet.

@@ -3,6 +3,7 @@ import {itemEffectRemainingSeconds} from "./rules/effect-duration.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {effectSource} from "./rules/effect-source.mjs";
 import {deleteEffectOnce} from "./effect-deletion.mjs";
+import {NOAJ_DRAGON_TABLET,noajRelicForTablet} from "./rules/noaj-relics.mjs";
 
 const scope = "trudvang-chronicles";
 const jobs = new WeakMap();
@@ -42,10 +43,13 @@ export function resolveHuvfurwurmDeath(actor) {
     const create=(name,marker,duration,statuses=[])=>effectSource({name:local(name),description:local(name+"Description"),
       img:guard.img,type:"effect",transfer:false,origin:guard.uuid,start,statuses,duration,
       system:{stackId:marker,stacking:"replace",changes:[]},flags:{[scope]:{[marker]:true}}});
-    if(!dragonRelicCracked(actor))await actor.createEmbeddedDocuments("ActiveEffect",[
-      create("Hibernation","huvfurwurmHibernation",{value:1,units:"months"},["unconscious"]),
-      create("Cracked","dragonRelicCracked",{value:null,units:"days"})
-    ]);
+    const tablet=Array.from(actor.items??[]).find(item=>item.type==="tablet"&&item.system.catalogId===NOAJ_DRAGON_TABLET);
+    const relic=tablet&&noajRelicForTablet(actor,tablet.id);
+    const effects=[create("Hibernation","huvfurwurmHibernation",{value:1,units:"months"},["unconscious"])];
+    if(relic)await relic.update({"system.noajRelic.broken":true,"system.equipped":false});
+    // TEMPORARY WORLD MIGRATION — allow an already-active old guard to finish.
+    else if(!dragonRelicCracked(actor))effects.push(create("Cracked","dragonRelicCracked",{value:null,units:"days"}));
+    await actor.createEmbeddedDocuments("ActiveEffect",effects);
     await actor.update({"system.survivalRounds":0});
     await deleteEffectOnce(guard);
     await notice(actor,"Survived",roll).catch(error=>console.error("Trudvang | Hibernation notice failed",error));

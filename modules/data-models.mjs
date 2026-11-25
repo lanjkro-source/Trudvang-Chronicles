@@ -518,7 +518,9 @@ export class ShieldData extends BaseItemData {
 export class GearData extends BaseItemData {
   static defineSchema() {
     return {...super.defineSchema(), equipped: boolean(false), consumable: boolean(false), consequenceId: string(),
-      lightBright: number(0, {min: 0}), lightDim: number(0, {min: 0})};
+      lightBright: number(0, {min: 0}), lightDim: number(0, {min: 0}),
+      noajRelic: schema({enabled:boolean(),part:string(),creatureId:string(),originName:string(),
+        tabletId:string(),ownerId:string(),broken:boolean(),failedOwners:new fields.ArrayField(string(),{initial:[]})})};
   }
 }
 

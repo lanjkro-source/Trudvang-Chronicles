@@ -1,5 +1,6 @@
 import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {sacredAffinity,sacredObjectViews,createSacredObjectDialog,removeSacredObject} from '../sacred-objects.mjs';
+import {bindNoajRelic,relicTabletView} from '../noaj-relics.mjs';
 import {damageIcons} from "../damage-icons.mjs";
 import {conditionalProtectionProfiles} from "../rules/conditional-protection.mjs";
 import {damageQualification} from "../rules/damage-qualifications.mjs";
@@ -135,6 +136,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "end-active-spell": TrudvangActorSheet.#onAction,
       "item-delete": TrudvangActorSheet.#onAction,
       "item-equip": TrudvangActorSheet.#onAction,
+      "bind-noaj-relic": TrudvangActorSheet.#onAction,
       "item-ready": TrudvangActorSheet.#onAction,
       "natural-attack": TrudvangActorSheet.#onAction,
       "natural-parry": TrudvangActorSheet.#onAction,
@@ -539,6 +541,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const tabletId = item.system.catalogId || item.getFlag("trudvang-chronicles", "catalogId");
       return {
         item,
+        noajRelic:relicTabletView(this.actor,item),
         refundCost: this.actor.getKnowledgeLevelCost(item, level),
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
         children: sortTabletPowers(powers.filter(power => power.system.tabletId === tabletId || normalized(power.system.tablet) === normalized(item.name)), tabletId)
@@ -581,7 +584,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       input.addEventListener("change", async event => {
         const container = event.currentTarget.closest("[data-item-id]");
         const item = container && this.actor.items.get(container.dataset.itemId);
-        if (item) await item.update({[`system.${event.currentTarget.dataset.itemField}`]: Number(event.currentTarget.value) || 0});
+        const field=event.currentTarget.dataset.itemField;
+        if(item?.system.noajRelic?.enabled&&field==="quantity"){
+          event.currentTarget.value=item.system.quantity;
+          return;
+        }
+        if (item) await item.update({[`system.${field}`]: Number(event.currentTarget.value) || 0});
       });
     });
     this._activateTabs(root);
@@ -630,7 +638,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "toggle-creation-mode", "toggle-npc-edit-mode", "confirm-advancement", "cancel-advancement", "item-delete",
       "item-equip", "item-ready", "item-create", "add-npc-knowledge", "add-npc-capacity", "capacity-delete",
       "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
-      "reset-traits", "npc-prepared-action", "reset-combat", "restore-vitner"
+      "reset-traits", "npc-prepared-action", "reset-combat", "restore-vitner", "bind-noaj-relic"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = target.closest("[data-item-id]")?.dataset.itemId;
@@ -689,7 +697,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "end-active-spell": return item ? this.actor.endActiveSpell(item, target.dataset.castId) : null;
       case "inspect-item": return item ? showInspectionDialog(prepareEquipmentInspection(item, this.actor)) : null;
       case "item-delete": return this._deleteItem(item);
-      case "item-equip": return item?.update({"system.equipped": !item.system.equipped});
+      case "bind-noaj-relic": return item?bindNoajRelic(this.actor,item):null;
+      case "item-equip": return item?.system.noajRelic?.broken
+        ?ui.notifications.warn(game.i18n.localize("TRUDVANG.NoajRelic.Casting.broken"))
+        :item?.update({"system.equipped": !item.system.equipped});
       case "item-ready": return item ? this.actor.toggleReadiedItem(item) : null;
       case "natural-attack": return this.actor.rollNaturalCombatAction("attack");
       case "natural-parry": return this.actor.rollNaturalCombatAction("parry");
