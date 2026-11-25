@@ -59,6 +59,12 @@ export function buildBestiaryPackDocuments({code, localize, format, isFrench, st
       if (strict && (!value || value === key)) throw new Error(`Missing creature text: ${key} (${code})`);
       return value;
     });
+    if (entry.family === "troll") {
+      actor.prototypeToken.flags ??= {};
+      actor.prototypeToken.flags["trudvang-chronicles"] = {
+        ...actor.prototypeToken.flags["trudvang-chronicles"], randomName:true, nameCulture:"troll"
+      };
+    }
     actor.system.details.source.page = entry.pages[code];
     actor.system.tags = (actor.system.tags ?? []).map(tag => localize(tag));
     actor.items.push(...entry.featIds.map(id => creatureAbilityItemData(abilities.get(id), {code, localize, strict})));

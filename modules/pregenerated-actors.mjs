@@ -83,7 +83,7 @@ export function pregeneratedActorPayload(profile, sourceItems, {localize, format
   return {
     name, type:"npc", img:"icons/svg/mystery-man.svg", folder, ownership:{default:0},
     flags:{[scope]:{starterId:`pregen-${profile.id}`, inventoryInitialized:true}},
-    prototypeToken:{name, actorLink:false, disposition:0},
+    prototypeToken:{name, actorLink:false, disposition:0, flags:{[scope]:{randomName:true}}},
     items:[...learned, ...gear.values(), ...magicItems],
     system:{
       details:{race, culture:profile.culture, religion:profile.religion, age:String(profile.age),

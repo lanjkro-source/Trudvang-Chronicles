@@ -9994,6 +9994,12 @@
     "height": 1,
     "texture": {
       "src": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg"
+    },
+    "flags": {
+      "trudvang-chronicles": {
+        "randomName": true,
+        "nameCulture": "troll"
+      }
     }
   },
   "system": {

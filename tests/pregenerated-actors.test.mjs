@@ -4,7 +4,7 @@ import test from "node:test";
 import {PREGENERATED_ACTORS} from "../modules/pregenerated-actor-data.mjs";
 import {installPregeneratedActors, pregeneratedActorPayload} from "../modules/pregenerated-actors.mjs";
 globalThis.foundry ??= {};
-const {applyRandomTokenName, tokenNameCulture} = await import("../modules/token-names.mjs");
+const {applyRandomTokenName, migrateImportedTokenNameDefaults, tokenNameCulture} = await import("../modules/token-names.mjs");
 
 const read = file => JSON.parse(readFileSync(new URL(file, import.meta.url), "utf8"));
 const starter = read("../data/starter-content.json");
@@ -42,6 +42,7 @@ for (const language of ["fr","en"]) test(`all fourteen profiles resolve in ${lan
     assert.equal(actor.system.details.move[0].max,`${profile.move} m`);
     assert.equal(actor.folder,"npcs");
     assert.equal(actor.prototypeToken.actorLink,false);
+    assert.equal(actor.prototypeToken.flags[scope].randomName,true);
     const byId = new Map(actor.items.map(item=>[item._id,item]));
     for (const action of actor.system.attacks.flat()) assert.equal(byId.get(action.itemId)?.name,action.attack);
     for (const item of actor.items) assert.doesNotMatch(item.name,/TRUDVANG\./);
@@ -76,10 +77,33 @@ test("prototype names recognize troll tags and cultures and preserve core decora
   const token = {name:"Grincheux Troll gris 3",updateSource(data){Object.assign(this,data);}};
   assert.equal(tokenNameCulture(troll),"troll");
   assert.equal(applyRandomTokenName(troll,token,{}).name,"Grincheux Aa 3");
+  const next = {...token, name:"Troll gris"};
+  assert.equal(applyRandomTokenName(troll,next,{},{tokens:[{name:"Aa"},{name:"Aa 2"}]}).name,"Aa 3");
   assert.equal(applyRandomTokenName(troll,{name:"Spécimen"},{name:"Spécimen"}).name,"Spécimen");
   const human = {...troll,system:{details:{culture:"stormlander"}}};
   human.prototypeToken = {name:"Garde",flags:{[scope]:{randomName:true,nameGender:"female"}}};
   assert.equal(applyRandomTokenName(human,{...token,name:"Garde"},{}).name,"Asa");
   assert.equal(tokenNameCulture({system:{details:{culture:"korpikalli"}}}),"elf");
   assert.equal(tokenNameCulture({system:{details:{race:"zlodd"}}}),"dwarf");
+});
+
+test("only previously imported profiles and trolls without a naming preference receive the default", async t => {
+  runtime(t, "fr");
+  const actor = (id, prototypeFlags, ids) => ({id, type:"npc", prototypeToken:{flags:{[scope]:prototypeFlags}},
+    getFlag:(_scope,key)=>ids[key]});
+  const trollId = "2HYRncE9EaGbHcId";
+  game.actors = [
+    actor("pregen", {}, {starterId:"pregen-novice-bard"}),
+    actor("troll", {}, {bestiaryId:trollId}),
+    actor("disabled", {randomName:false}, {bestiaryId:trollId}),
+    actor("custom", {}, {})
+  ];
+  let updates;
+  globalThis.Actor = {async updateDocuments(changes){updates=changes;}};
+  await migrateImportedTokenNameDefaults();
+  const path = `prototypeToken.flags.${scope}`;
+  assert.deepEqual(updates, [
+    {_id:"pregen", [`${path}.randomName`]:true},
+    {_id:"troll", [`${path}.randomName`]:true, [`${path}.nameCulture`]:"troll"}
+  ]);
 });

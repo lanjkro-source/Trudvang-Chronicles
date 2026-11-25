@@ -280,6 +280,12 @@
     "height": 1,
     "texture": {
       "src": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg"
+    },
+    "flags": {
+      "trudvang-chronicles": {
+        "randomName": true,
+        "nameCulture": "troll"
+      }
     }
   },
   "system": {

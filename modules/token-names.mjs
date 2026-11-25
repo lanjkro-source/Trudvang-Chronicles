@@ -1,3 +1,4 @@
+import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {generateRandomName} from "./name-tables.mjs";
 
 const scope = "trudvang-chronicles";
@@ -14,17 +15,49 @@ export function tokenNameCulture(actor) {
     ?? (cultures.includes(culture) ? culture : "");
 }
 
-export function applyRandomTokenName(actor, token, data) {
+export function applyRandomTokenName(actor, token, data, scene = token.parent ?? globalThis.canvas?.scene) {
   const settings = actor.prototypeToken?.flags?.[scope];
   if (data.name != null || settings?.randomName !== true) return token;
-  const generated = generateRandomName(settings.nameCulture || tokenNameCulture(actor), settings.nameGender || undefined);
+  const culture = settings.nameCulture || tokenNameCulture(actor);
+  const gender = settings.nameGender || undefined;
+  const generated = generateRandomName(culture, gender);
   if (!generated) return token;
   // Core has already applied any enabled adjective and numbering options.
   const base = actor.prototypeToken.name || actor.name;
   const decorated = token.name ?? "";
   const index = base ? decorated.lastIndexOf(base) : -1;
-  token.updateSource({name: index < 0 ? generated : decorated.slice(0, index) + generated + decorated.slice(index + base.length)});
+  const displayName = name => index < 0 ? name : decorated.slice(0, index) + name + decorated.slice(index + base.length);
+  const taken = new Set(Array.from(scene?.tokens ?? [], entry => entry.name?.toLowerCase()));
+  let name = displayName(generated);
+  for (let attempt = 0; taken.has(name.toLowerCase()) && attempt < 12; attempt++) {
+    name = displayName(generateRandomName(culture, gender) || generated);
+  }
+  if (taken.has(name.toLowerCase())) {
+    let suffix = 2;
+    while (taken.has(`${name.toLowerCase()} ${suffix}`)) suffix++;
+    name += ` ${suffix}`;
+  }
+  token.updateSource({name});
   return token;
+}
+
+// TEMPORARY WORLD MIGRATION — default naming was introduced after the first
+// pretirés and troll compendiums. Respect explicit prototype choices.
+export async function migrateImportedTokenNameDefaults() {
+  const trolls = new Set(BESTIARY_ENTRIES.filter(entry => entry.family === "troll").map(entry => entry.id));
+  const updates = [];
+  for (const actor of game.actors) {
+    if (actor.type !== "npc") continue;
+    const flags = actor.prototypeToken?.flags?.[scope];
+    if (flags?.randomName !== undefined) continue;
+    const troll = trolls.has(actor.getFlag(scope, "bestiaryId"));
+    const pregen = actor.getFlag(scope, "starterId")?.startsWith("pregen-");
+    if (!troll && !pregen) continue;
+    const path = `prototypeToken.flags.${scope}`;
+    updates.push({_id:actor.id, [`${path}.randomName`]:true,
+      ...(troll && !flags?.nameCulture ? {[`${path}.nameCulture`]:"troll"} : {})});
+  }
+  if (updates.length) await Actor.updateDocuments(updates);
 }
 
 export function registerTokenNameOptions() {

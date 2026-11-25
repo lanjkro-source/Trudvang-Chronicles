@@ -43,6 +43,8 @@ test("each bestiary actor has valid folders, embedded identities, independent to
     assert.ok(folders.some(folder => folder._id === actor.folder));
     assert.equal(actor.effects.length, 0, "capacities belong to Items, not ActiveEffect");
     assert.equal(actor.prototypeToken.actorLink, false);
+    const troll = BESTIARY_ENTRIES.find(entry => entry.id === actor._id).family === "troll";
+    assert.equal(actor.prototypeToken.flags?.["trudvang-chronicles"]?.randomName, troll ? true : undefined);
     const dimensions = creatureTokenDimensions(actor.system.details.size);
     assert.equal(actor.prototypeToken.width, dimensions.width); assert.equal(actor.prototypeToken.height, dimensions.height);
     assert.ok(existsSync(new URL(`../${actor.img.replace("systems/trudvang-chronicles/", "")}`, import.meta.url)));

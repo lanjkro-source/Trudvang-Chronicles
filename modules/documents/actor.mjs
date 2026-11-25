@@ -110,7 +110,7 @@ export class TrudvangActor extends BaseActor {
     // ActorDelta stores each token's subsequent item edits independently.
     // Explicit linking and any per-token delta supplied by a caller are respected.
     const token = await super.getTokenDocument(this.type === "npc" ? {actorLink: false, ...dimensions, ...data} : data, options);
-    return applyRandomTokenName(this, token, data);
+    return applyRandomTokenName(this, token, data, options.parent);
   }
 
   get isInActiveCombat() {
