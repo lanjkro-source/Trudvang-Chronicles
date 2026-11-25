@@ -16740,10 +16740,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.NoajRelic.Defeated` | The Noaj has already defeated this creature | Le noaj a déjà vaincu cette créature |
 | `TRUDVANG.NoajRelic.Individual` | Select a single ordinary gear item. | Choisissez un exemplaire individuel d’équipement ordinaire. |
 | `TRUDVANG.NoajRelic.NoCandidate` | No compatible relic is available in the inventory. | Aucune relique compatible et disponible dans l’inventaire. |
-| `TRUDVANG.NoajRelic.absent` | Relic missing | Relique absente |
-| `TRUDVANG.NoajRelic.stored` | Relic stored | Relique rangée |
-| `TRUDVANG.NoajRelic.worn` | Relic worn | Relique portée |
-| `TRUDVANG.NoajRelic.broken` | Relic broken | Relique brisée |
+| `TRUDVANG.NoajRelic.Choose` | Choose a relic | Choisir une relique |
+| `TRUDVANG.NoajRelic.None` | No relics in the inventory. | Aucune relique dans l’inventaire. |
+| `TRUDVANG.NoajRelic.Unlink` | Unbind | Délier |
+| `TRUDVANG.NoajRelic.GMOnly` | The GM can change the binding. | Le MJ peut modifier la liaison. |
+| `TRUDVANG.NoajRelic.UnknownOrigin` | Unknown type | Type inconnu |
+| `TRUDVANG.NoajRelic.State` | Relic: {status} | Relique {status} |
+| `TRUDVANG.NoajRelic.Provenance` | Type: {detail} | Type : {detail} |
+| `TRUDVANG.NoajRelic.absent` | missing | absente |
+| `TRUDVANG.NoajRelic.stored` | stored | rangée |
+| `TRUDVANG.NoajRelic.worn` | worn | portée |
+| `TRUDVANG.NoajRelic.broken` | broken | brisée |
 | `TRUDVANG.NoajRelic.HitIntact` | {name} absorbs the hit and remains intact (d20: {die}/{count}). | {name} absorbe le coup et reste intacte (d20 : {die}/{count}). |
 | `TRUDVANG.NoajRelic.HitBroken` | {name} absorbs the hit and breaks (d20: {die}/{count}). | {name} absorbe le coup et se brise (d20 : {die}/{count}). |
 

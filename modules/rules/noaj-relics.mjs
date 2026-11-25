@@ -38,11 +38,13 @@ export function noajRelicForTablet(actor,tabletId) {
   return matches.find(item=>!noajRelic(item).broken)??matches[0]??null;
 }
 
-export function noajRelicConflict(actor,item,tabletId) {
+export function noajRelicConflict(actor,item,tabletId,{replacing=false}={}) {
   const origin=noajRelic(item)?.creatureId;
   return noajRelics(actor).some(other=>{
     const relic=noajRelic(other);
-    return other.id!==item.id&&!relic.broken&&(relic.tabletId===tabletId||species(relic.creatureId)===species(origin));
+    if(other.id===item.id||relic.broken)return false;
+    if(relic.tabletId===tabletId)return !replacing;
+    return species(relic.creatureId)===species(origin);
   });
 }
 

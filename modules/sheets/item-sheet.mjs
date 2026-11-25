@@ -111,7 +111,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.item = this.item;
     context.noajRelic=relicItemView(this.item);
     context.canConfigureNoajRelic=this.isEditable&&this.item.type==="gear"&&
-      (!context.noajRelic||context.noajRelic.canConfigure)&&!this.item.system.consumable&&!this.item.system.sacred?.enabled;
+      this.item.isOwner&&!this.item.system.consumable&&!this.item.system.sacred?.enabled;
     context.isSacredObject=isSacredObject(this.item);
     context.sacredRunes=context.isSacredObject?sacredRuneViews(this.item):[];
     context.sacredCapacity=context.isSacredObject&&this.item.parent?sacredCapacity(this.item.parent,equipmentCraftMaterial(this.item)):0;

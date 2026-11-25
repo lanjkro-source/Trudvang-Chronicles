@@ -33,6 +33,10 @@ function apply(message,target,extra={}){return applyChatApplication({messageId:m
 function noaj(actor){
  actor.id='noaj';
  actor.items.get=id=>actor.items.find(item=>item.id===id);
+ actor.updateEmbeddedDocuments=async (type,rows)=>{
+  assert.equal(type,'Item');
+  for(const {_id,...changes} of rows)await actor.items.get(_id).update(changes);
+ };
  const tablet={id:'tablet',type:'tablet',name:'Puissance du dragon',system:{catalogId:'holy-haminges-power-of-the-dragon',level:2,religion:'haminges'}};
  actor.items.push(tablet,{type:'ability',system:{catalogId:'invoke',level:1}},{type:'ability',system:{catalogId:'noaj',level:1}});
  actor.system.resources.divinity={value:10};
@@ -50,7 +54,8 @@ test('Haminges binds compatible individual origins, keeps tablet levels and rest
  const incompatible=relic('Crâne',{creatureId:'elf',ownerId:'',tabletId:''});
  const base=foundry.applications.api;
  foundry.applications.api={DialogV2:{wait:async options=>{
-  assert.match(options.content,/Croc/);assert.doesNotMatch(options.content,/Crâne/);
+  assert.match(options.content,/<option value="Croc">Croc \(/);
+  assert.match(options.content,/<option value="Crâne" disabled>Crâne \(/);
   return {id:candidate.id,defeated:true};
  }}};
  try{
@@ -76,6 +81,34 @@ test('Haminges binds compatible individual origins, keeps tablet levels and rest
   assert.equal(candidate.system.noajRelic.tabletId,'');
   assert.equal(noajRelicForTablet(f.victim,tablet.id),replacement);
  }finally{foundry.applications.api=base;}
+});
+
+test('Noaj binding can be replaced or unbound, and restoring the previous link reuses the completed ritual',async()=>{
+ const f=setup(),{tablet,power,relic}=noaj(f.victim);
+ const former=relic('Croc'),replacement=relic('Griffe',{ownerId:'',tabletId:''});
+ const base=foundry.applications.api;
+ const open=async(choice,verify=()=>{})=>{
+  foundry.applications.api={DialogV2:{wait:async options=>{verify(options);return choice;}}};
+  return bindNoajRelic(f.victim,tablet);
+ };
+ try {
+  await open(null);
+  assert.equal(noajRelicForTablet(f.victim,tablet.id),former);
+  game.user=f.owner;
+  await open({id:replacement.id,defeated:true},options=>{
+   assert.match(options.content,/Griffe/);
+   assert.ok(!options.buttons.some(button=>button.action==='continue'||button.action==='unlink'));
+  });
+  assert.equal(noajRelicForTablet(f.victim,tablet.id),former);
+  game.user=game.users.get('gm');
+  assert.equal(await open({id:replacement.id,defeated:true}),replacement);
+  assert.equal(former.system.noajRelic.tabletId,'');
+  assert.equal(noajRelicForTablet(f.victim,tablet.id),replacement);
+  await open({unlink:true});
+  assert.equal(spellAvailability(f.victim,power).reason,'TRUDVANG.NoajRelic.Casting.absent');
+  assert.equal(await open({id:former.id,defeated:false}),former);
+  assert.equal(spellAvailability(f.victim,power).ok,true);
+ } finally {foundry.applications.api=base;}
 });
 
 test('a Noaj relic intercepts the complete hit before armor, breaks at five and does not roll twice on retry',async()=>{

@@ -69,13 +69,14 @@
     {{#if (eq item.type "gear")}}<div class="item-field-row"><label>{{localize "TRUDVANG.Field.Weight"}}<input name="system.weight" type="number" step="0.1" value="{{system.weight}}"></label><label>{{localize "TRUDVANG.Field.Value"}}<input name="system.value" type="number" step="0.1" value="{{system.value}}"></label><label class="checkbox"><input name="system.equipped" type="checkbox" {{checked system.equipped}}> {{localize "TRUDVANG.Field.Equipped"}}</label></div>{{/if}}
     {{#if (eq item.type "gear")}}
       {{#if noajRelic}}
-      <fieldset><legend>{{localize "TRUDVANG.NoajRelic.Title"}}</legend>
-        <p><strong>{{noajRelic.status}}</strong>{{#if noajRelic.tablet}} · {{noajRelic.tablet}}{{/if}}</p>
-        {{#if noajRelic.part}}<p>{{localize "TRUDVANG.NoajRelic.Part"}} · {{noajRelic.part}}</p>{{/if}}
-        <p>{{localize "TRUDVANG.NoajRelic.Origin"}} · {{noajRelic.origin}}</p>
-        {{#if canConfigureNoajRelic}}<button type="button" data-action="configure-noaj-relic">{{localize "TRUDVANG.NoajRelic.Configure"}}</button>{{/if}}
-        {{#if noajRelic.canRestore}}<button type="button" data-action="restore-noaj-relic">{{localize "TRUDVANG.NoajRelic.Restore"}}</button>{{/if}}
-      </fieldset>
+      <div class="noaj-relic-details">
+        <div class="noaj-relic-link">
+          <strong>{{localize "TRUDVANG.NoajRelic.State" status=noajRelic.status}}</strong>{{#if noajRelic.tablet}} <span>· {{noajRelic.tablet}}</span>{{/if}}
+          {{#if canConfigureNoajRelic}}<button type="button" data-action="configure-noaj-relic">{{localize "TRUDVANG.NoajRelic.Configure"}}</button>{{/if}}
+          {{#if noajRelic.canRestore}}<button type="button" data-action="restore-noaj-relic">{{localize "TRUDVANG.NoajRelic.Restore"}}</button>{{/if}}
+        </div>
+        <div>{{localize "TRUDVANG.NoajRelic.Provenance" detail=noajRelic.provenance}}</div>
+      </div>
       {{else}}<div class="item-field-row"><label class="checkbox"><input name="system.consumable" type="checkbox" {{checked system.consumable}}> {{localize "TRUDVANG.Consumable.Label"}}</label>
       {{#if canConfigureNoajRelic}}<button type="button" data-action="configure-noaj-relic">{{localize "TRUDVANG.NoajRelic.Configure"}}</button>{{/if}}<span></span></div>{{/if}}
     {{/if}}
@@ -102,7 +103,7 @@
     </div>
     {{#if (eq system.kind "feat")}}<div class="item-field-row"><label class="checkbox wide" title="{{localize 'TRUDVANG.Npc.DurableHint'}}"><input name="system.ignoreWoundPenalties" type="checkbox" {{checked system.ignoreWoundPenalties}}> {{localize "TRUDVANG.Npc.DurableMechanic"}}</label></div>{{/if}}
     {{/if}}
-    {{#if qualityOptions}}<div class="item-field-row"><label>{{localize "TRUDVANG.Quality.Label"}}<select name="system.quality" {{#if qualityLocked}}disabled{{/if}}>{{#each qualityOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label><label class="checkbox"><input name="system.magical" type="checkbox" {{checked system.magical}}> {{localize "TRUDVANG.Quality.Magical"}}</label>{{#if specialUseOptions}}<label>{{localize "TRUDVANG.Quality.SpecialLabel"}}<select name="system.specialUse">{{#each specialUseOptions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>{{else}}<span></span>{{/if}}</div>{{/if}}
+    {{#if qualityOptions}}<div class="item-field-row"><label>{{localize "TRUDVANG.Quality.Label"}}<select name="system.quality" {{#if qualityLocked}}disabled{{/if}}>{{#each qualityOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label><label class="checkbox"><input name="system.magical" type="checkbox" {{#if noajRelic}}checked disabled{{else}}{{checked system.magical}}{{/if}}> {{localize "TRUDVANG.Quality.Magical"}}</label>{{#if specialUseOptions}}<label>{{localize "TRUDVANG.Quality.SpecialLabel"}}<select name="system.specialUse">{{#each specialUseOptions}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>{{else}}<span></span>{{/if}}</div>{{/if}}
   </section>
   {{#if (or (eq item.type "tablet") isMagicPower)}}
     <div class="tablet-summary-text" title="{{system.summary}}"><textarea name="system.summary" rows="2" aria-label="{{localize 'TRUDVANG.Field.Summary'}}">{{system.summary}}</textarea></div>
