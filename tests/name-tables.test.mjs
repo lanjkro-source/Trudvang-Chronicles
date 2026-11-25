@@ -17,7 +17,7 @@ globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, d
 globalThis.CONST = {CHAT_MESSAGE_STYLES: {OTHER: 4}};
 
 const starter = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
-const {nameTableMeta, resolveNameAffix, assembleName, rollNameTable} = await import("../modules/name-tables.mjs");
+const {nameTableMeta, resolveNameAffix, assembleName, generateRandomName, rollNameTable} = await import("../modules/name-tables.mjs");
 
 const nameTables = starter.tables.filter(table => table.flags?.[SYSTEM]?.nameTable);
 const byKey = key => nameTables.find(table => table.nameKey.includes(key));
@@ -121,6 +121,33 @@ test("cancelling the sex choice draws nothing", async t => {
   const result = await rollNameTable(byKey("StormlanderNames"), {displayChat: true});
   assert.equal(messages.length, 0, "no chat message is posted");
   assert.equal(result.roll.total, NaN);
+});
+
+test("silent names use the same pools without a Roll, dialog or chat message", t => {
+  runtime(t);
+  const stormlander = structuredClone(byKey("StormlanderNames"));
+  stormlander.name = "Noms Stormlanders";
+  stormlander.id = "storm";
+  stormlander.flags[SYSTEM].tableKey = "TRUDVANG.Content.Table.StormlanderNames";
+  stormlander.flags[SYSTEM].starterId = stormlander.flags[SYSTEM].tableKey;
+  const troll = byKey("TrollNames");
+  const tables = [stormlander, troll];
+  tables.get = id => tables.find(table => table.id === id);
+  game.tables = tables;
+  globalThis.Roll = class {constructor() {assert.fail("silent generation must not create a Roll");}};
+  globalThis.DialogV2 = class {static wait() {assert.fail("silent generation must not prompt");}};
+  ChatMessage.create = () => assert.fail("silent generation must not create a message");
+  t.mock.method(Math, "random", () => 0);
+
+  assert.equal(generateRandomName("stormlander", "female"), "Asa");
+  assert.equal(generateRandomName("storm", "male"), "Asbiorn");
+  assert.equal(generateRandomName("Noms Stormlanders", "female"), "Asa");
+  assert.equal(generateRandomName("stormlander-names", "female"), "Asa");
+  assert.ok(["Asbiorn", "Asa"].includes(generateRandomName("stormlander")));
+  assert.equal(generateRandomName(troll, "female"), "Aa");
+  assert.equal(generateRandomName("stormlander", "unknown"), null);
+  assert.equal(generateRandomName("unknown"), null);
+  assert.equal(generateRandomName({...stormlander, results: stormlander.results.slice(0, 1)}, "female"), null);
 });
 
 test("the parenthetical variants of the book are resolved", () => {

@@ -10,6 +10,7 @@ import { TrudvangItemSheet,registerMagicSheetAvailabilityHooks } from "./modules
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
+import { generateRandomName } from "./modules/name-tables.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, ensureUtilityMacros, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import {rollGenericDamage, rollGenericFear, requestGenericSituationRoll} from "./modules/generic-rolls.mjs";
 import {advanceDay, advanceDuration, advanceWorldTime} from "./modules/world-time.mjs";
@@ -210,7 +211,7 @@ Hooks.once("init", () => {
 
   // Public macro API: the generic situation-roll macro calls
   // `game.trudvang.rollGenericSituation()` (no actor required).
-  game.trudvang = {rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll, advanceDay, advanceDuration, advanceWorldTime, requestEnvironmentRoll, requestSkillRoll, executeConsequences, createConsequenceEffect, announceConsequences};
+  game.trudvang = {generateRandomName, rollGenericSituation, requestTraitSituationRoll, rollGenericDamage, rollGenericFear, requestGenericSituationRoll, advanceDay, advanceDuration, advanceWorldTime, requestEnvironmentRoll, requestSkillRoll, executeConsequences, createConsequenceEffect, announceConsequences};
 
   const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 

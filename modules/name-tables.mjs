@@ -80,6 +80,57 @@ export async function drawNamePart(pool) {
   return {result, text: resolveNameAffix(result.text), roll};
 }
 
+function namePartPools(meta, gender) {
+  // Prefixes carry no gender: only the suffixes follow the chosen sex.
+  const eligible = meta.results.filter(result => {
+    const flags = resultFlags(result);
+    return !meta.gendered || !flags.gender || flags.gender === gender;
+  });
+  if (meta.affixes) return [eligible, eligible];
+  return ["prefix", "suffix"].map(part => eligible.filter(result => resultFlags(result).namePart === part));
+}
+
+const nameTableKey = value => String(value ?? "").trim()
+  .replace(/^TRUDVANG\.Content\.Table\./i, "").replace(/\.Name$/i, "")
+  .replace(/[-_\s]/g, "").replace(/names$/i, "").toLowerCase();
+
+function resolveNameTable(cultureOrTable) {
+  if (typeof cultureOrTable !== "string") return cultureOrTable;
+  const query = cultureOrTable.trim();
+  if (!query) return null;
+  const tables = globalThis.game?.tables;
+  const byId = tables?.get(query);
+  if (byId) return byId;
+  const key = nameTableKey(query);
+  return Array.from(tables ?? []).find(table => {
+    const flags = table.flags?.[SYSTEM_ID];
+    return flags?.nameTable && (table.name?.toLowerCase() === query.toLowerCase()
+      || [flags.tableKey, flags.starterId].some(id => id && nameTableKey(id) === key));
+  });
+}
+
+const pick = pool => pool[Math.floor(Math.random() * pool.length)];
+
+/**
+ * Return a name without a Roll, dialog or chat message. Accepts a culture key
+ * (e.g. "stormlander"), or the name, ID or document of an installed name table.
+ * On gendered tables use "male", "female", or omit to select a suffix pool at random.
+ * Returns null when the requested table or suffix pool is unavailable.
+ */
+export function generateRandomName(cultureOrTable, gender) {
+  const meta = nameTableMeta(resolveNameTable(cultureOrTable));
+  if (!meta.isNameTable) return null;
+  if (meta.gendered) {
+    const genders = new Set(meta.results.map(result => resultFlags(result).gender).filter(Boolean));
+    gender ??= pick([...genders]);
+    if (!genders.has(gender)) return null;
+  }
+  const [prefixes, suffixes] = namePartPools(meta, gender);
+  const prefix = pick(prefixes)?.text;
+  const suffix = pick(suffixes)?.text;
+  return prefix && suffix ? assembleName(resolveNameAffix(prefix), resolveNameAffix(suffix)) || null : null;
+}
+
 /**
  * Roll a name table: draw a prefix and a suffix of the requested sex (or two
  * affixes for the trolls) and post the assembled name to the chat.
@@ -93,14 +144,7 @@ export async function rollNameTable(table, {displayChat = true} = {}) {
     // The core table sheet reads roll.total even after a cancelled draw.
     if (!gender) return {roll: {total: NaN}, results: []};
   }
-  // Prefixes carry no gender: only the suffixes follow the chosen sex.
-  const eligible = result => {
-    const flags = resultFlags(result);
-    return !meta.gendered || !flags.gender || flags.gender === gender;
-  };
-  const poolFor = part => meta.results.filter(result => eligible(result) && resultFlags(result).namePart === part);
-  const firstPool = meta.affixes ? meta.results.filter(eligible) : poolFor("prefix");
-  const secondPool = meta.affixes ? meta.results.filter(eligible) : poolFor("suffix");
+  const [firstPool, secondPool] = namePartPools(meta, gender);
   const first = await drawNamePart(firstPool);
   const second = await drawNamePart(secondPool);
   const name = assembleName(first.text, second.text);
