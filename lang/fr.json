@@ -11847,6 +11847,46 @@
           "Page": "p.",
           "Level": "N",
           "BackToContents": "Retour au sommaire"
+        },
+        "ArchetypeCreationBonus": "À la création, cet archétype accorde {points} points de création supplémentaires, à répartir entre {first} et {second} ou à consacrer entièrement à l’une de ces compétences. Leurs disciplines et spécialités sont aussi éligibles.",
+        "ReligionOrganization": "Organisation",
+        "ReligionPantheon": "Panthéon",
+        "ReligionIntroductions": {
+          "gerbanis": {
+            "Overview": "Gerbanis est la foi dominante des Stormlanders, dans les Stormländer à l’est de Trudvang. Un stormikjalt peut renforcer et rallier ses alliés, les soigner ou les protéger, mais aussi lancer des cris de guerre, invoquer le feu ou se servir des ténèbres pour entraver l’ennemi.",
+            "Practice": "L’offrande de sang sur un poteau ou un piquet sacrificiel procure des points de divinité temporaires. Pour apprendre une tablette sacrée, le stormikjalt doit faire un sacrifice de sa propre chair en rapport avec le pouvoir recherché.",
+            "Pantheon": "Storme, père de tous, règne sur un panthéon qui distingue les dieux de la tempête, du chaos et de la mort. Parmi les divinités invoquées figurent Jorn (la nuit), Enken (la nature et les animaux), Solvei (le soleil et la guérison), Windinna (la sagesse) et Tyrd (la colère et la vengeance)."
+          },
+          "ealdTradition": {
+            "Overview": "L’Ancienne Tradition reste surtout vivace dans l’est du Mittland. Le bruide est un héros en devenir. Il peut galvaniser ses compagnons, chasser trolls, géants ou dragons, ou faire appel à la nature pour voyager, pister et prendre des aspects animaux. Certains pouvoirs protègent aussi contre la peur ou le vitner.",
+            "Practice": "Le serment de sang donne des points de divinité temporaires dès qu’il est prêté. Il engage le bruide à accomplir un objectif précis dans l’année. Les points inutilisés disparaissent lorsque le serment est accompli ou prend fin. Pour accéder à une tablette, le bruide fait une promesse durable aux Flowras ou à ses ancêtres.",
+            "Pantheon": "Les dieux, héros ancestraux et esprits de la nature tiennent tous une place dans la tradition. Whote est le voyageur et le père de l’humanité, Othwolk garde Othwa, le domaine des héros tombés au combat, et Shurd est le seigneur des ténèbres et des dragons. Les tablettes perpétuent notamment la mémoire de Majne et de Halawen et les dons de Magh, Thanja, Morgu et Nema."
+          },
+          "tenetNid": {
+            "Overview": "La Doctrine de Nid est née chez les Viranns du Vastermark et s’est étendue vers l’ouest du Mittland. Le gavlien excelle contre les démons et les morts-vivants. Ses prières peuvent protéger contre le vitner, affaiblir ou neutraliser des adversaires, et soigner les alliés. Ses pouvoirs sociaux lui permettent aussi de persuader et de sceller des alliances. C’est la seule des sept religions dont les tablettes permettent de ressusciter les morts.",
+            "Practice": "Le gavlien obtient des points de divinité temporaires par la prière. La durée et le caractère sacré du lieu déterminent le gain. Pour apprendre une tablette, il étudie les Écritures en retraite dans un temple ou un monastère pendant 1d6 semaines.",
+            "Pantheon": "Gave, l’Unique, est considéré comme le seul vrai dieu et le créateur du monde. Ses saints, tels que Siro Werte et Bete Wiemdas, servent d’intercesseurs. Simag, fausse prophétesse et ennemie de Gave, incarne la corruption de sa création."
+          },
+          "haminges": {
+            "Overview": "Haminges est la sombre foi des Sauvages et de nombreux trolls du Nhoordland. Les noajs conjurent les esprits pour emprunter leur force, leur endurance ou leur forme. Selon leurs reliques, ils peuvent combattre au premier rang, terrifier ou contaminer l’ennemi, ou préparer des remèdes.",
+            "Practice": "Après avoir porté le coup fatal, le noaj peut s’emparer du dernier souffle de sa victime au tour suivant pour gagner des points de divinité temporaires par le vol spirituel. Pour accéder à une tablette, il doit lier l’esprit d’une créature du type requis à une relique tirée de sa dépouille. Il doit porter cette relique intacte pour invoquer les pouvoirs associés.",
+            "Pantheon": "Gellti, la sombre mère, donne et reprend la vie. Vigan, le géant destructeur, tire sa puissance des âmes qu’il absorbe. Mastru, maître des mensonges et de la duperie, préside aussi à la chance."
+          },
+          "thuuldom": {
+            "Overview": "Le Thuuldom est la tradition des nains de Muspelheim, dans les profondeurs du Nhoordland. Le thuul est un forgeron runique. Il crée des armes ou des protections sacrées et inscrit des runes pour frapper, protéger, guérir, réparer ou façonner la pierre.",
+            "Practice": "Le Forgeage thuul et l’artisanat permettent de créer un objet sacré, puis d’y inscrire les runes connues et d’y investir des points de divinité. Les runes permanentes agissent en continu et les autres puisent dans leurs propres réserves, qui se régénèrent chaque jour. Les thuuls utilisent ce système de réserves investies à la place des rites donnant des points temporaires.",
+            "Pantheon": "La montagne elle-même, avec sa pierre et ses minerais, est au cœur du culte. Borjorn, le Façonneur, a créé le monde et donné aux nains une âme, le don de façonner la roche et le royaume souterrain de Muspelheim."
+          },
+          "toikalokke": {
+            "Overview": "Toikalokke est la pratique divine des elfes originaires de l’archipel de Soj. Elle est surtout liée aux illmalainas, qui ont gardé foi dans les dieux disparus. L’ihana est prêtre et astrologue, mais aussi guide, pisteur ou protecteur. Ses hauts dons lui permettent de communiquer avec les animaux, d’emprunter leurs aptitudes et d’agir sur les éléments.",
+            "Practice": "L’ihana déchiffre la lumière des étoiles à l’aide de sa propre harpe des étoiles. Elle lui donne accès aux tablettes sacrées et permet de gagner des points de divinité temporaires par l’observation nocturne. La durée de l’observation et l’état du ciel influent sur le gain.",
+            "Pantheon": "Les Vanirs, ou « hauts dieux », sont les créateurs des elfes. Après leur départ de Trudvang, les elfes des étoiles ont continué à chercher leurs signes dans le ciel, tandis que les korpikallas les ont reniés."
+          },
+          "joaringFaith": {
+            "Overview": "La foi joaring est pratiquée par les Joarings de Dain, au nord des Stormländer. Elle mêle culte des ancêtres et rites villageois. La mopor est prêtresse, gardienne de la mémoire orale et conseillère du village. Ses tablettes couvrent la magie de guerre, les soins, la divination et les malédictions.",
+            "Practice": "La mopor, choisie lors d’une vision d’une mopor plus âgée, apprend la spécialité Mopor de la discipline Invocation et accède à quatre tablettes sacrées. Pour gagner des points de divinité temporaires, elle peut faire une offrande de nourriture pendant un rite de deux heures à l’autel du village, ou y faire une offrande de sang selon les règles de Gerbanis.",
+            "Pantheon": "Autour de l’autel, Ogon, dieu sombre de la guerre, regarde vers l’est et Sille, déesse de l’amour et de l’abondance, vers l’ouest. Lekaba, guide et dieu de la parole sacrée, regarde vers le nord, et Sonntag, dieu de la mort, vers le sud."
+          }
         }
       },
       "CreatureAbility": {

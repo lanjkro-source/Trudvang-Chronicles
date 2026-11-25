@@ -1,6 +1,8 @@
 const knowledge = (id, name, specialties) => ({id, name, label: `TRUDVANG.Knowledge.${id}`, specialties: specialties.map(([childId, childName]) => ({id: childId, name: childName, label: `TRUDVANG.Knowledge.${childId}`}))});
 
 import {WEAPON_MATERIALS} from "./rules/damage-qualifications.mjs";
+export const ARCHETYPE_CREATION_BONUS = 50;
+
 export const TRUDVANG = {
   weaponMaterials: {...WEAPON_MATERIALS},
   skills: {

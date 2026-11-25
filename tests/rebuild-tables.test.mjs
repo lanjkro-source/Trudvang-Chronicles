@@ -8,7 +8,7 @@ globalThis.foundry = {data: {operators: {ForcedReplacement: class {static create
   applications: {handlebars: {renderTemplate: async () => ""}}};
 globalThis.CONST = {DOCUMENT_OWNERSHIP_LEVELS: {NONE: 0, OWNER: 3}};
 
-const {rebuildTables} = await import("../modules/content-importer.mjs");
+const {importStarterContent, rebuildTables} = await import("../modules/content-importer.mjs");
 
 function runtime(t, {created = []} = {}) {
   const previous = {game: globalThis.game, RollTable: globalThis.RollTable};
@@ -66,4 +66,36 @@ test("rebuildTables localizes the table name and description", async t => {
   await rebuildTables(source, {characterCreationTables: {id: "folder-1", defaultRole: undefined}}, translations);
   assert.equal(created[0].name, "Noms Stormlanders");
   assert.equal(created[0].description, "TRUDVANG.Content.Table.StormlanderNames.Description");
+});
+
+test("version 75 refreshes only existing starter archetype and religion pages in place", async t => {
+  const previous = globalThis.game;
+  t.after(() => {globalThis.game = previous;});
+  const locale = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
+  const scope = "trudvang-chronicles";
+  const changed = new Map();
+  const settings = new Map([["starterContentVersion", 74], ["starterContentLocale", "fr"]]);
+  const localize = key => get(locale, key) ?? key;
+  const format = (key, fields) => localize(key).replace(/\{(\w+)\}/g, (_, field) => fields[field]);
+  function journal(id) {
+    const name = locale.TRUDVANG.Content.Journal[id].Name;
+    return {getFlag:() => `journal-${id}`,
+      pages: [
+        {id:`${id}-notes`, name:"Notes du MJ", type:"text", text:{content:"notes"},
+          update:async () => assert.fail("Extra page must be preserved")},
+        {id:`${id}-main`, name, type:"text", text:{content:"previous version"},
+          update:async data => changed.set(id, data["text.content"])}
+      ]};
+  }
+  globalThis.game = {i18n:{lang:"fr",localize,format}, journal:["warrior","joaringFaith","human","environment"].map(journal),
+    settings:{get:(_scope,key)=>settings.get(key), async set(namespace,key,value) {
+      assert.equal(namespace,scope);
+      settings.set(key,value);
+    }}};
+  assert.equal(await importStarterContent(), true);
+  assert.equal(settings.get("starterContentVersion"),75);
+  assert.deepEqual([...changed.keys()], ["warrior","joaringFaith"]);
+  assert.match(changed.get("warrior"), /50 points de création supplémentaires/);
+  assert.match(changed.get("joaringFaith"), /<h2>Panthéon<\/h2>/);
+  assert.equal(await importStarterContent(),false);
 });

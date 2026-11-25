@@ -40,7 +40,7 @@ test("tablet-list journal is filed under Magic in character creation", () => {
     globalThis.game = {i18n: {lang: "fr", localize: localizer(french)}};
     assert.equal(JOURNAL_FOLDERS.magic.parent, "characterCreation");
     assert.equal(JOURNAL_FOLDERS.magic.nameKey, "TRUDVANG.Content.Folder.JournalMagic");
-    const documents = journalDocuments({magic: {id: "magic-folder"}});
+    const documents = journalDocuments({magic: {id: "magic-folder"}}, ["magic"]);
     const document = documents.find(entry => entry.id === "tabletList");
     assert.equal(document.name, "Liste des tablettes");
     assert.equal(document.folder, "magic-folder");

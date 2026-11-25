@@ -1,3 +1,4 @@
+import {ARCHETYPE_CREATION_BONUS, TRUDVANG} from "./config.mjs";
 import {tabletListJournalHtml} from "./tablet-journal-content.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
@@ -62,10 +63,29 @@ function raceTable(id) {
   return `<h2>${l("TRUDVANG.Content.Journal.Statistics")}</h2><table><thead><tr><th>${l("TRUDVANG.Content.Journal.Culture")}</th><th>${l("TRUDVANG.Content.Journal.BodyPoints")}</th><th>${l("TRUDVANG.Content.Journal.Movement")}</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
-export function journalDocuments(folders) {
-  return journals.map(({id, folder, key, image, content: buildContent}) => {
+function withArchetypeBonus(key, body) {
+  const [first, second] = TRUDVANG.archetypes[key].core.map(skill => l(TRUDVANG.skills[skill]));
+  const bonus = game.i18n.format("TRUDVANG.Content.Journal.ArchetypeCreationBonus", {points: ARCHETYPE_CREATION_BONUS, first, second});
+  return body.replace("</p>", ` <strong>${bonus}</strong></p>`);
+}
+
+function withReligionIntroduction(key, body) {
+  const root = `TRUDVANG.Content.Journal`;
+  const section = part => l(`${root}.ReligionIntroductions.${key}.${part}`);
+  const organization = `<h2>${l(`${root}.ReligionOrganization`)}</h2>`;
+  const introduction = `<p>${section("Overview")}</p><p>${section("Practice")}</p><h2>${l(`${root}.ReligionPantheon`)}</h2><p>${section("Pantheon")}</p>`;
+  const start = '<article class="trudvang-religion-journal">';
+  // The Joaring source already has a heading over the organization paragraph.
+  if (key === "joaringFaith") body = body.replace(/^<article[^>]*><h2>[^<]*<\/h2>/, start);
+  return body.replace(start, `${start}${introduction}${organization}`);
+}
+
+export function journalDocuments(folders, onlyFolders) {
+  return journals.filter(({folder}) => !onlyFolders || onlyFolders.includes(folder)).map(({id, folder, key, image, content: buildContent}) => {
     const name = l(`TRUDVANG.Content.Journal.${key}.Name`);
-    const pageContent = buildContent ? buildContent() : content(key);
+    let pageContent = buildContent ? buildContent() : content(key);
+    if (folder === "archetypes") pageContent = withArchetypeBonus(key, pageContent);
+    if (folder === "religions") pageContent = withReligionIntroduction(key, pageContent);
     return {
       id, name, folder: folders[folder]?.id,
       flags: {[SYSTEM_ID]: {starterId: `journal-${id}`}},

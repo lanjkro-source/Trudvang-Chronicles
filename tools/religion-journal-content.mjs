@@ -228,6 +228,39 @@ function pageWithBlocks(raw, blocks, lang, specials) {
   return page;
 }
 
+// The English PDF's columns interrupt the hierarchy with adjacent rules.
+function moveEnglishOrganization(id, body) {
+  if (id === "gerbanis") {
+    const intro = "The following ranks apply to the hierarchy of priests in the Gerbanis religion.";
+    const match = body.match(new RegExp(`<ul><li>([^<]+) ${intro.replace(".", "\\.")}</li>((?:<li>.*?</li>)+)</ul>`));
+    if (!match) throw Error("Missing Gerbanis organization.");
+    return `<p>${intro}</p><ul>${match[2]}</ul>${body.replace(match[0], `<ul><li>${match[1]}</li></ul>`)}`;
+  }
+  if (id === "haminges") {
+    const lead = "<p>Unlike members of other religions, the Noaj bind defeated spirits to the physical remains of the bodies those spirits once ";
+    const intro = "The dark religion of Hamiges follows the following organization.";
+    const start = body.indexOf(lead + intro);
+    const end = body.indexOf("</ul>", start) + "</ul>".length;
+    if (start < 0 || end < start) throw Error("Missing Haminges organization.");
+    const hierarchy = body.slice(start + lead.length + intro.length + "</p>".length, end);
+    const rest = body.slice(0, start).replace("<h2>Relics</h2>", "") + body.slice(end);
+    return `<p>${intro.replace("Hamiges", "Haminges")}</p>${hierarchy}<h2>Relics</h2>${rest.replace("<p>inhabited", lead + "inhabited")}`;
+  }
+  const introductions = {
+    ealdTradition: "<p>Followers of the Eald Tradition are organized as follows.</p>",
+    tenetNid: "<p>The followers of the Tenet of Nid are organized as follows.</p>",
+    thuuldom: "<p>Thuuldom is the closest thing to any sort of religion"
+  };
+  const intro = introductions[id];
+  if (!intro) return body;
+  const start = body.indexOf(intro);
+  const closingTag = id === "thuuldom" ? "</p>" : "</ul>";
+  const close = body.indexOf(closingTag, start + intro.length);
+  if (start < 0 || close < 0) throw Error(`Missing ${id} organization.`);
+  const end = close + closingTag.length;
+  return body.slice(start, end) + body.slice(0, start) + body.slice(end);
+}
+
 export function religionJournalEntries(lang, source) {
   return Object.fromEntries(Object.entries(religions).map(([id, config]) => {
     const specials = [];
@@ -238,7 +271,8 @@ export function religionJournalEntries(lang, source) {
       const heading = lang === "fr" ? "Le pouvoir des objets sacrés" : "The Power of Sacred Objects";
       text = text.replace("@@0@@", "").replace(heading, `@@0@@\n${heading}`);
     }
-    const content = `<article class="trudvang-religion-journal">${formatText(text, config.headings[lang], specials)}</article>`;
+    const body = formatText(text, config.headings[lang], specials);
+    const content = `<article class="trudvang-religion-journal">${lang === "en" ? moveEnglishOrganization(id, body) : body}</article>`;
     return [id, {Name: names[lang][id], Content: content}];
   }));
 }

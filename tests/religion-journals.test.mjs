@@ -39,9 +39,40 @@ test("starter Journal documents are filed together under Religions", () => {
   const french = JSON.parse(fs.readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
   globalThis.game = {i18n: {localize: key => key.split(".").reduce((value, part) => value?.[part], french) ?? key}};
   const folderId = "religions-folder";
-  const documents = journalDocuments({religions: {id: folderId}}).filter(document => ids.includes(document.id));
+  const documents = journalDocuments({religions: {id: folderId}}, ["religions"]);
   assert.equal(JOURNAL_FOLDERS.religions.nameKey, "TRUDVANG.Content.Folder.Religions");
   assert.deepEqual(documents.map(document => document.id), ids);
   assert.ok(documents.every(document => document.folder === folderId));
   assert.ok(documents.every(document => document.pages.length === 1 && document.pages[0].text.content.includes("trudvang-religion-journal")));
+});
+
+test("starter creation journals show the localized bonus and all seven introductions in the requested order", t => {
+  const previous = globalThis.game;
+  t.after(() => {globalThis.game = previous;});
+  const expectedSkills = {
+    dimwalker: "Faith", bard: "Entertainment", dweller: "Care", warrior: "Fighting",
+    rogue: "ShadowArts", ranger: "Wilderness", vitnerWeaver: "VitnerCraft"
+  };
+  for (const lang of ["fr", "en"]) {
+    const locale = JSON.parse(fs.readFileSync(new URL(`../lang/${lang}.json`, import.meta.url), "utf8"));
+    const localize = key => key.split(".").reduce((value, part) => value?.[part], locale) ?? key;
+    const format = (key, fields) => localize(key).replace(/\{(\w+)\}/g, (_, field) => fields[field]);
+    globalThis.game = {i18n: {lang, localize, format}};
+    const journals = journalDocuments({}, ["archetypes", "religions"]);
+    assert.equal(journals.length, 14);
+    for (const {id, pages: [{text: {content}}]} of journals) {
+      const journal = locale.TRUDVANG.Content.Journal;
+      if (ids.includes(id)) {
+        const {Overview, Practice, Pantheon} = journal.ReligionIntroductions[id];
+        assert.ok(content.startsWith(`<article class="trudvang-religion-journal"><p>${Overview}</p><p>${Practice}</p><h2>${journal.ReligionPantheon}</h2><p>${Pantheon}</p><h2>${journal.ReligionOrganization}</h2><p>`), `${lang}/${id}`);
+        assert.equal((content.match(/<table>/g) || []).length, tableCounts[ids.indexOf(id)]);
+      } else {
+        const first = content.match(/<p>(.*?)<\/p>/)?.[1];
+        assert.ok(first.startsWith(journal[id].Content.match(/<p>(.*?)<\/p>/)[1]), `${lang}/${id} still starts with the original paragraph`);
+        assert.ok(first.includes(`<strong>${format("TRUDVANG.Content.Journal.ArchetypeCreationBonus", {
+          points: 50, first: locale.TRUDVANG.Skill.Knowledge, second: locale.TRUDVANG.Skill[expectedSkills[id]]
+        })}</strong>`), `${lang}/${id} bonus at the end of the first paragraph`);
+      }
+    }
+  }
 });

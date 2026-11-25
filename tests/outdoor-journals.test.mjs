@@ -46,7 +46,7 @@ test("both journals retain every reference table and regenerate without data dri
     assert.match(journals.training.Content, /<td>25<\/td>/);
     assert.match(journals.hunting.Content, /8d10\+80/);
     globalThis.game = {i18n: {localize: key => key.split(".").reduce((value, part) => value?.[part], locale) ?? key}};
-    const documents = journalDocuments({rules: {id: "rules"}}).filter(row => ["training", "hunting", "travel", "combatActions", "environment"].includes(row.id));
+    const documents = journalDocuments({rules: {id: "rules"}}, ["rules"]).filter(row => ["training", "hunting", "travel", "combatActions", "environment"].includes(row.id));
     assert.equal(documents.length, 5);
     assert.ok(documents.every(row => row.folder === "rules" && row.pages[0].text.content.includes("<table>")));
   }

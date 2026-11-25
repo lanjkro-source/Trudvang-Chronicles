@@ -9,7 +9,7 @@ import {nidBlessingRestriction} from "../rules/nid-blessings.mjs";
 import {conditionalSkillModifiers,withConditionalEffectConsumption} from "../rules/effect-conditional-tests.mjs";
 import {effectStackId, isGradedEffect, effectDegree, markActorDeleting} from "../rules/effect-stacking.mjs";
 import {CUSTOM_SPECIALTY_PREFIX, customSpecialtyMetadata, isCustomSpecialty, canDeleteCustomSpecialty} from "../rules/custom-specialties.mjs";
-import { TRUDVANG } from "../config.mjs";
+import { ARCHETYPE_CREATION_BONUS, TRUDVANG } from "../config.mjs";
 import {naturalWeaponQualification} from "../rules/damage-qualifications.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, perfectSuccessDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
@@ -573,7 +573,7 @@ export class TrudvangActor extends BaseActor {
       if (coreSkills.has(this.getKnowledgeSkillKey(item))) coreEligible += cost;
       else regular += cost;
     }
-    const coreBonusTotal = archetype ? 50 : 0;
+    const coreBonusTotal = archetype ? ARCHETYPE_CREATION_BONUS : 0;
     const coreBonusUsed = Math.min(coreBonusTotal, coreEligible);
     return {traitCost, regular, coreEligible, coreBonusTotal, coreBonusUsed, coreBonusRemaining: coreBonusTotal - coreBonusUsed, total: traitCost + regular + coreEligible - coreBonusUsed};
   }
