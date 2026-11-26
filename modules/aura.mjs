@@ -4,7 +4,7 @@ import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicDamageProfile} from './magic-damage.mjs';
 import {itemEffectRemainingSeconds,normalizeEffectDuration} from './rules/effect-duration.mjs';
 import {weatherWard} from './rules/weather-wards.mjs';
-import {syncSpellZoneFireLight} from "./fire-zones.mjs";
+import {syncSpellZoneLight} from "./fire-zones.mjs";
 import {fixedLightProfile} from "./rules/spell-zones.mjs";
 
 const S="trudvang-chronicles", TYPE="trudvangAura";
@@ -280,7 +280,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
  if(removed||!activeSource(effect)){
   for(const region of regions){
    if(sourceMeta(effect)?.sourceId==="holy-ealdtradition-magh-s-gift:elf-summer:3")
-    await syncSpellZoneFireLight(region,{removed:true});
+    await syncSpellZoneLight(region,{removed:true});
    // Clean by provenance even when the scene is not currently viewed.
    const actors=new Map(Array.from(scene.tokens??[]).filter(row=>row.actor?.uuid).map(row=>[row.actor.uuid,row.actor]));
    for(const actor of actors.values()){
@@ -306,7 +306,7 @@ export async function synchronizeAuraSource(effect,{removed=false}={}){
   const context=sourceMeta(effect)?.ruleTestContext;
   if(sourceMeta(effect)?.sourceId!=="holy-ealdtradition-magh-s-gift:elf-summer:3")return;
   try{
-   await syncSpellZoneFireLight(region,{illuminationSource:{context:{...context,sourceId:sourceMeta(effect).sourceId},
+   await syncSpellZoneLight(region,{illuminationSource:{context:{...context,sourceId:sourceMeta(effect).sourceId},
     elevation:location.elevation,profile:{kind:"fixedLight",radius,illumination:{bright:radius,dim:radius}}}});
   }catch(error){console.error("Trudvang | Summer light synchronization failed",error);}
  };

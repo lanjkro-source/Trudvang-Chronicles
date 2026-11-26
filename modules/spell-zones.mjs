@@ -1,4 +1,4 @@
-import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage,syncSpellZoneFireLight,cleanupOrphanSpellZoneLights} from './fire-zones.mjs';
+import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage,syncSpellZoneLight,cleanupOrphanSpellZoneLights} from './fire-zones.mjs';
 import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {TABLET_BY_ID,powerItemData} from './tablet-catalog.mjs';
@@ -62,7 +62,7 @@ function placementLimit(scene,token,profile,movingFog){
 const pointInRange = (limit,point) => spellZoneRange(limit,point)?.inRange === true;
 const zoneColor = profile => profile.kind === 'airShield' ? '#008cff' : auraColor();
 // Lighting failures must not prevent a victim's damage or Evade decision.
-async function syncZoneLight(region,options){try{await syncSpellZoneFireLight(region,options);}catch(error){console.error('Trudvang | Fire area lighting failed',error);}}
+async function syncZoneLight(region,options){try{await syncSpellZoneLight(region,options);}catch(error){console.error('Trudvang | Spell area lighting failed',error);}}
 const regionDeletions=new WeakMap();
 function regionPresent(region){return !region.id||!region.parent?.regions?.get||region.parent.regions.get(region.id)===region;}
 function deleteZoneOnce(region){
@@ -163,6 +163,11 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   }
   if(spellZoneExpired(info,clock(info))){await clearSpellZoneRecipients(region,info,{expired:true});await deleteZoneOnce(region);return;}
   if(info.lightTokenId&&!region.parent.tokens?.get(info.lightTokenId)){await deleteZoneOnce(region);return;}
+  // TEMPORARY WORLD MIGRATION — remove the old visual-only darkness from active Jorn regions.
+  if(info.profile.kind==='darkness'){
+   const old=values(region.behaviors).filter(b=>b.type==='adjustDarknessLevel'&&b.name===region.name&&b.system.mode===0&&b.system.modifier===1);
+   if(old.length)await region.deleteEmbeddedDocuments('RegionBehavior',old.map(b=>b.id));
+  }
   if(!enabled(region)){await clearSpellZoneRecipients(region,info);await syncZoneLight(region,{removed:true});await syncSpellWall(region,{removed:true});return;}
   if(info.wall){
    if(info.wall.sections.every(section=>section.hp<=0))await deleteZoneOnce(region);
@@ -235,7 +240,7 @@ function successfulZoneCast(message,ready){
 }
 
 function fireLightInReach(scene,light,token,profile){
- if(light.hidden||!(Math.max(Number(light.config?.bright)||0,Number(light.config?.dim)||0)>0))return false;
+ if(light.hidden||light.config?.negative||!(Math.max(Number(light.config?.bright)||0,Number(light.config?.dim)||0)>0))return false;
  const regionUuid=light.flags?.[S]?.spellZoneLight?.regionUuid;
  if(regionUuid){
   const zone=values(scene.regions).find(region=>region.uuid===regionUuid);
@@ -372,11 +377,10 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  info.createdRound=Number(combat?.round)||0;
  info.lastMovedPhase=spellZonePhase(info,clock(info));
  let region=values(scene.regions).find(r=>infoOf(r)?.messageId===message.id);
- const darkMode=darkness?globalThis.CONFIG?.RegionBehavior?.dataModels?.adjustDarknessLevel?.MODES?.OVERRIDE:undefined;
  if(!region)[region]=await scene.createEmbeddedDocuments('Region',[{name:nameOf(info),color:zoneColor(profile),highlightMode:darkness||wall||air||profile.kind==='vitnerWall'?'shapes':'coverage',visibility:CONST.REGION_VISIBILITY.ALWAYS,
   ...(support?{attachment:{token:support.id}}:{}),
   levels:(solar?.level??token.level)?[solar?.level??token.level]:[],shapes:wall?wall.sections.map(section=>section.shape):[footprint??{type:'circle',x:point.x,y:point.y,radius:(profile.kind==='fog'?fogRadius(info,clock(info)):profile.radius)*scale}],flags:{[S]:{spellZone:info}},
-  behaviors:[{type:TYPE,name:nameOf(info),system:{}},...(darkMode===undefined?[]:[{type:'adjustDarknessLevel',name:nameOf(info),system:{mode:darkMode,modifier:1}}])]}]);
+  behaviors:[{type:TYPE,name:nameOf(info),system:{}}]}]);
  if(!region)throw Error('Spell zone creation failed');
  if(profile.kind==='nidSanctuary')await applyZoneDamage({actor,message,formula:'1',qualification:{protection:'none'}});
  if(wall)await reconcileSpellZone(region);

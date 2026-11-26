@@ -1,3 +1,4 @@
+import {darknessSourceGeometry} from "./rules/jorn-darkness.mjs";
 import {combatPoolsAreFull} from './rules/combat-pool-resolver.mjs';
 import {applyZoneDamage} from './zone-damage.mjs';
 const S='trudvang-chronicles';
@@ -40,20 +41,36 @@ export function spellZoneFireLightData(region, info=region.flags?.[S]?.spellZone
    ...(flame?{color:'#ffb347',alpha:0.1,attenuation:0,animation:{type:'flame',speed:3,intensity:4}}:{color:null,attenuation:0})},
   flags:{[S]:{spellZoneLight:{regionUuid:region.uuid}}}};
 }
+export function spellZoneDarknessLightData(region, info=region.flags?.[S]?.spellZone) {
+ if (info?.profile?.kind !== "darkness") return null;
+ const geometry = darknessSourceGeometry(collectionValues(region.shapes)[0]);
+ if (!geometry) return null;
+ const {x,y,radius,boundary} = geometry;
+ const {penalty,nightPenalty} = info.profile;
+ const pixelsToUnits = Number(region.parent.grid?.distance || 1) / Number(region.parent.grid?.size || 1);
+ return {
+  name:game.i18n.localize("TRUDVANG.Content.Power."+info.context.sourceId+".Name"),
+  x,y,elevation:info.elevation,levels:collectionValues(region.levels),hidden:false,walls:false,vision:false,
+  config:{negative:true,priority:100,bright:(radius+(boundary ? 1 : 0))*pixelsToUnits,dim:0,angle:360,gradual:false,attenuation:0},
+  flags:{[S]:{spellZoneLight:{regionUuid:region.uuid,darkness:{penalty,nightPenalty,boundary:boundary??null}}}}
+ };
+}
 function deleteLightOnce(light){
  if(lightDeletions.has(light))return lightDeletions.get(light);
  const job=Promise.resolve().then(()=>light.parent.lights.get(light.id)===light?light.delete():false).finally(()=>lightDeletions.delete(light));lightDeletions.set(light,job);return job;
 }
 function includesLightValues(actual,wanted){return Object.entries(wanted).every(([key,value])=>value&&typeof value==='object'?includesLightValues(actual?.[key]??{},value):actual?.[key]===value);}
 /** Called by the active GM; serializing also covers overlapping native region hooks. */
-export function syncSpellZoneFireLight(region,{removed=false,illuminationSource}={}){
+export function syncSpellZoneLight(region,{removed=false,illuminationSource}={}){
  const previous=lightJobs.get(region.uuid)??Promise.resolve();
  const job=previous.catch(()=>{}).then(async()=>{
-  const scene=region.parent,lights=collectionValues(scene.lights).filter(light=>lightRegion(light)===region.uuid),data=removed?null:spellZoneFireLightData(region,illuminationSource);
+  const scene=region.parent,lights=collectionValues(scene.lights).filter(light=>lightRegion(light)===region.uuid),data=removed?null:spellZoneDarknessLightData(region)??spellZoneFireLightData(region,illuminationSource);
   if(!data){for(const light of lights)await deleteLightOnce(light);return null;}
   let light=lights[0];for(const duplicate of lights.slice(1))await deleteLightOnce(duplicate);
-  if(!light){[light]=await scene.createEmbeddedDocuments('AmbientLight',[data]);if(!light)throw Error('Fire area light creation failed');}
-  else if(['x','y','elevation','hidden','walls','vision'].some(key=>light[key]!==data[key])||!includesLightValues(light.config,data.config))await light.update(data);
+  if(!light){[light]=await scene.createEmbeddedDocuments('AmbientLight',[data]);if(!light)throw Error('Spell area light creation failed');}
+  else if(['x','y','elevation','hidden','walls','vision'].some(key=>light[key]!==data[key])||!includesLightValues(light.config,data.config)
+    ||(data.levels && (data.levels.length !== collectionValues(light.levels).length || data.levels.some(id => !collectionValues(light.levels).includes(id))))
+    ||JSON.stringify(light.flags?.[S]?.spellZoneLight?.darkness)!==JSON.stringify(data.flags[S].spellZoneLight.darkness))await light.update(data);
   return light;
  }).finally(()=>{if(lightJobs.get(region.uuid)===job)lightJobs.delete(region.uuid);});lightJobs.set(region.uuid,job);return job;
 }

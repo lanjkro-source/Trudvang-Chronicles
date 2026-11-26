@@ -216,3 +216,7 @@ Dans `modules/magic-seal.mjs`, le repli `TEMPORARY WORLD MIGRATION` autorise le 
 ## Premières reliques de Puissance du dragon
 
 Les replis `TEMPORARY WORLD MIGRATION` dans `modules/huvfurwurm-head.mjs` et `modules/noaj-relics.mjs` permettent à une protection déjà active sans relique de se résoudre, puis retirent l’ancien effet de relique fendue à la première liaison d’un objet compatible. Retirer ces replis et la lecture de l’ancien marqueur `dragonRelicCracked` après mise à niveau des mondes de développement. L’état de la relique portée est désormais écrit sur l’objet.
+
+## Anciennes zones de ténèbres de Jorn
+
+Au rapprochement des zones, le bloc marqué `TEMPORARY WORLD MIGRATION` dans `modules/spell-zones.mjs` retire le comportement Foundry d’ajustement de l’obscurité qui portait le nom de la région et imposait une obscurité maximale. La synchronisation recrée l’occultation à partir de la source d’obscurité de la région. Retirer ce bloc une fois les anciennes régions expirées ou les mondes concernés supprimés.

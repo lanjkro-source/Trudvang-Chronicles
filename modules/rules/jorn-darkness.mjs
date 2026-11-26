@@ -1,24 +1,26 @@
-import {sensoryProfile} from "./senses.mjs";
+import {grantsTrueSight,sensoryProfile} from "./senses.mjs";
 
 const S = "trudvang-chronicles";
-const trueSight = new Set(["vitner-power-of-vision:true-sight:7","holy-joaringfaith-sight-of-lekaba:true-sight:7"]);
 
 export function darknessCombatRow(actor, observer = actor) {
   if (!actor || !observer) return null;
   const effects = Array.from(actor.effects ?? []).filter(effect => effect.flags?.[S]?.spellZoneRecipient?.darkness
     && !effect.disabled && !effect.isSuppressed && !effect.duration?.expired);
   if (!effects.length) return null;
-  const senses = observer.transformationProfile?.sensory ?? (observer.system ? sensoryProfile(observer) : []);
-  if (senses.some(sense => sense.enabled && ["dark","true"].includes(sense.type))
-      || observer.transformationProfile?.effects?.some(effect => trueSight.has(effect.flags?.[S]?.transformation?.sourceId))) return null;
-  const night = senses.some(sense => sense.enabled && sense.type === "night");
   let strongest = null;
   for (const effect of effects) {
-    const darkness = effect.flags?.[S]?.spellZoneRecipient?.darkness;
-    const value = Number(night ? darkness.nightPenalty : darkness.penalty);
+    const value = jornDarknessPenalty(observer, effect.flags[S].spellZoneRecipient.darkness);
     if (value < (strongest?.value ?? 0)) strongest = {label:effect.name,value};
   }
   return strongest;
+}
+
+export function jornDarknessPenalty(observer, darkness) {
+  const senses = observer?.transformationProfile?.sensory ?? (observer?.system ? sensoryProfile(observer) : []);
+  if (senses.some(sense => sense.enabled && ["dark","true"].includes(sense.type))
+      || observer?.transformationProfile?.effects?.some(effect => grantsTrueSight(effect))) return 0;
+  const night = senses.some(sense => sense.enabled && sense.type === "night");
+  return Number(night ? darkness.nightPenalty : darkness.penalty);
 }
 
 export function darknessPlacementShape(shape, maximumArea, scale) {
@@ -34,4 +36,23 @@ export function darknessPlacementShape(shape, maximumArea, scale) {
     return {type:"rectangle",x,y,width,height,rotation,anchorX:.5,anchorY:.5};
   }
   return null;
+}
+
+/** Region coordinates use pixels; the light is centered with a radius reaching
+ * every corner, then Foundry clips its native darkness polygon to these points. */
+export function darknessSourceGeometry(shape) {
+  if (!shape || ![shape.x, shape.y].every(Number.isFinite)) return null;
+  if (shape.type === "circle" && Number.isFinite(shape.radius) && shape.radius > 0) {
+    return {x:shape.x, y:shape.y, radius:shape.radius};
+  }
+  if (shape.type !== "rectangle" || ![shape.width,shape.height,shape.rotation ?? 0].every(Number.isFinite)
+      || shape.width <= 0 || shape.height <= 0) return null;
+  const angle = (shape.rotation ?? 0) * Math.PI / 180;
+  const cosine = Math.cos(angle), sine = Math.sin(angle);
+  const point = (x,y) => [shape.x + cosine*x - sine*y, shape.y + sine*x + cosine*y];
+  const left = -Number(shape.anchorX ?? .5) * shape.width, top = -Number(shape.anchorY ?? .5) * shape.height;
+  const right = left + shape.width, bottom = top + shape.height;
+  const [x,y] = point((left+right)/2,(top+bottom)/2);
+  return {x,y,radius:Math.hypot(shape.width,shape.height)/2,
+    boundary:[...point(left,top),...point(right,top),...point(right,bottom),...point(left,bottom)]};
 }

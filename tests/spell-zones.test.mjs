@@ -801,6 +801,13 @@ test('Jorn darkness respects its footprint and duration, and removes penalties o
  assert.equal((await createSpellZoneOnAuthority({...payload,shape:rectangle})).status,'placed');
  const region=[...regions.values()][0];
  assert.deepEqual(region.shapes[0],{...rectangle,anchorX:.5,anchorY:.5});
+ const [shadow]=scene.lights.values();
+ assert.equal(shadow.config.negative,true);
+ assert.ok(shadow.config.bright >= Math.hypot(rectangle.width,rectangle.height)/200);
+ const footprint=shadow.flags[S].spellZoneLight.darkness.boundary;
+ assert.equal(footprint.length,8);
+ const area=Math.abs(footprint.reduce((sum,v,i)=>i%2?sum:sum+v*footprint[(i+3)%8]-footprint[(i+2)%8]*footprint[i+1],0))/2;
+ assert.ok(Math.abs(area-rectangle.width*rectangle.height)<.001);
  assert.equal(darknessCombatRow(target).value,-3);
  assert.equal(game.messages.size,1);
  region.tokens.delete(scene.tokens.get('target'));
@@ -810,6 +817,30 @@ test('Jorn darkness respects its footprint and duration, and removes penalties o
  await reconcileSpellZone(region);
  assert.equal(regions.size,0);
  assert.equal(darknessCombatRow(caster),null);
+ assert.equal(scene.lights.size,0);
+});
+
+test('Jorn darkness replaces legacy dimming and keeps its source on the region’s scene level',async()=>{
+ const payload=setup(jorn+'night-curtain:3');
+ await createSpellZoneOnAuthority({...payload,shape:{type:'circle',...payload.point,radius:300}});
+ const [region]=regions.values();
+ const [light]=scene.lights.values();
+ assert.equal(light.config.bright,3);
+ assert.equal(light.flags[S].spellZoneLight.darkness.boundary,null);
+ region.behaviors.push({id:'legacy',name:region.name,type:'adjustDarknessLevel',system:{mode:0,modifier:1}});
+ region.behaviors.push({id:'custom',name:'Other lighting',type:'adjustDarknessLevel',system:{mode:0,modifier:1}});
+ region.deleteEmbeddedDocuments=async(type,ids)=>{
+  assert.equal(type,'RegionBehavior');
+  assert.deepEqual(ids,['legacy']);
+  region.behaviors=region.behaviors.filter(b=>!ids.includes(b.id));
+ };
+ region.levels=new Set(['upper-floor']);
+ await reconcileSpellZone(region);
+ assert.deepEqual(light.levels,['upper-floor']);
+ assert.ok(region.behaviors.some(b=>b.id==='custom'));
+ await region.delete();
+ await reconcileSpellZone(region,{removed:true});
+ assert.equal(scene.lights.size,0);
 });
 
 test('the strongest darkness uses the combatant’s current vision on either side of the boundary',async()=>{
@@ -1187,7 +1218,7 @@ test('disabled, manually removed and orphaned fire lights are cleaned without to
  const [regular]=await scene.createEmbeddedDocuments('AmbientLight',[{x:0,y:0,config:{bright:2},flags:{}}]);await scene.createEmbeddedDocuments('AmbientLight',[{x:0,y:0,config:{bright:2},flags:{[S]:{spellZoneLight:{regionUuid:r.uuid}}}}]);const {cleanupOrphanSpellZoneLights}=await import('../modules/fire-zones.mjs');await Promise.all([cleanupOrphanSpellZoneLights(scene),cleanupOrphanSpellZoneLights(scene)]);assert.equal(scene.lights.size,1);assert.equal(scene.lights.get(regular.id),regular);
 });
 test('fire light converts physical circle radius to scene units and ignores unrelated native defaults',async()=>{
- setup();const {spellZoneFireLightData,syncSpellZoneFireLight}=await import('../modules/fire-zones.mjs');const r={uuid:'Scene.scene.Region.light',parent:scene,shapes:[{type:'circle',x:150,y:250,radius:100}],flags:{[S]:{spellZone:{context:{sourceId:sea},profile:{kind:'fire'}}}}};scene.grid={size:100,distance:5,units:'ft'};assert.equal(spellZoneFireLightData(r).config.bright,5);const light=await syncSpellZoneFireLight(r);let writes=0;light.config.animation.reverse=false;light.update=async()=>writes++;await syncSpellZoneFireLight(r);assert.equal(writes,0);assert.equal(scene.lights.size,1);
+ setup();const {spellZoneFireLightData,syncSpellZoneLight}=await import('../modules/fire-zones.mjs');const r={uuid:'Scene.scene.Region.light',parent:scene,shapes:[{type:'circle',x:150,y:250,radius:100}],flags:{[S]:{spellZone:{context:{sourceId:sea},profile:{kind:'fire'}}}}};scene.grid={size:100,distance:5,units:'ft'};assert.equal(spellZoneFireLightData(r).config.bright,5);const light=await syncSpellZoneLight(r);let writes=0;light.config.animation.reverse=false;light.update=async()=>writes++;await syncSpellZoneLight(r);assert.equal(writes,0);assert.equal(scene.lights.size,1);
 });
 test('lighting errors do not block fire damage or Evade decisions; non-fire zones never create lights',async()=>{
  await createSpellZoneOnAuthority(setup());assert.equal(scene.lights.size,0);const p=setup(burst);const create=scene.createEmbeddedDocuments,oldError=console.error,oldRoll=globalThis.Roll;let errors=0;console.error=()=>errors++;globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=4;}};scene.createEmbeddedDocuments=async(type,data)=>{if(type==='AmbientLight')throw Error('Native light failure');return create(type,data);};

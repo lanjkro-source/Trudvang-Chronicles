@@ -100,3 +100,13 @@ test("manual token vision disable and range reductions survive unrelated actor s
  apply(t,tokenVisionUpdate(t,null));
  assert.equal(t.detectionModes.darkvision.enabled,false);assert.equal(t.detectionModes.darkvision.range,20);assert.equal(t.sight.range,20);
 });
+
+test("true sight grants its effective vision range, including power levels",()=>{
+ const sourceId="vitner-power-of-vision:true-sight:7";
+ const effect={flags:{[scope]:{transformation:{sourceId,ruleTestContext:{countsById:{[sourceId+":4"]:1,[sourceId+":5"]:2}}}}}};
+ const a=actor([sense("normal")]);
+ assert.equal(sensoryVision(sensoryProfile(a)),null);
+ const profile=sensoryProfile(a,[{name:"Vision véritable",rules:{},effect}]);
+ assert.deepEqual(profile[1],{...sense("true",80,"Vision véritable"),source:"Vision véritable"});
+ assert.deepEqual(sensoryVision(profile),{mode:"darkvision",range:80});
+});

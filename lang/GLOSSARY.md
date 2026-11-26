@@ -16277,6 +16277,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Senses.Types.normal` | Normal sight | Vision normale |
 | `TRUDVANG.Senses.Types.night` | Night vision | Vision nocturne |
 | `TRUDVANG.Senses.Types.dark` | Darkvision | Vision dans le noir |
+| `TRUDVANG.Senses.Types.true` | True Sight | Vision véritable |
 | `TRUDVANG.Senses.Types.other` | Other sense | Autre sens |
 
 ## `TRUDVANG.Environment`

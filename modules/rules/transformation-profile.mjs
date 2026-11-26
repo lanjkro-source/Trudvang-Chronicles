@@ -41,7 +41,7 @@ export function transformationProfile(actor) {
   if(r.testFactor)profile.testFactor={...profile.testFactor,...r.testFactor};
   if(r.damageTakenFactor)profile.damageTakenFactor=(profile.damageTakenFactor??1)*r.damageTakenFactor;
  }
- profile.sensory=sensoryProfile(actor,profile.effects.map(e=>({rules:effectRules(e),name:e.name})));
+ profile.sensory=sensoryProfile(actor,profile.effects.map(e=>({rules:effectRules(e),name:e.name,effect:e})));
  profile.vision=sensoryVision(profile.sensory)?.mode;
  return profile;
 }

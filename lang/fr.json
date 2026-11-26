@@ -18591,6 +18591,7 @@
         "normal": "Vision normale",
         "night": "Vision nocturne",
         "dark": "Vision dans le noir",
+        "true": "Vision véritable",
         "other": "Autre sens"
       },
       "Unlimited": "Sans limite de portée précisée",

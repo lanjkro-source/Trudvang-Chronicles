@@ -18591,6 +18591,7 @@
         "normal": "Normal sight",
         "night": "Night vision",
         "dark": "Darkvision",
+        "true": "True Sight",
         "other": "Other sense"
       },
       "Unlimited": "No specified range limit",

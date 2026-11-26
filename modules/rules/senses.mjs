@@ -1,4 +1,7 @@
-/** Sensory profiles are actor data; only night/dark vision affect Foundry sight. */
+const trueSightPowers = new Set(["vitner-power-of-vision:true-sight:7", "holy-joaringfaith-sight-of-lekaba:true-sight:7"]);
+export const grantsTrueSight = effect => trueSightPowers.has(effect?.flags?.["trudvang-chronicles"]?.transformation?.sourceId);
+
+/** Sensory profiles are actor data; only vision senses affect Foundry sight. */
 export function normalizeSense(value){
  const row=typeof value==="string"?{label:value}:value??{};
  const label=String(row.label??row.labelKey??"");
@@ -24,16 +27,22 @@ export function intrinsicSenses(actor){
 }
 export function sensoryProfile(actor,effects=[]){
  const base=intrinsicSenses(actor);
- for(const {rules,name}of effects){
+ for(const {rules,name,effect}of effects){
   const senses=(rules.senses??[]).map(normalizeSense);
   if(rules.sensesReplace)base.splice(0,base.length);
   base.push(...senses.map(s=>({...s,source:name})));
+  if(grantsTrueSight(effect)){
+   const {sourceId,ruleTestContext} = effect.flags["trudvang-chronicles"].transformation;
+   const counts = ruleTestContext?.countsById;
+   const range = 25 + 5*(Number(counts?.[sourceId+":4"])||0) + 25*(Number(counts?.[sourceId+":5"])||0);
+   base.push({type:"true",label:name,range,enabled:true,source:name});
+  }
   if(rules.vision&&!senses.some(s=>["night","dark"].includes(s.type)))base.push({type:rules.vision==="lightAmplification"?"night":"dark",label:"",range:null,enabled:true,source:name});
  }
  return base.filter((s,i,all)=>all.findIndex(x=>x.type===s.type&&x.label===s.label&&x.range===s.range&&x.enabled===s.enabled&&x.source===s.source)===i);
 }
 export function sensoryVision(senses){
- const rows=senses.filter(s=>s.enabled&&["night","dark"].includes(s.type));
+ const rows=senses.filter(s=>s.enabled&&["night","dark","true"].includes(s.type));
  return rows.length?{mode:"darkvision",range:rows.some(s=>s.range===null)?null:Math.max(...rows.map(s=>s.range))}:null;
 }
 export function sensoryRows(actor,{localize=key=>key}={}){

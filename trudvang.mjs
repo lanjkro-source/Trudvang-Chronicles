@@ -1,3 +1,4 @@
+import {registerJornDarknessCanvas} from "./modules/jorn-darkness-canvas.mjs";
 import {registerSpellZoneSupport} from './modules/spell-zones.mjs';
 import {registerSacredHooks,registerSacredSockets} from './modules/sacred-objects.mjs';
 import { TRUDVANG } from "./modules/config.mjs";
@@ -49,6 +50,7 @@ Hooks.once("init", () => {
   configureEffects();
   registerAuraSupport();
   registerSpellZoneSupport();
+  registerJornDarknessCanvas();
   registerEffectHooks();
   registerMagicSheetAvailabilityHooks();
   registerActorEffectDurationHooks();
