@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {followupPolicy,followupFingerprint,followupAvailability,followupRollTest} from '../modules/rules/followup-tests.mjs';
 import {TRANSFORMATION_TEMPLATES} from '../modules/transformation-data.mjs';
-const S='trudvang-chronicles',docs=new Map(),messages=new Map();let warnings=[],renderedCard;
+const S='trudvang-chronicles',docs=new Map(),messages=new Map();let warnings=[];
 const languages=Object.fromEntries(['fr','en'].map(lang=>[lang,JSON.parse(fs.readFileSync(new URL('../lang/'+lang+'.json',import.meta.url)))]));
-globalThis.foundry={applications:{handlebars:{renderTemplate:async(_path,data)=>(renderedCard=data,'<article>Result</article>')}},utils:{fromUuid:async uuid=>docs.get(uuid),deepClone:structuredClone}};
+globalThis.foundry={applications:{handlebars:{renderTemplate:async()=>'<article>Result</article>'}},utils:{fromUuid:async uuid=>docs.get(uuid),deepClone:structuredClone}};
 globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=String(value);}})};
 globalThis.ui={notifications:{warn:message=>warnings.push(message)}};
 const {withFollowupTest,resolveFollowupOnAuthority,pullPrisoner}=await import('../modules/followup-tests.mjs');
@@ -115,7 +115,7 @@ test('the real recovery dialog and chat use the saved bonus once, for the recipi
  globalThis.CONFIG={TRUDVANG:{}};globalThis.Roll=class{async evaluate(){this.total=5;return this;}};
  globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.uuid}),create:async data=>{const message={...data,id:'rolled',update:async change=>Object.assign(message,change)};messages.set(message.id,message);return message;}};
  try{
-  const result=await performRuleTest({document:e,index:1,actor:{...actor,uuid:'Actor.other'}});card=renderedCard;
+  const result=await performRuleTest({document:e,index:1,actor:{...actor,uuid:'Actor.other'}});
   assert.equal(result.target,9,'6 base + 1 Psyche + 2 recovered memory');assert.equal(result.success,true);
   assert.match(dialog.content,/Récupération des souvenirs/);assert.match(card.flavor,/Récupération des souvenirs/);
   assert.equal(messages.get('rolled').speaker.actor,actor.uuid);assert.match(messages.get('rolled').content,/\+4/);

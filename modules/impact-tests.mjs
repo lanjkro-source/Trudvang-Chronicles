@@ -1,3 +1,4 @@
+import {isNpcRoll,recordedRoll,recordedRollFlag,publishNpcRollDetails} from "./chat-roll-privacy.mjs";
 import {windProjectionProfile,impactSize} from './rules/impact.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
@@ -15,12 +16,12 @@ export async function resolveImpactTest(payload,{refresh,canReadMessage}={}){
  if(!lock||lock.token!==payload.token||lock.userId!==user.id)return {status:'unavailable'};
  if(payload.action==='cancel'){locks.delete(key);return {status:'cancelled'};}
  if(payload.action!=='finish')return {status:'unavailable'};
- const proof=game.messages.get(payload.proofId),meta=proof?.flags?.[S]?.impactTestFor;
- const die=Number(proof?.rolls?.[0]?.total),target=Number(meta?.target);
- if((proof?.author?.id??proof?._source?.author)!==user.id||meta?.messageId!==message.id||meta?.actorUuid!==actor.uuid||meta?.token!==lock.token||proof?.rolls?.[0]?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
+ const proof=game.messages.get(payload.proofId),meta=recordedRollFlag(proof,"impactTestFor");
+ const roll=recordedRoll(proof),die=Number(roll?.total),target=Number(meta?.target);
+ if((proof?.author?.id??proof?._source?.author)!==user.id||meta?.messageId!==message.id||meta?.actorUuid!==actor.uuid||meta?.token!==lock.token||roll?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
  const remembered=pending.get(key);
  const outcome=remembered?.outcome??{...resolveRollUnderOutcome(die,target),result:die,target};row.impact??={};
- row.impact.outcome=outcome;
+ row.impact.outcome=isNpcRoll(actor)?{success:outcome.success}:outcome;
  if(!outcome.success){
   // Retain the distance before changing statuses: a retried write never rerolls it.
   if(remembered){lock.distance=remembered.distance;lock.rolls=remembered.rolls;}
@@ -30,7 +31,8 @@ export async function resolveImpactTest(payload,{refresh,canReadMessage}={}){
   await actor.toggleStatusEffect('prone',{active:true});
  }
  row.impact.resolved=true;
- await refresh(message,rows,{rolls:lock.rolls??[]});
+ if(isNpcRoll(actor)&&lock.rolls?.length)await publishNpcRollDetails({speaker:ChatMessage.getSpeaker({actor}),content:"",rolls:lock.rolls});
+ await refresh(message,rows,{rolls:isNpcRoll(actor)?[]:lock.rolls??[]});
  pending.delete(key);locks.delete(key);return {status:'resolved'};
 }
 export async function requestImpactTest({message,actor,request}={}){

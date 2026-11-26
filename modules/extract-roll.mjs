@@ -1,5 +1,6 @@
 import { TRUDVANG } from "./config.mjs";
-import { escapeHtml, renderTemplate } from "./helpers.mjs";
+import { escapeHtml } from "./helpers.mjs";
+import {createActorRollMessage,isNpcRoll,renderRollCard} from "./chat-roll-privacy.mjs";
 import {applyConsumableConsequences} from "./consumable-effects.mjs";
 import {consequenceResultText} from "./consequences.mjs";
 
@@ -90,7 +91,7 @@ export async function useExtract(item, actor, preparedChoice = null) {
   const stageLabel = stageLabelFor(stage);
   const nextStageLabel = stage.next ? stageLabelFor(STAGES.find(entry => entry.id === stage.next) ?? stage) : "";
   const consequences = await applyConsumableConsequences(item, actor, {stage, durationRoll: duration.roll});
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-use-card.hbs", {
+  const view = {
     itemName: item.name,
     itemImg: item.img,
     actorName: actor.name,
@@ -100,12 +101,17 @@ export async function useExtract(item, actor, preparedChoice = null) {
     traitModifier: modifier,
     result,
     stageLabel,
-    consequences: consequences.rows.map(consequenceResultText),
+    consequences: consequences.rows.map(row=>consequenceResultText(row)),
     stageEffect: item.system.efficacy?.[stage.id] || "",
     duration: duration.label || game.i18n.localize("TRUDVANG.Extract.UnknownDuration"),
     nextStageLabel,
     ends: !stage.next
-  });
-  const message = await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll, ...(duration.roll ? [duration.roll] : []), ...consequences.rolls]});
+  };
+  const message = await createActorRollMessage(actor,{
+    speaker:ChatMessage.getSpeaker({actor}),content:await renderRollCard("extract-use-card",view),
+    rolls:[dieRoll,...(duration.roll?[duration.roll]:[]),...consequences.rolls]
+  },{resultContent:isNpcRoll(actor)?await renderRollCard("extract-use-card",{
+    ...view,consequences:consequences.rows.map(row=>consequenceResultText(row,{resultOnly:true}))
+  },{resultOnly:true}):undefined});
   return {message, result, stage};
 }

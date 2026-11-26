@@ -22,7 +22,7 @@ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=S
 
 const {rollUnder} = await import("../modules/dice.mjs");
 const {useCreatureAbility} = await import("../modules/rule-use.mjs");
-const actor = {name: "Acteur <A>", uuid: "Actor.A", type: "npc", isOwner: true, canPerformAction: () => true};
+const actor = {name: "Acteur <A>", uuid: "Actor.A", type: "character", isOwner: true, canPerformAction: () => true};
 const catalogue = "vitner-vitner-craft:vitner-pouch:1";
 
 test("successful magic exposes source actions, while failed casts and shared descriptions have no extra list", async () => {

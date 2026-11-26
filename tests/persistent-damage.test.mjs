@@ -17,12 +17,12 @@ const {requestChatApplication,requestDamageResistance}=await import('../modules/
 function runtime(t,{key='vitner-dimvitner:hand-of-death:1#effect',counts={},custom,results=[4]}={}){
  const previous={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
  t.after(()=>Object.assign(globalThis,previous));
- const cards=[],rolls=[],gm={id:'gm',isGM:true,isSelf:true,active:true},users=new Map([[gm.id,gm]]);users.activeGM=gm;
+ const cards=[],privateCards=[],rolls=[],gm={id:'gm',isGM:true,isSelf:true,active:true},users=new Map([[gm.id,gm]]);users.activeGM=gm;
  const messages=new Map(),combat={id:crypto.randomUUID(),started:true,round:1,combatants:[]};
  globalThis.game={user:gm,users,messages,combat,time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format}};
- globalThis.Roll=class{constructor(formula){this.formula=formula;rolls.push(this);}async evaluate(){this.total=results.shift();assert.notEqual(this.total,undefined,'unexpected die');return this;}async toMessage(data){return ChatMessage.create({...data,content:'Duration',rolls:[this]});}};
+ globalThis.Roll=class{static fromData(data){return data;}constructor(formula){this.formula=formula;rolls.push(this);}async evaluate(){this.total=results.shift();assert.notEqual(this.total,undefined,'unexpected die');return this;}async render(){return 'Duration';}async toMessage(data){return ChatMessage.create({...data,content:'Duration',rolls:[this]});}};
  function updateObject(target,changes){for(const [path,value]of Object.entries(changes)){const parts=path.split('.');let row=target;for(const part of parts.slice(0,-1))row=row[part]??={};row[parts.at(-1)]=structuredClone(value);}}
- globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),author:gm,getFlag:(_s,key)=>message.flags?.[S]?.[key],update:async changes=>updateObject(message,changes)};messages.set(message.id,message);cards.push(message);return message;}};
+ globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),author:gm,getFlag:(_s,key)=>message.flags?.[S]?.[key],update:async changes=>updateObject(message,changes)};messages.set(message.id,message);(data.blind?privateCards:cards).push(message);return message;}};
  const actor={uuid:'Actor.'+crypto.randomUUID(),name:'Victime',documentName:'Actor',type:'npc',isOwner:true,items:[],effects:[],system:{protection:0,modifiers:{damage:20},resources:{body:{value:40,current:40,max:40}}},testUserPermission:()=>true,allApplicableEffects:()=>actor.effects,update:async changes=>{if(changes['system.resources.body.value']!==undefined){actor.system.resources.body.value=changes['system.resources.body.value'];actor.system.resources.body.current=changes['system.resources.body.value'];}}};
  actor.clone=async changes=>({...actor,effects:changes.effects,allApplicableEffects(){return this.effects;}});
  documents.set(actor.uuid,actor);combat.combatants=[{actor},{actor}];
@@ -30,7 +30,7 @@ function runtime(t,{key='vitner-dimvitner:hand-of-death:1#effect',counts={},cust
  actor.createTrudvangEffect=async data=>installEffect(data);
  const effect=installEffect({type:'effect',name:'Effet',system:{changes:[]},duration:{value:3,units:'rounds'},flags:{[S]:{...(custom?{persistentDamage:custom}:{}),transformation:{key,sourceId:key.split('#')[0],resolved:true,ruleTestContext:{sourceId:key.split('#')[0],countsById:counts}}}}});
  actor.effects.get=id=>actor.effects.find(row=>row.id===id);
- return {effect,actor,combat,cards,rolls,messages};
+ return {effect,actor,combat,cards,privateCards,rolls,messages};
 }
 test('Main funeste rolls once on application, waits for resistance and keeps its frozen JO without the victim’s outgoing bonuses',async t=>{
  const id='vitner-dimvitner:hand-of-death:1',r=runtime(t,{counts:{[`${id}:4`]:1},results:[9]});
@@ -38,7 +38,8 @@ test('Main funeste rolls once on application, waits for resistance and keeps its
  assert.equal(r.cards.length,1);assert.equal(r.rolls.length,1);assert.equal(r.actor.system.resources.body.current,40);
  assert.equal(r.cards[0].getFlag(S,'damageContext').resistance.test.sv,6);
  assert.match(r.cards[0].content,/data-damage="9"/);assert.doesNotMatch(r.cards[0].content,/TRUDVANG\./);
- assert.match(r.cards[0].content,/JO 0 → JO 10/);
+ assert.doesNotMatch(r.cards[0].content,/JO 0 → JO 10/);
+ assert.match(r.privateCards[0].content,/JO 0 → JO 10/);
  assert.equal(r.effect.flags[S].persistentDamageClock.pending,null);
 });
 test('unavoidable damage automatically removes PS and cannot apply twice',async t=>{

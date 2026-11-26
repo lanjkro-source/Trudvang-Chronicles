@@ -1,3 +1,4 @@
+import {recordedRoll,recordedRollFlag} from "../chat-roll-privacy.mjs";
 import {activeBarriers,tokenBarrierCenter} from "./spell-barriers.mjs";
 import {resolveRollUnderOutcome} from "./roll-under-resolver.mjs";
 import {TRANSFORMATIONS_BY_SOURCE,TRANSFORMATION_TEMPLATES} from "../transformation-data.mjs";
@@ -55,9 +56,9 @@ export function nidTargetModifier(token,context,clock) {
 }
 
 export function nidPreventsCasting(message,modifier) {
-  const proof=message?.flags?.[scope]?.ruleTestContext?.nidRoll;
+  const proof=recordedRollFlag(message,"ruleTestContext")?.nidRoll;
   if(!proof||!modifier||!Number.isFinite(proof.target))return false;
-  return !resolveRollUnderOutcome(Number(message.rolls?.[0]?.total),proof.target+modifier.penalty,proof).success;
+  return !resolveRollUnderOutcome(Number(recordedRoll(message)?.total),proof.target+modifier.penalty,proof).success;
 }
 
 export function nidResistanceBonus(test,context,token,clock) {

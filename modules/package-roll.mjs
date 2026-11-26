@@ -1,4 +1,5 @@
-import { escapeHtml, renderTemplate } from "./helpers.mjs";
+import { escapeHtml } from "./helpers.mjs";
+import {createActorRollMessage,isNpcRoll,renderRollCard} from "./chat-roll-privacy.mjs";
 
 /** Open and resolve a package availability check from a sheet or chat message. */
 export async function rollPackageAvailability(item, situationValue) {
@@ -19,13 +20,15 @@ export async function rollPackageAvailability(item, situationValue) {
   const roll = await new Roll("1d20").evaluate();
   const result = Number(roll.total);
   const success = result === 1 || (result !== 20 && result <= target);
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/package-roll-card.hbs", {
+  const view = {
     itemName: item.name,
     itemImg: item.img,
     result,
     target,
     modifier: Number(modifier) || 0,
     success
-  });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: item.parent}), content, rolls: [roll]});
+  };
+  const actor = item.actor;
+  await createActorRollMessage(actor,{speaker:ChatMessage.getSpeaker({actor}),content:await renderRollCard("package-roll-card",view),rolls:[roll]},
+    {resultContent:isNpcRoll(actor)?await renderRollCard("package-roll-card",view,{resultOnly:true}):undefined});
 }

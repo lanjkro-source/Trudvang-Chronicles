@@ -1,3 +1,5 @@
+import {animateNpcRollDetails} from "./chat-roll-privacy.mjs";
+import {pruneChatActions} from "./chat-card-permissions.mjs";
 import {decorateSpellZoneRows,endFog,openFireTamerExtinguish,openSpellWallDamage,placeSpellZone,requestInstantSpellZoneApplication,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
 import {registerFollowupSocket} from './followup-tests.mjs';
@@ -37,6 +39,7 @@ export function registerChatListeners() {
   // renderChatMessage (jQuery) variant is deprecated and removed in V16, so only the HTML
   // hook is registered.
   Hooks.on("renderChatMessageHTML", attachListeners);
+  Hooks.on("createChatMessage", animateNpcRollDetails);
   Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
@@ -77,9 +80,10 @@ function autoShowForcedPortrait(message, html) {
 }
 
 function attachListeners(message, html) {
-  if (!(html instanceof HTMLElement)) return;
+  if (!(html instanceof HTMLElement) || message.isContentVisible === false) return;
   if (html.dataset.trudvangBound === "true") return;
   html.dataset.trudvangBound = "true";
+  pruneChatActions(message,html);
   clearIndicatedTraitToken(message.id);
   autoShowForcedPortrait(message, html);
   renderFatalResultAction(message, html);
@@ -108,7 +112,16 @@ function attachListeners(message, html) {
     for(const button of html.querySelectorAll("[data-transformation-key]")){
       const key=button.dataset.transformationKey;
       if(!message.flags?.["trudvang-chronicles"]?.ruleTestContext || button.nextElementSibling?.classList?.contains("effect-target-list"))continue;
-      button.setAttribute("aria-disabled",editable?"false":"true");
+      if (!editable) {
+        const eligible=effectTargetsFor(message,key).some(row=>foundry.utils.fromUuidSync?.(row.actorUuid)?.isOwner);
+        if (!eligible) {button.remove();continue;}
+        const drag=document.createElement("span");
+        for(const attr of button.attributes) if(attr.name!=="type")drag.setAttribute(attr.name,attr.value);
+        drag.dataset.dragOnly="true";
+        drag.innerHTML=button.innerHTML;
+        button.replaceWith(drag);
+        continue;
+      }
       if(TRANSFORMATION_TEMPLATES[key]?.instant?.operation==='createConsumable')continue;
       const group=document.createElement("div");
       group.className="effect-target-group";
@@ -212,7 +225,7 @@ function attachListeners(message, html) {
     });
   });
   html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
-    foundry.utils.fromUuid(button.dataset.itemUuid).then(item=>{if(isConsumable(item)){button.textContent=game.i18n.localize("TRUDVANG.Consumable.Consume");button.hidden=!canConsumeSharedItem(item);}});
+    foundry.utils.fromUuid(button.dataset.itemUuid).then(item=>{if(isConsumable(item)){button.textContent=game.i18n.localize("TRUDVANG.Consumable.Consume");button.hidden=!canConsumeSharedItem(item);}else button.hidden=!item?.isOwner;});
     button.addEventListener("click", async event => {
       event.preventDefault();
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);

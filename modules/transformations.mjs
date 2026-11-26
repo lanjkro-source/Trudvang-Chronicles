@@ -1,3 +1,4 @@
+import {isNpcRoll,publishNpcRollDetails} from "./chat-roll-privacy.mjs";
 import {waterMovementValues,waterMovementBase,waterMovementDegree} from "./rules/water-movement.mjs";
 import {effectTargetRestriction,leapDistances} from './rules/mobility-effects.mjs';
 import {equipmentGrantItems,equipmentGrantActive,grantedEquipmentData} from './rules/granted-equipment.mjs';
@@ -600,7 +601,11 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
 /** Publish the actual Roll so the standard chat pipeline also animates Dice So Nice. */
 async function rollEffectValue(formula,{actor,name=""}={}){
  const roll=await new Roll(formula).evaluate();
- await roll.toMessage({speaker:ChatMessage.getSpeaker(actor?{actor}:{}),flavor:escapeHtml(name)});
+ const speaker=ChatMessage.getSpeaker(actor?{actor}:{}),flavor=escapeHtml(name);
+ if(isNpcRoll(actor)){
+  const content=await roll.render({flavor});
+  await publishNpcRollDetails({speaker,content,rolls:[roll]});
+ }else await roll.toMessage({speaker,flavor});
  return Number(roll.total);
 }
 export async function resolveDuration(text,context={}){
@@ -745,6 +750,7 @@ export function registerTransformationHooks(){
  });
  document.addEventListener("click",async event=>{
   const button=event.target.closest?.("[data-transformation-key]");if(!button)return;
+  if(button.dataset.dragOnly==="true")return;
   event.preventDefault();event.stopPropagation();
   if(button.disabled)return;
   button.disabled=true;

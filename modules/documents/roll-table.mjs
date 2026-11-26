@@ -1,4 +1,5 @@
-import { escapeHtml, renderTemplate } from "../helpers.mjs";
+import { isNpcRoll, createActorRollMessage, publishNpcRollDetails, renderRollCard } from "../chat-roll-privacy.mjs";
+import { escapeHtml } from "../helpers.mjs";
 import { TRUDVANG } from "../config.mjs";
 import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
 import { fatalTableId, fatalRollFormula, fatalTotalInRange } from "../rules/fatal-table.mjs";
@@ -82,7 +83,7 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     const tableName = game.i18n.has?.("TRUDVANG.Content.Table.ExtractStage.Name")
       ? game.i18n.localize("TRUDVANG.Content.Table.ExtractStage.Name")
       : this.name;
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-stage-card.hbs", {
+    const view = {
       actorName: actor.name,
       tableName,
       die: Number(dieRoll.total),
@@ -91,9 +92,10 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
       traitModifier: modifier,
       result,
       stageLabel: stageLabelFor(stage)
-    });
+    };
     const message = displayChat
-      ? await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll]})
+      ? await createActorRollMessage(actor,{speaker:ChatMessage.getSpeaker({actor}),content:await renderRollCard("extract-stage-card",view),rolls:[dieRoll]},
+        {resultContent:isNpcRoll(actor)?await renderRollCard("extract-stage-card",view,{resultOnly:true}):undefined})
       : null;
     return {roll: dieRoll, results: [], message};
   }
@@ -121,7 +123,16 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
         ? result.clone({text: game.i18n.localize(`TRUDVANG.Content.Table.FatalMagic.E${row}`)}, {keepId: true})
         : result;
     });
-    return this.toMessage(results, {roll: fixedResult ? undefined : draw.roll, messageData, messageOptions: {messageMode}});
+    let roll = fixedResult ? undefined : draw.roll;
+    if (roll && isNpcRoll(actor)) {
+      const content = await roll.render();
+      const detail = await publishNpcRollDetails({speaker:messageData.speaker,content,rolls:[roll]});
+      messageData.flags ??= {};
+      (messageData.flags["trudvang-chronicles"] ??= {}).npcRoll = {detailId:detail?.id};
+      messageData.flags["dice-so-nice"] = {skip:true};
+      roll = undefined;
+    }
+    return this.toMessage(results, {roll, messageData, messageOptions: {messageMode}});
   }
 
   getResultsForRoll(value) {

@@ -41,10 +41,13 @@ export async function applyZoneDamage({actor, message, formula, openRoll = 0, qu
   });
   if (!result) throw Error("Area damage application failed");
   if (game.dice3d?.showForRoll) {
+    const casterUuid=message.flags?.[SCOPE]?.spellZoneTest?.casterUuid??message.flags?.[SCOPE]?.ruleTestContext?.casterUuid;
+    const caster=casterUuid?await foundry.utils.fromUuid(casterUuid):null;
+    const privateDice=(caster??actor)?.type==="npc";
     const recipients = Array.from(game.users.values()).filter(user => user.isGM
-      || (!message.blind && actor.testUserPermission(user, "OWNER"))).map(user => user.id);
+      || (!privateDice && !message.blind && actor.testUserPermission(user, "OWNER"))).map(user => user.id);
     try {
-      for (const roll of rolls) await game.dice3d.showForRoll(roll, game.user, true, recipients, Boolean(message.blind));
+      for (const roll of rolls) await game.dice3d.showForRoll(roll, game.user, !privateDice, recipients, Boolean(message.blind));
     } catch (error) {
       console.error("Trudvang | Area damage animation failed", error);
     }

@@ -1,3 +1,4 @@
+import {recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {followupPolicy,followupState,followupFingerprint,followupAvailability,isVitnerPrison,worldDay} from './rules/followup-tests.mjs';
 import {itemEffectRemainingSeconds} from './rules/effect-duration.mjs';
 import {escapeHtml} from './helpers.mjs';
@@ -25,7 +26,7 @@ async function resolvePrisonDamage(effect,message,escape,profile){
 }
 
 function escapeRollMatches(message,user,effect,payload){
- const roll=message?.rolls?.[0],reference=message?.getFlag?.(S,'followupTest')??message?.flags?.[S]?.followupTest;
+ const roll=recordedRoll(message),reference=recordedRollFlag(message,'followupTest');
  const die=Number(roll?.total);
  return message?.author?.id===user.id&&reference?.effectUuid===effect.uuid&&reference.index===0
   && roll?.formula==='1d20'&&Number.isInteger(die)&&die>=1&&die<=20

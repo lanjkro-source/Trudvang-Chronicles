@@ -396,6 +396,9 @@ test("the health dice action rolls inclusive bounds, fills health and preserves 
   const previous = {document: globalThis.document, Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage};
   t.after(() => Object.assign(globalThis, previous));
   globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  const previousUsers = game.users;
+  game.users = [{id:"gm",isGM:true}];
+  t.after(() => { game.users = previousUsers; });
   const totals = [21, 26];
   globalThis.Roll = class {
     constructor(formula) { this.formula = formula; }
@@ -427,7 +430,8 @@ test("the health dice action rolls inclusive bounds, fills health and preserves 
   }
   assert.equal(messages.length, 2);
   assert.ok(messages[0].content.includes("21 PS"));
-  assert.equal(messages[0].rolls[0].formula, "1d6 + 20");
+  assert.deepEqual(messages[0].whisper, ["gm"]);
+  assert.equal(messages[0].flags["trudvang-chronicles"].npcRollDetails.rollData[0].formula, "1d6 + 20");
   npc.isOwner = false;
   assert.equal(await npc.rollNpcHealth(), null);
   npc.isOwner = true; npc.type = "character";
@@ -1006,7 +1010,7 @@ test("a natural attack dialog spends its reserve and both Free hands, rolls a D2
   assert.match(dialogs[0].content, /data-pool-id="natural:bite"/);
   assert.match(dialogs[0].content, /Bite/);
   assert.equal(result.roll.formula, "1d20"); assert.equal(result.result, 1);
-  assert.equal(messages.length, 1); assert.equal(messages[0].rolls[0], result.roll);
+  assert.equal(messages.length, 1); assert.deepEqual(messages[0].rolls, []);
   assert.equal(bite.system.naturalCombatPointsSpent, 6);
   assert.equal(bite.system.weaponActionsSpent, 1);
   assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 2);
@@ -1267,7 +1271,7 @@ test("validating a book specialty roll evaluates a D20 and creates a chat messag
   assert.equal(result.success, true);
   assert.equal(messages.length, 1);
   assert.deepEqual(messages[0].speaker, {actor: "npc"});
-  assert.equal(messages[0].rolls[0].formula, "1d20", "chat roll uses the normal Dice So Nice-compatible pipeline");
+  assert.deepEqual(messages[0].rolls, [], "NPC dice stay out of public chat");
 });
 
 test("book skill rolls keep bonuses and effects without adding the actor base twice", async t => {
@@ -1365,7 +1369,7 @@ test("tracking training bonus precedes the situation field and contributes once 
   assert.ok(content.indexOf('name="mount-training"') < content.indexOf('name="modifier"'));
   assert.match(content, /name="mount-training"[^>]*value="0"/);
   assert.ok(renderedCards.at(-1).data.flavor.includes("+4"));
-  assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls[0].formula, "1d20");
+  assert.equal(runtime.messages.length, 1); assert.deepEqual(runtime.messages[0].rolls, []);
 });
 
 test("Dwarven Smith automatically modifies only its chosen specialty and skill dialogs omit the redundant number",async t=>{
@@ -1410,7 +1414,7 @@ test("fetch and guard roll the trained animal's VC with the situation modifier, 
   assert.equal((await performTrainedAnimalAction(ability, "fetch")).target, 7);
   runtime.response = {degree: 5, modifier: 2};
   assert.equal((await performTrainedAnimalAction(ability, "guard")).target, 20);
-  assert.equal(runtime.messages.length, 2); assert.equal(runtime.messages[0].rolls[0].formula, "1d20");
+  assert.equal(runtime.messages.length, 2); assert.deepEqual(runtime.messages[0].rolls, []);
   runtime.response = false;
   assert.equal(await performTrainedAnimalAction(ability, "guard"), null);
   assert.equal(runtime.messages.length, 2, "cancel must produce neither dice nor chat messages");
@@ -1438,7 +1442,7 @@ for (const Sheet of [TrudvangCharacterSheet, TrudvangNpcSheet]) {
     assert.equal(runtime.messages.length, 2);
     assert.equal(JSON.stringify(wearer.system), resources);
     assert.equal(renderedCards.filter(card => card.path.endsWith("damage-roll-dialog.hbs")).length, 3);
-    assert.equal(renderedCards.at(-3).data.parsed.faces, 5);
+    assert.ok(renderedCards.some(card => card.path.endsWith("damage-roll-dialog.hbs") && card.data.parsed.faces === 5));
   });
 }
 
@@ -1716,6 +1720,7 @@ test("a targeted divine invocation creates a chat allocation record but no maint
 
 test("perfect spell success spends only the original vitner cost and stores free improvements",async t=>{
  const runtime=mockActionRuntime(t,{die:1}),npc=magicalNpc("Démon tangible");
+ const previousUsers=game.users;game.users=[{id:"gm",isGM:true}];t.after(()=>{game.users=previousUsers;});
  Object.defineProperty(npc,"selectedVitnerType",{value:{id:"vaagritalja",level:3,perfectSuccessMax:1},configurable:true});
  const id="vitner-body-vitner:hasten:9",levels=[{id:`${id}:0`,effect:"Durée",cost:1,maxCount:null}];
  const spell={id:"spell",uuid:"Actor.npc.Item.spell",type:"spell",name:"Hâte",system:{catalogId:id,cost:3,modifier:0,spellType:"lasting",powerLevels:levels}};
@@ -1730,8 +1735,8 @@ test("perfect spell success spends only the original vitner cost and stores free
  assert.equal(npc._source.system.resources.vitner.value,91);
  assert.equal(npc.system.activeSpellCastings[0].cost,4);
  assert.equal(npc.system.activeSpellCastings[0].powerLevelSnapshot[0].count,3);
- assert.equal(runtime.messages[0].updated["flags.trudvang-chronicles.ruleTestContext"].countsById[levels[0].id],3);
- assert.equal(runtime.messages[1].rolls[0].formula,"1d10+1");
+ assert.equal(runtime.messages.find(message=>message.flags?.["trudvang-chronicles"].npcRoll).updated["flags.trudvang-chronicles.ruleTestContext"].countsById[levels[0].id],3);
+ assert.equal(runtime.messages.at(-1).flags["trudvang-chronicles"].npcRollDetails.rollData[0].formula,"1d10+1");
 });
 
 test("innate NPC magic requires an explicit casting SV and respects the unlimited-vitner feat", async t => {
@@ -1860,7 +1865,7 @@ for (const type of ["character", "npc"]) {
     assert.equal((await instance.rollConcentration()).target, 2);
     assertStateBreakdown(runtime);
     assert.equal(runtime.messages.length, 5);
-    assert.ok(runtime.messages.every(message => message.rolls[0].formula === "1d20"));
+    assert.ok(runtime.messages.every(message => message.rolls.length === (type === "npc" ? 0 : 1)));
   });
 
   test(`${type}: melee, ranged, shield and natural attacks/parries apply states independently of CP spending`, async t => {
@@ -2377,7 +2382,7 @@ test("weapon attacks use size-adjusted VC per target with one allocation, one ac
   const result = await npc.rollWeaponAction(item, "attack");
   assert.deepEqual(result.attackTargets.map(row => [row.target, row.success]), [[7, true], [2, false]]);
   assert.equal(spending, 1); assert.equal(actions, 1);
-  assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls.length, 1);
+  assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls.length, 0);
   assert.match(runtime.dialogs[0].content, /combat-size-modifiers/);
   runtime.response = null;
   await npc.rollWeaponAction(item, "parry");
@@ -2460,7 +2465,7 @@ test("passive protection intercepts at the effective PP threshold without skill 
     assert.equal(result.success, expected); assert.equal(result.target, pp);
     const card = renderedCards.at(-1);
     assert.match(card.path, /passive-protection/); assert.equal(card.data.success, expected);
-    assert.equal(runtime.messages.at(-1).rolls[0].formula, "1d20");
+    assert.deepEqual(runtime.messages.at(-1).rolls, []);
   }
   assert.equal(runtime.messages.length, 4);
   shield.system.equipped=false; assert.equal(await instance.rollPassiveProtection(shield), null);
@@ -2557,7 +2562,7 @@ test("creation mode includes invested adventure points and returns refunded poin
 });
 
 test("night rest posts a compact recovery message and keeps fear recovery separate",async t=>{
- const runtime=mockActionRuntime(t,{die:3}),instance=actor();instance.isOwner=true;instance.name="Eira";
+ const runtime=mockActionRuntime(t,{die:3}),instance=actor();instance.type="character";instance.isOwner=true;instance.name="Eira";
  instance.system.healthRecovery={amount:3,days:1};instance.system.resources.body.current=9;instance.system.resources.body.max=10;
  Object.assign(instance.system.resources.vitner,{value:2,max:8});Object.assign(instance.system.resources.divinity,{value:3,max:9,temporary:4});
  instance.system.resources.fear.current=5;instance._source.system.resources.fear.value=5;instance._source.system.rest={healthRecoveryNights:0};

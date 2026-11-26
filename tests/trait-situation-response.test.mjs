@@ -44,7 +44,8 @@ globalThis.Roll = class {
     return this;
   }
 };
-globalThis.ChatMessage = {create: () => { throw new Error("A response must not create another chat message"); }};
+const details = [];
+globalThis.ChatMessage = {getSpeaker: () => ({}), create: data => { assert.equal(data.blind,true); details.push(data); }};
 
 function actor(id, trait, owner = true, type = "character") {
   const document = {
@@ -80,9 +81,11 @@ test("GM records player-supplied dice on the original card, with all four outcom
     const rows = JSON.parse(message.content).responses;
     assert.equal(rows.at(-1).outcome, outcome);
     assert.equal(rows.at(-1).success, success);
-    assert.equal(rows.at(-1).result, die);
+    assert.equal(rows.at(-1).result, performer === npc ? undefined : die);
   }
   assert.equal(updates, 4);
+  assert.equal(details.length, 1);
+  assert.deepEqual(details[0].whisper, [gm.id]);
   assert.equal(evaluated, 0, "the GM never evaluates a player's die");
   assert.equal(request.responses.length, 4);
   assert.equal(request.responses.at(-1).tokenUuid, token.uuid);

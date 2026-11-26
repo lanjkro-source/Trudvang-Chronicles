@@ -1,3 +1,5 @@
+import {isNpcRoll,publishNpcRollDetails,renderRollCard} from "./chat-roll-privacy.mjs";
+import {rollOutcomeView} from "./rules/roll-outcome-view.mjs";
 import {renderTemplate} from "./helpers.mjs";
 import {TRUDVANG} from "./config.mjs";
 import {resolveRollUnderOutcome} from "./rules/roll-under-resolver.mjs";
@@ -113,14 +115,17 @@ async function recordTraitSituationResponseNow(payload) {
       + (request.environment ? environmentActorValues(actor, request.environment).modifier : 0)
       + payload.modifier;
     const {success} = resolveRollUnderOutcome(payload.result, target);
-    const responses = [...(request.responses ?? []), {
+    const row = {
       actorUuid: actor.uuid,
       tokenUuid: linkedToken?.uuid ?? "",
       name: linkedToken?.name || actor.name,
       result: payload.result,
       target,
       success
-    }];
+    };
+    const npc=isNpcRoll(actor);
+    const responses=[...(request.responses??[]),npc?{actorUuid:row.actorUuid,tokenUuid:row.tokenUuid,name:row.name,success}:row];
+    if(npc)await publishNpcRollDetails({speaker:ChatMessage.getSpeaker({actor}),content:await renderRollCard("roll-card",{actorName:actor.name,actorImg:actor.img,label:request.title||game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"),...row,...rollOutcomeView(row)}),rolls:payload.roll&&globalThis.Roll?.fromData?[Roll.fromData(payload.roll)]:[]});
     const content = await cardContent(message, request, responses);
     await message.update({content, [`flags.${SYSTEM_ID}.traitSituation.responses`]: responses});
     return "recorded";
@@ -213,7 +218,7 @@ export async function requestTraitSituationResponse({message, actor, token, modi
   try {
     const roll = await new Roll("1d20").evaluate();
     const result = Number(roll.total);
-    if (game.modules?.get("dice-so-nice")?.active && typeof game.dice3d?.showForRoll === "function") {
+    if (!isNpcRoll(actor) && game.modules?.get("dice-so-nice")?.active && typeof game.dice3d?.showForRoll === "function") {
       try {
         Promise.resolve(game.dice3d.showForRoll(roll, game.user, true, [], false, undefined,
           ChatMessage.getSpeaker({actor}))).catch(error =>
@@ -222,7 +227,7 @@ export async function requestTraitSituationResponse({message, actor, token, modi
         console.error("Trudvang Chronicles | Resistance roll animation failed", error);
       }
     }
-    return await sendToGM({...base, result, type: "traitSituationSubmit", requestId: crypto.randomUUID()}, responder);
+    return await sendToGM({...base, result, ...(isNpcRoll(actor)?{roll:roll.toJSON?.()}:{}), type: "traitSituationSubmit", requestId: crypto.randomUUID()}, responder);
   } catch (error) {
     console.error("Trudvang Chronicles | Resistance roll failed", error);
     return "unavailable";

@@ -1,3 +1,4 @@
+import {isNpcRoll,recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage,syncSpellZoneLight,cleanupOrphanSpellZoneLights} from './fire-zones.mjs';
 import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
@@ -235,8 +236,9 @@ function placementFeedback(result){
  else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='invalidArea'?'DarknessAreaInvalid':result.status==='fogMoveTooFar'?'FogMoveTooFar':result.status==='outOfRange'?'OutOfRange':'Unavailable'));
 }
 function successfulZoneCast(message,ready){
- const die=Number(message?.rolls?.[0]?.total);
- return Boolean(ready&&Number.isInteger(die)&&die>=1&&die<=19&&(die===1||die<=ready.target));
+ const die=Number(recordedRoll(message)?.total);
+ const target=recordedRollFlag(message,"spellZoneCasting")?.target ?? ready?.target;
+ return Boolean(ready&&Number.isInteger(die)&&die>=1&&die<=19&&(die===1||die<=target));
 }
 
 function fireLightInReach(scene,light,token,profile){
@@ -494,10 +496,10 @@ export async function resolveSpellZoneTestOnAuthority(payload){
    try{roll=Roll.fromData(payload.roll);}catch{return {status:'unavailable'};}
    target=Number(payload.target);
   }else{
-   const proof=game.messages.get(payload.proofId),test=proof?.flags?.[S]?.spellZoneProof;
+   const proof=game.messages.get(payload.proofId),test=recordedRollFlag(proof,"spellZoneProof");
    if((proof?.author?.id??proof?._source?.author)!==user.id||test?.messageId!==message.id
     ||test?.actorUuid!==actor.uuid||test.token!==lock.token)return {status:'unavailable'};
-   roll=proof.rolls?.[0];target=Number(test.target);
+   roll=recordedRoll(proof);target=Number(test.target);
   }
   const die=Number(roll?.total);
   if(roll?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
@@ -505,7 +507,7 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  }
  const next=structuredClone(state);
  if(mud&&!old)delete next.responses[responseKey(actor.uuid)];
- const response=next.responses[responseKey(actor.uuid)]??={outcome,proofId:payload.proofId,resolved:false};
+ const response=next.responses[responseKey(actor.uuid)]??={outcome:isNpcRoll(actor)?{success:outcome.success}:outcome,proofId:payload.proofId,resolved:false};
  if(mud){
   if(response.outcome.success){
    await rope.update({['flags.'+S+'.spellZoneRecipient.quagmire.rescued']:true,description:local('QuagmireRescued')});
@@ -590,15 +592,17 @@ async function checkVitnerWallOnAuthority({messageId,tokenUuid,userId}){
  const message=game.messages.get(messageId),user=game.users.get(userId),token=await foundry.utils.fromUuid(tokenUuid);
  if(!message||!user?.active||!canRead(message,user)||token?.documentName!=='Token'||
    (!user.isGM&&(token.hidden&&!token.actor?.testUserPermission(user,'OWNER'))))return {status:'unavailable'};
- const casting=message.flags?.[S]?.ruleTestContext,site=casting?.barrierOrigin;
- if(!site||site.sceneId!==token.parent.id||site.level!==(token.level??null))return {status:'pass'};
+ const casting=recordedRollFlag(message,'ruleTestContext'),site=casting?.barrierOrigin;
  if(!(user.isGM||message.author?.id===user.id||token.actor?.testUserPermission(user,'OWNER')))return {status:'unavailable'};
- const blocked=await vitnerWallBlocks({scene:token.parent,level:token.level,origin:site,target:tokenBarrierCenter(token),message});
+ const saved=casting?.nidTargets?.find(row=>row.tokenUuid===token.uuid);
+ if(nidPreventsCasting(message,saved??nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat})))return {status:'nidBlocked'};
+ if(!site||site.sceneId!==token.parent.id||site.level!==(token.level??null))return {status:'pass'};
+ const blocked=casting.kind==='spell'&&await vitnerWallBlocks({scene:token.parent,level:token.level,origin:site,target:tokenBarrierCenter(token),message});
  return {status:blocked?'blocked':'pass'};
 }
 
 export async function magicBlockedForTarget(message,actor,tokenUuid){
- const casting=message?.flags?.[S]?.ruleTestContext;
+ const casting=recordedRollFlag(message,'ruleTestContext');
  if(!isForeignMagic(casting))return false;
  const site=casting.barrierOrigin;
  const saved=casting.nidTargets?.find(row=>tokenUuid?row.tokenUuid===tokenUuid:row.actorUuid===actor.uuid);
@@ -611,6 +615,12 @@ export async function magicBlockedForTarget(message,actor,tokenUuid){
  if(nidPreventsCasting(message,modifier)){
   ui.notifications.warn(local('NidSanctuaryBlocked'));
   return true;
+ }
+ if(message.flags?.[S]?.npcRoll&&!game.user?.isGM){
+  const result=await request({type:'checkVitnerWall',messageId:message.id,tokenUuid:token.uuid});
+  if(result.status==='nidBlocked')ui.notifications.warn(local('NidSanctuaryBlocked'));
+  if(result.status==='unavailable')ui.notifications.warn(local('Unavailable'));
+  return result.status!=='pass';
  }
  if(casting.kind!=='spell'||!site||token.parent?.id!==site.sceneId||(token.level??null)!==site.level)return false;
  const point=tokenBarrierCenter(token);

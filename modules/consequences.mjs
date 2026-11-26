@@ -1,3 +1,4 @@
+import {createActorRollMessage,isNpcRoll} from "./chat-roll-privacy.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
 import {applyDamageToActor} from "./damage-application.mjs";
 import {nextConsequenceEvent} from "./rules/consumable-effects.mjs";
@@ -54,15 +55,18 @@ async function executeConsequencesNow({actor,item=null,operations=[],source=""}=
  }
  return {rows,rolls};
 }
-export function consequenceResultText(row){
+export function consequenceResultText(row,{resultOnly=false}={}){
+ if(resultOnly&&row.operation==="risk") return row.source+" · "+game.i18n.localize(row.amount?"TRUDVANG.Consequence.RiskTriggered":"TRUDVANG.Consequence.RiskAvoided");
  return game.i18n.format(`TRUDVANG.Consequence.Result.${row.operation}`,{amount:row.amount,rolled:row.rolled,source:row.source,resource:row.resource?game.i18n.localize(`TRUDVANG.Resource.${row.resource[0].toUpperCase()+row.resource.slice(1)}`):"",outcome:game.i18n.localize(row.amount?"TRUDVANG.Consequence.RiskTriggered":"TRUDVANG.Consequence.RiskAvoided")});
 }
 export async function announceConsequences(actor,{rows=[],rolls=[]},source=""){
  if(!rows.length)return null;
  const grouped=new Map();
  for(const row of rows){const key=`${row.source}:${row.operation}:${row.resource}`;if(row.operation==="risk"||!grouped.has(key))grouped.set(row.operation==="risk"?`${key}:${grouped.size}`:key,{...row});else grouped.get(key).amount+=row.amount;}
- return ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),rolls,
-  content:`<div class="trudvang consequence-notice"><strong>${escapeHtml(actor.token?.name||actor.name)}${source?` — ${escapeHtml(source)}`:""}</strong>${[...grouped.values()].map(row=>`<p>${escapeHtml(consequenceResultText(row))}</p>`).join("")}</div>`});
+ const content = resultOnly => `<div class="trudvang consequence-notice"><strong>${escapeHtml(actor.token?.name||actor.name)}${source?` — ${escapeHtml(source)}`:""}</strong>${[...grouped.values()].map(row=>`<p>${escapeHtml(consequenceResultText(row,{resultOnly}))}</p>`).join("")}</div>`;
+ const resultOnly=isNpcRoll(actor)&&rolls.length>0;
+ const data={speaker:ChatMessage.getSpeaker({actor}),rolls,content:content(false)};
+ return resultOnly?createActorRollMessage(actor,data,{resultContent:content(true)}):ChatMessage.create(data);
 }
 const duration=seconds=>seconds>=86400&&seconds%86400===0?{value:seconds/86400,units:"days",expired:false}:seconds>=3600?{value:seconds/3600,units:"hours",expired:false}:{value:seconds/5,units:"rounds",expired:false};
 const clockFlag=effect=>effect.flags?.[SCOPE]?.consequenceClock;

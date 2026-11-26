@@ -1,3 +1,4 @@
+import {createActorRollMessage,isNpcRoll,renderRollCard} from "../chat-roll-privacy.mjs";
 import {weaponUseLocked} from '../rules/transformation-profile.mjs';
 import {actorForResistance} from '../resistance-actor.mjs';
 import {waterMovementBudget} from "../rules/water-movement.mjs";
@@ -19,7 +20,7 @@ import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "..
 import {POWER_DETAILS_BY_ID} from "../power-catalog-data.mjs";
 import {requestEndMaintainedSpell} from "../maintained-spell-tracking.mjs";
 import {canBindSpell} from "../magic-seal.mjs";
-import { escapeHtml, renderTemplate } from "../helpers.mjs";
+import { escapeHtml } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { divinePowerId } from "../rules/divine-failure.mjs";
 import {fatalAbsence, fatalAmnesia, fatalRecoveryBlocked, fatalVitnerState, storedVitnerForCurrent} from "../rules/fatal-magic.mjs";
@@ -1012,7 +1013,7 @@ export class TrudvangActor extends BaseActor {
       return rollUnder({blessing:options.blessing, actor: this, label, target, kind: "situation", flavor: rollModifierFlavor([...effectRows.map(row => ({...row, included: true})), ...modifierRows])});
     }
     const openRoll = await openD10({threshold: 10, modifier: trait + options.bonus + effect});
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/open-trait-roll-card.hbs", {
+    const view = {
       actorName: this.name,
       actorImg: this.img,
       label,
@@ -1022,8 +1023,9 @@ export class TrudvangActor extends BaseActor {
       bonus: options.bonus,
       effect,
       flavor: rollModifierFlavor([...effectRows.map(row => ({...row, included: true})),...(options.blessing?[options.blessing]:[])])
-    });
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: openRoll.diceRolls});
+    };
+    await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:await renderRollCard("open-trait-roll-card",view),rolls:openRoll.diceRolls},
+      {resultContent:isNpcRoll(this)?await renderRollCard("open-trait-roll-card",view,{resultOnly:true}):undefined});
     return openRoll;
   }
 
@@ -1065,17 +1067,18 @@ export class TrudvangActor extends BaseActor {
       .filter(candidate => candidate.actor === this || candidate.actor?.uuid === this.uuid);
     if (combatants.length) await Promise.all(combatants.map(candidate => candidate.update({initiative: result.total})));
     if (!game.settings?.get("trudvang-chronicles", "initiativeChatMessages")) return result.total;
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/initiative-card.hbs", {
+    const view = {
       actorName: this.name,
       actorImg: this.img,
       total: result.total,
       detail,
       flavor: rollModifierFlavor([...effectContributions(this, "system.modifiers.rolls.initiative"), ...this.traitEffectRows("dexterity")].map(row => ({...row, included: true}))),
       modifier: result.modifier
-    });
+    };
     // Pass the raw d10 Roll objects (V16/Dice So Nice): without `rolls` the chat card renders
     // but no 3D dice are animated. Same objects that produced `total`, so nothing is re-rolled.
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: result.diceRolls});
+    await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:await renderRollCard("initiative-card",view),rolls:result.diceRolls},
+      {resultContent:isNpcRoll(this)?await renderRollCard("initiative-card",view,{resultOnly:true}):undefined});
     return result.total;
   }
 
@@ -1091,12 +1094,13 @@ export class TrudvangActor extends BaseActor {
     const roll = new Roll("1d20");
     await roll.evaluate();
     const success = Number(roll.total) <= target;
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/passive-protection.hbs", {
+    const view = {
       actorName: this.name, actorImg: this.img,
       label: `${item.name} — ${game.i18n.localize("TRUDVANG.PassiveProtection.Title")}`,
       result: roll.total, target, success
-    });
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: [roll]});
+    };
+    await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:await renderRollCard("passive-protection",view),rolls:[roll]},
+      {resultContent:isNpcRoll(this)?await renderRollCard("passive-protection",view,{resultOnly:true}):undefined});
     return {roll, target, success};
   }
 
@@ -1591,7 +1595,7 @@ export class TrudvangActor extends BaseActor {
       seal: seal ? {effect: seal, token: sealToken, cost: options.cost, levels: levelSnapshot} : null,
       resolvePerfectSuccess:isDivine?null:async()=>{
         const bonusRoll=await new Roll("1d10+1").evaluate();
-        await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]});
+        await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]},{hideOutcome:true});
         const availableLevels=wall&&activeSpellInstances(this).length>=activeSpellLimit
           ?powerLevels.map((level,index)=>index===7?{...level,maxCount:0}:level):powerLevels;
         const selection=await perfectSuccessDialog({title:item.name,powerLevels:availableLevels,entries:options.costBreakdown.entries,bonus:Number(bonusRoll.total)});
@@ -1745,11 +1749,11 @@ export class TrudvangActor extends BaseActor {
     await this.update({"system.resources.fear.value": Math.max(0, stored - recovered)});
     const after = Math.max(0, before - recovered);
     const message = game.i18n.format("TRUDVANG.Notification.CalmFear", {actor: this.name, amount: recovered, before, after});
-    await ChatMessage.create({
+    await createActorRollMessage(this,{
       speaker: ChatMessage.getSpeaker({actor: this}),
       content: `<p class="trudvang fear-recovery"><i class="fas fa-heart"></i> ${escapeHtml(message)}</p>`,
       rolls: [roll]
-    });
+    },{hideOutcome:true});
     return {roll, recovered, before, after};
   }
 
@@ -1779,8 +1783,9 @@ export class TrudvangActor extends BaseActor {
       ...(Number(options.acclimatization || 0) ? [game.i18n.format("TRUDVANG.Calculation.FearAcclimatization", {amount: Number(options.acclimatization)})] : []),
       ...(Number(options.situational || 0) ? [game.i18n.format("TRUDVANG.Calculation.FearSituation", {amount: Number(options.situational)})] : [])
     ];
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-card.hbs", {actorName: this.name, actorImg: this.img, total: Math.max(0, roll.total), detail: roll.rolls.join(" + "), factor: notation, modifierDetails});
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: roll.diceRolls,flags:{"trudvang-chronicles":{fearContext:{profile:{dice:factor.dice,faces:factor.faces,threshold:factor.threshold,modifier:0},values:roll.rolls,adjustment:modifier}}}});
+    const view={actorName:this.name,actorImg:this.img,total:Math.max(0,roll.total),detail:roll.rolls.join(" + "),factor:notation,modifierDetails};
+    await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:await renderRollCard("fear-card",view),rolls:roll.diceRolls,flags:{"trudvang-chronicles":{fearContext:{profile:{dice:factor.dice,faces:factor.faces,threshold:factor.threshold,modifier:0},values:roll.rolls,adjustment:modifier}}}},
+      {resultContent:isNpcRoll(this)?await renderRollCard("fear-card",view,{resultOnly:true}):undefined});
     return roll;
   }
 
@@ -1800,11 +1805,11 @@ export class TrudvangActor extends BaseActor {
       ...bodyHealthUpdate(this,effectiveMax,{maximum:effectiveMax}),
       "system.survivalRounds": -1
     });
-    await ChatMessage.create({
+    await createActorRollMessage(this,{
       speaker: ChatMessage.getSpeaker({actor: this}),
       content: `<p class="trudvang">${escapeHtml(game.i18n.format("TRUDVANG.Npc.HealthRolled", {actor: this.name, health, min, max}))}</p>`,
       rolls: [roll]
-    });
+    },{hideOutcome:true});
     return {roll, health};
   }
 
@@ -1815,11 +1820,11 @@ export class TrudvangActor extends BaseActor {
     const rounds = Math.max(0, Number(roll.total || 0));
     await this.update({"system.survivalRounds": rounds});
     const message = game.i18n.format("TRUDVANG.Notification.SurvivalRounds", {actor: this.name, rounds});
-    await ChatMessage.create({
+    await createActorRollMessage(this,{
       speaker: ChatMessage.getSpeaker({actor: this}),
       content: `<p class="trudvang survival-rounds"><i class="fas fa-hourglass-half"></i> ${escapeHtml(message)}</p>`,
       rolls: [roll]
-    });
+    },{hideOutcome:true});
     return {roll, rounds};
   }
 

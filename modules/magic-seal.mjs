@@ -1,3 +1,4 @@
+import {recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {applyItemTransformation} from "./item-effect-application.mjs";
 import {activeSpellRecords} from "./rules/active-spell-resolver.mjs";
 import {currentCastingCounts} from "./rules/magic-resistance.mjs";
@@ -80,9 +81,9 @@ export function canDropSealCard(message, user = game.user) {
 }
 
 export async function prepareMagicSeal(message, item, user = game.user) {
-  const state = message?.flags?.[SCOPE]?.sealPreparation;
+  const state = recordedRollFlag(message,"sealPreparation");
   const context = message?.flags?.[SCOPE]?.ruleTestContext;
-  const roll = message?.rolls?.[0], die = Number(roll?.total);
+  const roll = recordedRoll(message), die = Number(roll?.total);
   if (!writer() || !canDropSealCard(message, user) || !canOpenItem(item, user) || !sealPreparation(context)
       || roll?.formula !== "1d20" || !Number.isInteger(die) || die < 1 || die > 20
       || !Number.isFinite(state.target) || !resolveRollUnderOutcome(die,state.target).success) return null;

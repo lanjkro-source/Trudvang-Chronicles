@@ -1,3 +1,5 @@
+import {recordedRoll} from "../chat-roll-privacy.mjs";
+
 const TABLE_IDS = new Map([
   ["fatal-magic-effects", "fatal-magic-effects"],
   ["fatal-failure-effects", "fatal-failure-effects"],
@@ -22,6 +24,6 @@ export function fatalTotalInRange(total, first, last) {
 }
 
 export function matchesFatalResult(message, result, rule) {
-  return Boolean(result && rule && (fatalTotalInRange(message.rolls?.[0]?.total, result.row, rule.last)
+  return Boolean(result && rule && (fatalTotalInRange(recordedRoll(message)?.total, result.row, rule.last)
     || (result.forced === true && message.author?.isGM)));
 }

@@ -21,6 +21,7 @@ globalThis.foundry={applications:{handlebars:{renderTemplate:async(path,data)=>H
 Handlebars.registerHelper('eq',(a,b)=>a===b);
 Handlebars.registerHelper('localize',(key,options)=>game.i18n.format(key,options.hash));
 const {createSpellZoneOnAuthority,reconcileSpellZone,resolveSpellZoneRequest,registerSpellZoneSupport,requestSpellZoneTest,placeSpellZone,spellWallCardState,openSpellWallDamage,migrateToikalokkeEarthquake}=await import('../modules/spell-zones.mjs');
+const {recordedRoll,recordedRollFlag}=await import("../modules/chat-roll-privacy.mjs");
 const {applyFatalEnclosure, registerFatalEnclosures}=await import('../modules/fatal-enclosure.mjs');
 const applyInstant=(prompt,user=owner)=>resolveSpellZoneRequest({type:'applyInstantSpellZone',messageId:prompt.id,userId:user.id});
 let gm,owner,observer,scene,caster,target,message,regions;
@@ -62,7 +63,7 @@ test('Blessed Home is a fixed daylight rite and applies one DC per target for a 
  const previousRoll=globalThis.Roll;
  const previousUI=globalThis.ui;
  globalThis.ui={notifications:{warn:()=>{}}};
- globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=this.formula==='1'?1:9;return this;}};
+ globalThis.Roll=class{static fromData(data){return data;}constructor(formula){this.formula=formula;}async evaluate(){this.total=this.formula==='1'?1:9;return this;}};
  try{
   assert.equal((await createSpellZoneOnAuthority(request)).status,'unavailable');
   assert.equal(caster.system.resources.body.value,20);
@@ -86,7 +87,8 @@ test('Blessed Home is a fixed daylight rite and applies one DC per target for a 
   const item={type:'divineFeat',name:'Ability',system:{level:2,catalogId:'custom',religion:'haminges'}};
   assert.equal((await rollUnder({actor:caster,item,kind:'divine',label:item.name,target:10})).success,true);
   const card=[...game.messages.values()].at(-1);
-  assert.match(card.content,/target.*Foyer béni.*VC 7/);
+  assert.doesNotMatch(card.content,/Foyer béni|VC 7/);
+  assert.match(game.messages.get(card.flags[S].npcRoll.detailId).content,/target.*Foyer béni.*VC 7/);
   assert.equal(await magicBlockedForTarget(card,target,inside.uuid),true);
   assert.equal(await magicBlockedForTarget(card,caster,outside.uuid),false);
   inside.x=900;
@@ -346,8 +348,8 @@ test('Seal defers a successful spell, freezes critical improvements and releases
   const request={action:'release',userId:observer.id,effectUuid:seal.uuid,targetUuid:tokenDoc.uuid};
   const released=await Promise.all([handleSealRequest(request),handleSealRequest(request)]);
   assert.equal(released.filter(result=>result.status==='released').length,1);
-  assert.equal(game.messages.get('release-seal').rolls[0].total,1);
-  assert.match(game.messages.get('release-seal').content,/117 L.*7 min.*10 m/);
+  assert.equal(recordedRoll(game.messages.get('release-seal')).total,1);
+  assert.match(game.messages.get(game.messages.get('release-seal').flags[S].npcRoll.detailId).content,/117 L.*7 min.*10 m/);
   assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.targetUuid,tokenDoc.uuid);
   assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.userId,observer.id);
   assert.equal(seal.disabled,true);
@@ -889,7 +891,7 @@ test('out of range, failed casting and observers cannot create a zone',async()=>
 test('rune response uses a real d20, records one result, and incapacitates through the following round',async()=>{
  const p=setup(rune,{},3);await createSpellZoneOnAuthority(p);const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest),base={type:'spellZoneTest',messageId:prompt.id,userId:owner.id,actorUuid:target.uuid};const begin=await resolveSpellZoneRequest({...base,action:'begin'});assert.equal(begin.status,'reserved');assert.equal((await resolveSpellZoneRequest({...base,action:'begin'})).status,'busy');
  game.messages.set('proof',{author:owner,rolls:[{formula:'1d20',total:20}],flags:{[S]:{spellZoneProof:{messageId:prompt.id,actorUuid:target.uuid,token:begin.token,target:99}}}});
- const end={...base,action:'finish',token:begin.token,proofId:'proof'};assert.equal((await resolveSpellZoneRequest(end)).status,'resolved');assert.deepEqual(target.effects[0].statuses,['stun']);assert.equal(target.effects[0].duration.value,2);assert.equal((await resolveSpellZoneRequest(end)).status,'alreadyRolled');assert.equal(target.effects.length,1);assert.match(prompt.content,/Échec auto/);
+ const end={...base,action:'finish',token:begin.token,proofId:'proof'};assert.equal((await resolveSpellZoneRequest(end)).status,'resolved');assert.deepEqual(target.effects[0].statuses,['stun']);assert.equal(target.effects[0].duration.value,2);assert.equal((await resolveSpellZoneRequest(end)).status,'alreadyRolled');assert.equal(target.effects.length,1);assert.match(prompt.content,/Échec/);assert.doesNotMatch(prompt.content,/Échec auto/);
 });
 test('cancellation and a forged or stale response never impose consequences',async()=>{
  await createSpellZoneOnAuthority(setup(rune));const prompt=[...game.messages.values()].find(m=>m.flags?.[S]?.spellZoneTest),base={type:'spellZoneTest',messageId:prompt.id,userId:owner.id,actorUuid:target.uuid};const b=await resolveSpellZoneRequest({...base,action:'begin'});assert.equal((await resolveSpellZoneRequest({...base,action:'finish',token:b.token,proofId:'forged'})).status,'unavailable');await resolveSpellZoneRequest({...base,action:'cancel',token:b.token});assert.equal(target.effects.length,0);game.combat.round=2;assert.equal((await resolveSpellZoneRequest({...base,action:'begin'})).status,'unavailable');
@@ -920,7 +922,7 @@ test('flying creatures are excluded and an elapsed world-time duration removes a
 
 test('a successful native casting card exposes zone placement instead of unrestricted damage or manual resistance buttons',async()=>{
  setup();const old=globalThis.Roll;globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=5;}};
- try{const {rollUnder}=await import('../modules/dice.mjs');await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.quake',name:'Tremblement de terre',type:'spell',actor:caster,system:{catalogId:vitner,level:2}},label:'Tremblement de terre',target:12,kind:'spell'});const card=[...game.messages.values()].find(m=>m.id!=='cast');assert.match(card.content,/place-spell-zone/);assert.doesNotMatch(card.content,/data-action="magic-damage"|data-action="roll-rule-test"/);assert.equal(card.flags[S].spellZoneCasting.target,12);}
+ try{const {rollUnder}=await import('../modules/dice.mjs');await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.quake',name:'Tremblement de terre',type:'spell',actor:caster,system:{catalogId:vitner,level:2}},label:'Tremblement de terre',target:12,kind:'spell'});const card=[...game.messages.values()].find(m=>m.flags?.[S]?.npcRoll);assert.match(card.content,/place-spell-zone/);assert.doesNotMatch(card.content,/data-action="magic-damage"|data-action="roll-rule-test"/);assert.equal(recordedRollFlag(card,'spellZoneCasting').target,12);}
  finally{globalThis.Roll=old;}
 });
 test('linked tokens in one zone share one penalty and keep it while another representation remains inside',async()=>{

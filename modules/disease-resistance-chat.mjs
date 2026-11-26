@@ -1,3 +1,4 @@
+import {isNpcRoll} from "./chat-roll-privacy.mjs";
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
@@ -37,14 +38,16 @@ async function recordNow(payload){
  const clock=effect.flags[S].consequenceClock;
  const late=clock?.stage!==0||clock.stageStartedAt+clock.stages[0].seconds<=Number(game.time?.worldTime||0);
  const response={actorUuid:actor.uuid,name:actor.name,result:payload.result,target:payload.target,...resolveRollUnderOutcome(payload.result,payload.target),late};
- const label=rollOutcomeText(response,key=>game.i18n.localize(key));
- const detail=game.i18n.format('TRUDVANG.Disease.ResistanceResult',response);
+ const npc=isNpcRoll(actor);
+ const summary=npc?{actorUuid:response.actorUuid,name:response.name,success:response.success,late}:response;
+ const label=rollOutcomeText(summary,key=>game.i18n.localize(key));
+ const detail=npc?"":game.i18n.format("TRUDVANG.Disease.ResistanceResult",response);
  const row='<div class="disease-resistance-result disease-resistance-result--'+(response.success?'success':'failure')+'"><span>'+escapeHtml(actor.name)+'</span><span>'+escapeHtml(detail)+'</span><strong>'+escapeHtml(label)+'</strong>'+(late?'<em>'+escapeHtml(game.i18n.localize('TRUDVANG.Disease.ResistanceLate'))+'</em>':'')+'</div>';
  const content=message.content.replace(/<button\b([^>]*data-action="roll-rule-test"[^>]*)>/,'<button disabled$1>').replace(/<\/div>\s*$/,row+'</div>');
  // Preserve the notice and its original dice; the resistance is part of this card.
- const rolls=payload.roll?[...message.rolls,Roll.fromData(payload.roll)]:message.rolls;
+ const rolls=payload.roll&&!npc?[...message.rolls,Roll.fromData(payload.roll)]:message.rolls;
  await message.update({content,rolls,whisper:diseaseRecipients(actor),blind:false,
-  ['flags.'+S+'.diseaseResistance']:{effectUuid:effect.uuid,actorUuid:actor.uuid,response},
+  ['flags.'+S+'.diseaseResistance']:{effectUuid:effect.uuid,actorUuid:actor.uuid,response:summary},
   'flags.dice-so-nice.skip':true});
  return {response,animate:true};
 }

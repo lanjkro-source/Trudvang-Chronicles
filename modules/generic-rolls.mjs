@@ -1,3 +1,4 @@
+import {createActorRollMessage,isNpcRoll,renderRollCard} from "./chat-roll-privacy.mjs";
 import {damageIcons} from "./damage-icons.mjs";
 import {openDice, damageRollDialog, requestTraitSituationRoll} from "./dice.mjs";
 import {escapeHtml, renderTemplate} from "./helpers.mjs";
@@ -44,16 +45,16 @@ export async function rollGenericImpact(kind = "damage", {actor: requestedActor,
   const detail = `${rolled.rolls.join(" + ")}${choice.modifier ? ` ${choice.modifier > 0 ? "+" : "−"} ${Math.abs(choice.modifier)}` : ""}`;
   const fearTargets = fearArea ? nativeFearTargets(fearArea,fearContext?.originMessageId,fearContext) : null;
   const fearTargetsHTML = fearArea ? await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-targets.hbs", {total, targets:fearTargets}) : "";
-  const content = await renderTemplate(`systems/trudvang-chronicles/templates/chat/${fear ? "fear" : "damage"}-card.hbs`, {
+  const view = {
     actorName: actor?.name ?? game.user.name, actorImg: actor?.img ?? game.user.avatar,
     modifierDetails: notice&&!fearArea?[notice]:[], title: choice.title, itemName: choice.title, itemImg: "icons/svg/d20.svg", total, detail, factor,
     fearArea: fearArea ? {notice} : null, fearTargetsHTML
-  });
-  await ChatMessage.create({speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(), content,
+  };
+  await createActorRollMessage(actor,{speaker:actor?ChatMessage.getSpeaker({actor}):ChatMessage.getSpeaker(),content:await renderRollCard("fear-card",view),
     rolls: rolled.diceRolls, flags: {"trudvang-chronicles": {
       ...(fearArea?{fearTargets}:{}),
       fearContext:{...fearContext,profile:{dice:choice.dice,faces:choice.faces,threshold:choice.threshold,modifier:Number(fearContext?.profile?.modifier)||0},values:rolled.rolls,adjustment:choice.modifier-(Number(fearContext?.profile?.modifier)||0)}
-    }}});
+    }}},{resultContent:isNpcRoll(actor)?await renderRollCard("fear-card",view,{resultOnly:true}):undefined});
   return rolled;
 }
 
@@ -72,7 +73,7 @@ async function rollStandaloneDamage({actor:requestedActor,title:requestedTitle,d
  const factor=choice.dice?choice.dice+'d'+choice.faces+(choice.openRoll?' '+game.i18n.localize('TRUDVANG.Roll.OpenRoll')+' '+choice.openRoll+'+':''):'';
  const detail=choice.dice?factor+' : '+rolled.rolls.join(' + ')+(choice.fixedModifier?' '+(choice.fixedModifier>0?'+':'−')+' '+Math.abs(choice.fixedModifier):''):String(choice.fixedModifier);
  const targetsHTML=await renderTemplate('systems/trudvang-chronicles/templates/chat/damage-targets.hbs',{total,targets});
- const content=await renderTemplate('systems/trudvang-chronicles/templates/chat/damage-card.hbs',{actorName:actor?.name??game.user.name,actorImg:actor?.img??game.user.avatar,itemName:choice.title,itemImg:'icons/svg/d20.svg',total,detail,targetsHTML,qualificationHTML:damageIcons(choice.qualification),modifierDetails:[]});
- await ChatMessage.create({speaker:actor?ChatMessage.getSpeaker({actor}):ChatMessage.getSpeaker(),content,rolls:rolled.diceRolls,flags:{'trudvang-chronicles':{damageTargets:targets,damageContext:{usage:choice.damageUsage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification}}}});
+ const view={actorName:actor?.name??game.user.name,actorImg:actor?.img??game.user.avatar,itemName:choice.title,itemImg:"icons/svg/d20.svg",total,detail,targetsHTML,qualificationHTML:damageIcons(choice.qualification),modifierDetails:[]};
+ await createActorRollMessage(actor,{speaker:actor?ChatMessage.getSpeaker({actor}):ChatMessage.getSpeaker(),content:await renderRollCard("damage-card",view),rolls:rolled.diceRolls,flags:{'trudvang-chronicles':{damageTargets:targets,damageContext:{usage:choice.damageUsage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification}}}},{resultContent:isNpcRoll(actor)?await renderRollCard("damage-card",view,{resultOnly:true}):undefined});
  return rolled;
 }

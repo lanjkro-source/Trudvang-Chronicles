@@ -1,3 +1,4 @@
+import {createActorRollMessage} from "./chat-roll-privacy.mjs";
 import {diseaseRecipients,diseaseRecordedResult} from './disease-resistance-chat.mjs';
 import {TRANSFORMATION_TEMPLATES} from './transformation-data.mjs';
 import {RULE_TESTS_BY_CATALOG_ID} from './rule-test-data.mjs';
@@ -35,7 +36,8 @@ export async function beginDiseaseIncubation(source,actor){
   ]});
   if(effect){
    const text=game.i18n.format(spec.kind==='sores'?'TRUDVANG.Disease.SoresNotice':'TRUDVANG.Disease.IncubationNotice',{actor:actor.name,minutes,days:count,remaining:count,penalty:spec.penalty});
-   const message=await ChatMessage.create({whisper:diseaseRecipients(actor),flags:{[S]:{diseaseResistance:{actorUuid:actor.uuid,effectUuid:effect.uuid}}},speaker:ChatMessage.getSpeaker({actor}),rolls:[incubation,amount],content:`<div class="trudvang consequence-notice" data-rule-document-uuid="${escapeAttribute(effect.uuid??'')}"><p>${escapeHtml(text)}</p><button type="button" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20"></i> ${escapeHtml(local('Resist'))}</button></div>`});
+   const data={whisper:diseaseRecipients(actor),flags:{[S]:{diseaseResistance:{actorUuid:actor.uuid,effectUuid:effect.uuid}}},speaker:ChatMessage.getSpeaker({actor}),rolls:[incubation,amount],content:`<div class="trudvang consequence-notice" data-rule-document-uuid="${escapeAttribute(effect.uuid??'')}"><p>${escapeHtml(text)}</p><button type="button" data-action="roll-rule-test" data-test-index="0"><i class="fas fa-dice-d20"></i> ${escapeHtml(local('Resist'))}</button></div>`};
+   const message=await createActorRollMessage(actor,data,{resultContent:data.content});
    if(message?.id)await effect.update({['flags.'+S+'.diseaseIncubation.messageId']:message.id});
   }
   return effect;

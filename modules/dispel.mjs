@@ -1,3 +1,4 @@
+import {recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {dispelCandidate,dispelFingerprint,vitnerIdentity} from './rules/dispel.mjs';
 import {RULE_TESTS_BY_CATALOG_ID} from './rule-test-data.mjs';
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
@@ -65,7 +66,7 @@ export function resolveDispelOnAuthority(payload){
  return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});
 }
 async function resolveNow({messageId,userId}){
- const message=game.messages?.get(messageId),attempt=message?.flags?.[S]?.dispelAttempt,user=game.users?.get(userId);
+ const message=game.messages?.get(messageId),attempt=recordedRollFlag(message,"dispelAttempt"),user=game.users?.get(userId);
  const caster=attempt?await foundry.utils.fromUuid(attempt.casterUuid):null;
  if(!attempt||!user?.active||!caster)return 'unavailable';
  const recipient=attempt.recipientUuid?await foundry.utils.fromUuid(attempt.recipientUuid):null;
@@ -76,7 +77,7 @@ async function resolveNow({messageId,userId}){
  const automatic=cleansing&&(test.dispel.roll==='none'||test.dispel.roll==='self'&&recipient?.uuid!==caster.uuid);
  if(automatic!==Boolean(attempt.automatic))return 'unavailable';
  if(automatic&&!user.isGM&&!caster.testUserPermission?.(user,'OWNER'))return 'unavailable';
- if(!automatic){const die=Number(message.rolls?.[0]?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';}
+ if(!automatic){const die=Number(recordedRoll(message)?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';}
  if(attempt.resolved)return attempt.status??'removed';
  const effect=await foundry.utils.fromUuid(attempt.effectUuid);
  if(!authority()&&(!message.canUserModify?.(game.user,'update')||(effect&&!effect.canUserModify?.(game.user,'delete'))))return 'unavailable';
@@ -92,7 +93,7 @@ async function resolveNow({messageId,userId}){
  await effect.delete();status='removed';}
  const line='<p class="dispel-result">'+escapeHtml(game.i18n.format(status==='removed'?(cleansing?'TRUDVANG.Cleansing.Removed':'TRUDVANG.Dispel.Removed'):'TRUDVANG.Dispel.Gone',{effect:effect?.name??''}))+'</p>';
  const content=String(message.content).replace(/<\/article>\s*$/,line+'</article>');
- await message.update({content,['flags.'+S+'.dispelAttempt']:{...attempt,resolved:true,status}});return status;
+ await message.update({content,['flags.'+S+'.dispelAttempt']:{...(message.flags?.[S]?.dispelAttempt??{}),resolved:true,status}});return status;
 }
 export function registerDispelSocket(){
  if(registered||!game.socket)return;registered=true;

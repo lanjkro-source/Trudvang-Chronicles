@@ -34,7 +34,7 @@
       {{else}}
       <span class="trait-situation-token-name">{{name}}</span>
       {{/if}}
-      <strong class="trait-situation-die">{{result}}</strong>
+      {{#if result}}<strong class="trait-situation-die">{{result}}</strong>{{/if}}
       <strong class="trait-situation-outcome">{{outcomeLabel}}</strong>
       {{#if ../environment}}<button type="button" data-action="apply-environment-fatigue" data-actor-uuid="{{actorUuid}}" {{#if fatigueApplied}}disabled{{/if}} title="{{localize "TRUDVANG.Environment.addFatigue"}}"><i class="fas fa-person-walking"></i> {{localize "TRUDVANG.Content.Item.Fatigued.Name"}}{{#if fatigueApplied}} ✓{{/if}}</button>{{/if}}
     </li>

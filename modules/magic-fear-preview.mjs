@@ -1,3 +1,4 @@
+import {recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {auraColor} from './aura.mjs';
 import {canResolveReleasedSeal} from './magic-seal.mjs';
 import {POWER_DETAILS_BY_ID} from './power-catalog-data.mjs';
@@ -65,12 +66,13 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
   if (regions.length || !scene || !fear?.area) return;
   const token = values(scene.tokens).find(row => row.uuid === area.casterTokenUuid);
   const author = cast.author;
-  const result = Number(cast.rolls?.[0]?.total);
+  const result = Number(recordedRoll(cast)?.total);
+  const target = recordedRollFlag(cast,"magicFearArea")?.target;
   const {x,y} = area.origin ?? {};
   const actorUuid=section(cast)?.releasedSeal?.actorUuid??context.casterUuid;
   if (!token?.actor || token.actor.uuid !== actorUuid || !author ||
       (!token.actor.testUserPermission(author,'OWNER')&&!canResolveReleasedSeal(cast,author))
-      || !Number.isInteger(result) || result < 1 || result > 19 || (result !== 1 && !(result <= area.target))
+      || !Number.isInteger(result) || result < 1 || result > 19 || (result !== 1 && !(result <= target))
       || ![x,y,area.radiusPixels].every(Number.isFinite) || area.radiusPixels <= 0) return;
   const restricted = cast.blind || cast.whisper?.length;
   const recipients = [author.id,...Array.from(cast.whisper ?? [],user => user.id ?? user)];

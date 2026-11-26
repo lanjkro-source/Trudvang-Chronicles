@@ -1,3 +1,4 @@
+import {createActorRollMessage,isNpcRoll,publishNpcRollDetails,renderRollCard,updateActorRollMessage,publicCastingContext} from "./chat-roll-privacy.mjs";
 import {withConditionalEffectConsumption} from './rules/effect-conditional-tests.mjs';
 import {heatingConsequence,purificationConsequence} from './water-purification.mjs';
 import {sealPreparation as prepareSealData, storeSealedSpell} from './magic-seal.mjs';
@@ -183,13 +184,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     const stored=await storeSealedSpell(seal.effect,actor,item,{roll,target:finalTarget,context,cost:seal.cost,token:seal.token,
       levels:seal.levels.map((entry,index)=>({...entry,count:counts[index]??0}))});
     if(!stored)throw Error(game.i18n.localize("TRUDVANG.Seal.Unavailable"));
-    const content=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",{
+    const view={
       actorName:actor.name,actorImg:actor.img,label,kind,result,target:finalTarget,success,critical,
       ...rollOutcomeView({result,target:finalTarget,success}),
       flavor:[flavor,...(perfectSelection?.flavor??[])].filter(Boolean).join("<br>"),
       successConsequence:game.i18n.format("TRUDVANG.Seal.Bound",{object:seal.effect.parent.name})
-    });
-    try { await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor}),content,rolls:[roll]}); }
+    };
+    const content=await renderRollCard("roll-card",view);
+    try { await createActorRollMessage(actor,{speaker:ChatMessage.getSpeaker({actor}),content,rolls:[roll]},
+      {resultContent:isNpcRoll(actor)?await renderRollCard("roll-card",view,{resultOnly:true}):undefined}); }
     catch(error) { console.error("Trudvang | Could not publish sealed spell",error); }
     return {roll,result,target:finalTarget,success,critical,margin,perfectSelection,automaticEffectUuids};
   }
@@ -261,7 +264,12 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     return area && {...area,nativeRegion:true,target:card.target};
   };
   const magicFearArea = describeFearArea();
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", card);
+  const npcRoll=isNpcRoll(actor);
+  const renderCard=resultOnly=>renderRollCard("roll-card",{
+    ...card,
+    ...(resultOnly&&card.transformationLinks?{transformationLinks:transformationLinks(item,powerLevelCounts,{context:publicCastingContext(ruleTestContext)})}:{})
+  },{resultOnly});
+  const content = await renderCard(false);
   const useDiceSoNice = (animateWithDiceSoNice || Boolean(publishMessage))
     && game.modules?.get("dice-so-nice")?.active
     && typeof game.dice3d?.showForRoll === "function";
@@ -289,12 +297,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     messageData.flags["dice-so-nice"]={skip:true};
   }
   const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
-  const message=publication?.message??await ChatMessage.create(messageData,releasedSeal?{keepId:true}:{});
+  const message=publication?.message??await createActorRollMessage(actor,messageData,{
+    resultContent:npcRoll?await renderCard(true):undefined,createOptions:releasedSeal?{keepId:true}:{}
+  });
+  if(npcRoll&&publication?.message&&publication.animate!==false&&!publication.privateRollRecorded)await publishNpcRollDetails(messageData);
   if(magicFearArea){
     try{await synchronizeMagicFearRegion(message.id);}
     catch(error){console.error("Trudvang | Fear area display failed",error);}
   }
-  if (useDiceSoNice && publication?.animate!==false) {
+  if (!npcRoll && useDiceSoNice && publication?.animate!==false) {
     try {
       await game.dice3d.showForRoll(roll, game.user, true, publication?.whisper ?? message.whisper ?? [], Boolean(message.blind), message.id, message.speaker);
     } catch (error) {
@@ -321,15 +332,15 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     card.magicFear=Boolean(POWER_DETAILS_BY_ID[ruleTestContext?.sourceId]?.fearRoll);
     card.magicFearBase=magicFearHasBaseTargets(item,ruleTestContext);
     const area = describeFearArea();
-    const updated=await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card);
+    const updated=await renderCard(npcRoll);
     const preparation=prepareSealData(ruleTestContext,finalTarget);
-    await message.update({content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(preparation?{[`flags.${SYSTEM_ID}.sealPreparation`]:preparation}:{}),...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})});
+    await updateActorRollMessage(actor,message,{content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(preparation?{[`flags.${SYSTEM_ID}.sealPreparation`]:preparation}:{}),...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})},npcRoll?await renderCard(false):undefined);
   }
   if(success&&selfOnly&&!auraKey){
    try{
     const effects=await applyPersonalCasting(releasedSeal?.target?.actor??actor,item,{context:ruleTestContext,counts:powerLevelCounts,messageId:message.id});
     automaticEffectUuids.push(...effects.map(e=>e.uuid).filter(Boolean));
-    if(effects.length){card.successConsequence=[card.successConsequence,game.i18n.localize('TRUDVANG.Transformation.AutomaticSelf')].filter(Boolean).join(' ');await message.update({content:await renderTemplate('systems/trudvang-chronicles/templates/chat/roll-card.hbs',card)});}
+    if(effects.length){card.successConsequence=[card.successConsequence,game.i18n.localize('TRUDVANG.Transformation.AutomaticSelf')].filter(Boolean).join(' ');await updateActorRollMessage(actor,message,{content:await renderCard(npcRoll)},npcRoll?await renderCard(false):undefined);}
    }catch(error){console.error('Trudvang | Personal effect activation failed',error);ui.notifications.warn(game.i18n.localize('TRUDVANG.Transformation.AutomaticSelfFailed'));}
   }
   if(success&&auraKey){
@@ -352,7 +363,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
         if(applied.uuid)automaticEffectUuids.push(applied.uuid);
         card.transformationLinks="";
         card.successConsequence=[card.successConsequence,game.i18n.localize("TRUDVANG.Aura.Automatic")].filter(Boolean).join(" ");
-        await message.update({content:await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs",card)});
+        await updateActorRollMessage(actor,message,{content:await renderCard(npcRoll)},npcRoll?await renderCard(false):undefined);
       }
     }catch(error){console.error("Trudvang | Aura activation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.Failed"));}
   }
@@ -857,7 +868,7 @@ export async function rollDamage({actor, item, context = {}}) {
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {
     total, targets, fixedTarget: Boolean(context.boundActorUuid), protectionLocked: context.protectionLocked === true
   });
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
+  const damageView = {
     actorName: actor.name,
     actorImg: actor.img,
     itemName: item.name,
@@ -874,7 +885,8 @@ export async function rollDamage({actor, item, context = {}}) {
     damageResistance:context.damageResistance ? {actorUuid:context.boundActorUuid,label:game.i18n.localize(context.damageResistance.scope==='presence'?'TRUDVANG.PersistentDamage.ResistPresence':context.damageResistance.scope==='consequence'?'TRUDVANG.DamageOutcome.ResistPsychological':'TRUDVANG.PersistentDamage.Resist')} : null,
     alternatives:(context.alternatives??[]).map(row=>({...row,actorUuid:context.boundActorUuid,amount:Math.ceil(total*row.factor),label:game.i18n.localize(row.labelKey)})),
     targetsHTML
-  });
+  };
+  const content = await renderRollCard("damage-card",damageView);
   const rangedOrigin=choice.qualification?.delivery==="ranged"
     ? auraCasterToken(actor,globalThis.canvas?.tokens?.controlled,globalThis.canvas?.tokens?.placeables) : null;
   let rangedCover;
@@ -886,7 +898,8 @@ export async function rollDamage({actor, item, context = {}}) {
     });
   }
   const attackDamage=["weapon","shield"].includes(item?.type);
-  const message=await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, ...(context.whisper?.length ? {whisper: context.whisper} : {}), flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,protectionLocked:context.protectionLocked===true,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification,sourceMessageId:context.sourceMessageId,rangedTokenUuid:rangedOrigin?.uuid,rangedCover,attackDamage},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}});
+  const message=await createActorRollMessage(actor,{speaker: ChatMessage.getSpeaker({actor}), content, rolls, ...(context.whisper?.length ? {whisper: context.whisper} : {}), flags: {"trudvang-chronicles": {persistentDamageEvent:context.persistentDamageEvent,damageTargets: targets,...(damageEffects.length?{weaponDamageEffects:damageEffects}:{}),damageContext:{...(components.length?{components}:{}),minimumAfterArmor:context.minimumAfterArmor??0,impact:context.impact,boundActorUuid:context.boundActorUuid,protectionLocked:context.protectionLocked===true,sourceEffectUuid:context.sourceEffectUuid,effectSnapshot:context.effectSnapshot,resistance:context.damageResistance,alternatives:context.alternatives??[],targetTags:context.targetTags??[],usage:profile.usage,magicalWeapon:choice.magicalWeapon,qualification:choice.qualification,sourceMessageId:context.sourceMessageId,rangedTokenUuid:rangedOrigin?.uuid,rangedCover,attackDamage},conditionalDamage,conditionalDamageBeforeRange:beforeRange,conditionalDamageLongRange:Boolean(choice.longRange)}}},
+    {resultContent:isNpcRoll(actor)?await renderRollCard("damage-card",damageView,{resultOnly:true}):undefined});
   return context.returnMessage?{total,message}:total;
 }
 
@@ -1365,7 +1378,7 @@ export async function rollGenericSituation({target, label, modifier, actor: requ
   const critical = result === 20 ? "failure" : result <= 1 ? "success" : "";
   const success = critical === "success" || (result !== 20 && result <= finalTarget);
   const margin = success ? Math.max(0, finalTarget - result) : null;
-  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
+  const situationView = {
     actorName,
     actorImg,
     label: resolvedLabel,
@@ -1383,12 +1396,11 @@ export async function rollGenericSituation({target, label, modifier, actor: requ
     usage: "",
     longRange: false,
     feint: 0
-  });
-  await ChatMessage.create({
+  };
+  await createActorRollMessage(actor,{
     speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(),
-    content,
-    rolls: [roll]
-  });
+    content:await renderRollCard("roll-card",situationView), rolls:[roll]
+  },{resultContent:isNpcRoll(actor)?await renderRollCard("roll-card",situationView,{resultOnly:true}):undefined});
   return {roll, result, target: finalTarget, success, critical, margin};
 }
 
