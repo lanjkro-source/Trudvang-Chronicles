@@ -1,8 +1,14 @@
 import {jornDarknessPenalty} from "./rules/jorn-darkness.mjs";
+import {grantsPerfectSight,grantsTrueSight,hasPerfectSight} from "./rules/senses.mjs";
 
 const scope = "trudvang-chronicles";
 const darknessLight = object => (object?.document ?? object)?.flags?.[scope]?.spellZoneLight?.darkness;
 const actorForSight = source => source?.actor ?? source?.object?.actor ?? source?.object?.document?.actor;
+
+function darknessBlocksSight(object, observer) {
+  const darkness = darknessLight(object);
+  return darkness ? jornDarknessPenalty(observer, darkness) !== 0 : !hasPerfectSight(observer);
+}
 
 export function registerJornDarknessCanvas() {
   const canvasConfig = CONFIG.Canvas;
@@ -25,6 +31,33 @@ export function registerJornDarknessCanvas() {
     }
   };
 
+  if (canvasConfig.visionSourceClass) {
+    canvasConfig.visionSourceClass = class extends canvasConfig.visionSourceClass {
+      _updateVisionMode() {
+        const observer = actorForSight(this);
+        if (!observer) return super._updateVisionMode();
+        const {blinded,origin,priority} = this;
+        let darkness = blinded.darkness;
+        // Foundry writes its point containment result here before picking the
+        // blindness mode and building the view polygons. Filter just that cause.
+        Object.defineProperty(blinded, "darkness", {
+          configurable:true, enumerable:true,
+          get:() => darkness,
+          set:active => {
+            darkness = active && canvas.effects.testInsideDarkness(origin, {
+              condition:source => priority <= source.priority && darknessBlocksSight(source.object, observer)
+            });
+          }
+        });
+        try {
+          return super._updateVisionMode();
+        } finally {
+          Object.defineProperty(blinded, "darkness", {value:darkness, writable:true, configurable:true, enumerable:true});
+        }
+      }
+    };
+  }
+
   canvasConfig.polygonBackends.sight = class extends canvasConfig.polygonBackends.sight {
     #nativeEdgeTypes;
 
@@ -40,11 +73,10 @@ export function registerJornDarknessCanvas() {
     }
 
     _testEdgeInclusion(edge, edgeTypes) {
-      const darkness = this.#nativeEdgeTypes && darknessLight(edge.object);
       const observer = actorForSight(this.config?.source);
-      if (darkness && observer) {
-        if (jornDarknessPenalty(observer, darkness) === 0) return false;
-        return super._testEdgeInclusion(edge, edgeTypes);
+      if (this.#nativeEdgeTypes && observer && edge.type === "darkness") {
+        if (!darknessBlocksSight(edge.object, observer)) return false;
+        if (darknessLight(edge.object)) return super._testEdgeInclusion(edge, edgeTypes);
       }
       return super._testEdgeInclusion(edge, this.#nativeEdgeTypes ?? edgeTypes);
     }
@@ -57,4 +89,13 @@ export function registerJornDarknessCanvas() {
     light.object?.initializeLightSource();
     canvas.perception.update({initializeLighting:true, initializeVision:true, refreshLighting:true, refreshVision:true});
   });
+
+  // An effect can change which obstacles apply with the same token sight mode
+  // and range, in which case the token document itself is not updated.
+  for (const hook of ["createActiveEffect","updateActiveEffect","deleteActiveEffect"]) {
+    Hooks.on(hook, effect => {
+      if (!globalThis.canvas?.ready || !(grantsPerfectSight(effect) || grantsTrueSight(effect))) return;
+      canvas.perception.update({initializeVision:true});
+    });
+  }
 }

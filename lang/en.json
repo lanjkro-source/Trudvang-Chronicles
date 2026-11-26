@@ -18592,6 +18592,7 @@
         "night": "Night vision",
         "dark": "Darkvision",
         "true": "True Sight",
+        "perfect": "Seeing",
         "other": "Other sense"
       },
       "Unlimited": "No specified range limit",

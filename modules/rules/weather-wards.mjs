@@ -1,3 +1,4 @@
+import {hasPerfectSight} from "./senses.mjs";
 import {activeBarriers,tokenBarrierCenter} from "./spell-barriers.mjs";
 
 const scope = "trudvang-chronicles";
@@ -39,7 +40,7 @@ export function activeWeatherWards(actor) {
 }
 
 export function ignoresSpellFog(actor) {
-  return actor && activeWeatherWards(actor).some(ward => ["journey","storm"].includes(ward.kind));
+  return actor && (hasPerfectSight(actor) || activeWeatherWards(actor).some(ward => ["journey","storm"].includes(ward.kind)));
 }
 
 export function weatherBlocks(ward, row, magical) {

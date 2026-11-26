@@ -1,4 +1,4 @@
-import {grantsTrueSight,sensoryProfile} from "./senses.mjs";
+import {actorSenses,grantsTrueSight} from "./senses.mjs";
 
 const S = "trudvang-chronicles";
 
@@ -16,8 +16,8 @@ export function darknessCombatRow(actor, observer = actor) {
 }
 
 export function jornDarknessPenalty(observer, darkness) {
-  const senses = observer?.transformationProfile?.sensory ?? (observer?.system ? sensoryProfile(observer) : []);
-  if (senses.some(sense => sense.enabled && ["dark","true"].includes(sense.type))
+  const senses = actorSenses(observer);
+  if (senses.some(sense => sense.enabled && ["dark","true","perfect"].includes(sense.type))
       || observer?.transformationProfile?.effects?.some(effect => grantsTrueSight(effect))) return 0;
   const night = senses.some(sense => sense.enabled && sense.type === "night");
   return Number(night ? darkness.nightPenalty : darkness.penalty);

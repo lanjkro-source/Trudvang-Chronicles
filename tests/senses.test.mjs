@@ -3,6 +3,7 @@ import test from "node:test";
 import fs from "node:fs";
 import Handlebars from "handlebars";
 import {normalizeSense,intrinsicSenses,sensoryProfile,sensoryVision,sensoryText,tokenVisionUpdate} from "../modules/rules/senses.mjs";
+import {ignoresSpellFog} from "../modules/rules/weather-wards.mjs";
 import {BESTIARY_ENTRIES} from "../modules/bestiary-catalog-data.mjs";
 import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
 
@@ -109,4 +110,18 @@ test("true sight grants its effective vision range, including power levels",()=>
  const profile=sensoryProfile(a,[{name:"Vision véritable",rules:{},effect}]);
  assert.deepEqual(profile[1],{...sense("true",80,"Vision véritable"),source:"Vision véritable"});
  assert.deepEqual(sensoryVision(profile),{mode:"darkvision",range:80});
+});
+
+test("both versions of Seeing restore ordinary visibility without granting True Sight",()=>{
+ for(const sourceId of ["vitner-power-of-vision:seeing:3","holy-joaringfaith-sight-of-lekaba:seeing:4"]){
+  const effect={flags:{[scope]:{transformation:{sourceId}}}};
+  const profile=sensoryProfile(actor(),[{name:"Seeing",rules:{},effect}]);
+  assert.deepEqual(profile,[sense("normal"),{...sense("perfect",null,"Seeing"),source:"Seeing"}]);
+  assert.deepEqual(sensoryVision(profile),{mode:"darkvision",range:null});
+  assert.equal(ignoresSpellFog({transformationProfile:{sensory:profile}}),true);
+  assert.equal(ignoresSpellFog(actor([sense("true")])),false);
+  const t=token(),before=structuredClone(t.detectionModes.seeInvisibility);
+  apply(t,tokenVisionUpdate(t,sensoryVision(profile)));
+  assert.deepEqual(t.detectionModes.seeInvisibility,before);
+ }
 });

@@ -861,6 +861,8 @@ test('the strongest darkness uses the combatant’s current vision on either sid
  assert.equal(targetDefenseRows(target,caster)[0].value,-3);
  caster.system.senses=[{type:'dark'}];
  assert.deepEqual(targetDefenseRows(target,caster),[]);
+ caster.system.senses=[{type:'perfect'}];
+ assert.deepEqual(targetDefenseRows(target,caster),[]);
  caster.transformationProfile={sensory:[],effects:[{flags:{[S]:{transformation:{sourceId:'vitner-power-of-vision:true-sight:7'}}}}]};
  assert.deepEqual(targetDefenseRows(target,caster),[]);
 });

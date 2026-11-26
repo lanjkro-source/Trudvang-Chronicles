@@ -1,5 +1,8 @@
 const trueSightPowers = new Set(["vitner-power-of-vision:true-sight:7", "holy-joaringfaith-sight-of-lekaba:true-sight:7"]);
-export const grantsTrueSight = effect => trueSightPowers.has(effect?.flags?.["trudvang-chronicles"]?.transformation?.sourceId);
+const perfectSightPowers = new Set(["vitner-power-of-vision:seeing:3", "holy-joaringfaith-sight-of-lekaba:seeing:4"]);
+const transformation = effect => effect?.flags?.["trudvang-chronicles"]?.transformation;
+export const grantsTrueSight = effect => trueSightPowers.has(transformation(effect)?.sourceId);
+export const grantsPerfectSight = effect => perfectSightPowers.has(transformation(effect)?.sourceId);
 
 /** Sensory profiles are actor data; only vision senses affect Foundry sight. */
 export function normalizeSense(value){
@@ -31,8 +34,9 @@ export function sensoryProfile(actor,effects=[]){
   const senses=(rules.senses??[]).map(normalizeSense);
   if(rules.sensesReplace)base.splice(0,base.length);
   base.push(...senses.map(s=>({...s,source:name})));
+  if(grantsPerfectSight(effect))base.push({type:"perfect",label:name,range:null,enabled:true,source:name});
   if(grantsTrueSight(effect)){
-   const {sourceId,ruleTestContext} = effect.flags["trudvang-chronicles"].transformation;
+   const {sourceId,ruleTestContext} = transformation(effect);
    const counts = ruleTestContext?.countsById;
    const range = 25 + 5*(Number(counts?.[sourceId+":4"])||0) + 25*(Number(counts?.[sourceId+":5"])||0);
    base.push({type:"true",label:name,range,enabled:true,source:name});
@@ -41,8 +45,11 @@ export function sensoryProfile(actor,effects=[]){
  }
  return base.filter((s,i,all)=>all.findIndex(x=>x.type===s.type&&x.label===s.label&&x.range===s.range&&x.enabled===s.enabled&&x.source===s.source)===i);
 }
+export const actorSenses = actor => actor?.transformationProfile?.sensory ?? (actor?.system ? sensoryProfile(actor) : []);
+export const hasPerfectSight = actor => actorSenses(actor).some(sense => sense.enabled && sense.type === "perfect");
+
 export function sensoryVision(senses){
- const rows=senses.filter(s=>s.enabled&&["night","dark","true"].includes(s.type));
+ const rows=senses.filter(s=>s.enabled&&["night","dark","true","perfect"].includes(s.type));
  return rows.length?{mode:"darkvision",range:rows.some(s=>s.range===null)?null:Math.max(...rows.map(s=>s.range))}:null;
 }
 export function sensoryRows(actor,{localize=key=>key}={}){
