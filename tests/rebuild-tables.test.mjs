@@ -68,13 +68,13 @@ test("rebuildTables localizes the table name and description", async t => {
   assert.equal(created[0].description, "TRUDVANG.Content.Table.StormlanderNames.Description");
 });
 
-test("version 75 refreshes only existing starter archetype and religion pages in place", async t => {
+for (const previousVersion of [74, 75]) test(`version 76 refreshes the relevant starter journals from version ${previousVersion}`, async t => {
   const previous = globalThis.game;
   t.after(() => {globalThis.game = previous;});
   const locale = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
   const scope = "trudvang-chronicles";
   const changed = new Map();
-  const settings = new Map([["starterContentVersion", 74], ["starterContentLocale", "fr"]]);
+  const settings = new Map([["starterContentVersion", previousVersion], ["starterContentLocale", "fr"]]);
   const localize = key => get(locale, key) ?? key;
   const format = (key, fields) => localize(key).replace(/\{(\w+)\}/g, (_, field) => fields[field]);
   function journal(id) {
@@ -93,9 +93,9 @@ test("version 75 refreshes only existing starter archetype and religion pages in
       settings.set(key,value);
     }}};
   assert.equal(await importStarterContent(), true);
-  assert.equal(settings.get("starterContentVersion"),75);
-  assert.deepEqual([...changed.keys()], ["warrior","joaringFaith"]);
-  assert.match(changed.get("warrior"), /50 points de création supplémentaires/);
-  assert.match(changed.get("joaringFaith"), /<h2>Panthéon<\/h2>/);
+  assert.equal(settings.get("starterContentVersion"),76);
+  assert.deepEqual([...changed.keys()], previousVersion === 74 ? ["warrior","joaringFaith"] : ["warrior"]);
+  assert.ok(changed.get("warrior").includes("</p><p>À la création, cet archétype accorde 50 points de création supplémentaires"));
+  if (previousVersion === 74) assert.match(changed.get("joaringFaith"), /<h2>Panthéon<\/h2>/);
   assert.equal(await importStarterContent(),false);
 });

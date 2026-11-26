@@ -72,7 +72,7 @@ Toute nouvelle migration de monde doit :
 
 | Code | Rôle transitoire | Suppression possible lorsque |
 |---|---|---|
-| `refreshCreationJournalPages()` et le palier `CONTENT_VERSION = 75` | Met à jour sur place les pages de départ Archétypes et Religions des mondes au palier 74. Leurs identifiants et les autres documents sont conservés. | Les mondes de développement au palier 74 ont été actualisés ou recréés. |
+| `refreshCreationJournalPages()` et le palier `CONTENT_VERSION = 76` | Met à jour sur place les pages de départ Archétypes et Religions des mondes au palier 74, et uniquement les pages Archétypes pour les mondes au palier 75. Leurs identifiants et les autres documents sont conservés. | Les mondes de développement aux paliers 74 et 75 ont été actualisés ou recréés. |
 | `CONTENT_VERSION`, `starterContentVersion`, `starterContentLocale` et le chemin `importStarterContent()` | Détectent qu'un monde existant doit recevoir à nouveau le contenu de démarrage. | Les mondes de développement antérieurs ont été supprimés. |
 | Passage de `CONTENT_VERSION` à 56 | Installe la table de régénération de tête (2d10) dans un dossier MJ et les journaux Chasse/Dressage du dossier Règles dans les mondes existants. Les permissions de la table sont données explicitement à NONE, comme son dossier. | Les mondes précédant cette version ont été supprimés ; conserver les données et leur import normal. |
 | Passage de `CONTENT_VERSION` à 57 | Ajoute le journal Voyage & Terrains dans Règles aux mondes déjà installés. | Les mondes précédant cette version ont été supprimés ; conserver le journal dans l’import normal. |

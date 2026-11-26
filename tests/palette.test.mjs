@@ -100,3 +100,25 @@ test("native rich-text toolbars and dropdowns use high-contrast palette roles in
     }
   }
 });
+
+test("tablet journals pair readable link and body colors with their dark page and light contents panel", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.trudvang-tablet-journal\s*\{[^}]*--tablet-journal-text: var\(--trudvang-on-header\);[^}]*--tablet-journal-link: var\(--trudvang-on-header-muted\);[^}]*background: var\(--trudvang-header\)/);
+  assert.match(css, /\.tablet-journal-toc\s*\{[^}]*--tablet-journal-text: var\(--trudvang-ink\);[^}]*--tablet-journal-link: color-mix\(in srgb, var\(--trudvang-accent\) 85%, var\(--trudvang-ink\)\);[^}]*background: var\(--trudvang-paper-light\)/);
+  assert.match(css, /:is\(a, a\.content-link\)\s*\{\s*color: var\(--tablet-journal-link\);\s*text-decoration: underline/);
+  assert.match(css, /\.tablet-journal-count, \.tablet-journal-meta, \.tablet-journal-level\)\s*\{\s*color: var\(--tablet-journal-text\)/);
+  const rgb = hex => [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16) / 255);
+  const luminance = channels => channels.map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+    .reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
+  for (const [id, palette] of Object.entries(PALETTES)) {
+    const ink = rgb(palette.ink);
+    const lightPanelLink = rgb(palette.accent).map((value, index) => value * .85 + ink[index] * .15);
+    for (const [foreground, background] of [
+      [rgb(palette.onHeader), rgb(palette.header)], [rgb(palette.onHeaderMuted), rgb(palette.header)],
+      [ink, rgb(palette.paperLight)], [lightPanelLink, rgb(palette.paperLight)]
+    ]) {
+      const a = luminance(foreground), b = luminance(background);
+      assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, `${id}: tablet journal contrast`);
+    }
+  }
+});

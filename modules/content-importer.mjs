@@ -47,7 +47,7 @@ import {isGradedState} from "./rules/effect-stacking.mjs";
 // TEMPORARY WORLD MIGRATION — version 72 groups existing name tables under
 // Character Creation / Names; the normal starter import recreates their folder assignment.
 // TEMPORARY WORLD MIGRATION — version 73 imports the torch and lantern in existing worlds.
-const CONTENT_VERSION = 75;
+const CONTENT_VERSION = 76;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -813,10 +813,10 @@ async function upsertJournals() {
   }
 }
 
-// TEMPORARY WORLD MIGRATION — version 75 enriches the existing creation journals
-// in place. Other world documents and additional journal pages stay untouched.
-async function refreshCreationJournalPages() {
-  for (const payload of journalDocuments({}, ["archetypes", "religions"])) {
+// TEMPORARY WORLD MIGRATION — updates the existing creation journals in place
+// for versions 75–76. Other world documents and additional pages stay untouched.
+async function refreshCreationJournalPages(folders) {
+  for (const payload of journalDocuments({}, folders)) {
     const journal = game.journal.find(entry => flagOf(entry) === payload.flags[SYSTEM_ID].starterId);
     const page = journal?.pages.find(entry => entry.type === "text" && entry.name === payload.pages[0].name);
     const {content} = payload.pages[0].text;
@@ -1306,9 +1306,9 @@ export async function importStarterContent({force = false} = {}) {
     const importedLocale = String(game.settings.get(SYSTEM_ID, "starterContentLocale") || "");
     const currentLocale = activeLanguage();
     if (!force && installed >= CONTENT_VERSION && importedLocale === currentLocale) return false;
-    // TEMPORARY WORLD MIGRATION — version 74 worlds need only the journal text update.
-    if (!force && installed === 74 && CONTENT_VERSION === 75 && importedLocale === currentLocale) {
-      await refreshCreationJournalPages();
+    // TEMPORARY WORLD MIGRATION — versions 74–75 need only the creation journal update.
+    if (!force && (installed === 74 || installed === 75) && CONTENT_VERSION === 76 && importedLocale === currentLocale) {
+      await refreshCreationJournalPages(installed === 74 ? ["archetypes", "religions"] : ["archetypes"]);
       await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
       return true;
     }

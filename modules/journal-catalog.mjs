@@ -66,7 +66,7 @@ function raceTable(id) {
 function withArchetypeBonus(key, body) {
   const [first, second] = TRUDVANG.archetypes[key].core.map(skill => l(TRUDVANG.skills[skill]));
   const bonus = game.i18n.format("TRUDVANG.Content.Journal.ArchetypeCreationBonus", {points: ARCHETYPE_CREATION_BONUS, first, second});
-  return body.replace("</p>", ` <strong>${bonus}</strong></p>`);
+  return body.replace("</p>", `</p><p>${bonus}</p>`);
 }
 
 function withReligionIntroduction(key, body) {

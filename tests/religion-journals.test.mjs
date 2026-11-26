@@ -67,11 +67,11 @@ test("starter creation journals show the localized bonus and all seven introduct
         assert.ok(content.startsWith(`<article class="trudvang-religion-journal"><p>${Overview}</p><p>${Practice}</p><h2>${journal.ReligionPantheon}</h2><p>${Pantheon}</p><h2>${journal.ReligionOrganization}</h2><p>`), `${lang}/${id}`);
         assert.equal((content.match(/<table>/g) || []).length, tableCounts[ids.indexOf(id)]);
       } else {
-        const first = content.match(/<p>(.*?)<\/p>/)?.[1];
-        assert.ok(first.startsWith(journal[id].Content.match(/<p>(.*?)<\/p>/)[1]), `${lang}/${id} still starts with the original paragraph`);
-        assert.ok(first.includes(`<strong>${format("TRUDVANG.Content.Journal.ArchetypeCreationBonus", {
+        const [first, second] = [...content.matchAll(/<p>(.*?)<\/p>/g)].map(match => match[1]);
+        assert.equal(first, journal[id].Content.match(/<p>(.*?)<\/p>/)[1], `${lang}/${id} keeps the original paragraph`);
+        assert.equal(second, format("TRUDVANG.Content.Journal.ArchetypeCreationBonus", {
           points: 50, first: locale.TRUDVANG.Skill.Knowledge, second: locale.TRUDVANG.Skill[expectedSkills[id]]
-        })}</strong>`), `${lang}/${id} bonus at the end of the first paragraph`);
+        }), `${lang}/${id} bonus in its own plain paragraph`);
       }
     }
   }
