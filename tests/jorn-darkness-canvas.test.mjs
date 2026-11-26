@@ -8,11 +8,11 @@ test("Jorn darkness adds exact boundaries and lets each observer use the appropr
  class NativeDarkness {
   _getPolygonConfiguration(){return {boundaryShapes:["native"]};}
   _couldShapesChange(){return false;}
+  _getEdgeCreationOptions(){return {type:"source",object:this.object,priority:100};}
  }
  class NativeSweep {
-  constructor(actor){this.config={source:{object:{actor}}};}
-  _determineEdgeTypes(){return {darkness:{mode:0,priority:0},wall:{mode:1,priority:0}};}
-  _testEdgeInclusion(edge,edgeTypes){return edgeTypes[edge.type].mode>0;}
+  constructor(actor){this.config={type:"sight",source:{object:{actor}}};}
+  _testEdgeInclusion(edge,edgeTypes){const {mode,priority}=edgeTypes[edge.type];return mode>0 && edge.priority>=priority;}
  }
  globalThis.CONFIG={Canvas:{darknessSourceClass:NativeDarkness,polygonBackends:{sight:NativeSweep}}};
  const hooks=new Map();
@@ -24,8 +24,7 @@ test("Jorn darkness adds exact boundaries and lets each observer use the appropr
  const coat={penalty:-15,nightPenalty:-8,boundary:null};
  const scope="trudvang-chronicles";
  const flags=darkness=>({[scope]:{spellZoneLight:{darkness}}});
- const ambient=darkness=>({document:{flags:flags(darkness)}});
- const edge=profile=>({type:"darkness",object:ambient(profile)});
+ const ambient=darkness=>({document:{flags:flags(darkness),config:{negative:true}}});
  const source=new CONFIG.Canvas.darknessSourceClass();
  source.object=ambient(wall);
  assert.deepEqual(source._getPolygonConfiguration().boundaryShapes.map(p=>p.points??p),["native",wall.boundary]);
@@ -34,14 +33,24 @@ test("Jorn darkness adds exact boundaries and lets each observer use the appropr
  assert.equal(source._couldShapesChange({}),true);
  source.object=ambient(curtain);
  assert.deepEqual(source._getPolygonConfiguration().boundaryShapes,["native"]);
-
+ const edges=[wall,curtain,coat].map(profile=>{
+  source.object=ambient(profile);
+  return source._getEdgeCreationOptions();
+ });
+ const positive={type:"source",priority:100,object:{document:{config:{negative:false}}}};
+ const negative={type:"source",priority:100,object:ambient(undefined)};
+ const physicalWall={type:"wall",priority:0};
+ const edgeTypes={source:{mode:1,priority:0},wall:{mode:1,priority:0}};
  const Sweep=CONFIG.Canvas.polygonBackends.sight;
  for(const [type,expected] of [["normal",[true,true,true]],["night",[false,true,true]],["dark",[false,false,false]],["true",[false,false,false]],["perfect",[false,false,false]]]){
   const sweep=new Sweep({system:{senses:[{type}]}});
-  const edgeTypes=sweep._determineEdgeTypes("sight",0,sweep.config);
-  assert.deepEqual([wall,curtain,coat].map(profile=>sweep._testEdgeInclusion(edge(profile),edgeTypes)),expected);
-  assert.equal(sweep._testEdgeInclusion({type:"darkness"},edgeTypes),false);
-  assert.equal(sweep._testEdgeInclusion({type:"wall"},edgeTypes),true);
+  assert.deepEqual(edges.map(edge=>sweep._testEdgeInclusion(edge,edgeTypes)),expected);
+  assert.equal(sweep._testEdgeInclusion(positive,edgeTypes),true);
+  assert.equal(sweep._testEdgeInclusion(negative,edgeTypes),type!=="perfect");
+  assert.equal(sweep._testEdgeInclusion(physicalWall,edgeTypes),true);
+  // The sightline from outside crosses two faces of the spell, then a real wall.
+  const sightline=[{...edges[0],at:10},{...edges[0],at:20},{...physicalWall,at:30}];
+  assert.equal(sightline.find(edge=>sweep._testEdgeInclusion(edge,edgeTypes)).at,type==="normal"?10:30);
  }
  let sourceUpdates=0,visionUpdates=0;
  globalThis.canvas={ready:true,scene:{},perception:{update(changes){assert.equal(changes.initializeVision,true);visionUpdates++;}}};
@@ -71,14 +80,20 @@ test("Foundry’s interior darkness blinding uses the same per-observer exceptio
    this.object={actor:{system:{senses:[{type}]}}};
    this.origin={x:10,y:5,elevation:0};
    this.blinded={blind:false,burrow:false};
+   this.data={visionMode:type==="normal"?"basic":"darkvision"};
    this.priority=10;
   }
   _updateVisionMode(){
    this.blinded.darkness=canvas.effects.testInsideDarkness(this.origin,{condition:source=>this.priority<=source.priority});
-   this.visionMode=Object.values(this.blinded).some(Boolean)?"blindness":"normal";
+   this.visionMode=Object.values(this.blinded).some(Boolean)?"blindness":this.data.visionMode;
   }
  }
- globalThis.CONFIG={Canvas:{visionSourceClass:NativeVision,darknessSourceClass:class{},polygonBackends:{sight:class{}}}};
+ const shader=class{};
+ const darkvision={id:"darkvision",canvas:{shader,uniforms:{saturation:-1,exposure:0}},clone(changes){
+  return {...this,...changes,canvas:{...this.canvas,uniforms:{...this.canvas.uniforms,...changes.canvas.uniforms}}};
+ }};
+ const visionModes={darkvision};
+ globalThis.CONFIG={Canvas:{visionModes,visionSourceClass:NativeVision,darknessSourceClass:class{},polygonBackends:{sight:class{}}}};
  globalThis.Hooks={on(){}};
  registerJornDarknessCanvas();
  const vision=type=>new CONFIG.Canvas.visionSourceClass(type);
@@ -93,6 +108,14 @@ test("Foundry’s interior darkness blinding uses the same per-observer exceptio
   assert.deepEqual(readers.map(source=>source.visionMode==="blindness"),expected);
  }
  check([wall],[true,false,false,false,false]);
+ assert.equal(visionModes[night.visionMode].canvas.shader,shader);
+ assert.ok(visionModes[night.visionMode].canvas.uniforms.exposure<0);
+ assert.equal(night.data.visionMode,"darkvision");
+ for(const observer of [dark,trueSight,perfect])assert.equal(observer.visionMode,"darkvision");
+ night.object.actor.system.senses.push({type:"dark"});
+ night._updateVisionMode();
+ assert.equal(night.visionMode,"darkvision");
+ night.object.actor.system.senses.pop();
  check([wall,curtain],[true,true,false,false,false]);
  check([wall,{priority:100}],[true,true,true,true,false]);
  check([wall,{priority:5}],[true,false,false,false,false]);

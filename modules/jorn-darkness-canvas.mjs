@@ -1,8 +1,19 @@
 import {jornDarknessPenalty} from "./rules/jorn-darkness.mjs";
-import {grantsPerfectSight,grantsTrueSight,hasPerfectSight} from "./rules/senses.mjs";
+import {actorSenses,grantsPerfectSight,grantsTrueSight,hasPerfectSight} from "./rules/senses.mjs";
 
 const scope = "trudvang-chronicles";
-const darknessLight = object => (object?.document ?? object)?.flags?.[scope]?.spellZoneLight?.darkness;
+const nightVisionMode = "trudvangNightVision";
+const lightDocument = object => object?.document ?? object;
+const darknessLight = object => lightDocument(object)?.flags?.[scope]?.spellZoneLight?.darkness;
+const isNegativeLight = object => {
+  const document = lightDocument(object);
+  return document?.config?.negative || document?.light?.negative;
+};
+
+function usesNightVision(observer) {
+  const senses = actorSenses(observer).filter(sense => sense.enabled);
+  return senses.some(sense => sense.type === "night") && !senses.some(sense => ["dark","true","perfect"].includes(sense.type));
+}
 const actorForSight = source => source?.actor ?? source?.object?.actor ?? source?.object?.document?.actor;
 
 function darknessBlocksSight(object, observer) {
@@ -13,6 +24,13 @@ function darknessBlocksSight(object, observer) {
 export function registerJornDarknessCanvas() {
   const canvasConfig = CONFIG.Canvas;
   if (!canvasConfig?.darknessSourceClass || !canvasConfig.polygonBackends?.sight) return;
+  const visionModes = canvasConfig.visionModes;
+  if (visionModes?.darkvision) {
+    visionModes[nightVisionMode] = visionModes.darkvision.clone({
+      id:nightVisionMode, label:"TRUDVANG.Senses.Types.night", tokenConfig:false,
+      canvas:{uniforms:{exposure:-0.24}}
+    });
+  }
 
   // Keep the native source (including its lighting/vision edges) and clip its
   // radial bounds to the footprint stored on the scene's Ambient Light.
@@ -36,7 +54,8 @@ export function registerJornDarknessCanvas() {
       _updateVisionMode() {
         const observer = actorForSight(this);
         if (!observer) return super._updateVisionMode();
-        const {blinded,origin,priority} = this;
+        const {blinded,origin,priority,data} = this;
+        const configuredMode = data.visionMode;
         let darkness = blinded.darkness;
         // Foundry writes its point containment result here before picking the
         // blindness mode and building the view polygons. Filter just that cause.
@@ -50,8 +69,12 @@ export function registerJornDarknessCanvas() {
           }
         });
         try {
+          if (configuredMode === "darkvision" && visionModes?.[nightVisionMode] && usesNightVision(observer)) {
+            data.visionMode = nightVisionMode;
+          }
           return super._updateVisionMode();
         } finally {
+          data.visionMode = configuredMode;
           Object.defineProperty(blinded, "darkness", {value:darkness, writable:true, configurable:true, enumerable:true});
         }
       }
@@ -59,26 +82,18 @@ export function registerJornDarknessCanvas() {
   }
 
   canvasConfig.polygonBackends.sight = class extends canvasConfig.polygonBackends.sight {
-    #nativeEdgeTypes;
-
-    _determineEdgeTypes(type, priority, config) {
-      const native = super._determineEdgeTypes(type, priority, config);
-      this.#nativeEdgeTypes = null;
-      if (type !== "sight" || !actorForSight(config?.source ?? this.config?.source)) return native;
-      // Ensure the candidate search includes Jorn's darkness even when generic
-      // darkvision excludes darkness edges. Preserve the native filtering for
-      // every edge unrelated to these powers.
-      this.#nativeEdgeTypes = native;
-      return {...native, darkness:{mode:1, priority:-Infinity}};
-    }
-
     _testEdgeInclusion(edge, edgeTypes) {
       const observer = actorForSight(this.config?.source);
-      if (this.#nativeEdgeTypes && observer && edge.type === "darkness") {
-        if (!darknessBlocksSight(edge.object, observer)) return false;
-        if (darknessLight(edge.object)) return super._testEdgeInclusion(edge, edgeTypes);
+      // Foundry V14 uses the same edge type for positive and negative light sources.
+      if (observer && this.config.type === "sight" && edge.type === "source") {
+        const darkness = darknessLight(edge.object);
+        if (darkness) {
+          if (jornDarknessPenalty(observer, darkness) === 0) return false;
+          return super._testEdgeInclusion(edge, {...edgeTypes,source:{mode:1,priority:-Infinity}});
+        }
+        if (isNegativeLight(edge.object) && hasPerfectSight(observer)) return false;
       }
-      return super._testEdgeInclusion(edge, this.#nativeEdgeTypes ?? edgeTypes);
+      return super._testEdgeInclusion(edge, edgeTypes);
     }
   };
 
