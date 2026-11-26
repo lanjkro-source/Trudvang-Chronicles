@@ -1,8 +1,19 @@
 const trueSightPowers = new Set(["vitner-power-of-vision:true-sight:7", "holy-joaringfaith-sight-of-lekaba:true-sight:7"]);
 const perfectSightPowers = new Set(["vitner-power-of-vision:seeing:3", "holy-joaringfaith-sight-of-lekaba:seeing:4"]);
-const transformation = effect => effect?.flags?.["trudvang-chronicles"]?.transformation;
+const scope = "trudvang-chronicles";
+const transformation = effect => effect?.flags?.[scope]?.transformation;
+const weakenedSight = "vitner-body-vitner:vision-blindness:4#affaibli";
+const seeInvisibility = "detectionModes.seeInvisibility";
 export const grantsTrueSight = effect => trueSightPowers.has(transformation(effect)?.sourceId);
 export const grantsPerfectSight = effect => perfectSightPowers.has(transformation(effect)?.sourceId);
+
+export function isVisionBlindnessSuspended(effect) {
+ const actor = effect.parent;
+ if (transformation(effect)?.key !== weakenedSight || actor?.documentName !== "Actor") return false;
+ // Read the source effects while Foundry is still assembling the actor statuses.
+ return Array.from(actor.effects ?? []).some(other => grantsPerfectSight(other)
+  && !other.disabled && !other.isSuppressed && !other.duration?.expired);
+}
 
 /** Sensory profiles are actor data; only vision senses affect Foundry sight. */
 export function normalizeSense(value){
@@ -50,7 +61,10 @@ export const hasPerfectSight = actor => actorSenses(actor).some(sense => sense.e
 
 export function sensoryVision(senses){
  const rows=senses.filter(s=>s.enabled&&["night","dark","true","perfect"].includes(s.type));
- return rows.length?{mode:"darkvision",range:rows.some(s=>s.range===null)?null:Math.max(...rows.map(s=>s.range))}:null;
+ if (!rows.length) return null;
+ const longest = entries => entries.some(sense=>sense.range===null) ? null : Math.max(...entries.map(sense=>sense.range));
+ const trueSight = rows.filter(sense => sense.type === "true");
+ return {mode:"darkvision",range:longest(rows),...(trueSight.length ? {invisibilityRange:longest(trueSight)} : {})};
 }
 export function sensoryRows(actor,{localize=key=>key}={}){
  const profile=actor.transformationProfile?.sensory??sensoryProfile(actor);
@@ -66,35 +80,52 @@ export function sensoryText(actor,{localize=key=>key}={}){
 /** Partial updates preserve unrelated detection modes and later manual edits. V14
  * detectionModes is a keyed TypedObjectField, not the old array of mode objects. */
 export function tokenVisionUpdate(token,vision){
- const scope="trudvang-chronicles",flag=`flags.${scope}.transformationVision`;
+ const flag=`flags.${scope}.transformationVision`;
  const saved=token.flags?.[scope]?.transformationVision;
- const get=path=>path.split('.').reduce((o,k)=>o?.[k],token);
+ const applied=saved?.applied && typeof saved.applied==="object" ? saved.applied : {"sight.visionMode":saved?.applied};
+ const get=path=>{
+  if (path !== seeInvisibility) return path.split(".").reduce((o,k)=>o?.[k],token);
+  const mode = (token._source?.detectionModes ?? token.detectionModes)?.seeInvisibility;
+  return mode ? {enabled:mode.enabled,range:mode.range===Infinity ? null : mode.range} : null;
+ };
  const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
  const deletion=()=>foundry.data.operators.ForcedDeletion.create();
  const changes={};
+ const restore=(path,value)=>{
+  if (!equal(get(path),applied[path])) return;
+  if (path===seeInvisibility && value===null) changes[path]=deletion();
+  else changes[path]=value===null&&path.endsWith(".enabled") ? false : value;
+ };
  if(vision){
   const scene=token.parent??token.scene;
   const units=String(scene?.grid?.units??"m").toLowerCase();
   const scale=/^(ft|feet|foot|pi|pieds?)$/.test(units)?1/0.3048:/^(km|kilom)/.test(units)?0.001:1;
-  const range=vision.range===null?null:Math.round((vision.range*scale+Number.EPSILON)*100)/100;
+  const sceneRange=meters=>meters===null ? null : Math.round((meters*scale+Number.EPSILON)*100)/100;
+  const range=sceneRange(vision.range);
   const unlimited=Math.hypot(scene?.dimensions?.width??scene?.width??0,scene?.dimensions?.height??scene?.height??0)/(scene?.grid?.size||1)*(scene?.grid?.distance||1);
   const desired={"sight.enabled":true,"sight.visionMode":"darkvision","sight.range":range??Math.max(unlimited,Number(saved?.before?.["sight.range"]??token.sight?.range)||0),
    ...Object.fromEntries(Object.entries(globalThis.CONFIG?.Canvas?.visionModes?.darkvision?.vision?.defaults??{saturation:-1,attenuation:0}).map(([k,v])=>[`sight.${k}`,v])),
    "detectionModes.darkvision.enabled":true,"detectionModes.darkvision.range":range};
   const before=typeof saved?.before==="object"?{...saved.before}:saved?{"sight.visionMode":saved.before}:{};
+  if (vision.invisibilityRange !== undefined) {
+   const previous = Object.hasOwn(before,seeInvisibility) ? before[seeInvisibility] : get(seeInvisibility);
+   const configuredRange = previous?.enabled ? previous.range : 0;
+   const grantedRange = sceneRange(vision.invisibilityRange);
+   desired[seeInvisibility] = {enabled:true,range:configuredRange===null||grantedRange===null ? null : Math.max(configuredRange??0,grantedRange)};
+  } else if (Object.hasOwn(before,seeInvisibility)) {
+   restore(seeInvisibility,before[seeInvisibility]);
+   delete before[seeInvisibility];
+  }
   for(const [path,value]of Object.entries(desired)){
    if(!Object.hasOwn(before,path))before[path]=get(path)??null;
    // Token configuration edits persist until the granted sensory profile changes.
-   if(!equal(get(path),value)&&(!saved||!equal(saved.applied?.[path],value)))changes[path]=value;
+   if(!equal(get(path),value)&&(!saved||!equal(applied[path],value)))changes[path]=value;
   }
   const state={before,applied:desired};
-  if(!equal(saved,state))changes[flag]=state;
+  if(!equal(saved,state))changes[flag]=foundry.data.operators.ForcedReplacement.create(state);
  }else if(saved){
   const before=typeof saved.before==="object"?saved.before:{"sight.visionMode":saved.before};
-  const applied=typeof saved.applied==="object"?saved.applied:{"sight.visionMode":saved.applied};
-  for(const [path,value]of Object.entries(before))if(equal(get(path),applied[path])){
-   changes[path]=value===null&&path.endsWith('.enabled')?false:value;
-  }
+  for (const [path,value] of Object.entries(before)) restore(path,value);
   // Remove only our detection row when it did not exist before application.
   if(before["detectionModes.darkvision.enabled"]===null&&equal(get("detectionModes.darkvision.enabled"),applied["detectionModes.darkvision.enabled"])&&equal(get("detectionModes.darkvision.range"),applied["detectionModes.darkvision.range"])){
    delete changes["detectionModes.darkvision.enabled"];delete changes["detectionModes.darkvision.range"];

@@ -11,11 +11,11 @@ const scope="trudvang-chronicles";
 const sense=(type,range=null,label="")=>({type,range,label,enabled:true});
 const actor=senses=>({system:{senses},items:[],effects:[]});
 const del={delete:true};
-globalThis.foundry={data:{operators:{ForcedDeletion:{create:()=>del}}}};
+globalThis.foundry={data:{operators:{ForcedDeletion:{create:()=>del},ForcedReplacement:{create:replacement=>({replacement})}}}};
 function apply(token,changes){
  for(const [path,value]of Object.entries(changes)){
   const keys=path.split('.'),last=keys.pop(),parent=keys.reduce((o,k)=>o[k]??={},token);
-  if(value===del)delete parent[last];else parent[last]=structuredClone(value);
+  if(value===del)delete parent[last];else parent[last]=structuredClone(value?.replacement??value);
  }
 }
 function token(){return {sight:{enabled:false,visionMode:"basic",range:0,saturation:0,attenuation:0.5},detectionModes:{seeInvisibility:{enabled:true,range:5}},flags:{},parent:{width:2000,height:1000,grid:{size:100,distance:5,units:"m"}}};}
@@ -109,7 +109,7 @@ test("true sight grants its effective vision range, including power levels",()=>
  assert.equal(sensoryVision(sensoryProfile(a)),null);
  const profile=sensoryProfile(a,[{name:"Vision véritable",rules:{},effect}]);
  assert.deepEqual(profile[1],{...sense("true",80,"Vision véritable"),source:"Vision véritable"});
- assert.deepEqual(sensoryVision(profile),{mode:"darkvision",range:80});
+ assert.deepEqual(sensoryVision(profile),{mode:"darkvision",range:80,invisibilityRange:80});
 });
 
 test("both versions of Seeing restore ordinary visibility without granting True Sight",()=>{
@@ -124,4 +124,41 @@ test("both versions of Seeing restore ordinary visibility without granting True 
   apply(t,tokenVisionUpdate(t,sensoryVision(profile)));
   assert.deepEqual(t.detectionModes.seeInvisibility,before);
  }
+});
+
+test("True Sight uses its own detection radius, then restores invisibility settings while ordinary darkvision continues",()=>{
+ const t=token(),initial={enabled:false,range:10};
+ t.detectionModes.seeInvisibility=structuredClone(initial);
+ const otherVision=sense("dark",null);
+ const base=sense("true",25),extended=sense("true",55);
+ const update=(...senses)=>apply(t,tokenVisionUpdate(t,sensoryVision(senses)));
+ update(otherVision,base,extended);
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:55});
+ assert.ok(t.sight.range>55);
+ update(otherVision,base);
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:25});
+ update(otherVision);
+ assert.deepEqual(t.detectionModes.seeInvisibility,initial);
+ assert.equal(t.sight.visionMode,"darkvision");
+ assert.equal(Object.hasOwn(t.flags[scope].transformationVision.applied,"detectionModes.seeInvisibility"),false);
+ t.detectionModes.seeInvisibility={enabled:true,range:100};
+ update(otherVision,base);
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:100});
+ update(otherVision);
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:100});
+});
+
+test("temporary invisibility detection is removed in a feet-based scene and preserves manual edits",()=>{
+ const t=token();
+ delete t.detectionModes.seeInvisibility;
+ t.parent.grid.units="ft";
+ const trueSight=sensoryVision([sense("true",25)]);
+ apply(t,tokenVisionUpdate(t,trueSight));
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:82.02});
+ apply(t,tokenVisionUpdate(t,null));
+ assert.equal(t.detectionModes.seeInvisibility,undefined);
+ apply(t,tokenVisionUpdate(t,trueSight));
+ t.detectionModes.seeInvisibility.range=40;
+ apply(t,tokenVisionUpdate(t,null));
+ assert.deepEqual(t.detectionModes.seeInvisibility,{enabled:true,range:40});
 });

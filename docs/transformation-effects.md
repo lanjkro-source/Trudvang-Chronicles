@@ -139,6 +139,12 @@ restaurés si le MJ ne les a pas modifiés entre-temps. La portée maximale est
 utilisée ; les paliers de netteté restent descriptifs. Les distances sont converties
 si la scène est en pieds ou en kilomètres.
 
+Vision véritable ajoute la détection native des tokens portant le statut Invisible,
+avec une portée effective de 25 m, augmentée selon les niveaux de puissance. La
+ligne de vue reste nécessaire. Vision parfaite neutralise le malus et le statut
+Aveugle de la variante néfaste de Vision/cécité. La durée de cette dernière
+continue de s’écouler. Les deux mécanismes s’appliquent aussi aux versions de Joar.
+
 Les effets appliqués portent `transformation.resolved`. Leur copie conserve les
 valeurs déjà résolues et leur durée sans réappliquer les améliorations, les niveaux
 de savoir ou les tirages aléatoires. Les anciennes copies sont reconnues par leur
@@ -337,12 +343,12 @@ Cinquante effets supplémentaires couvrent la météo, les perceptions, les obje
 Immobilisation applique l'état entravé et bloque le déplacement ; une application
 de dégâts qui atteint les points de santé ou les points temporaires supprime l'effet.
 Les modifications manuelles de santé, les gestes impossibles et la taille pour le
-test de résistance restent à gérer manuellement. Camouflage, Invisibilité, Vision parfaite, Vision véritable,
+test de résistance restent à gérer manuellement. Camouflage, Invisibilité,
 Modification d'apparence, Façonnage de la terre et de la pierre, Création d'eau,
 Vent porteur et Seigneur des vents proposent leurs descriptions et durées
 améliorées. Le camouflage et l'invisibilité restent détectables selon les règles :
-ils ne masquent pas automatiquement le token. Les changements de décor, la vision,
-le poids soulevé et les déplacements en vol restent à gérer manuellement. Les
+ces effets ne masquent pas automatiquement le token. Le MJ gère les changements
+de décor, le poids soulevé et les déplacements en vol. Les
 trois minutes supplémentaires pour façonner la terre ou la pierre n'allongent pas
 la durée pendant laquelle la forme obtenue subsiste ; elles sont indiquées dans
 les améliorations. Les capacités de cibles supplémentaires sont prises en compte

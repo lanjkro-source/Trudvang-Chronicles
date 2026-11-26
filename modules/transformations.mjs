@@ -19,7 +19,7 @@ import {npcBookSkillRows} from "./rules/npc-summary.mjs";
 import {ruleTestCastingContext,withCastingCounts,currentCastingCounts,ruleTestSourceId} from "./rules/magic-resistance.mjs";
 import {RULE_TESTS_BY_CATALOG_ID} from "./rule-test-data.mjs";
 import {magicResistancePreview} from "./magic-resistance-preview.mjs";
-import {normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
+import {grantsTrueSight,normalizeSense,sensoryVision,tokenVisionUpdate} from "./rules/senses.mjs";
 import {naturalWeaponQualification} from "./rules/damage-qualifications.mjs";
 import {SURPRISED_ITEM, applySurprised} from "./combat-effects.mjs";
 import {STACKABLE_EFFECT_IDS} from "./rules/effect-stacking.mjs";
@@ -797,6 +797,18 @@ export function registerTransformationHooks(){
   if(changed.system?.changes||Object.keys(changed).some(key=>key.startsWith("system.changes")))await syncEffectGrants(effect);
   await syncTransformationTokens(effect.parent);
  }});
+ Hooks.on("ready", async () => {
+  // Recalculate detection for ongoing castings, including after a world reload.
+  const actors = new Set();
+  for (const scene of game.scenes ?? []) for (const token of scene.tokens ?? []) {
+   const actor = token.actor;
+   if (!canSyncActor(actor)) continue;
+   const applied = token.flags?.[SCOPE]?.transformationVision?.applied;
+   if (Object.hasOwn(applied ?? {},"detectionModes.seeInvisibility") || Array.from(actor.effects ?? []).some(grantsTrueSight)) actors.add(actor);
+  }
+  const results = await Promise.allSettled(Array.from(actors,syncTransformationTokens));
+  for (const result of results) if (result.status === "rejected") console.error("Trudvang | Vision synchronization failed",result.reason);
+ });
  Hooks.on("createToken",async token=>{if(canSyncActor(token.actor))await syncTransformationTokens(token.actor);});
  Hooks.on("updateActor",async actor=>{if(canSyncActor(actor))await syncTransformationTokens(actor);});
  for(const hook of ["createItem","updateItem","deleteItem"])Hooks.on(hook,async item=>{if(item.parent?.documentName==="Actor"&&canSyncActor(item.parent))await syncTransformationTokens(item.parent);});

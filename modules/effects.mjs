@@ -1,6 +1,7 @@
 import {deleteEffectOnce} from './effect-deletion.mjs';
 import {isSacredInscriptionFailure} from './effects-summary.mjs';
 import {equipmentGrantActive} from './rules/granted-equipment.mjs';
+import {isVisionBlindnessSuspended} from "./rules/senses.mjs";
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {registerPersistentDamageHooks} from './persistent-damage.mjs';
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
@@ -128,7 +129,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
   get isSuppressed() {
     if(this.parent?.documentName==='Item'&&!equipmentGrantActive(this.parent))return true;
     if(this.parent?.documentName==='Item'&&this.parent.flags?.['trudvang-chronicles']?.inventoryTransfer)return true;
-    if (super.isSuppressed) return true;
+    if (super.isSuppressed || isVisionBlindnessSuspended(this)) return true;
     if (this.system?.stackId === "trudvang-fatigued" && this.parent?.documentName === "Actor"
       && Array.from(this.parent.effects ?? []).some(effect => !effect.disabled && !effect.duration?.expired
         && effect.flags?.["trudvang-chronicles"]?.consumablePolicy?.ignoreFatigue)) return true;

@@ -1136,6 +1136,40 @@ test("Tornrot suppresses fatigue without deleting its accumulated degree",()=>{
  fatigue.parent.effects[0].disabled=true;assert.equal(fatigue.isSuppressed,false);
 });
 
+test("Seeing masks only the adverse Vision/Blindness effect, including its native status and optional modifiers",async()=>{
+ const {conditionalSkillModifiers}=await import("../modules/rules/effect-conditional-tests.mjs");
+ const scope="trudvang-chronicles",sourceId="vitner-body-vitner:vision-blindness:4";
+ const actor={documentName:"Actor",effects:[]};
+ const effect=(id,tag="",statuses=[],counts=[])=>Object.assign(new TrudvangActiveEffect(),{
+  parent:actor,name:tag||id,disabled:false,duration:{expired:false},statuses:new Set(statuses),
+  flags:{[scope]:{transformation:{sourceId:id,key:id+tag,ruleTestContext:{counts}}}}
+ });
+ const penalty=effect(sourceId,"#affaibli",["blind"],[0,0,0,0,0,7]);
+ const blessing=effect(sourceId,"#ameliore");
+ const perfect=effect("vitner-power-of-vision:seeing:3");
+ const joar=effect("holy-joaringfaith-sight-of-lekaba:seeing:4");
+ actor.effects=[penalty,blessing,perfect,joar];
+ const activeStatuses=()=>actor.effects.filter(e=>!e.disabled&&!e.isSuppressed).flatMap(e=>[...e.statuses]);
+ const modifiers=()=>conditionalSkillModifiers(actor).map(r=>r.value);
+ assert.equal(penalty.isSuppressed,true);
+ assert.deepEqual(activeStatuses(),[]);
+ assert.deepEqual(modifiers(),[3]);
+ perfect.disabled=true;
+ assert.equal(penalty.isSuppressed,true,"the second version is still active");
+ joar.duration.expired=true;
+ assert.deepEqual(activeStatuses(),["blind"]);
+ assert.deepEqual(modifiers(),[-10,3]);
+ assert.equal(penalty.disabled,false);
+ const independent=effect("ordinary-injury","",["blind"]);
+ actor.effects.push(independent);
+ perfect.disabled=false;
+ assert.equal(penalty.isSuppressed,true);
+ assert.deepEqual(activeStatuses(),["blind"],"ordinary blindness still applies");
+ actor.effects=actor.effects.filter(e=>e!==penalty);
+ perfect.disabled=true;
+ assert.deepEqual(modifiers(),[3],"an expired or removed penalty cannot return");
+});
+
 function mockTimeChat(t) {
   const previous={ChatMessage:globalThis.ChatMessage,document:globalThis.document};
   t.after(()=>Object.assign(globalThis,previous));

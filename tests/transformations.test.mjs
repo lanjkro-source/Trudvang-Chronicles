@@ -473,7 +473,7 @@ test("compendium drops read persisted source rows and reject malformed dynamic r
  assert.equal(created,null);
 });
 test("vision is restored after removal, while later manual token edits remain intact",async()=>{
- globalThis.foundry.data={operators:{ForcedDeletion:{create:()=>({delete:true})}}};
+ globalThis.foundry.data={operators:{ForcedDeletion:{create:()=>({delete:true})},ForcedReplacement:{create:value=>value}}};
  const token={sight:{visionMode:"basic"},flags:{},async update(data){
   if(data["sight.visionMode"])this.sight.visionMode=data["sight.visionMode"];
   if(data[`flags.${S}.transformationVision`])this.flags[S]={transformationVision:data[`flags.${S}.transformationVision`]};
