@@ -9,6 +9,7 @@
       {{#if relicHitText}}<small class="impact-test-result">{{relicHitText}}</small>{{/if}}
       {{#if impactPending}}<button type="button" class="impact-test-button" data-action="resist-impact" data-target-actor-uuid="{{actorUuid}}">{{localize "TRUDVANG.Impact.Resist"}}</button>{{/if}}
       {{#if impactText}}<small class="impact-test-result">{{impactText}}</small>{{/if}}
+      {{#if responseDetails}}<span data-npc-roll-details="{{responseDetails}}" hidden></span>{{/if}}
     </li>
     {{/each}}
   </ul>

@@ -167,6 +167,10 @@
       "InitiativeChatMessagesName": "Afficher les jets d’initiative dans le chat",
       "InitiativeChatMessagesHint": "Si cette option est décochée, seul le score du tracker de combat est mis à jour. Aucun message ni dé 3D d’initiative n’est affiché."
     },
+    "NpcRollDetails": {
+      "Compendium": "Détails des jets privés",
+      "Unavailable": "Impossible de lire ou d’enregistrer le détail du jet dans le compendium privé."
+    },
     "Tab": {
       "Summary": "Résumé",
       "Combat": "Combat",

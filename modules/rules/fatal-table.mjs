@@ -23,7 +23,7 @@ export function fatalTotalInRange(total, first, last) {
   return Number.isInteger(total) && total >= first && total <= last;
 }
 
-export function matchesFatalResult(message, result, rule) {
-  return Boolean(result && rule && (fatalTotalInRange(recordedRoll(message)?.total, result.row, rule.last)
+export async function matchesFatalResult(message, result, rule) {
+  return Boolean(result && rule && (fatalTotalInRange((await recordedRoll(message))?.total, result.row, rule.last)
     || (result.forced === true && message.author?.isGM)));
 }

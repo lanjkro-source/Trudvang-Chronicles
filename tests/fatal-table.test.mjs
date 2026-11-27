@@ -144,8 +144,8 @@ test("a GM-forced 50 keeps the selected row and is actionable without a random r
     assert.equal(table.message.options.roll, undefined);
     const result = table.message.options.messageData.flags["trudvang-chronicles"].fatalMagicResult;
     assert.deepEqual(result, {actorUuid: actor.uuid, tokenUuid: "Scene.test.Token.weaver", row: 50, forced: true});
-    assert.equal(matchesFatalResult({author: game.user}, result, {last: 50}), true);
-    assert.equal(matchesFatalResult({author: {isGM: false}}, result, {last: 50}), false);
+    assert.equal(await matchesFatalResult({author: game.user}, result, {last: 50}), true);
+    assert.equal(await matchesFatalResult({author: {isGM: false}}, result, {last: 50}), false);
     const natural = {total: 50};
     await table.draw({results: [selected], roll: natural});
     assert.equal(table.message.options.roll, natural);

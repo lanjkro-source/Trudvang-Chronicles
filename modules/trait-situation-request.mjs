@@ -8,6 +8,7 @@ import {environmentActorValues, environmentCardView} from "./rules/environment.m
 import {applyGradedEffect} from "./graded-effects.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
+const NPC_RESPONSE_QUERY = SYSTEM_ID + ".submitNpcSituation";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}`;
 const CLAIM_LIFETIME_MS = 90000;
 const claims = new Map();
@@ -124,8 +125,8 @@ async function recordTraitSituationResponseNow(payload) {
       success
     };
     const npc=isNpcRoll(actor);
-    const responses=[...(request.responses??[]),npc?{actorUuid:row.actorUuid,tokenUuid:row.tokenUuid,name:row.name,success}:row];
-    if(npc)await publishNpcRollDetails({speaker:ChatMessage.getSpeaker({actor}),content:await renderRollCard("roll-card",{actorName:actor.name,actorImg:actor.img,label:request.title||game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"),...row,...rollOutcomeView(row)}),rolls:payload.roll&&globalThis.Roll?.fromData?[Roll.fromData(payload.roll)]:[]});
+    const record = npc ? await publishNpcRollDetails({content:await renderRollCard("roll-card",{actorName:actor.name,actorImg:actor.img,label:request.title||game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"),...row,...rollOutcomeView(row)}),rolls:payload.roll&&globalThis.Roll?.fromData?[Roll.fromData(payload.roll)]:[]}) : null;
+    const responses=[...(request.responses??[]),npc?{actorUuid:row.actorUuid,tokenUuid:row.tokenUuid,name:row.name,success,detailId:record?.id}:row];
     const content = await cardContent(message, request, responses);
     await message.update({content, [`flags.${SYSTEM_ID}.traitSituation.responses`]: responses});
     return "recorded";
@@ -150,6 +151,10 @@ export async function applyEnvironmentFatigue(message, actorUuid) {
     await message.update({content: await cardContent(message, request, responses), [`flags.${SYSTEM_ID}.traitSituation.responses`]: responses});
     return result;
   });
+}
+
+export function registerTraitSituationQueries() {
+  CONFIG.queries[NPC_RESPONSE_QUERY] = recordTraitSituationResponse;
 }
 
 export function registerTraitSituationSocket() {
@@ -227,7 +232,9 @@ export async function requestTraitSituationResponse({message, actor, token, modi
         console.error("Trudvang Chronicles | Resistance roll animation failed", error);
       }
     }
-    return await sendToGM({...base, result, ...(isNpcRoll(actor)?{roll:roll.toJSON?.()}:{}), type: "traitSituationSubmit", requestId: crypto.randomUUID()}, responder);
+    const response = {...base,result,...(isNpcRoll(actor)?{roll:roll.toJSON()}:{}),type:"traitSituationSubmit",requestId:crypto.randomUUID()};
+    if (isNpcRoll(actor) && responder.id !== game.user.id) return await responder.query(NPC_RESPONSE_QUERY,response);
+    return await sendToGM(response,responder);
   } catch (error) {
     console.error("Trudvang Chronicles | Resistance roll failed", error);
     return "unavailable";

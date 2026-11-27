@@ -1383,3 +1383,13 @@ button.trudvang-transformation-link:hover { filter: brightness(1.2); }
 
 .trudvang.damage-roll-dialog .damage-roll-supplement { margin: 12px 0; padding: 10px; border: 1px solid var(--trudvang-gold); }
 .trudvang.damage-roll-dialog .damage-roll-supplement legend { padding: 0 5px; color: var(--trudvang-on-header); font-weight: 700; }
+
+.trudvang.chat-card .npc-roll-details-button {
+  width: auto;
+  min-height: 0;
+  padding: 0 .4em;
+  margin-inline: .25em;
+  font-size: .85em;
+  white-space: nowrap;
+}
+.npc-roll-details-dialog .window-content { overflow: auto; }

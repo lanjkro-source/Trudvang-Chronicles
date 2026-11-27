@@ -1,3 +1,4 @@
+import {npcRollDetailMarker} from "./chat-roll-privacy.mjs";
 import {escapeHtml, escapeAttribute} from "./helpers.mjs";
 import {DIVINE_FAILURE_ROWS, divineFailurePowers, planDivineFailure} from "./rules/divine-failure.mjs";
 import {normalizeEffectDuration} from "./rules/effect-duration.mjs";
@@ -162,14 +163,16 @@ function areaDetails(result, message, row) {
     ? actor?.getFlag(SCOPE, "fatalRecoveryLoss")?.[message.id]?.amount : receipt?.lostVitner;
   const consequence = (amount == null ? "" : zoneOutcome(game.i18n.format(`TRUDVANG.AreaChat.${resource}`, {amount})))
     + (damage?.temporary ? zoneOutcome(game.i18n.format("TRUDVANG.AreaChat.TemporaryHealthLoss", {amount: damage.temporary})) : "")
+    + npcRollDetailMarker(damage?.detailId)
     + (additionalVitner > 0 ? zoneOutcome(game.i18n.format("TRUDVANG.AreaChat.VitnerLoss", {amount: additionalVitner})) : "");
   if (result.row !== 53) return consequence + (row.consequenceKeys?.map(key => zoneOutcome(game.i18n.localize(key))).join("")
     || (!consequence ? zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.Affected")) : ""));
   const flash = actor?.getFlag(SCOPE, "fatalFlash")?.[message.id];
-  const resisted = result.flashResults?.[encodeURIComponent(row.actorUuid).replaceAll(".", "%2E")] ?? flash?.success;
+  const key = encodeURIComponent(row.actorUuid).replaceAll(".", "%2E");
+  const resisted = result.flashResults?.[key] ?? flash?.success;
   if (typeof resisted === "boolean") return consequence + zoneOutcome(game.i18n.localize(
     resisted ? "TRUDVANG.AreaChat.Resisted" : "TRUDVANG.AreaChat.Blinded"
-  ), resisted);
+  ), resisted) + npcRollDetailMarker(result.flashRollDetails?.[key]);
   const effectUuid = flash?.effectUuid ?? actor?.effects.get(message.id)?.uuid;
   if (!own || !effectUuid) return consequence + zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.PendingResistance"));
   return consequence + zoneAction(game.i18n.localize("TRUDVANG.AreaChat.Resist"), {

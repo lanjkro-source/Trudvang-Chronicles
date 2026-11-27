@@ -127,7 +127,7 @@ async function drainVictim(actor, rolled, messageId) {
 export async function prepareFatalVitnerArea(message) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
-  if (!fatalMagicHasArea(rule) || !matchesFatalResult(message, result, rule)) return null;
+  if (!fatalMagicHasArea(rule) || !await matchesFatalResult(message, result, rule)) return null;
   if (result.applied) return null;
   const caster = await foundry.utils.fromUuid(result.actorUuid);
   if (!caster) return null;
@@ -251,7 +251,7 @@ export async function cleanupFatalVitnerPreviews() {
 export async function applyFatalVitnerArea(message, {prepareOnly = false, cost} = {}) {
   const result = message.getFlag(SCOPE, "fatalMagicResult");
   const rule = FATAL_MAGIC_ROWS[result?.row];
-  if (!matchesFatalResult(message, result, rule)) return {status: "invalidResult"};
+  if (!await matchesFatalResult(message, result, rule)) return {status: "invalidResult"};
   if (result?.applied) {
     await clearFatalVitnerPreview(message);
     return {status: "alreadyApplied"};

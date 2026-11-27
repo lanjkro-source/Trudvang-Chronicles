@@ -1,3 +1,4 @@
+import {mockNpcRollPack} from "./support/npc-roll-pack.mjs";
 import Handlebars from 'handlebars';import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {earthquakeProfile,earthquakeTest,spellZoneExpired,spellZonePhase,spellZoneRange,zonePixelScale} from '../modules/rules/spell-zones.mjs';
 import {POWER_DETAILS_BY_ID} from '../modules/power-catalog-data.mjs';
@@ -21,13 +22,14 @@ globalThis.foundry={applications:{handlebars:{renderTemplate:async(path,data)=>H
 Handlebars.registerHelper('eq',(a,b)=>a===b);
 Handlebars.registerHelper('localize',(key,options)=>game.i18n.format(key,options.hash));
 const {createSpellZoneOnAuthority,reconcileSpellZone,resolveSpellZoneRequest,registerSpellZoneSupport,requestSpellZoneTest,placeSpellZone,spellWallCardState,openSpellWallDamage,migrateToikalokkeEarthquake}=await import('../modules/spell-zones.mjs');
-const {recordedRoll,recordedRollFlag}=await import("../modules/chat-roll-privacy.mjs");
+const {readNpcRollDetails,publishNpcRollDetails,recordedRoll,recordedRollFlag}=await import("../modules/chat-roll-privacy.mjs");
 const {applyFatalEnclosure, registerFatalEnclosures}=await import('../modules/fatal-enclosure.mjs');
 const applyInstant=(prompt,user=owner)=>resolveSpellZoneRequest({type:'applyInstantSpellZone',messageId:prompt.id,userId:user.id});
 let gm,owner,observer,scene,caster,target,message,regions;
 function setup(id=vitner,counts={},runeLevel=1){
  docs.clear();hooks.clear();language='fr';gm={id:'gm',isGM:true,active:true,isSelf:true};owner={id:'owner',active:true};observer={id:'observer',active:true};const users=new Map([gm,owner,observer].map(u=>[u.id,u]));users.activeGM=gm;
  globalThis.game={user:gm,users,actors:new Map(),scenes:new Map(),messages:new Map(),time:{worldTime:0},combat:{id:'combat',round:1,started:true},i18n:{localize:k=>get(langs[language],k)??k,format:(k,d)=>String(get(langs[language],k)??k).replace(/\{(\w+)\}/g,(_,k)=>d[k]??'')}};
+ mockNpcRollPack(game);
  globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.uuid}),create:async data=>{const m={...data,id:data._id??'message-'+game.messages.size,author:gm,getFlag:(_s,k)=>m.flags?.[S]?.[k],async update(data){if(data.content!==undefined)m.content=data.content;for(const[k,v]of Object.entries(data))if(k.startsWith('flags.'+S+'.')){m.flags??={};m.flags[S]??={};m.flags[S][k.slice(('flags.'+S+'.').length)]=v;}}};game.messages.set(m.id,m);return m;}};
  const actor=(id,size=1)=>{const a={uuid:'Actor.'+id,name:id,type:'npc',documentName:'Actor',isOwner:true,effects:[],items:[],statuses:new Set(),system:{details:{size},protection:0,resources:{body:{value:20}}},getTraitValue:()=>0,flags:{},getFlag:(scope,key)=>a.flags[scope]?.[key],async update(changes){if(changes['system.resources.body.value']!==undefined)a.system.resources.body.value=changes['system.resources.body.value'];for(const [key,value] of Object.entries(changes)){if(!key.startsWith('flags.'))continue;const parts=key.split('.').slice(1),field=parts.pop(),parent=parts.reduce((object,part)=>object[part]??={},a.flags);parent[field]=value;}},testUserPermission:u=>u.isGM||u.id===owner.id,async createTrudvangEffect(data){const e={...data,id:'effect-'+effectIndex++,uuid:a.uuid+'.ActiveEffect.'+effectIndex,parent:a,documentName:'ActiveEffect',async delete(){a.effects=a.effects.filter(x=>x!==e);docs.delete(e.uuid);}};a.effects.push(e);docs.set(e.uuid,e);return e;},async clone(changes){return {...a,effects:changes.effects};}};docs.set(a.uuid,a);game.actors.set(a.uuid,a);return a;};
  caster=actor('caster');target=actor('target');regions=new Map();scene={id:'scene',grid:{size:100,distance:1,units:'m'},regions,lights:new Map(),tokens:new Map(),async createEmbeddedDocuments(type,data){if(type==='AmbientLight'){const light={...structuredClone(data[0]),id:'light-'+scene.lights.size,parent:scene,async update(data){Object.assign(this,structuredClone(data));},async delete(){assert.equal(scene.lights.get(this.id),this,'Light deleted twice');scene.lights.delete(this.id);}};scene.lights.set(light.id,light);return [light];}assert.equal(type,'Region');const manifest=JSON.parse(fs.readFileSync('system.json','utf8'));for(const behavior of data[0].behaviors)assert.ok(Object.hasOwn(manifest.documentTypes.RegionBehavior,behavior.type),'Region behavior must be declared in the package manifest: '+behavior.type);const r={...data[0],id:'r'+regionIndex++,uuid:'Scene.scene.Region.'+regionIndex,parent:scene,tokens:new Set(scene.tokens.values()),async update(data){for(const[k,v]of Object.entries(data))if(k.startsWith('flags.'+S+'.spellZone.'))r.flags[S].spellZone[k.slice(('flags.'+S+'.spellZone.').length)]=v;else if(k==='shapes')r.shapes=v;},async delete(){assert.equal(regions.get(r.id),r,"region deleted twice");regions.delete(r.id);docs.delete(r.uuid);}};regions.set(r.id,r);docs.set(r.uuid,r);return [r];}};game.scenes.set(scene.id,scene);
@@ -88,7 +90,7 @@ test('Blessed Home is a fixed daylight rite and applies one DC per target for a 
   assert.equal((await rollUnder({actor:caster,item,kind:'divine',label:item.name,target:10})).success,true);
   const card=[...game.messages.values()].at(-1);
   assert.doesNotMatch(card.content,/Foyer béni|VC 7/);
-  assert.match(game.messages.get(card.flags[S].npcRoll.detailId).content,/target.*Foyer béni.*VC 7/);
+  assert.match((await readNpcRollDetails(card.flags[S].npcRoll.detailId)).content,/target.*Foyer béni.*VC 7/);
   assert.equal(await magicBlockedForTarget(card,target,inside.uuid),true);
   assert.equal(await magicBlockedForTarget(card,caster,outside.uuid),false);
   inside.x=900;
@@ -242,8 +244,7 @@ test('Huvfurwurm Head consumes one improved guard, blocks its tablet and wakes a
   assert.deepEqual(processed,['1d10']);
   const publicRoll=[...game.messages.values()].find(message=>message.getFlag?.(S,'npcRoll'));
   assert.deepEqual(publicRoll.rolls,[]);
-  const details=game.messages.get(publicRoll.getFlag(S,'npcRoll').detailId);
-  assert.deepEqual(details.whisper,[gm.id]);
+  const details=await readNpcRollDetails(publicRoll.getFlag(S,'npcRoll').detailId);
   assert.match(details.content,/1d10 = 6/);
   assert.equal(dragonRelicCracked(caster),true);
   assert.equal(huvfurwurmGuard(caster),null);
@@ -276,7 +277,7 @@ test('Heat Water only reports the combined volume, duration and range',async()=>
   await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.heat',name:'Ébullition',type:'spell',actor:caster,system:{catalogId:id,level:1}},
    label:'Ébullition',powerLevelCounts:[2,2,2,1,1],target:12,kind:'spell'});
   const card=[...game.messages.values()].find(m=>m.id!=='cast');
-  assert.match(card.content,/117 L.*7 min.*10 m/);
+  assert.match((await readNpcRollDetails(card.flags[S].npcRoll.detailId)).content,/117 L.*7 min.*10 m/);
   assert.doesNotMatch(card.content,/place-spell-zone|magic-damage|data-transformation-key/);
   assert.equal(regions.size,0);
  }finally{globalThis.Roll=old;}
@@ -353,8 +354,8 @@ test('Seal defers a successful spell, freezes critical improvements and releases
   const request={action:'release',userId:observer.id,effectUuid:seal.uuid,targetUuid:tokenDoc.uuid};
   const released=await Promise.all([handleSealRequest(request),handleSealRequest(request)]);
   assert.equal(released.filter(result=>result.status==='released').length,1);
-  assert.equal(recordedRoll(game.messages.get('release-seal')).total,1);
-  assert.match(game.messages.get(game.messages.get('release-seal').flags[S].npcRoll.detailId).content,/117 L.*7 min.*10 m/);
+  assert.equal((await recordedRoll(game.messages.get('release-seal'))).total,1);
+  assert.match((await readNpcRollDetails(game.messages.get('release-seal').flags[S].npcRoll.detailId)).content,/117 L.*7 min.*10 m/);
   assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.targetUuid,tokenDoc.uuid);
   assert.equal(game.messages.get('release-seal').flags[S].releasedSeal.userId,observer.id);
   assert.equal(seal.disabled,true);
@@ -927,7 +928,7 @@ test('flying creatures are excluded and an elapsed world-time duration removes a
 
 test('a successful native casting card exposes zone placement instead of unrestricted damage or manual resistance buttons',async()=>{
  setup();const old=globalThis.Roll;globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){this.total=5;}};
- try{const {rollUnder}=await import('../modules/dice.mjs');await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.quake',name:'Tremblement de terre',type:'spell',actor:caster,system:{catalogId:vitner,level:2}},label:'Tremblement de terre',target:12,kind:'spell'});const card=[...game.messages.values()].find(m=>m.flags?.[S]?.npcRoll);assert.match(card.content,/place-spell-zone/);assert.doesNotMatch(card.content,/data-action="magic-damage"|data-action="roll-rule-test"/);assert.equal(recordedRollFlag(card,'spellZoneCasting').target,12);}
+ try{const {rollUnder}=await import('../modules/dice.mjs');await rollUnder({actor:caster,item:{uuid:'Actor.caster.Item.quake',name:'Tremblement de terre',type:'spell',actor:caster,system:{catalogId:vitner,level:2}},label:'Tremblement de terre',target:12,kind:'spell'});const card=[...game.messages.values()].find(m=>m.flags?.[S]?.npcRoll);assert.match(card.content,/place-spell-zone/);assert.doesNotMatch(card.content,/data-action="magic-damage"|data-action="roll-rule-test"/);assert.equal((await recordedRollFlag(card,'spellZoneCasting')).target,12);}
  finally{globalThis.Roll=old;}
 });
 test('linked tokens in one zone share one penalty and keep it while another representation remains inside',async()=>{
@@ -1166,7 +1167,9 @@ test('an Evade roll can finish inside the only area card, after its marker is re
   target.findRuleKnowledge=()=>({system:{level:1}});
   target.rollAbility=async(_item,options)=>{
    const rolled={formula:"1d20",total:1};
-   const publication=await options.publishMessage({rolls:[{toJSON:()=>rolled}]},{target:10});
+   const data={rolls:[{toJSON:()=>rolled}]};
+   const record=await publishNpcRollDetails({content:"<p>1 ≤ 10</p>",rolls:data.rolls,flags:options.resolveProcedure({target:10}).flags});
+   const publication=await options.publishMessage(data,{target:10},{npcDetailId:record.id});
    assert.equal(publication.message,prompt);
    return {messageId:prompt.id};
   };
@@ -1179,6 +1182,7 @@ test('an Evade roll can finish inside the only area card, after its marker is re
   assert.equal(regions.size,0);
   assert.equal((await requestSpellZoneTest(prompt,target.uuid,"evade")).status,"resolved");
   assert.match(prompt.content,/zone-outcome success[^>]*>Flammes évitées/);
+  assert.match(prompt.content,/data-npc-roll-details=/);
   assert.equal(game.messages.size,count);
   assert.equal(target.system.resources.body.value,20);
  }finally{globalThis.Roll=old;}

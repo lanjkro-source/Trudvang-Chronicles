@@ -36,6 +36,7 @@
       {{/if}}
       {{#if result}}<strong class="trait-situation-die">{{result}}</strong>{{/if}}
       <strong class="trait-situation-outcome">{{outcomeLabel}}</strong>
+      {{#if detailId}}<span data-npc-roll-details="{{detailId}}" hidden></span>{{/if}}
       {{#if ../environment}}<button type="button" data-action="apply-environment-fatigue" data-actor-uuid="{{actorUuid}}" {{#if fatigueApplied}}disabled{{/if}} title="{{localize "TRUDVANG.Environment.addFatigue"}}"><i class="fas fa-person-walking"></i> {{localize "TRUDVANG.Content.Item.Fatigued.Name"}}{{#if fatigueApplied}} ✓{{/if}}</button>{{/if}}
     </li>
     {{/each}}

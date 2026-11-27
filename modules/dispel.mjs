@@ -66,7 +66,7 @@ export function resolveDispelOnAuthority(payload){
  return job.finally(()=>{if(jobs.get(key)===job)jobs.delete(key);});
 }
 async function resolveNow({messageId,userId}){
- const message=game.messages?.get(messageId),attempt=recordedRollFlag(message,"dispelAttempt"),user=game.users?.get(userId);
+ const message=game.messages?.get(messageId),attempt=await recordedRollFlag(message,"dispelAttempt"),user=game.users?.get(userId);
  const caster=attempt?await foundry.utils.fromUuid(attempt.casterUuid):null;
  if(!attempt||!user?.active||!caster)return 'unavailable';
  const recipient=attempt.recipientUuid?await foundry.utils.fromUuid(attempt.recipientUuid):null;
@@ -77,7 +77,7 @@ async function resolveNow({messageId,userId}){
  const automatic=cleansing&&(test.dispel.roll==='none'||test.dispel.roll==='self'&&recipient?.uuid!==caster.uuid);
  if(automatic!==Boolean(attempt.automatic))return 'unavailable';
  if(automatic&&!user.isGM&&!caster.testUserPermission?.(user,'OWNER'))return 'unavailable';
- if(!automatic){const die=Number(recordedRoll(message)?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';}
+ if(!automatic){const die=Number((await recordedRoll(message))?.total);if(!Number.isInteger(die)||die<1||die>19||(die!==1&&die>attempt.target))return 'unavailable';}
  if(attempt.resolved)return attempt.status??'removed';
  const effect=await foundry.utils.fromUuid(attempt.effectUuid);
  if(!authority()&&(!message.canUserModify?.(game.user,'update')||(effect&&!effect.canUserModify?.(game.user,'delete'))))return 'unavailable';

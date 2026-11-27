@@ -55,10 +55,10 @@ export function nidTargetModifier(token,context,clock) {
   return {name:region.name,penalty,resistance,tokenUuid:token.uuid,actorUuid:token.actor?.uuid};
 }
 
-export function nidPreventsCasting(message,modifier) {
-  const proof=recordedRollFlag(message,"ruleTestContext")?.nidRoll;
+export async function nidPreventsCasting(message,modifier) {
+  const proof=(await recordedRollFlag(message,"ruleTestContext"))?.nidRoll;
   if(!proof||!modifier||!Number.isFinite(proof.target))return false;
-  return !resolveRollUnderOutcome(Number(recordedRoll(message)?.total),proof.target+modifier.penalty,proof).success;
+  return !resolveRollUnderOutcome(Number((await recordedRoll(message))?.total),proof.target+modifier.penalty,proof).success;
 }
 
 export function nidResistanceBonus(test,context,token,clock) {

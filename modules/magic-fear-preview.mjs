@@ -66,8 +66,8 @@ export function synchronizeMagicFearRegion(id, {deletedId} = {}) {
   if (regions.length || !scene || !fear?.area) return;
   const token = values(scene.tokens).find(row => row.uuid === area.casterTokenUuid);
   const author = cast.author;
-  const result = Number(recordedRoll(cast)?.total);
-  const target = recordedRollFlag(cast,"magicFearArea")?.target;
+  const result = Number((await recordedRoll(cast))?.total);
+  const target = (await recordedRollFlag(cast,"magicFearArea"))?.target;
   const {x,y} = area.origin ?? {};
   const actorUuid=section(cast)?.releasedSeal?.actorUuid??context.casterUuid;
   if (!token?.actor || token.actor.uuid !== actorUuid || !author ||

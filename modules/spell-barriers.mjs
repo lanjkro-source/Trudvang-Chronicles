@@ -79,7 +79,7 @@ async function resolveWallTest(region,source,spellLevel,{breach=false}={}) {
       const result=await rollUnder({actor:caster,label:local(breach?"NidBreach":"TestWall",{wall:region.name,level:spellLevel}),
         target:target+Number(caster.getRollModifier?.({kind:"situation"})||0),
         kind:"situation",successConsequence:local(breach?"NidBreached":"Blocked"),failureConsequence:local(breach?"Blocked":"Passed"),
-        publishMessage:async(data,outcome)=>{
+        publishMessage:async(_data,outcome,{data})=>{
           const Chat=globalThis.foundry?.documents?.ChatMessage?.implementation??globalThis.ChatMessage;
           const message=await Chat.create({...data,_id:id,
             flags:{...data.flags,[scope]:{...data.flags?.[scope],vitnerWallTest:{blocked:breach?!outcome.success:outcome.success}}}},{keepId:true});

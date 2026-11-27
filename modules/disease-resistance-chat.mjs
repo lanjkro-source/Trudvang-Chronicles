@@ -1,8 +1,8 @@
-import {isNpcRoll} from "./chat-roll-privacy.mjs";
+import {isNpcRoll,npcRollDetailMarker} from "./chat-roll-privacy.mjs";
 import {escapeHtml,escapeAttribute} from './helpers.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
-const S='trudvang-chronicles',channel='system.'+S,jobs=new Map(),replies=new Map();
+const S='trudvang-chronicles',channel='system.'+S,QUERY=S+'.submitNpcDiseaseResistance',jobs=new Map(),replies=new Map();
 let registered=false;
 /** Whisper to owners (including offline owners) and every GM, never observers. */
 export function diseaseRecipients(actor){
@@ -39,10 +39,10 @@ async function recordNow(payload){
  const late=clock?.stage!==0||clock.stageStartedAt+clock.stages[0].seconds<=Number(game.time?.worldTime||0);
  const response={actorUuid:actor.uuid,name:actor.name,result:payload.result,target:payload.target,...resolveRollUnderOutcome(payload.result,payload.target),late};
  const npc=isNpcRoll(actor);
- const summary=npc?{actorUuid:response.actorUuid,name:response.name,success:response.success,late}:response;
+ const summary=npc?{actorUuid:response.actorUuid,name:response.name,success:response.success,late,detailId:payload.npcDetailId}:response;
  const label=rollOutcomeText(summary,key=>game.i18n.localize(key));
  const detail=npc?"":game.i18n.format("TRUDVANG.Disease.ResistanceResult",response);
- const row='<div class="disease-resistance-result disease-resistance-result--'+(response.success?'success':'failure')+'"><span>'+escapeHtml(actor.name)+'</span><span>'+escapeHtml(detail)+'</span><strong>'+escapeHtml(label)+'</strong>'+(late?'<em>'+escapeHtml(game.i18n.localize('TRUDVANG.Disease.ResistanceLate'))+'</em>':'')+'</div>';
+ const row='<div class="disease-resistance-result disease-resistance-result--'+(response.success?'success':'failure')+'"><span>'+escapeHtml(actor.name)+'</span><span>'+escapeHtml(detail)+'</span><strong>'+escapeHtml(label)+'</strong>'+npcRollDetailMarker(summary.detailId)+(late?'<em>'+escapeHtml(game.i18n.localize('TRUDVANG.Disease.ResistanceLate'))+'</em>':'')+'</div>';
  const content=message.content.replace(/<button\b([^>]*data-action="roll-rule-test"[^>]*)>/,'<button disabled$1>').replace(/<\/div>\s*$/,row+'</div>');
  // Preserve the notice and its original dice; the resistance is part of this card.
  const rolls=payload.roll&&!npc?[...message.rolls,Roll.fromData(payload.roll)]:message.rolls;
@@ -50,6 +50,9 @@ async function recordNow(payload){
   ['flags.'+S+'.diseaseResistance']:{effectUuid:effect.uuid,actorUuid:actor.uuid,response:summary},
   'flags.dice-so-nice.skip':true});
  return {response,animate:true};
+}
+export function registerDiseaseResistanceQuery(){
+ CONFIG.queries[QUERY]=payload=>recordDiseaseResistance(payload);
 }
 export function registerDiseaseResistanceSocket(){
  if(registered||!game.socket)return;registered=true;
@@ -66,10 +69,11 @@ export function registerDiseaseResistanceSocket(){
 }
 export function diseaseResultPublisher(effect,actor,preferred){
  const message=diseaseResultMessage(effect,preferred);if(!message)return null;
- return async(messageData,outcome)=>{
-  const payload={type:'diseaseResistanceSubmit',requestId:crypto.randomUUID(),userId:game.user.id,messageId:message.id,effectUuid:effect.uuid,actorUuid:actor.uuid,result:outcome.result,target:outcome.target,roll:messageData.rolls[0].toJSON()};
+ return async(messageData,outcome,{npcDetailId}={})=>{
+  const payload={type:'diseaseResistanceSubmit',requestId:crypto.randomUUID(),userId:game.user.id,messageId:message.id,effectUuid:effect.uuid,actorUuid:actor.uuid,result:outcome.result,target:outcome.target,roll:messageData.rolls[0].toJSON(),npcDetailId};
   let result;
   if(responder()?.id===game.user.id||(!responder()&&message.canUserModify?.(game.user,'update')))result=await recordDiseaseResistance(payload);
+  else if(isNpcRoll(actor)&&responder())result=await responder().query(QUERY,payload);
   else{
    if(!responder()||!game.socket)throw new Error(game.i18n.localize('TRUDVANG.ChatApplication.Unavailable'));
    registerDiseaseResistanceSocket();

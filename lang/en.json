@@ -167,6 +167,10 @@
       "InitiativeChatMessagesName": "Show initiative rolls in chat",
       "InitiativeChatMessagesHint": "When unchecked, only the combat tracker score is updated. No initiative message or 3D die is shown."
     },
+    "NpcRollDetails": {
+      "Compendium": "Private roll details",
+      "Unavailable": "The roll details could not be read or saved in the private compendium."
+    },
     "Tab": {
       "Summary": "Summary",
       "Combat": "Combat",

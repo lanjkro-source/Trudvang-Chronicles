@@ -1,3 +1,4 @@
+import {mockNpcRollPack} from "./support/npc-roll-pack.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
@@ -74,6 +75,7 @@ globalThis.game = {user: {isGM: true}, combat: null, i18n: {
   lang: "fr", localize: key => get(fr, key) ?? key,
   format: (key, data) => String(get(fr, key) ?? key).replace(/\{(\w+)\}/g, (_, name) => data[name] ?? "")
 }};
+const npcRollRecords = mockNpcRollPack(game);
 const {NpcData, CharacterData, AbilityData} = await import("../modules/data-models.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 const {TrudvangActiveEffect} = await import("../modules/effects.mjs");
@@ -431,7 +433,7 @@ test("the health dice action rolls inclusive bounds, fills health and preserves 
   assert.equal(messages.length, 2);
   assert.ok(messages[0].content.includes("21 PS"));
   assert.deepEqual(messages[0].whisper, ["gm"]);
-  assert.equal(messages[0].flags["trudvang-chronicles"].npcRollDetails.rollData[0].formula, "1d6 + 20");
+  assert.equal(npcRollRecords.get(messages[0].flags["trudvang-chronicles"].npcRoll.detailId).flags["trudvang-chronicles"].npcRollDetails.rollData[0].formula, "1d6 + 20");
   npc.isOwner = false;
   assert.equal(await npc.rollNpcHealth(), null);
   npc.isOwner = true; npc.type = "character";
@@ -1118,6 +1120,7 @@ test("book knowledge opens its reference without creating an ability on the NPC"
   assert.equal(rows[2].catalogId, "oneHandedLightWeapons");
   assert.equal(rows[5].catalogId, "motherTongue");
   const opened = [];
+  const previousPacks = game.packs;
   game.packs = new Map([["trudvang-chronicles.skills-fr", {
     getDocument: async id => {
       assert.equal(id, deterministicId("ability:oneHandedLightWeapons"));
@@ -1130,7 +1133,7 @@ test("book knowledge opens its reference without creating an ability on the NPC"
     assert.equal(sheet.actor.items.length, 0);
     const html = render(await sheet._prepareContext({}));
     assert.match(html, /data-action="show-npc-book-skill" data-index="2"/);
-  } finally { delete game.packs; }
+  } finally { game.packs = previousPacks; }
 });
 
 test("NPC capacities open a dedicated sheet and never appear among actual effects", async () => {
@@ -1736,7 +1739,8 @@ test("perfect spell success spends only the original vitner cost and stores free
  assert.equal(npc.system.activeSpellCastings[0].cost,4);
  assert.equal(npc.system.activeSpellCastings[0].powerLevelSnapshot[0].count,3);
  assert.equal(runtime.messages.find(message=>message.flags?.["trudvang-chronicles"].npcRoll).updated["flags.trudvang-chronicles.ruleTestContext"].countsById[levels[0].id],3);
- assert.equal(runtime.messages.at(-1).flags["trudvang-chronicles"].npcRollDetails.rollData[0].formula,"1d10+1");
+ assert.equal(runtime.messages.length,1);
+ assert.deepEqual(npcRollRecords.get(runtime.messages[0].flags["trudvang-chronicles"].npcRoll.detailId).flags["trudvang-chronicles"].npcRollDetails.rollData.map(roll=>roll.formula),["1d20","1d10+1"]);
 });
 
 test("innate NPC magic requires an explicit casting SV and respects the unlimited-vitner feat", async t => {

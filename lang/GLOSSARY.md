@@ -194,6 +194,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.InitiativeChatMessagesName` | Show initiative rolls in chat | Afficher les jets d’initiative dans le chat |
 | `TRUDVANG.Settings.InitiativeChatMessagesHint` | When unchecked, only the combat tracker score is updated. No initiative message or 3D die is shown. | Si cette option est décochée, seul le score du tracker de combat est mis à jour. Aucun message ni dé 3D d’initiative n’est affiché. |
 
+## `TRUDVANG.NpcRollDetails`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.NpcRollDetails.Compendium` | Private roll details | Détails des jets privés |
+| `TRUDVANG.NpcRollDetails.Unavailable` | The roll details could not be read or saved in the private compendium. | Impossible de lire ou d’enregistrer le détail du jet dans le compendium privé. |
+
 ## `TRUDVANG.Tab`
 
 | Clé | English | Français |

@@ -1,4 +1,4 @@
-import {isNpcRoll,recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
+import {isNpcRoll,npcRollDetailMarker,npcRollDetailsId,readNpcRollDetails,recordedRoll,recordedRollFlag} from "./chat-roll-privacy.mjs";
 import {fireEvadeItem,canEvadeZoneFire,zoneFireInitiativePenalty,applyZoneFireDamage,syncSpellZoneLight,cleanupOrphanSpellZoneLights} from './fire-zones.mjs';
 import {magicDamageProfile} from './magic-damage.mjs';
 import {deleteEffectOnce} from './effect-deletion.mjs';
@@ -113,12 +113,12 @@ function promptHTML(info,state){
    action:'spell-zone-test','zone-choice':choice,'actor-uuid':row.actorUuid
   }, choice==='accept'?'fa-heart-crack':'fa-dice-d20');
   if(info.profile.kind==='fire')return response?.resolved
-   ? zoneOutcome(local(response.avoided?'FireAvoided':'FireApplied'),response.avoided)
+   ? zoneOutcome(local(response.avoided?'FireAvoided':'FireApplied'),response.avoided)+npcRollDetailMarker(response.detailId)
    : (row.canEvade?control('evade','FireEvade'):'')+control('accept',row.canEvade?'FireDeclineEvade':'FireAccept');
   const result=response?.resolved?zoneOutcome(rollOutcomeText(outcome,k=>game.i18n.localize(k)),outcome.success)
    +(!outcome.success&&!mud?zoneOutcome(game.i18n.localize(info.profile.kind==='runeEarthquake'?'TRUDVANG.AreaChat.Stunned':'TRUDVANG.AreaChat.Prone'),false):''):'';
   const showTest=mud ? row.trapped&&(!response?.resolved||!outcome.success) : !response?.resolved;
-  return result+(showTest?control('test',mud?'QuagmireRope':'Test'):'');
+  return result+npcRollDetailMarker(response?.detailId)+(showTest?control('test',mud?'QuagmireRope':'Test'):'');
  })+'</article>';
 }
 async function updatePrompt(message,info,state,region){
@@ -184,7 +184,7 @@ export function reconcileSpellZone(region,{removed=false,entering,leaving}={}){
   let tokens=members(region,{entering,leaving});
   if(isForeignMagic(info.context)){
    const source=game.messages?.get(info.messageId),origin=values(region.shapes)[0];
-   for(const [uuid,token]of tokens)if(nidPreventsCasting(source,nidTargetModifier(token,info.context,clock(info)))
+   for(const [uuid,token]of tokens)if(await nidPreventsCasting(source,nidTargetModifier(token,info.context,clock(info)))
     || await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message:source}))tokens.delete(uuid);
   }
   if(info.profile.instant&&!info.initialTokens){info.initialTokens=[...tokens].map(([actorUuid,t])=>({actorUuid,tokenUuid:t.uuid}));await region.update({['flags.'+S+'.spellZone.initialTokens']:info.initialTokens});}
@@ -235,9 +235,9 @@ function placementFeedback(result){
  if(result.reason)ui.notifications.warn(local(result.reason));
  else if(!['placed','alreadyPlaced'].includes(result.status))ui.notifications.warn(local(result.status==='invalidArea'?'DarknessAreaInvalid':result.status==='fogMoveTooFar'?'FogMoveTooFar':result.status==='outOfRange'?'OutOfRange':'Unavailable'));
 }
-function successfulZoneCast(message,ready){
- const die=Number(recordedRoll(message)?.total);
- const target=recordedRollFlag(message,"spellZoneCasting")?.target ?? ready?.target;
+async function successfulZoneCast(message,ready){
+ const die=Number((await recordedRoll(message))?.total);
+ const target=(await recordedRollFlag(message,"spellZoneCasting"))?.target ?? ready?.target;
  return Boolean(ready&&Number.isInteger(die)&&die>=1&&die<=19&&(die===1||die<=target));
 }
 
@@ -256,7 +256,7 @@ export async function extinguishFireTamerLight(message,scene,tokenId,lightId){
  const cast=message?.flags?.[S]?.ruleTestContext;
  const token=scene?.tokens?.get(tokenId);
  const profile=fixedLightProfile(cast);
- if(!game.user?.isGM||cast?.sourceId!==fireTamerId||!successfulZoneCast(message,message.flags?.[S]?.spellZoneCasting)||
+ if(!game.user?.isGM||cast?.sourceId!==fireTamerId||!await successfulZoneCast(message,message.flags?.[S]?.spellZoneCasting)||
    !token?.actor||token.actor.uuid!==cast.casterUuid)return {status:'unavailable'};
  return serial('extinguish:'+scene.id+':'+lightId,async()=>{
   const light=scene.lights?.get(lightId);
@@ -275,7 +275,7 @@ export async function createSpellZoneOnAuthority(payload){
  const actor=released?.actorUuid?await foundry.utils.fromUuid(released.actorUuid):castActor;
  const profile=zoneProfile(cast);
  const canPlace=actor&&user&&(actor.testUserPermission(user,'OWNER')||canResolveReleasedSeal(message,user));
- if(!writer()||!user?.active||!message||!canRead(message,user)||!canPlace||!profile||!successfulZoneCast(message,ready))return {status:'unavailable'};
+ if(!writer()||!user?.active||!message||!canRead(message,user)||!canPlace||!profile||!await successfulZoneCast(message,ready))return {status:'unavailable'};
  const place=()=>placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,profile});
  return released&&!released.tracked||profile.kind==='vitnerWall'&&!profile.persistent
   ? place() : withMaintainedZoneCasting(castActor,cast,place);
@@ -358,7 +358,7 @@ async function placeSpellZoneOnAuthority(payload,{message,cast,ready,user,actor,
  if(profile.kind==='nidSanctuary'&&!payload.daylight)return {status:'unavailable'};
  const fixedConstruction=['fixedLight','earthWall','airShield','vitnerWall','darkness','fog'].includes(profile.kind);
  const sanctuary=fixedConstruction&&isForeignMagic(cast)&&nidSanctuaryAt(scene,token.level,point,{time:Number(game.time?.worldTime)||0,combat:game.combat});
- if(sanctuary&&nidPreventsCasting(message,infoOf(sanctuary).profile)){
+ if(sanctuary&&await nidPreventsCasting(message,infoOf(sanctuary).profile)){
   await message.update({['flags.'+S+'.spellZoneCasting']:{...ready,barrierBlocked:true}});
   void trackSpellZoneRemoval(cast);
   return {status:'blocked',reason:'NidSanctuaryBlocked'};
@@ -460,7 +460,7 @@ export function decorateSpellZoneRows(message,html){
   const receipt=zoneDamageReceipt(actor,message.id);
   const details=element.querySelector('.zone-target-details');
   if(receipt&&details){
-   details.insertAdjacentHTML('beforeend',zoneOutcome(game.i18n.format('TRUDVANG.AreaChat.HealthLoss',receipt)));
+   details.insertAdjacentHTML('beforeend',zoneOutcome(game.i18n.format('TRUDVANG.AreaChat.HealthLoss',receipt))+npcRollDetailMarker(receipt.detailId));
    if(receipt.temporary)details.insertAdjacentHTML('beforeend',zoneOutcome(game.i18n.format('TRUDVANG.AreaChat.TemporaryHealthLoss',{amount:receipt.temporary})));
   }
  }
@@ -489,17 +489,22 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  if(mud&&lock.phase!==phase){locks.delete(key);return {status:'unavailable'};}
  if(info.profile.kind==='fire'&&payload.choice==='accept'&&payload.action==='finish'){const next=structuredClone(state);await applyZoneFireDamage({actor,token:victimToken,info,message});next.responses[responseKey(actor.uuid)]={resolved:true,avoided:false};await updatePrompt(message,info,next,region);locks.delete(key);return {status:'resolved'};}
  if(payload.action!=='finish')return {status:'unavailable'};
- let outcome=old?.outcome;
+ let outcome=old?.outcome,detailId=old?.detailId;
  if(!outcome){
   let roll,target;
-  if(payload.roll){
+  if(payload.npcDetailId){
+   const record=await readNpcRollDetails(payload.npcDetailId),proof=record?.flags?.spellZoneProof;
+   if(!isNpcRoll(actor)||proof?.actorUuid!==actor.uuid||proof?.messageId!==message.id||proof?.token!==lock.token||!record.rollData?.[0])return {status:'unavailable'};
+   roll=Roll.fromData(record.rollData[0]);target=proof.target;detailId=payload.npcDetailId;
+  }else if(payload.roll){
+   if(isNpcRoll(actor))return {status:'unavailable'};
    try{roll=Roll.fromData(payload.roll);}catch{return {status:'unavailable'};}
    target=Number(payload.target);
   }else{
-   const proof=game.messages.get(payload.proofId),test=recordedRollFlag(proof,"spellZoneProof");
+   const proof=game.messages.get(payload.proofId),test=await recordedRollFlag(proof,"spellZoneProof");
    if((proof?.author?.id??proof?._source?.author)!==user.id||test?.messageId!==message.id
     ||test?.actorUuid!==actor.uuid||test.token!==lock.token)return {status:'unavailable'};
-   roll=recordedRoll(proof);target=Number(test.target);
+   roll=await recordedRoll(proof);target=Number(test.target);detailId=npcRollDetailsId(proof);
   }
   const die=Number(roll?.total);
   if(roll?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
@@ -507,7 +512,7 @@ export async function resolveSpellZoneTestOnAuthority(payload){
  }
  const next=structuredClone(state);
  if(mud&&!old)delete next.responses[responseKey(actor.uuid)];
- const response=next.responses[responseKey(actor.uuid)]??={outcome:isNpcRoll(actor)?{success:outcome.success}:outcome,proofId:payload.proofId,resolved:false};
+ const response=next.responses[responseKey(actor.uuid)]??={outcome:isNpcRoll(actor)?{success:outcome.success}:outcome,proofId:payload.proofId,detailId,resolved:false};
  if(mud){
   if(response.outcome.success){
    await rope.update({['flags.'+S+'.spellZoneRecipient.quagmire.rescued']:true,description:local('QuagmireRescued')});
@@ -592,17 +597,17 @@ async function checkVitnerWallOnAuthority({messageId,tokenUuid,userId}){
  const message=game.messages.get(messageId),user=game.users.get(userId),token=await foundry.utils.fromUuid(tokenUuid);
  if(!message||!user?.active||!canRead(message,user)||token?.documentName!=='Token'||
    (!user.isGM&&(token.hidden&&!token.actor?.testUserPermission(user,'OWNER'))))return {status:'unavailable'};
- const casting=recordedRollFlag(message,'ruleTestContext'),site=casting?.barrierOrigin;
+ const casting=await recordedRollFlag(message,'ruleTestContext'),site=casting?.barrierOrigin;
  if(!(user.isGM||message.author?.id===user.id||token.actor?.testUserPermission(user,'OWNER')))return {status:'unavailable'};
  const saved=casting?.nidTargets?.find(row=>row.tokenUuid===token.uuid);
- if(nidPreventsCasting(message,saved??nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat})))return {status:'nidBlocked'};
+ if(await nidPreventsCasting(message,saved??nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat})))return {status:'nidBlocked'};
  if(!site||site.sceneId!==token.parent.id||site.level!==(token.level??null))return {status:'pass'};
  const blocked=casting.kind==='spell'&&await vitnerWallBlocks({scene:token.parent,level:token.level,origin:site,target:tokenBarrierCenter(token),message});
  return {status:blocked?'blocked':'pass'};
 }
 
 export async function magicBlockedForTarget(message,actor,tokenUuid){
- const casting=recordedRollFlag(message,'ruleTestContext');
+ const casting=await recordedRollFlag(message,'ruleTestContext');
  if(!isForeignMagic(casting))return false;
  const site=casting.barrierOrigin;
  const saved=casting.nidTargets?.find(row=>tokenUuid?row.tokenUuid===tokenUuid:row.actorUuid===actor.uuid);
@@ -612,7 +617,7 @@ export async function magicBlockedForTarget(message,actor,tokenUuid){
  if(token?.actor?.uuid!==actor.uuid)return false;
  const time={time:Number(game.time?.worldTime)||0,combat:game.combat,level:token.level};
  const modifier=saved??nidTargetModifier(token,casting,time);
- if(nidPreventsCasting(message,modifier)){
+ if(await nidPreventsCasting(message,modifier)){
   ui.notifications.warn(local('NidSanctuaryBlocked'));
   return true;
  }
@@ -844,8 +849,9 @@ export async function requestSpellZoneTest(message,actorUuid,choice='test'){
    const spec=['fire','quagmire'].includes(info.profile.kind)?{}:earthquakeTest(info.profile,impactSize(actor)),effect=region?effectsFor(actor,region)[0]:null;
    const procedure=outcome=>({flags:{spellZoneProof:{messageId:message.id,actorUuid,token:begin.token,target:outcome.target}}});let result;
    let resolution;
-   const publishMessage=async(data,outcome)=>{
-    resolution=await request({...base,action:'finish',token:begin.token,roll:data.rolls[0].toJSON(),target:outcome.target});
+   const publishMessage=async(data,outcome,{npcDetailId}={})=>{
+    const proof=isNpcRoll(actor)?{npcDetailId}:{roll:data.rolls[0].toJSON(),target:outcome.target};
+    resolution=await request({...base,action:'finish',token:begin.token,...proof});
    return {message,animate:resolution.status==='resolved',whisper:values(message.whisper).map(user=>user.id??user)};
    };
    const rollOptions={reactive:true,resistedEffect:effect,resolveProcedure:procedure,publishMessage};

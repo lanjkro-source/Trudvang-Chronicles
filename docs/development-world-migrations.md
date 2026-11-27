@@ -220,3 +220,8 @@ Les replis `TEMPORARY WORLD MIGRATION` dans `modules/huvfurwurm-head.mjs` et `mo
 ## Anciennes zones de ténèbres de Jorn
 
 Au rapprochement des zones, le bloc marqué `TEMPORARY WORLD MIGRATION` dans `modules/spell-zones.mjs` retire le comportement Foundry d’ajustement de l’obscurité qui portait le nom de la région et imposait une obscurité maximale. La synchronisation recrée l’occultation à partir de la source d’obscurité de la région. Retirer ce bloc une fois les anciennes régions expirées ou les mondes concernés supprimés.
+
+
+### Détails des jets de PNJ avant le compendium privé
+
+Le repli de `readNpcRollDetails()` dans `modules/chat-roll-privacy.mjs` retrouve le message privé associé aux cartes de la série 1.1. Les anciens jets restent utilisables pour leurs actions et preuves. Retirer ce repli une fois ces messages et mondes de développement supprimés.

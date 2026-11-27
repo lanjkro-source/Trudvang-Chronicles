@@ -1,4 +1,4 @@
-import {animateMaskedNpcRolls,isNpcRoll} from "./chat-roll-privacy.mjs";
+import {isNpcRoll,publishNpcRollDetails} from "./chat-roll-privacy.mjs";
 import {parseSimpleDamageFormula} from "./rules/equipment-resolver.mjs";
 
 const SCOPE = "trudvang-chronicles";
@@ -36,25 +36,25 @@ export async function applyZoneDamage({actor, message, formula, openRoll = 0, qu
     damage = Number(roll.total);
     rolls = [roll];
   }
+  const casterUuid = message.flags?.[SCOPE]?.spellZoneTest?.casterUuid ?? message.flags?.[SCOPE]?.ruleTestContext?.casterUuid;
+  const caster = casterUuid ? await foundry.utils.fromUuid(casterUuid) : null;
+  const privateDice = isNpcRoll(caster ?? actor);
+  const record = privateDice && rolls.length ? await publishNpcRollDetails({
+    content:(await Promise.all(rolls.map(roll=>roll.render?.()))).join(""),rolls
+  }) : null;
   const {applyDamageToActor} = await import("./damage-application.mjs");
   const result = await applyDamageToActor({
-    actor, damage: Math.max(0, damage), usage: "magic", qualification, announce: false, receipt
+    actor, damage: Math.max(0, damage), usage: "magic", qualification, announce: false, receipt, receiptDetailId:record?.id
   });
   if (!result) throw Error("Area damage application failed");
-  if (game.dice3d?.showForRoll) {
-    const casterUuid=message.flags?.[SCOPE]?.spellZoneTest?.casterUuid??message.flags?.[SCOPE]?.ruleTestContext?.casterUuid;
-    const caster=casterUuid?await foundry.utils.fromUuid(casterUuid):null;
-    const privateDice = isNpcRoll(caster ?? actor);
-    if (privateDice) void animateMaskedNpcRolls(rolls);
+  if (!privateDice && game.dice3d?.showForRoll) {
     const recipients = Array.from(game.users.values()).filter(user => user.isGM
-      || (!privateDice && !message.blind && actor.testUserPermission(user, "OWNER"))).map(user => user.id);
+      || (!message.blind && actor.testUserPermission(user, "OWNER"))).map(user => user.id);
     try {
-      if (!privateDice || game.user.isGM) for (const roll of rolls) {
-        await game.dice3d.showForRoll(roll, game.user, !privateDice, recipients, !privateDice && Boolean(message.blind));
-      }
+      for (const roll of rolls) await game.dice3d.showForRoll(roll, game.user, true, recipients, Boolean(message.blind));
     } catch (error) {
       console.error("Trudvang | Area damage animation failed", error);
     }
   }
-  return {amount: result.bodyDamage, temporary: result.temporaryDamage};
+  return {amount:result.bodyDamage,temporary:result.temporaryDamage,...(record?{detailId:record.id}:{})};
 }

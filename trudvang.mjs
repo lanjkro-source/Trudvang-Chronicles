@@ -41,7 +41,14 @@ import {registerRoundResistanceHooks} from './modules/round-resistance.mjs';
 import {registerInventoryCanvasDrop} from './modules/inventory-canvas-drop.mjs';
 import {registerInventoryTransferSocket,recoverInventoryTransfers} from './modules/inventory-transfer.mjs';
 
+import {registerNpcRollQueries} from "./modules/npc-roll-records.mjs";
+import {registerDiseaseResistanceQuery} from "./modules/disease-resistance-chat.mjs";
+import {registerTraitSituationQueries} from "./modules/trait-situation-request.mjs";
+
 Hooks.once("init", () => {
+  registerNpcRollQueries();
+  registerTraitSituationQueries();
+  registerDiseaseResistanceQuery();
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
   registerSacredHooks();

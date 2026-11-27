@@ -99,7 +99,7 @@ async function reconcileAuraTokenNow(region, token, {leaving=false,force=false}=
   const {tokenBarrierCenter}=await import("./rules/spell-barriers.mjs");
   const {nidPreventsCasting,nidTargetModifier}=await import("./rules/nid-zones.mjs");
   const origin=Array.from(region.shapes??[])[0];
-  if(nidPreventsCasting(message,nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat}))
+  if(await nidPreventsCasting(message,nidTargetModifier(token,casting,{time:Number(game.time?.worldTime)||0,combat:game.combat}))
     || await vitnerWallBlocks({scene:region.parent,level:token.level,origin,target:tokenBarrierCenter(token),message})){
    if(children.length)await removeAuraRecipients(actor,children);
    return;

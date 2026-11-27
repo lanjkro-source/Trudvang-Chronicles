@@ -1,3 +1,4 @@
+import {mockNpcRollPack} from "./support/npc-roll-pack.mjs";
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -13,6 +14,7 @@ globalThis.document={createElement:()=>({set textContent(value){this.innerHTML=S
 globalThis.foundry={applications:{api:{DialogV2:{wait:()=>assert.fail('automatic damage must not open a dialog')}},handlebars:{renderTemplate:async(path,data)=>Handlebars.compile(fs.readFileSync(new URL('../'+path.replace('systems/trudvang-chronicles/',''),import.meta.url),'utf8'))(data)}},utils:{fromUuid:async uuid=>documents.get(uuid)}};
 const documents=new Map();
 const {triggerPersistentDamage,processPersistentDamageRound,persistentDamageDefinition}=await import('../modules/persistent-damage.mjs');
+const {readNpcRollDetails}=await import("../modules/chat-roll-privacy.mjs");
 const {requestChatApplication,requestDamageResistance}=await import('../modules/chat-application.mjs');
 function runtime(t,{key='vitner-dimvitner:hand-of-death:1#effect',counts={},custom,results=[4]}={}){
  const previous={game:globalThis.game,Roll:globalThis.Roll,ChatMessage:globalThis.ChatMessage};
@@ -20,6 +22,7 @@ function runtime(t,{key='vitner-dimvitner:hand-of-death:1#effect',counts={},cust
  const cards=[],privateCards=[],rolls=[],gm={id:'gm',isGM:true,isSelf:true,active:true},users=new Map([[gm.id,gm]]);users.activeGM=gm;
  const messages=new Map(),combat={id:crypto.randomUUID(),started:true,round:1,combatants:[]};
  globalThis.game={user:gm,users,messages,combat,time:{worldTime:0},i18n:{lang:'fr',localize:lookup,format}};
+ mockNpcRollPack(game);
  globalThis.Roll=class{static fromData(data){return data;}constructor(formula){this.formula=formula;rolls.push(this);}async evaluate(){this.total=results.shift();assert.notEqual(this.total,undefined,'unexpected die');return this;}async render(){return 'Duration';}async toMessage(data){return ChatMessage.create({...data,content:'Duration',rolls:[this]});}};
  function updateObject(target,changes){for(const [path,value]of Object.entries(changes)){const parts=path.split('.');let row=target;for(const part of parts.slice(0,-1))row=row[part]??={};row[parts.at(-1)]=structuredClone(value);}}
  globalThis.ChatMessage={getSpeaker:()=>({}),create:async data=>{const message={...data,id:crypto.randomUUID(),author:gm,getFlag:(_s,key)=>message.flags?.[S]?.[key],update:async changes=>updateObject(message,changes)};messages.set(message.id,message);(data.blind?privateCards:cards).push(message);return message;}};
@@ -39,7 +42,7 @@ test('Main funeste rolls once on application, waits for resistance and keeps its
  assert.equal(r.cards[0].getFlag(S,'damageContext').resistance.test.sv,6);
  assert.match(r.cards[0].content,/data-damage="9"/);assert.doesNotMatch(r.cards[0].content,/TRUDVANG\./);
  assert.doesNotMatch(r.cards[0].content,/JO 0 → JO 10/);
- assert.match(r.privateCards[0].content,/JO 0 → JO 10/);
+ assert.match((await readNpcRollDetails(r.cards[0].flags[S].npcRoll.detailId)).content,/JO 0 → JO 10/);
  assert.equal(r.effect.flags[S].persistentDamageClock.pending,null);
 });
 test('unavoidable damage automatically removes PS and cannot apply twice',async t=>{

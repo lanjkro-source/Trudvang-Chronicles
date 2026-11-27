@@ -1595,12 +1595,15 @@ export class TrudvangActor extends BaseActor {
       seal: seal ? {effect: seal, token: sealToken, cost: options.cost, levels: levelSnapshot} : null,
       resolvePerfectSuccess:isDivine?null:async()=>{
         const bonusRoll=await new Roll("1d10+1").evaluate();
-        await createActorRollMessage(this,{speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}))}</p>`,rolls:[bonusRoll]},{hideOutcome:true});
+        const bonusNote=escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus",{points:bonusRoll.total}));
+        const npc=isNpcRoll(this);
+        if (!npc) await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this}),content:`<p class="trudvang magic-perfect-bonus">${bonusNote}</p>`,rolls:[bonusRoll]});
         const availableLevels=wall&&activeSpellInstances(this).length>=activeSpellLimit
           ?powerLevels.map((level,index)=>index===7?{...level,maxCount:0}:level):powerLevels;
         const selection=await perfectSuccessDialog({title:item.name,powerLevels:availableLevels,entries:options.costBreakdown.entries,bonus:Number(bonusRoll.total)});
         const details=selection.counts.map((count,index)=>({count:count-(Number(options.costBreakdown.entries[index]?.count)||0),level:powerLevels[index]})).filter(row=>row.count>0);
-        return {...selection,flavor:details.map(row=>escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectLevel",{count:row.count,effect:row.level.effect}))).join("<br>")};
+        const levelNotes=details.map(row=>escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectLevel",{count:row.count,effect:row.level.effect})));
+        return {...selection,...(npc?{bonusRoll}:{}),flavor:[...(npc?[bonusNote]:[]),...levelNotes].join("<br>")};
       },
       fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
         modifier: this.fatalEffectModifier(fatalKind, options.cost),

@@ -1,3 +1,5 @@
+import {getNpcRollRecord,npcRollRecordData,NPC_ROLL_PACK,storeNpcRollRecord,updateNpcRollRecord} from "./npc-roll-records.mjs";
+
 const scope = "trudvang-chronicles";
 const labelForOutcome = success => success ? "TRUDVANG.Roll.Success" : "TRUDVANG.Roll.Failure";
 const users = () => Array.from(game.users?.values?.() ?? game.users ?? []);
@@ -53,34 +55,40 @@ function partitionFlags(flags = {}) {
   return {publicFlags,details};
 }
 
-export async function publishNpcRollDetails({speaker, content, rolls = [], flags = {}, animate = true, recipients} = {}) {
-  const whisper = recipients ?? gmIds();
-  if (!whisper.length) return null;
-  const rollData = rolls.map(roll=>roll.toJSON?.() ?? roll);
-  const message = await ChatMessage.create({speaker,whisper,blind:true,content,
-    flags:{[scope]:{npcRollDetails:{flags,rollData,animate}},"dice-so-nice":{skip:true}}
-  });
-  if (message && animate) void animateMaskedNpcRolls(rolls);
-  return message;
+export async function publishNpcRollDetails({content, rolls = [], flags = {}, animate = true} = {}) {
+  let id;
+  try {
+    id = await storeNpcRollRecord(content,{flags,rollData:rolls.map(roll=>roll.toJSON?.() ?? roll),animate});
+  } catch (error) {
+    console.error("Trudvang | NPC roll could not be archived",error);
+  }
+  if (!id) globalThis.ui?.notifications?.warn(game.i18n.localize("TRUDVANG.NpcRollDetails.Unavailable"));
+  if (animate) void animateMaskedNpcRolls(rolls);
+  return id ? {id} : null;
+}
+
+export async function npcRollCardData(data, resultContent, {hideOutcome = false, animate = true, keepProof = false} = {}) {
+  if (!hideOutcome && typeof resultContent !== "string") throw Error("An NPC roll needs public result content");
+  const {publicFlags,details} = partitionFlags(data.flags?.[scope]);
+  const record = await publishNpcRollDetails({content:data.content,rolls:data.rolls,flags:keepProof ? data.flags?.[scope] : details,animate});
+  return {...data,content:hideOutcome ? data.content : resultContent,rolls:[],
+    ...(hideOutcome ? {whisper:gmIds(),blind:true} : {}),
+    flags:{...data.flags,[scope]:{...publicFlags,npcRoll:{detailId:record?.id}},"dice-so-nice":{skip:true}}
+  };
 }
 
 /** The visible result remains the canonical card referenced by game actions. */
 export async function createActorRollMessage(actor, data, {resultContent, hideOutcome = false, animate = true, createOptions = {}} = {}) {
   if (!isNpcRoll(actor)) return ChatMessage.create(data,createOptions);
-  if (!hideOutcome && typeof resultContent !== "string") throw Error("An NPC roll needs public result content");
-  const {publicFlags,details} = partitionFlags(data.flags?.[scope]);
-  const record = await publishNpcRollDetails({speaker:data.speaker,content:data.content,rolls:data.rolls,flags:details,animate});
-  if (hideOutcome) return record;
-  return ChatMessage.create({...data,content:resultContent,rolls:[],
-    flags:{...data.flags,[scope]:{...publicFlags,npcRoll:{detailId:record?.id}},"dice-so-nice":{skip:true}}
-  },createOptions);
+  if (hideOutcome && !gmIds().length) return null;
+  return ChatMessage.create(await npcRollCardData(data,resultContent,{hideOutcome,animate}),createOptions);
 }
 
-export async function updateActorRollMessage(actor,message,changes,fullContent) {
+export async function updateActorRollMessage(actor,message,changes,fullContent,{extraRolls=[]}={}) {
   if (!isNpcRoll(actor)) return message.update(changes);
-  const record = game.messages?.get(message.flags?.[scope]?.npcRoll?.detailId);
+  const id = message.flags?.[scope]?.npcRoll?.detailId;
   const publicChanges = {...changes};
-  const secrets = structuredClone(record?.flags?.[scope]?.npcRollDetails?.flags ?? {});
+  const secrets = {};
   for (const [path,value] of Object.entries(changes)) {
     if (!path.startsWith("flags."+scope+".")) continue;
     const key = path.slice(("flags."+scope+".").length);
@@ -89,25 +97,34 @@ export async function updateActorRollMessage(actor,message,changes,fullContent) 
     publicChanges[path] = publicFlags[key];
     if (Object.hasOwn(details,key)) secrets[key] = details[key];
   }
-  if (record) await record.update({content:fullContent,["flags."+scope+".npcRollDetails.flags"]:secrets});
+  if (id) await updateNpcRollRecord(id,fullContent,secrets,extraRolls.map(roll=>roll.toJSON?.()??roll));
+  if (extraRolls.length) void animateMaskedNpcRolls(extraRolls);
   return message.update(publicChanges);
 }
 
-function recordFor(message) {
-  if (!message || !globalThis.game?.user?.isGM) return null;
-  return message.flags?.[scope]?.npcRollDetails ?? game.messages?.get(message.flags?.[scope]?.npcRoll?.detailId)?.flags?.[scope]?.npcRollDetails;
+export const npcRollDetailMarker = id => id && /^[a-zA-Z0-9_-]+$/.test(id) ? '<span data-npc-roll-details="'+id+'" hidden></span>' : "";
+export const npcRollDetailsId = message => message?.flags?.[scope]?.npcRoll?.detailId;
+
+export async function readNpcRollDetails(id) {
+  if (!id || !globalThis.game?.user?.isGM) return null;
+  const entry = await getNpcRollRecord(id);
+  if (entry) return npcRollRecordData(entry);
+  // TEMPORARY WORLD MIGRATION: earlier cards referenced a private chat message instead of a journal entry.
+  const legacy = game.messages?.get(id);
+  const details = legacy?.flags?.[scope]?.npcRollDetails;
+  return details ? {...details,content:legacy.content} : null;
 }
 
-export function recordedRoll(message,index=0) {
+export async function recordedRoll(message,index=0) {
   const roll = message?.rolls?.[index];
   if (roll) return roll;
-  const source = recordFor(message)?.rollData?.[index];
+  const source = (await readNpcRollDetails(message?.flags?.[scope]?.npcRoll?.detailId))?.rollData?.[index];
   return source ? Roll.fromData(source) : null;
 }
 
-export function recordedRollFlag(message,key) {
+export async function recordedRollFlag(message,key) {
   const raw = message?.flags?.[scope]?.[key] ?? message?.getFlag?.(scope,key);
-  const secret = recordFor(message)?.flags?.[key];
+  const secret = (await readNpcRollDetails(message?.flags?.[scope]?.npcRoll?.detailId))?.flags?.[key];
   if (secret === undefined) return raw;
   return raw && typeof raw === "object" && !Array.isArray(raw) ? {...raw,...secret} : secret;
 }
@@ -134,10 +151,11 @@ export async function animateMaskedNpcRolls(rolls) {
 }
 
 /** Play the original results locally on each GM client. */
-export function animateNpcRollDetails(message) {
-  const detail = message.flags?.[scope]?.npcRollDetails;
-  if (!detail?.animate || !game.user?.isGM || message.isContentVisible === false || !game.dice3d?.showForRoll) return;
-  for (const data of detail.rollData) {
+export function animateNpcRollDetails(entry,{extraCount}={}) {
+  const detail = entry.flags?.[scope]?.npcRollDetails;
+  if ((entry.compendium?.collection ?? entry.pack) !== NPC_ROLL_PACK || !detail?.animate || !game.user?.isGM || !game.dice3d?.showForRoll) return;
+  const rolls = extraCount > 0 ? detail.rollData.slice(-extraCount) : detail.rollData;
+  for (const data of rolls) {
     Promise.resolve().then(()=>game.dice3d.showForRoll(Roll.fromData(data),game.user,false))
       .catch(error=>console.error("Trudvang | Private dice animation failed",error));
   }

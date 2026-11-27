@@ -25,8 +25,8 @@ async function resolvePrisonDamage(effect,message,escape,profile){
   .catch(error=>console.error('Trudvang | Prison result notification failed',error));
 }
 
-function escapeRollMatches(message,user,effect,payload){
- const roll=recordedRoll(message),reference=recordedRollFlag(message,'followupTest');
+async function escapeRollMatches(message,user,effect,payload){
+ const roll=await recordedRoll(message),reference=await recordedRollFlag(message,'followupTest');
  const die=Number(roll?.total);
  return message?.author?.id===user.id&&reference?.effectUuid===effect.uuid&&reference.index===0
   && roll?.formula==='1d20'&&Number.isInteger(die)&&die>=1&&die<=20
@@ -65,7 +65,7 @@ export function resolveFollowupOnAuthority(payload){
   let note='';
   if(policy.success==='escapePrison'){
    const message=game.messages?.get(payload.messageId),profile=magicDamageProfile(effect);
-   if(!profile||!escapeRollMatches(message,user,effect,payload))return 'changed';
+   if(!profile||!await escapeRollMatches(message,user,effect,payload))return 'changed';
    await resolvePrisonDamage(effect,message,payload.success,payload.success?profile:{...profile,formula:'1d10',openRoll:0});
    if(payload.success)return 'resolved';
    state.attempts=(state.lastDay===worldDay(now)?state.attempts??0:0)+1;

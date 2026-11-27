@@ -1,4 +1,5 @@
-import {animateNpcRollDetails} from "./chat-roll-privacy.mjs";
+import {bindFatalEffectButton,renderNpcRollControls} from "./npc-roll-chat.mjs";
+import {animateNpcRollDetails,npcRollDetailMarker} from "./chat-roll-privacy.mjs";
 import {pruneChatActions} from "./chat-card-permissions.mjs";
 import {decorateSpellZoneRows,endFog,openFireTamerExtinguish,openSpellWallDamage,placeSpellZone,requestInstantSpellZoneApplication,requestSpellZoneTest,spellWallCardState} from './spell-zones.mjs';
 import {requestDamageImpact} from './chat-application.mjs';
@@ -39,7 +40,10 @@ export function registerChatListeners() {
   // renderChatMessage (jQuery) variant is deprecated and removed in V16, so only the HTML
   // hook is registered.
   Hooks.on("renderChatMessageHTML", attachListeners);
-  Hooks.on("createChatMessage", animateNpcRollDetails);
+  Hooks.on("createJournalEntry", entry=>animateNpcRollDetails(entry));
+  Hooks.on("updateJournalEntry", (entry,_changes,options)=>{
+    if (options?.trudvangNpcExtraDice) animateNpcRollDetails(entry,{extraCount:options.trudvangNpcExtraDice});
+  });
   Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
@@ -200,30 +204,7 @@ function attachListeners(message, html) {
       } finally {button.disabled=false;}
     });
   });
-  html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
-    button.addEventListener("click", async event => {
-      event.preventDefault();
-      if (button.disabled) return;
-      const kind = button.dataset.fatalKind;
-      const threshold = Number(button.dataset.fatalThreshold);
-      const modifier = Number(button.dataset.fatalModifier);
-      if (!["faith", "vitner"].includes(kind) || !Number.isInteger(threshold) || !Number.isInteger(modifier)) return;
-      const actor = await foundry.utils.fromUuid(button.dataset.actorUuid);
-      if (!actor?.isOwner) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotRollForActor"));
-      button.disabled = true;
-      try {
-        const power = button.dataset.fatalPowerId
-          ? {id: button.dataset.fatalPowerId, name: button.dataset.fatalPowerName}
-          : null;
-        const cost = button.dataset.fatalCost ? Number(button.dataset.fatalCost) : undefined;
-        const draw = await actor.rollFatalEffect(kind, {threshold, modifier, power, cost});
-        if (!draw?.results?.length) button.disabled = false;
-      } catch (error) {
-        button.disabled = false;
-        throw error;
-      }
-    });
-  });
+  html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(bindFatalEffectButton);
   html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
     foundry.utils.fromUuid(button.dataset.itemUuid).then(item=>{if(isConsumable(item)){button.textContent=game.i18n.localize("TRUDVANG.Consumable.Consume");button.hidden=!canConsumeSharedItem(item);}else button.hidden=!item?.isOwner;});
     button.addEventListener("click", async event => {
@@ -477,7 +458,7 @@ function attachListeners(message, html) {
       const details = row.querySelector(".zone-target-details");
       const outcome = message.getFlag(scope, "fearResistanceResults")?.find(result => result.actorUuid === actorUuid);
       const application = message.getFlag(scope, "applications")?.find(result => result.actorUuid === actorUuid && result.channel === "fear");
-      if (outcome) details.insertAdjacentHTML("beforeend", zoneOutcome(rollOutcomeText(outcome.outcome ?? {}, key => game.i18n.localize(key)), outcome.success));
+      if (outcome) details.insertAdjacentHTML("beforeend", zoneOutcome(rollOutcomeText(outcome.outcome ?? {}, key => game.i18n.localize(key)), outcome.success)+npcRollDetailMarker(outcome.detailId));
       if (application) {
         details.insertAdjacentHTML("beforeend", zoneOutcome(game.i18n.localize("TRUDVANG.AreaChat.Affected")));
         if (game.user.isGM || actor?.isOwner) details.lastElementChild.textContent = game.i18n.format("TRUDVANG.AreaChat.FearGain", application);
@@ -667,4 +648,5 @@ function attachListeners(message, html) {
       if (token) await canvas.animatePan({x: token.center.x, y: token.center.y});
     });
   });
+  renderNpcRollControls(message,html);
 }

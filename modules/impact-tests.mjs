@@ -1,4 +1,4 @@
-import {isNpcRoll,recordedRoll,recordedRollFlag,publishNpcRollDetails} from "./chat-roll-privacy.mjs";
+import {isNpcRoll,npcRollDetailsId,recordedRoll,recordedRollFlag,publishNpcRollDetails} from "./chat-roll-privacy.mjs";
 import {windProjectionProfile,impactSize} from './rules/impact.mjs';
 import {resolveRollUnderOutcome} from './rules/roll-under-resolver.mjs';
 import {rollOutcomeText} from './rules/roll-outcome-view.mjs';
@@ -16,8 +16,8 @@ export async function resolveImpactTest(payload,{refresh,canReadMessage}={}){
  if(!lock||lock.token!==payload.token||lock.userId!==user.id)return {status:'unavailable'};
  if(payload.action==='cancel'){locks.delete(key);return {status:'cancelled'};}
  if(payload.action!=='finish')return {status:'unavailable'};
- const proof=game.messages.get(payload.proofId),meta=recordedRollFlag(proof,"impactTestFor");
- const roll=recordedRoll(proof),die=Number(roll?.total),target=Number(meta?.target);
+ const proof=game.messages.get(payload.proofId),meta=await recordedRollFlag(proof,"impactTestFor");
+ const roll=await recordedRoll(proof),die=Number(roll?.total),target=Number(meta?.target);
  if((proof?.author?.id??proof?._source?.author)!==user.id||meta?.messageId!==message.id||meta?.actorUuid!==actor.uuid||meta?.token!==lock.token||roll?.formula!=='1d20'||!Number.isInteger(die)||die<1||die>20||!Number.isFinite(target))return {status:'unavailable'};
  const remembered=pending.get(key);
  const outcome=remembered?.outcome??{...resolveRollUnderOutcome(die,target),result:die,target};row.impact??={};
@@ -31,7 +31,14 @@ export async function resolveImpactTest(payload,{refresh,canReadMessage}={}){
   await actor.toggleStatusEffect('prone',{active:true});
  }
  row.impact.resolved=true;
- if(isNpcRoll(actor)&&lock.rolls?.length)await publishNpcRollDetails({speaker:ChatMessage.getSpeaker({actor}),content:"",rolls:lock.rolls});
+ if (isNpcRoll(actor)) {
+  row.impact.detailId=npcRollDetailsId(proof);
+  if (lock.rolls?.length) {
+   const content=(await Promise.all(lock.rolls.map(roll=>roll.render?.()))).join("");
+   const record=await publishNpcRollDetails({content,rolls:lock.rolls});
+   row.impact.distanceDetailId=record?.id;
+  }
+ }
  await refresh(message,rows,{rolls:isNpcRoll(actor)?[]:lock.rolls??[]});
  pending.delete(key);locks.delete(key);return {status:'resolved'};
 }

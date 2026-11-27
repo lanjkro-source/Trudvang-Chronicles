@@ -126,7 +126,7 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     let roll = fixedResult ? undefined : draw.roll;
     if (roll && isNpcRoll(actor)) {
       const content = await roll.render();
-      const detail = await publishNpcRollDetails({speaker:messageData.speaker,content,rolls:[roll]});
+      const detail = await publishNpcRollDetails({content,rolls:[roll]});
       messageData.flags ??= {};
       (messageData.flags["trudvang-chronicles"] ??= {}).npcRoll = {detailId:detail?.id};
       messageData.flags["dice-so-nice"] = {skip:true};

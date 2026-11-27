@@ -604,7 +604,7 @@ async function rollEffectValue(formula,{actor,name=""}={}){
  const speaker=ChatMessage.getSpeaker(actor?{actor}:{}),flavor=escapeHtml(name);
  if(isNpcRoll(actor)){
   const content=await roll.render({flavor});
-  await publishNpcRollDetails({speaker,content,rolls:[roll]});
+  await publishNpcRollDetails({content,rolls:[roll]});
  }else await roll.toMessage({speaker,flavor});
  return Number(roll.total);
 }

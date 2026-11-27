@@ -1,4 +1,4 @@
-import {createActorRollMessage,isNpcRoll,publishNpcRollDetails,renderRollCard,updateActorRollMessage,publicCastingContext} from "./chat-roll-privacy.mjs";
+import {createActorRollMessage,isNpcRoll,npcRollCardData,npcRollDetailsId,renderRollCard,updateActorRollMessage,publicCastingContext} from "./chat-roll-privacy.mjs";
 import {withConditionalEffectConsumption} from './rules/effect-conditional-tests.mjs';
 import {heatingConsequence,purificationConsequence} from './water-purification.mjs';
 import {sealPreparation as prepareSealData, storeSealedSpell} from './magic-seal.mjs';
@@ -191,7 +191,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       successConsequence:game.i18n.format("TRUDVANG.Seal.Bound",{object:seal.effect.parent.name})
     };
     const content=await renderRollCard("roll-card",view);
-    try { await createActorRollMessage(actor,{speaker:ChatMessage.getSpeaker({actor}),content,rolls:[roll]},
+    try { await createActorRollMessage(actor,{speaker:ChatMessage.getSpeaker({actor}),content,rolls:[roll,...(perfectSelection?.bonusRoll?[perfectSelection.bonusRoll]:[])]},
       {resultContent:isNpcRoll(actor)?await renderRollCard("roll-card",view,{resultOnly:true}):undefined}); }
     catch(error) { console.error("Trudvang | Could not publish sealed spell",error); }
     return {roll,result,target:finalTarget,success,critical,margin,perfectSelection,automaticEffectUuids};
@@ -296,11 +296,13 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       targetUuid:releasedSeal.target?.uuid ?? "", targetActorUuid:releasedSeal.target?.actor.uuid ?? ""};
     messageData.flags["dice-so-nice"]={skip:true};
   }
-  const publication=publishMessage?await publishMessage(messageData,{result,target:finalTarget,success,critical,margin}):null;
-  const message=publication?.message??await createActorRollMessage(actor,messageData,{
-    resultContent:npcRoll?await renderCard(true):undefined,createOptions:releasedSeal?{keepId:true}:{}
+  const resultContent = npcRoll ? await renderCard(true) : undefined;
+  const publishedData = npcRoll && publishMessage ? await npcRollCardData(messageData,resultContent,{keepProof:true}) : messageData;
+  const npcDetailId = npcRollDetailsId(publishedData);
+  const publication = publishMessage ? await publishMessage(messageData,{result,target:finalTarget,success,critical,margin},{data:publishedData,npcDetailId}) : null;
+  const message = publication?.message ?? await createActorRollMessage(actor,messageData,{
+    resultContent,createOptions:releasedSeal?{keepId:true}:{}
   });
-  if(npcRoll&&publication?.message&&publication.animate!==false&&!publication.privateRollRecorded)await publishNpcRollDetails(messageData);
   if(magicFearArea){
     try{await synchronizeMagicFearRegion(message.id);}
     catch(error){console.error("Trudvang | Fear area display failed",error);}
@@ -334,7 +336,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     const area = describeFearArea();
     const updated=await renderCard(npcRoll);
     const preparation=prepareSealData(ruleTestContext,finalTarget);
-    await updateActorRollMessage(actor,message,{content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(preparation?{[`flags.${SYSTEM_ID}.sealPreparation`]:preparation}:{}),...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})},npcRoll?await renderCard(false):undefined);
+    await updateActorRollMessage(actor,message,{content:updated,[`flags.${SYSTEM_ID}.ruleTestContext`]:ruleTestContext,...(preparation?{[`flags.${SYSTEM_ID}.sealPreparation`]:preparation}:{}),...(card.spellZone?{[`flags.${SYSTEM_ID}.spellZoneCasting`]:{target:card.target}}:{}),...(area?{[`flags.${SYSTEM_ID}.magicFearArea`]:area}:{}),...(instantAllocation?{[`flags.${SYSTEM_ID}.instantAllocation.selected`]:ruleTestContext.countsById}:{})},npcRoll?await renderCard(false):undefined,{extraRolls:perfectSelection?.bonusRoll?[perfectSelection.bonusRoll]:[]});
   }
   if(success&&selfOnly&&!auraKey){
    try{
@@ -367,7 +369,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       }
     }catch(error){console.error("Trudvang | Aura activation failed",error);ui.notifications.warn(game.i18n.localize("TRUDVANG.Aura.Failed"));}
   }
-  return {roll,automaticEffectUuids,...(publication?.response??{}),...(publication?.animate===false?{duplicate:true}:{}), result:publication?.response?.result??result, target: publication?.response?.target??(targetResults.length === 1 ? targetResults[0].target : finalTarget), success:publication?.response?.success??success, critical:publication?.response?.critical??critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...((damageResistanceFor||procedure?.flags)?{messageId:message.id}:{})};
+  return {roll,automaticEffectUuids,npcDetailId:npcDetailId??npcRollDetailsId(message),...(publication?.response??{}),...(publication?.animate===false?{duplicate:true}:{}), result:publication?.response?.result??result, target: publication?.response?.target??(targetResults.length === 1 ? targetResults[0].target : finalTarget), success:publication?.response?.success??success, critical:publication?.response?.critical??critical, margin, effectTarget, attackTargets: targetResults, ...(perfectSelection?{perfectSelection}: {}),...((damageResistanceFor||procedure?.flags)?{messageId:message.id}:{})};
 }
 
 function numericModifier(value) {

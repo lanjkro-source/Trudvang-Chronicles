@@ -59,7 +59,8 @@ export function resolveInitialResistanceOnAuthority(payload){
   const previous=areaId&&effect.parent.getFlag(S,'fatalFlash')?.[areaId];
   const success=previous?.success??payload.success;
   const key=encodeURIComponent(effect.parent.uuid).replaceAll('.','%2E');
-  const refreshArea=async()=>{if(area)await area.update({['flags.'+S+'.fatalMagicResult.flashResults.'+key]:success});};
+  const refreshArea=async()=>{if(area)await area.update({['flags.'+S+'.fatalMagicResult.flashResults.'+key]:success,
+   ...(payload.npcDetailId?{['flags.'+S+'.fatalMagicResult.flashRollDetails.'+key]:payload.npcDetailId}:{})});};
   if(areaId)await effect.parent.update({
    ['flags.'+S+'.fatalFlash.'+areaId]:{effectUuid:effect.uuid,success}
   });
@@ -67,7 +68,7 @@ export function resolveInitialResistanceOnAuthority(payload){
   if(state.payload.nativeStatuses){
    // Native posture outlives the instantaneous spell, without duplicate prone markers.
    for(const status of state.payload.nativeStatuses)await effect.parent.toggleStatusEffect(status,{active:true});
-   await effect.delete();return 'activated';
+   await effect.delete();await refreshArea();return 'activated';
   }
   await effect.update({name:state.payload.name,description:state.payload.description,statuses:state.payload.statuses,'system.changes':state.payload.changes,
    ...(state.payload.duration ? {duration:state.payload.duration,start:foundry.documents.ActiveEffect.implementation.getEffectStart()} : {}),
@@ -87,7 +88,7 @@ export function registerInitialResistanceSocket(){
  });
 }
 async function requestResolution(effect,state,result){
- const payload={type:'resolveInitialResistance',requestId:crypto.randomUUID(),effectUuid:effect.uuid,id:state.id,userId:game.user.id,success:result.success};
+ const payload={type:'resolveInitialResistance',requestId:crypto.randomUUID(),effectUuid:effect.uuid,id:state.id,userId:game.user.id,success:result.success,npcDetailId:result.npcDetailId};
  if(authority()||!game.users?.activeGM)return resolveInitialResistanceOnAuthority(payload);
  if(!game.socket)return 'unavailable';registerInitialResistanceSocket();
  return new Promise(resolve=>{const timer=setTimeout(()=>{replies.delete(payload.requestId);resolve('unavailable');},30000);replies.set(payload.requestId,{resolve,timer});game.socket.emit(channel,payload);});

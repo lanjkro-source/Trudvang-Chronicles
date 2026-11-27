@@ -206,7 +206,7 @@ export function applyFatalEnclosure(message, {pulse = false, cost, sequence} = {
   return serialize(message.id, async () => {
     const result = message.getFlag(SCOPE, "fatalMagicResult");
     const row = FATAL_MAGIC_ROWS[result?.row];
-    if (!row?.enclosure || !matchesFatalResult(message, result, row)) return {status: "invalidResult"};
+    if (!row?.enclosure || !await matchesFatalResult(message, result, row)) return {status: "invalidResult"};
     if (!pulse) {
       if (result.enclosure) return {status: "alreadyApplied"};
       const maximum = result.cost ?? cost;
