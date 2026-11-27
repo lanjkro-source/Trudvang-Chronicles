@@ -1,3 +1,4 @@
+import {animateMaskedNpcRolls,isNpcRoll} from "./chat-roll-privacy.mjs";
 import {parseSimpleDamageFormula} from "./rules/equipment-resolver.mjs";
 
 const SCOPE = "trudvang-chronicles";
@@ -43,11 +44,14 @@ export async function applyZoneDamage({actor, message, formula, openRoll = 0, qu
   if (game.dice3d?.showForRoll) {
     const casterUuid=message.flags?.[SCOPE]?.spellZoneTest?.casterUuid??message.flags?.[SCOPE]?.ruleTestContext?.casterUuid;
     const caster=casterUuid?await foundry.utils.fromUuid(casterUuid):null;
-    const privateDice=(caster??actor)?.type==="npc";
+    const privateDice = isNpcRoll(caster ?? actor);
+    if (privateDice) void animateMaskedNpcRolls(rolls);
     const recipients = Array.from(game.users.values()).filter(user => user.isGM
       || (!privateDice && !message.blind && actor.testUserPermission(user, "OWNER"))).map(user => user.id);
     try {
-      for (const roll of rolls) await game.dice3d.showForRoll(roll, game.user, !privateDice, recipients, Boolean(message.blind));
+      if (!privateDice || game.user.isGM) for (const roll of rolls) {
+        await game.dice3d.showForRoll(roll, game.user, !privateDice, recipients, !privateDice && Boolean(message.blind));
+      }
     } catch (error) {
       console.error("Trudvang | Area damage animation failed", error);
     }

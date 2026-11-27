@@ -225,7 +225,7 @@ test('Huvfurwurm Head consumes one improved guard, blocks its tablet and wakes a
  const {expireAppliedEffects}=await import('../modules/effects.mjs');
  const {spellAvailability}=await import('../modules/rules/spell-availability.mjs');
  const oldRoll=globalThis.Roll,processed=[];
- globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){processed.push(this.formula);this.total=6;return this;}toJSON(){return {formula:this.formula,total:this.total};}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){processed.push(this.formula);this.total=6;return this;}async render(){return '<p>1d10 = 6</p>';}toJSON(){return {formula:this.formula,total:this.total};}};
  caster.system.resources.body.value=-4;
  caster.system.survivalRounds=0;
  const update=caster.update;
@@ -240,6 +240,11 @@ test('Huvfurwurm Head consumes one improved guard, blocks its tablet and wakes a
  try{
   assert.deepEqual(await Promise.all([resolveHuvfurwurmDeath(caster),resolveHuvfurwurmDeath(caster)]),[true,true]);
   assert.deepEqual(processed,['1d10']);
+  const publicRoll=[...game.messages.values()].find(message=>message.getFlag?.(S,'npcRoll'));
+  assert.deepEqual(publicRoll.rolls,[]);
+  const details=game.messages.get(publicRoll.getFlag(S,'npcRoll').detailId);
+  assert.deepEqual(details.whisper,[gm.id]);
+  assert.match(details.content,/1d10 = 6/);
   assert.equal(dragonRelicCracked(caster),true);
   assert.equal(huvfurwurmGuard(caster),null);
   assert.equal(caster.effects.filter(e=>e.flags[S].huvfurwurmHibernation).length,1);

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
 import Handlebars from "handlebars";
-import {animateNpcRollDetails, createActorRollMessage, renderRollCard, recordedRoll, recordedRollFlag} from "../modules/chat-roll-privacy.mjs";
+import {animateMaskedNpcRolls, animateNpcRollDetails, createActorRollMessage, renderRollCard, recordedRoll, recordedRollFlag} from "../modules/chat-roll-privacy.mjs";
 
 const scope = "trudvang-chronicles";
 const gm = {id:"gm", isGM:true};
@@ -26,7 +26,14 @@ globalThis.game = {
   user:gm, users:new Map([gm,owner,observer].map(user=>[user.id,user])), messages,
   dice3d:{showForRoll:(...args)=>animations.push(args)}
 };
-globalThis.Roll = {fromData: data=>({...data})};
+globalThis.Roll = class {
+  static fromData(data) { return {...data}; }
+  constructor(formula) { this.formula = formula; }
+  async evaluate(options) {
+    assert.deepEqual(options,{minimize:true,allowInteractive:false});
+    return this;
+  }
+};
 globalThis.ChatMessage = {create:async data=>{
   const message = {...data,id:String(messages.size+1)};
   messages.set(message.id,message);
@@ -39,7 +46,7 @@ test("only the NPC result and operational controls are included in the public re
   const row = {name:"Adversaire",actorUuid:character.uuid,success:true,target:19,outcomeMargin:"+14"};
   const view = {kind:"attack",success:true,result:5,target:19,flavor:"Hidden modifier",
     actorUuid:actor.uuid,itemUuid:"Actor.npc.Item.sword",attackTargets:[row]};
-  const roll = {toJSON:()=>({formula:"1d20",total:5})};
+  const roll = {dice:[{faces:20,results:[{result:5}]}],toJSON:()=>({formula:"1d20",total:5})};
   const card = await createActorRollMessage(actor,{
     content:await renderRollCard("roll-card",view),rolls:[roll],
     flags:{[scope]:{attackTargets:[row],rollOutcome:{result:5,target:19,margin:14,success:true},
@@ -68,11 +75,27 @@ test("only the NPC result and operational controls are included in the public re
   assert.deepEqual(recordedRollFlag(card,"rollOutcome"),{success:true});
   animateNpcRollDetails(details);
   await Promise.resolve();
-  assert.equal(animations.length,0);
+  assert.equal(animations.length,1);
+  assert.deepEqual([{...animations[0][0]},...animations[0].slice(1)],[{formula:"1d20"},gm,true,[owner.id,observer.id],true,null,null,{ghost:true}]);
   game.user = gm;
   animateNpcRollDetails(details);
   await Promise.resolve();
-  assert.deepEqual(animations,[[{formula:"1d20",total:5},gm,false]]);
+  assert.deepEqual(animations.slice(1),[[{formula:"1d20",total:5},gm,false]]);
+});
+
+test("an NPC roller sees their own masked animation and only dice shapes and counts are shared",async t=>{
+  game.user = owner;
+  const offline = {id:"offline",active:false};
+  game.users.set(offline.id,offline);
+  t.after(()=>{ game.user = gm; game.users.delete(offline.id); });
+  const dice = [{faces:10,results:[{result:10},{result:2},{result:9,hidden:true}]}];
+  const rolls = [{dice,formula:"1d10x10 + 8",total:20},{dice:[{faces:4,results:[{result:3}]}]}];
+  await animateMaskedNpcRolls(rolls);
+  const [masked,...options] = animations.at(-1);
+  assert.deepEqual([{...masked},...options],[{formula:"2d10 + 1d4"},owner,true,[owner.id,observer.id],false,null,null,{ghost:true}]);
+  const count = animations.length;
+  await animateMaskedNpcRolls([{dice:[],total:8}]);
+  assert.equal(animations.length,count);
 });
 
 test("PC cards preserve detailed content and native dice", async () => {

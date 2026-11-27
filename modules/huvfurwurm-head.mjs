@@ -1,3 +1,4 @@
+import {createActorRollMessage,isNpcRoll} from "./chat-roll-privacy.mjs";
 import {dragonRelicCracked, huvfurwurmGuard, huvfurwurmHibernation, huvfurwurmThreshold} from "./rules/huvfurwurm-head.mjs";
 import {itemEffectRemainingSeconds} from "./rules/effect-duration.mjs";
 import {bodyHealthUpdate} from "./rules/body-health.mjs";
@@ -15,9 +16,13 @@ const Chat = () => globalThis.foundry?.documents?.ChatMessage?.implementation??g
 async function notice(actor,key,roll) {
   const {escapeHtml} = await import("./helpers.mjs");
   const message = Chat();
-  await message.create({speaker:message.getSpeaker({actor}),
+  const data={speaker:message.getSpeaker({actor}),
     content:`<p class="trudvang consequence-notice">${escapeHtml(local(key,{actor:actor.name}))}</p>`,
-    ...(roll?{rolls:[roll]}:{})});
+    ...(roll?{rolls:[roll]}:{})};
+  if (roll && isNpcRoll(actor)) {
+    return createActorRollMessage(actor,{...data,content:data.content+await roll.render()},{resultContent:data.content});
+  }
+  return message.create(data);
 }
 
 export function canConfirmHuvfurwurmBlow(effect) {

@@ -1,6 +1,7 @@
 const scope = "trudvang-chronicles";
 const labelForOutcome = success => success ? "TRUDVANG.Roll.Success" : "TRUDVANG.Roll.Failure";
-const gmIds = () => Array.from(game.users?.values?.() ?? game.users ?? []).filter(user => user.isGM).map(user => user.id);
+const users = () => Array.from(game.users?.values?.() ?? game.users ?? []);
+const gmIds = () => users().filter(user => user.isGM).map(user => user.id);
 export const isNpcRoll = actor => actor?.type === "npc";
 
 export function publicOutcome(outcome) {
@@ -56,9 +57,11 @@ export async function publishNpcRollDetails({speaker, content, rolls = [], flags
   const whisper = recipients ?? gmIds();
   if (!whisper.length) return null;
   const rollData = rolls.map(roll=>roll.toJSON?.() ?? roll);
-  return ChatMessage.create({speaker,whisper,blind:true,content,
+  const message = await ChatMessage.create({speaker,whisper,blind:true,content,
     flags:{[scope]:{npcRollDetails:{flags,rollData,animate}},"dice-so-nice":{skip:true}}
   });
+  if (message && animate) void animateMaskedNpcRolls(rolls);
+  return message;
 }
 
 /** The visible result remains the canonical card referenced by game actions. */
@@ -109,7 +112,28 @@ export function recordedRollFlag(message,key) {
   return raw && typeof raw === "object" && !Array.isArray(raw) ? {...raw,...secret} : secret;
 }
 
-/** Keep private rolls out of Dice So Nice socket broadcasts. */
+/** Broadcast faceless dice using only the shapes and counts of the actual roll. */
+export async function animateMaskedNpcRolls(rolls) {
+  const dice3d = game.dice3d;
+  if (typeof dice3d?.showForRoll !== "function") return;
+  const viewers = users().filter(user => !user.isGM && user.active !== false).map(user => user.id);
+  if (!viewers.length) return;
+  const roller = game.user;
+  const terms = rolls.flatMap(roll => (roll.dice ?? []).flatMap(die => {
+    const count = die.results?.filter(result => !result.hidden).length ?? 0;
+    return count && Number.isSafeInteger(die.faces) && die.faces >= 2 ? [count+"d"+die.faces] : [];
+  }));
+  if (!terms.length) return;
+  try {
+    // Dice So Nice serializes its animation data even for restricted recipients.
+    const masked = await new Roll(terms.join(" + ")).evaluate({minimize:true,allowInteractive:false});
+    await dice3d.showForRoll(masked,roller,true,viewers,!viewers.includes(roller.id),null,null,{ghost:true});
+  } catch (error) {
+    console.error("Trudvang | Masked dice animation failed", error);
+  }
+}
+
+/** Play the original results locally on each GM client. */
 export function animateNpcRollDetails(message) {
   const detail = message.flags?.[scope]?.npcRollDetails;
   if (!detail?.animate || !game.user?.isGM || message.isContentVisible === false || !game.dice3d?.showForRoll) return;
