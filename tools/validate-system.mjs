@@ -83,6 +83,7 @@ function collectKeyFields(value, output = []) {
 }
 
 const system = readJson("system.json");
+if (system.socket !== true) failures.push("system.json must enable the socket used by shared chat cards and other multiplayer actions.");
 const language = readJson("lang/en.json");
 const french = readJson("lang/fr.json");
 const content = readJson("data/starter-content.json");

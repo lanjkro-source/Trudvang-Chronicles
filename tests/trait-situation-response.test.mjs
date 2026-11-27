@@ -21,7 +21,7 @@ let updates = 0;
 const request = {traitKey: "strength", sv: 10, responses: []};
 const message = {
   id: "request-1",
-  user: gm.id,
+  author: gm,
   getFlag: () => request,
   async update(data) {
     updates++;
@@ -116,7 +116,10 @@ test("an unowned actor and an unclaimed die cannot update the GM card", async ()
   game.user = gm;
 });
 
-test("the player rolls locally and the GM automatically updates the original card", async () => {
+test("the player rolls locally and the GM who posted the card updates it automatically", async t => {
+  const otherGM = {id: "another-gm", isGM: true, active: true};
+  game.users.set(otherGM.id, otherGM);
+  t.after(() => game.users.delete(otherGM.id));
   let socketHandler;
   const emitted = [];
   game.socket = {
@@ -146,6 +149,7 @@ test("the player rolls locally and the GM automatically updates the original car
   const row = request.responses.find(response => response.actorUuid === performer.uuid);
   assert.equal(row.result, 9);
   assert.equal(row.target, 15);
+  assert.equal(JSON.parse(message.content).gmName, gm.name);
   assert.equal(updates, 6);
   game.user = gm;
 });

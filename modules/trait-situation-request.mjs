@@ -23,7 +23,7 @@ function updateRequest(messageId, callback) {
 }
 
 function responderFor(message) {
-  const author = game.users.get(message?.user);
+  const author = message?.author;
   if (author?.active && author.isGM) return author;
   return game.users.filter(user => user.active && user.isGM).sort((a, b) => a.id.localeCompare(b.id))[0];
 }
@@ -39,7 +39,7 @@ function responseView(entry) {
 }
 
 async function cardContent(message, request, responses) {
-  const author = game.users.get(message.user);
+  const author = message.author;
   const traitLabel = request.traitKey === "aucun"
     ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait")
     : game.i18n.localize(TRUDVANG.traits[request.traitKey]);
