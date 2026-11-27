@@ -39,6 +39,14 @@ async function openDetails(message, ids) {
         element.remove();
         continue;
       }
+      if (element.matches('button.target[data-action="toggle-roll-details"]')) {
+        // The calculation is already open in this dialog. Keep its threshold as text.
+        const target = document.createElement("span");
+        target.className = "target";
+        target.textContent = element.textContent;
+        element.replaceWith(target);
+        continue;
+      }
       if (element.matches("button")) {
         const actor = ChatMessage.getSpeakerActor(message.speaker);
         const fatal = element.dataset.action==="roll-fatal-effect" && ids.includes(npcRollDetailsId(message));

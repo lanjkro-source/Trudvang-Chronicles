@@ -179,3 +179,35 @@ test("the first private record provisions one private archive and a player can s
   assert.equal((await readNpcRollDetails(remote)).content,"new detail");
   assert.equal((await readNpcRollDetails(remote)).rollData[0].total,7);
 });
+
+test("the NPC details dialog shows the archived threshold without a redundant toggle", async t=>{
+  const previousDocument = globalThis.document;
+  const previousApi = foundry.applications.api;
+  t.after(()=>{globalThis.document=previousDocument;foundry.applications.api=previousApi;});
+  const content = await renderRollCard("roll-card",{result:6,target:18,success:true,outcomeMargin:"+12"});
+  const detailId = await storeNpcRollRecord(content,{flags:{},rollData:[]});
+  let threshold,archivedContent,click,dialogContent;
+  const targetButton = {
+    textContent:"18",
+    matches:selector=>selector==="button" || selector==='button.target[data-action="toggle-roll-details"]',
+    replaceWith:span=>{threshold=span;},
+    remove:()=>{threshold=null;}
+  };
+  const fragment = {querySelectorAll:selector=>selector==="*"?[targetButton]:[]};
+  globalThis.document={createElement(tag){
+    if (tag==="button") return {addEventListener:(_event,handler)=>{click=handler;}};
+    if (tag==="span") return {tag};
+    if (tag==="template") return {content:fragment,set innerHTML(html){archivedContent=html;}};
+    return {append(){},get innerHTML(){return threshold?.textContent ?? "";}};
+  }};
+  foundry.applications.api={DialogV2:class {
+    constructor(options){dialogContent=options.content;}
+    render(){}
+  }};
+  const card={append(){}};
+  renderNpcRollControls({flags:{[scope]:{npcRoll:{detailId}}}},{querySelector:()=>card,querySelectorAll:()=>[]});
+  await click();
+  assert.match(archivedContent,/class="die">6<.*class="target roll-detail-toggle"[^>]+>18</);
+  assert.deepEqual(threshold,{tag:"span",className:"target",textContent:"18"});
+  assert.equal(dialogContent,"18");
+});
